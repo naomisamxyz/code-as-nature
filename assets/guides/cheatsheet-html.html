@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Cheat Sheet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  @font-face {
+    font-family: "VCR OSD Mono";
+    src: url("../fonts/VCR-OSD-Mono.woff") format("woff"),
+         url("../fonts/VCR-OSD-Mono.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  body {
+    font-family: "VCR OSD Mono", "Space Mono", "Courier New", monospace;
+    color: #c5c4c4;
+    background-color: #111;
+    background-image: url("../images/header-glow.png"), url("../images/header-glow.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: -50vw top, 50vw top;
+    background-size: 100vw auto, 100vw auto;
+    background-attachment: fixed, fixed;
+  }
+
+  .page {
+    position: relative;
+    max-width: 700px;
+    margin: 0;
+    padding: 56px 20px 100px;
+  }
+
+  .stamp {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: rgb(130, 129, 129);
+    margin: 0;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 20px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: rgb(130, 129, 129);
+    margin: 10px 0 0;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-weight: normal;
+    font-size: clamp(26px, 5vw, 38px);
+    line-height: 1.1;
+    margin: 0;
+    color: #fff;
+  }
+
+  .masthead p {
+    color: rgb(164, 164, 164);
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 14px 0 0;
+  }
+
+  /* ---------- Nav strip ---------- */
+
+  .guide-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    margin-bottom: 16px;
+    font-size: 12.5px;
+  }
+
+  .guide-nav a, .guide-nav span {
+    padding: 2px 0;
+  }
+
+  .guide-nav a { color: rgba(255, 255, 255, 0.6); text-decoration: none; border-bottom: 1px solid transparent; }
+  .guide-nav a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.4); }
+  .guide-nav .current { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.5); }
+
+  /* ---------- On-this-page table of contents ---------- */
+
+  .page-toc {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 40px;
+    font-size: 12px;
+  }
+
+  .page-toc .toc-label {
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 2px 0;
+  }
+
+  .page-toc a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding: 2px 0;
+  }
+  .page-toc a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.4); }
+
+  /* ---------- Section headings ---------- */
+
+  h2 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 6px;
+    color: #fff;
+  }
+
+  h3.sub {
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    margin: 26px 0 8px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+    scroll-margin-top: 32px;
+  }
+
+  .section-intro {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 18px;
+  }
+
+  .section p.body-text {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 10px 0 0;
+  }
+
+  code.inline {
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1px 5px;
+  }
+
+  a, a:visited {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover { color: #fff; }
+
+  /* ==================================================
+     Annotated code block (code left, notes right)
+     ================================================== */
+
+  .annotated {
+    position: relative;
+    width: calc(100vw - 40px);
+    max-width: 1348px;
+    margin: 18px 0 24px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+  }
+
+  .code-card {
+    position: relative;
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.15);
+    overflow: hidden;
+  }
+
+  .code-scroll {
+    position: relative;
+    overflow-x: auto;
+    padding: 18px 20px;
+  }
+
+  .code-card pre {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+  }
+
+  .code-card code {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+    font-family: "Menlo", "Consolas", "Courier New", monospace;
+    font-size: 12px;
+    line-height: 2.05em;
+    color: rgba(255,255,255,0.9);
+    white-space: pre;
+  }
+
+  .code-groups {
+    position: absolute;
+    top: 18px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    font-size: 12px;
+    pointer-events: none;
+  }
+
+  .grp {
+    position: absolute;
+    right: 0;
+    background: rgba(255,255,255,0.04);
+    border-left: 2px solid rgba(255,255,255,0.22);
+  }
+
+  .grp::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .grp[data-level="1"] { left: 0; }
+
+  .grp[data-level="2"] {
+    left: 16px;
+    background: rgba(255,255,255,0.055);
+    border-left-color: rgba(255,255,255,0.32);
+  }
+  .grp[data-level="2"]::after { color: rgba(255,255,255,0.5); }
+
+  .grp[data-alt="1"] {
+    background: rgba(255,255,255,0.09);
+    border-left-color: rgba(255,255,255,0.4);
+  }
+
+  .notes {
+    position: relative;
+    font-size: 13px;
+    min-height: 100%;
+  }
+
+  .note {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.45);
+    border-left: 2px solid rgba(255,255,255,0.28);
+    padding: 8px 14px 10px;
+  }
+
+  .note-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 5px;
+  }
+
+  .note p {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: rgb(164,164,164);
+  }
+
+  .note strong { color: rgb(197,196,196); font-weight: normal; }
+  .note em { color: rgb(197,196,196); font-style: normal; }
+  .note code { font-family: "Menlo","Consolas","Courier New",monospace; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); padding: 0 4px; font-size: 0.95em; }
+
+  .connectors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .conn-h { position: absolute; height: 1px; background: rgba(255,255,255,0.3); }
+  .conn-v { position: absolute; width: 1px; background: rgba(255,255,255,0.3); }
+  .conn-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    margin: -2px 0 0 -2px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+  }
+
+  @media (max-width: 899px) {
+    .connectors { display: none; }
+    .annotated { grid-template-columns: 1fr; width: auto; }
+    .notes { min-height: 0; margin-top: 20px; }
+    .note { position: static; margin-bottom: 14px; }
+  }
+
+  /* ---------- Plain (non-annotated) code snippet ---------- */
+
+  .snippet {
+    margin: 14px 0;
+  }
+
+  /* ==================================================
+     Reference groups (single column)
+     ================================================== */
+
+  .ref-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ref-group {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.45);
+    padding: 16px 18px;
+  }
+
+  .ref-group h3 {
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin: 0 0 12px;
+  }
+
+  .ref-group dl {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .ref-group dt {
+    font-family: "Menlo","Consolas","Courier New",monospace;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.85);
+    display: inline;
+  }
+
+  .ref-group dd {
+    display: inline;
+    margin: 0 0 0 8px;
+    font-size: 12.5px;
+    color: rgb(148, 148, 148);
+    line-height: 1.6;
+  }
+
+  .ref-row { display: block; }
+
+  .attr-list {
+    margin: 6px 0 0;
+    padding-left: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12.5px;
+    color: rgb(148, 148, 148);
+    line-height: 1.6;
+  }
+
+  .tag-kind {
+    display: inline-block;
+    font-family: "VCR OSD Mono", "Space Mono", monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-left: 8px;
+  }
+
+  .closing {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 22px;
+  }
+
+  .closing strong { color: #fff; font-weight: normal; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <span class="stamp">Last updated August 21, 2026 &mdash; Naomi Sam</span>
+
+  <header class="masthead">
+    <h1>HTML Cheat Sheet</h1>
+    <span class="eyebrow">Structure &amp; core tags</span>
+    <p>The skeleton every page is built on: what goes where, why some tags matter more than others, and how a page connects to its CSS and JS.</p>
+  </header>
+
+  <nav class="guide-nav">
+    <a href="../../index.html">&larr; Course home</a>
+    <a href="your-first-website.html">Your first website</a>
+    <span class="current">HTML</span>
+    <a href="cheatsheet-css.html">CSS</a>
+    <a href="cheatsheet-js.html">JS</a>
+    <a href="cheatsheet-p5.html">p5.js</a>
+    <a href="portfolio-template.html">Portfolio template</a>
+    <a href="ai-assisted-workflows.html">AI-assisted workflows</a>
+    <a href="github-basics.html">GitHub basics</a>
+    <a href="publish-to-github.html">Publish to GitHub</a>
+  </nav>
+
+  <nav class="page-toc">
+    <span class="toc-label">On this page</span>
+    <a href="#anatomy">Anatomy of an HTML tag</a>
+    <a href="#structure">HTML Document Structure</a>
+    <a href="#reference">Most relevant tags</a>
+    <a href="#embeds">Embeds &amp; previews</a>
+    <a href="#css-in-html">CSS inside HTML</a>
+    <a href="#js-in-html">JS inside HTML</a>
+  </nav>
+
+  <!-- ================= ANATOMY OF A TAG ================= -->
+
+  <section class="section" id="anatomy">
+    <h2>Anatomy of an HTML tag</h2>
+    <p class="section-intro">Before the full page example below, here's what one single tag is made of &mdash; every tag in HTML follows this same shape. The example below uses an <strong>anchor tag</strong>, the pair of <code class="inline">&lt;a&gt;</code> and <code class="inline">&lt;/a&gt;</code>, which creates a link.</p>
+
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="OPENING TAG" style="top: calc(0 * 2.05em); height: calc(4 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="CONTENT" style="top: calc(4 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="CLOSING TAG" style="top: calc(5 * 2.05em); height: calc(1 * 2.05em);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>&lt;a
+  href="week1/index.html"
+  class="week"
+&gt;
+  Week 1
+&lt;/a&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" style="min-height: 440px;">
+
+        <div class="note" style="top: 0px;">
+          <span class="note-label">OPENING TAG</span>
+          <p><code>&lt;a</code> is the tag name &mdash; short for <strong>anchor</strong>, it's how you make a link. The tag name says what kind of element this is. Everything after it, up to the <code>&gt;</code>, is an <strong>attribute</strong>: extra info about this specific element. <code>href="week1/index.html"</code> and <code>class="week"</code> are both attributes. The text in quotes is called a <strong>string</strong> &mdash; just a piece of text. You'll see that exact word again in CSS and JavaScript.</p>
+        </div>
+
+        <div class="note" style="top: 220px;">
+          <span class="note-label">CONTENT</span>
+          <p>What actually shows on the page, sitting between the opening and closing tag. Here, that's the text &ldquo;Week 1&rdquo;.</p>
+        </div>
+
+        <div class="note" style="top: 334px;">
+          <span class="note-label">CLOSING TAG</span>
+          <p>Marks where the element ends &mdash; same name as the opening tag, with a <code>/</code> in front. Not every tag has one, see below.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors">
+        <div class="conn-h" style="top:31px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:12px; height:19px;"></div>
+        <div class="conn-h" style="top:12px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:31px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:129px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:129px; height:83px;"></div>
+        <div class="conn-h" style="top:232px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:129px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:154px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:154px; height:192px;"></div>
+        <div class="conn-h" style="top:346px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:154px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+
+    <h3 class="sub">Tags that don't have a closing tag</h3>
+    <p class="body-text">Some tags never hold content, so there's nothing to put a closing tag around. These are called <strong>void elements</strong>. Attributes still go inside them exactly the same way &mdash; there's just no <code class="inline">&hellip;</code> in the middle and no <code class="inline">&lt;/&hellip;&gt;</code> at the end.</p>
+
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;meta charset="UTF-8"&gt;
+&lt;img src="cat.jpg" alt="A sleeping cat"&gt;
+&lt;br&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-text">The void elements you'll run into most: <code class="inline">&lt;meta&gt;</code>, <code class="inline">&lt;link&gt;</code>, <code class="inline">&lt;img&gt;</code>, <code class="inline">&lt;br&gt;</code>, <code class="inline">&lt;input&gt;</code> &mdash; remember, <strong>void</strong> just means no closing tag, so no content can sit "between" tags. Attributes still go inside the tag itself exactly as normal. Further down, every tag in the reference list shows which kind it is.</p>
+  </section>
+
+  <!-- ================= BASIC STRUCTURE ================= -->
+
+  <section class="section" id="structure">
+    <h2>HTML Document Structure</h2>
+    <p class="section-intro">Every HTML page starts from the same skeleton. The notes explain what each part actually does &mdash; and whether it's required or just good practice.</p>
+
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="HEAD"   style="top: calc(2 * 2.05em);  height: calc(9 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="BODY"   style="top: calc(11 * 2.05em);  height: calc(20 * 2.05em);"></span>
+          <span class="grp" data-level="2" data-label="HEADER" style="top: calc(13 * 2.05em); height: calc(7 * 2.05em);"></span>
+          <span class="grp" data-level="2" data-label="MAIN"   style="top: calc(21 * 2.05em); height: calc(3 * 2.05em);"></span>
+          <span class="grp" data-level="2" data-label="FOOTER" style="top: calc(25 * 2.05em); height: calc(3 * 2.05em);"></span>
+          <span class="grp" data-level="2" data-label="SCRIPT" style="top: calc(29 * 2.05em); height: calc(1 * 2.05em);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  &gt;
+  &lt;title&gt;My Page&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;header&gt;
+    &lt;h1&gt;Site Title&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="#about"&gt;About&lt;/a&gt;
+      &lt;a href="#work"&gt;Work&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;p&gt;Page content goes here.&lt;/p&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2026&lt;/p&gt;
+  &lt;/footer&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" style="min-height: 1000px;">
+
+        <div class="note" style="top: 80px;">
+          <span class="note-label">HEAD &middot; required</span>
+          <p><strong>Required.</strong> Holds metadata &mdash; nothing inside is visible. <code>&lt;title&gt;</code> sets your browser-tab text, bookmark name, and the headline search engines show. <code>&lt;link rel="stylesheet" href="style.css"&gt;</code> is what connects this page to its CSS: <code>rel</code> says what kind of link it is, <code>href</code> says where to find the file.</p>
+        </div>
+
+        <div class="note" style="top: 269px;">
+          <span class="note-label">BODY &middot; required</span>
+          <p><strong>Required in practice</strong> &mdash; everything visible lives inside <code>&lt;body&gt;</code>.</p>
+        </div>
+
+        <div class="note" style="top: 376px;">
+          <span class="note-label">HEADER &middot; optional</span>
+          <p><strong>Optional</strong> &mdash; a <code>&lt;div&gt;</code> would work too. <code>&lt;header&gt;</code> tells screen readers and search engines this is the intro/nav area, which a generic <code>&lt;div&gt;</code> can't communicate.</p>
+        </div>
+
+        <div class="note" style="top: 545px;">
+          <span class="note-label">MAIN &middot; optional</span>
+          <p><strong>Optional</strong> for rendering, but recommended &mdash; screen readers use <code>&lt;main&gt;</code> to jump straight to real content. A page should have at most one.</p>
+        </div>
+
+        <div class="note" style="top: 693px;">
+          <span class="note-label">FOOTER &middot; optional</span>
+          <p><strong>Optional</strong>, same idea as <code>&lt;header&gt;</code> &mdash; purely semantic, for closing content like copyright or credits.</p>
+        </div>
+
+        <div class="note" style="top: 841px;">
+          <span class="note-label">SCRIPT &middot; optional</span>
+          <p><strong>Optional</strong> &mdash; only needed if the page has JavaScript. Placed at the <em>end</em> of <code>&lt;body&gt;</code> on purpose: the page's HTML has already loaded by the time this runs, so the script can safely find and use elements above it.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors">
+        <div class="conn-h" style="top:80px; left:calc(50% - 14px); width:28px;"></div>
+        <div class="conn-dot" style="top:80px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:302px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:281px; height:21px;"></div>
+        <div class="conn-h" style="top:281px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:302px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:351px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:351px; height:37px;"></div>
+        <div class="conn-h" style="top:388px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:351px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:572px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:557px; height:15px;"></div>
+        <div class="conn-h" style="top:557px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:572px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:671px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:671px; height:34px;"></div>
+        <div class="conn-h" style="top:705px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:671px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:745px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:745px; height:108px;"></div>
+        <div class="conn-h" style="top:853px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:745px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= REFERENCE ================= -->
+
+  <section class="section" id="reference">
+    <h2>Most relevant tags</h2>
+    <p class="section-intro">Every tag below shows whether it needs a closing tag: written as <code class="inline">&lt;tag&gt;&hellip;&lt;/tag&gt;</code> if it does, or with a <span class="tag-kind">void</span> mark if it doesn't.</p>
+
+    <div class="ref-groups">
+
+      <div class="ref-group">
+        <h3>Structure</h3>
+        <dl>
+          <div class="ref-row"><dt>&lt;div&gt;&hellip;&lt;/div&gt;</dt><dd>&mdash; generic container, no meaning of its own.</dd></div>
+          <div class="ref-row"><dt>&lt;span&gt;&hellip;&lt;/span&gt;</dt><dd>&mdash; generic inline container, for styling part of a line of text.</dd></div>
+          <div class="ref-row"><dt>&lt;header&gt;&hellip;&lt;/header&gt;</dt><dd>&mdash; top of the page; intro / branding area.</dd></div>
+          <div class="ref-row"><dt>&lt;nav&gt;&hellip;&lt;/nav&gt;</dt><dd>&mdash; a group of navigation links, your site's menu.</dd></div>
+          <div class="ref-row"><dt>&lt;main&gt;&hellip;&lt;/main&gt;</dt><dd>&mdash; the page's primary content, one per page.</dd></div>
+          <div class="ref-row"><dt>&lt;section&gt;&hellip;&lt;/section&gt;</dt><dd>&mdash; a thematic grouping of content, usually with its own heading.</dd></div>
+          <div class="ref-row"><dt>&lt;footer&gt;&hellip;&lt;/footer&gt;</dt><dd>&mdash; bottom of the page; closing info &mdash; credits, copyright, extra links.</dd></div>
+        </dl>
+      </div>
+
+      <div class="ref-group">
+        <h3>Text</h3>
+        <dl>
+          <div class="ref-row"><dt>&lt;h1&gt;&hellip;&lt;/h1&gt;</dt><dd>&mdash; heading. <code class="inline">h1</code> through <code class="inline">h6</code>, in order of importance. One <code class="inline">&lt;h1&gt;</code> per page.</dd></div>
+          <div class="ref-row"><dt>&lt;p&gt;&hellip;&lt;/p&gt;</dt><dd>&mdash; a paragraph.</dd></div>
+          <div class="ref-row"><dt>&lt;a href&gt;&hellip;&lt;/a&gt;</dt><dd>&mdash; a link.</dd></div>
+          <div class="ref-row"><dt>&lt;strong&gt;&hellip;&lt;/strong&gt;</dt><dd>&mdash; marks text as important.</dd></div>
+          <div class="ref-row"><dt>&lt;em&gt;&hellip;&lt;/em&gt;</dt><dd>&mdash; marks text as emphasized.</dd></div>
+          <div class="ref-row"><dt>&lt;ul&gt;&hellip;&lt;/ul&gt;</dt><dd>&mdash; unordered list &mdash; items get bullet points, order doesn't matter.</dd></div>
+          <div class="ref-row"><dt>&lt;ol&gt;&hellip;&lt;/ol&gt;</dt><dd>&mdash; ordered list &mdash; items get numbers, order matters (like steps in a recipe).</dd></div>
+          <div class="ref-row"><dt>&lt;li&gt;&hellip;&lt;/li&gt;</dt><dd>&mdash; one item inside either kind of list.</dd></div>
+        </dl>
+      </div>
+
+      <div class="ref-group">
+        <h3>Media</h3>
+        <dl>
+          <div class="ref-row">
+            <dt>&lt;img src="&hellip;" alt="&hellip;"&gt;</dt><dd><span class="tag-kind">void</span> &mdash; an image.</dd>
+            <div class="attr-list">
+              <div><code class="inline">src="&hellip;"</code> &mdash; where the file lives (more on file path vs. URL below).</div>
+              <div><code class="inline">alt="&hellip;"</code> &mdash; the text description (more on alt text below).</div>
+            </div>
+          </div>
+          <div class="ref-row"><dt>&lt;video controls&gt;&hellip;&lt;/video&gt;</dt><dd>&mdash; a video. <code class="inline">controls</code> is an attribute &mdash; add just that word inside the opening tag to show play/pause/volume controls.</dd></div>
+          <div class="ref-row"><dt>&lt;audio&gt;&hellip;&lt;/audio&gt;</dt><dd>&mdash; audio, same idea as video.</dd></div>
+          <div class="ref-row"><dt>&lt;iframe&gt;&hellip;&lt;/iframe&gt;</dt><dd>&mdash; embeds another page inline &mdash; more on this below.</dd></div>
+        </dl>
+      </div>
+
+      <div class="ref-group">
+        <h3>Forms</h3>
+        <dl>
+          <div class="ref-row"><dt>&lt;form&gt;&hellip;&lt;/form&gt;</dt><dd>&mdash; wraps a set of inputs meant to be submitted together.</dd></div>
+          <div class="ref-row">
+            <dt>&lt;input type="&hellip;"&gt;</dt><dd><span class="tag-kind">void</span> &mdash; one field. The <code class="inline">type</code> attribute decides what it looks like and does:</dd>
+            <div class="attr-list">
+              <div><code class="inline">type="text"</code> &mdash; a normal text box.</div>
+              <div><code class="inline">type="checkbox"</code> &mdash; a checkbox.</div>
+              <div><code class="inline">type="radio"</code> &mdash; one choice among several.</div>
+              <div><code class="inline">type="email"</code> / <code class="inline">type="number"</code> &mdash; a text box that expects that kind of value.</div>
+            </div>
+          </div>
+          <div class="ref-row"><dt>&lt;button&gt;&hellip;&lt;/button&gt;</dt><dd>&mdash; a clickable button. Placed inside a <code class="inline">&lt;form&gt;</code>, it submits that form by default &mdash; that's the actual "submit" tag; add <code class="inline">type="button"</code> if you don't want that.</dd></div>
+          <div class="ref-row"><dt>&lt;label&gt;&hellip;&lt;/label&gt;</dt><dd>&mdash; a caption tied to a specific input.</dd></div>
+          <div class="ref-row"><dt>&lt;textarea&gt;&hellip;&lt;/textarea&gt;</dt><dd>&mdash; a multi-line text field. Use it instead of <code class="inline">&lt;input&gt;</code> whenever someone might type more than one line &mdash; a comment, a description &mdash; since a regular <code class="inline">&lt;input&gt;</code> only ever holds a single line.</dd></div>
+          <div class="ref-row"><dt>&lt;select&gt;&hellip;&lt;/select&gt;</dt><dd>&mdash; a dropdown menu.</dd></div>
+        </dl>
+      </div>
+
+      <div class="ref-group">
+        <h3>Attributes worth knowing</h3>
+        <p class="body-text" style="margin: 0 0 10px;">These aren't tags on their own &mdash; they go <em>inside</em> an opening tag, the same spot as <code class="inline">href</code> or <code class="inline">src</code>. A few show up on almost anything.</p>
+        <dl>
+          <div class="ref-row"><dt>class="&hellip;"</dt><dd>&mdash; a label you invent, used to style a <em>group</em> of elements the same way from CSS. Give several elements the same class, e.g. <code class="inline">class="week"</code>, and one CSS rule styles all of them at once.</dd></div>
+          <div class="ref-row"><dt>id="&hellip;"</dt><dd>&mdash; a label you invent for exactly <em>one</em> element on the whole page, no repeats. Used when you need to target that single element specifically, e.g. jumping to it with a link like <code class="inline">#about</code>.</dd></div>
+          <div class="ref-row"><dt>alt="&hellip;"</dt><dd>&mdash; text description of an image, for screen readers and for when the image fails to load. Full explanation further down.</dd></div>
+          <div class="ref-row"><dt>target="_blank"</dt><dd>&mdash; goes on a link (<code class="inline">&lt;a&gt;</code>). Makes it open in a new browser tab instead of replacing the page you're on.</dd></div>
+          <div class="ref-row"><dt>data-*</dt><dd>&mdash; an attribute you make up yourself, starting with <code class="inline">data-</code>, e.g. <code class="inline">data-week="3"</code>. The browser ignores it, but JavaScript can read it &mdash; a way to attach your own info to an element.</dd></div>
+        </dl>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EMBEDS (moved to bottom) ================= -->
+
+  <section class="section" id="embeds">
+    <h2>Embeds &amp; previews</h2>
+    <p class="section-intro">A few tags pull in images, media, or entire other pages. Walking through each one on its own.</p>
+
+    <h3 class="sub">1. Adding an image</h3>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;img src="cat.jpg" alt="A sleeping cat"&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text"><code class="inline">&lt;img&gt;</code> is a void element (see above) &mdash; no closing tag, nothing goes between. <code class="inline">src</code> is an attribute pointing to the image file, the same way <code class="inline">href</code> points to a page in a link. It can be either kind of address: a plain file name or path like <code class="inline">cat.jpg</code> or <code class="inline">images/cat.jpg</code> when the image lives in your own project folder, or a full URL like <code class="inline">https://example.com/cat.jpg</code> when it's hosted somewhere else online. Use a file path for images you're supplying yourself; use a URL only when you actually mean to load someone else's hosted file.</p>
+
+    <h3 class="sub">2. Why alt text matters</h3>
+    <p class="body-text"><code class="inline">alt</code> is a second attribute on the same tag. It describes the image for screen readers, and it's what shows up as text if the image ever fails to load. For an image that's purely decorative &mdash; a background flourish with no real content &mdash; use <code class="inline">alt=""</code>: empty, but still present. Leaving the attribute off entirely is different from leaving it empty, and only the empty version tells screen readers to skip it on purpose.</p>
+
+    <h3 class="sub">3. Keeping images from breaking your layout</h3>
+    <p class="body-text">That part is CSS's job, not HTML's &mdash; rules like <code class="inline">max-width: 100%</code> and <code class="inline">aspect-ratio</code> keep an image from overflowing or making the page jump while it loads. Covered properly in <a href="cheatsheet-css.html">the CSS cheat sheet</a>.</p>
+
+    <h3 class="sub">4. Linking to another page vs. embedding it live</h3>
+    <p class="body-text">There are two different ways to connect one page to another, and they do very different things.</p>
+
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;a href="diagram.html"&gt;Open the diagram&lt;/a&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">A plain link. Clicking it <strong>navigates away</strong> &mdash; the browser leaves this page and loads <code class="inline">diagram.html</code> instead.</p>
+
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;iframe src="diagram.html" title="Diagram"&gt;&lt;/iframe&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">An embed. This one <strong>does</strong> need a closing tag, even though nothing usually goes between it &mdash; it shows <code class="inline">diagram.html</code> <em>live, inline</em>, like a little window sitting inside the current page. The <code class="inline">title</code> attribute is required for accessibility: it's how a screen reader describes what's inside the window. In CSS, an iframe usually also gets <code class="inline">border: 0</code> to remove the default border browsers put on it.</p>
+
+    <p class="body-text">The course's main page (<code class="inline">index.html</code>) uses both, side by side: its syllabus section links out to the GitHub guide with a plain <code class="inline">&lt;a&gt;</code>, while its Computational Pipeline section embeds the diagram live with an <code class="inline">&lt;iframe&gt;</code>.</p>
+  </section>
+
+  <!-- ================= CSS INSIDE HTML ================= -->
+
+  <section class="section" id="css-in-html">
+    <h2>CSS inside HTML</h2>
+    <p class="section-intro">CSS reaches a page in three ways &mdash; from most to least recommended. All three are HTML you write; only where the actual style rules live changes.</p>
+
+    <h3 class="sub">External file</h3>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">Already covered above, in the <a href="#structure">HEAD note</a>: one shared <code class="inline">style.css</code> file, linked from every page that needs it. Change the file once, every page updates &mdash; this is the one you'll use almost always.</p>
+
+    <h3 class="sub">Internal, written into the page</h3>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;style&gt;
+  body {
+    background: black;
+  }
+&lt;/style&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text"><code class="inline">&lt;style&gt;&hellip;&lt;/style&gt;</code> holds actual CSS rules &mdash; the same kind that would otherwise live in <code class="inline">style.css</code> &mdash; written directly into this one page instead. It goes in <code class="inline">&lt;head&gt;</code>, needs a closing tag, and only styles this page; nothing shared with any other.</p>
+
+    <h3 class="sub">Inline, on a single element</h3>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;p style="color: red;"&gt;Careful.&lt;/p&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">A <code class="inline">style</code> attribute directly on one tag &mdash; no selector needed, since it can only ever apply to that single element. Fine for a quick test, but it doesn't scale: styling ten elements the same way means repeating the same <code class="inline">style="&hellip;"</code> ten times, instead of writing one CSS rule once. More on CSS itself in the <a href="cheatsheet-css.html">CSS cheat sheet</a>.</p>
+  </section>
+
+  <!-- ================= JS INSIDE HTML ================= -->
+
+  <section class="section" id="js-in-html">
+    <h2>JS inside HTML</h2>
+    <p class="section-intro">JavaScript reaches a page in a similar set of ways &mdash; a separate file, written into the page, or run straight from an attribute.</p>
+
+    <h3 class="sub">External file</h3>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">Already covered above, in the <a href="#structure">SCRIPT note</a>: one shared script file. Placed at the end of <code class="inline">&lt;body&gt;</code> so the page's HTML has already loaded by the time it runs.</p>
+
+    <h3 class="sub">Internal, written into the page</h3>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;script&gt;
+  console.log("hello");
+&lt;/script&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text"><code class="inline">&lt;script&gt;&hellip;&lt;/script&gt;</code> = JavaScript written directly into the page &mdash; the same idea as internal <code class="inline">&lt;style&gt;</code>, but for the kind of code that would otherwise live in a file like <code class="inline">script.js</code>. It runs automatically, the moment the browser reaches this point in the page &mdash; no click or other trigger needed.</p>
+
+    <h3 class="sub">Running JS straight from an attribute</h3>
+    <p class="body-text">A third way JavaScript shows up in HTML: directly inside an attribute like <code class="inline">onclick</code>, which runs a bit of JS whenever that element is clicked.</p>
+
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;button onclick="alert('Clicked ☺️!')"&gt;Click Me&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text"><code class="inline">onclick</code> is an attribute, same spot as <code class="inline">href</code> or <code class="inline">src</code> &mdash; except its value isn't a link or a description, it's an actual line of JavaScript. Unlike the <code class="inline">&lt;script&gt;</code> block above, which runs the moment the page loads, this code sits and waits &mdash; it only runs when the button is actually pressed, not before. Fine for a one-liner like this.</p>
+
+    <p class="body-text">Once the logic is more than one line, <code class="inline">onclick</code> can just call a function defined elsewhere instead of holding all the code itself:</p>
+
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;button onclick="handleClick()"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+  function handleClick() {
+    alert('Button clicked!');
+  }
+&lt;/script&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">The button's <code class="inline">onclick</code> just names the function, <code class="inline">handleClick()</code>, and the actual logic lives in the <code class="inline">&lt;script&gt;</code> tag instead of being crammed into the attribute &mdash; the pattern you'll reach for once a click needs to do more than one thing. More on JavaScript itself in the <a href="cheatsheet-js.html">JS cheat sheet</a>, including why a separate file is usually cleaner than writing JS directly into the page or into an attribute.</p>
+  </section>
+
+  <p class="closing">Next up: <a href="cheatsheet-css.html">the CSS cheat sheet</a>, which covers how everything on this page actually gets styled &mdash; including <a href="cheatsheet-css.html#responsive">responsive layout for different screen sizes</a>.</p>
+
+</div>
+
+</body>
+</html>

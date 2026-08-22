@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your First Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  @font-face {
+    font-family: "VCR OSD Mono";
+    src: url("../fonts/VCR-OSD-Mono.woff") format("woff"),
+         url("../fonts/VCR-OSD-Mono.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  body {
+    font-family: "VCR OSD Mono", "Space Mono", "Courier New", monospace;
+    color: #c5c4c4;
+    background-color: #111;
+    background-image: url("../images/header-glow.png"), url("../images/header-glow.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: -50vw top, 50vw top;
+    background-size: 100vw auto, 100vw auto;
+    background-attachment: fixed, fixed;
+  }
+
+  .page {
+    position: relative;
+    max-width: 700px;
+    margin: 0;
+    padding: 56px 20px 100px;
+  }
+
+  .stamp {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: rgb(130, 129, 129);
+    margin: 0;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 20px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: rgb(130, 129, 129);
+    margin: 10px 0 0;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-weight: normal;
+    font-size: clamp(26px, 5vw, 38px);
+    line-height: 1.1;
+    margin: 0;
+    color: #fff;
+  }
+
+  .masthead p {
+    color: rgb(164, 164, 164);
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 14px 0 0;
+  }
+
+  /* ---------- Nav strip ---------- */
+
+  .guide-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    margin-bottom: 16px;
+    font-size: 12.5px;
+  }
+
+  .guide-nav a, .guide-nav span {
+    padding: 2px 0;
+  }
+
+  .guide-nav a { color: rgba(255, 255, 255, 0.6); text-decoration: none; border-bottom: 1px solid transparent; }
+  .guide-nav a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.4); }
+  .guide-nav .current { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.5); }
+
+  /* ---------- On-this-page table of contents ---------- */
+
+  .page-toc {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 40px;
+    font-size: 12px;
+  }
+
+  .page-toc .toc-label {
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 2px 0;
+  }
+
+  .page-toc a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding: 2px 0;
+  }
+  .page-toc a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.4); }
+
+  /* ---------- Section headings ---------- */
+
+  h2 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 6px;
+    color: #fff;
+  }
+
+  h3.sub {
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    margin: 26px 0 8px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+    scroll-margin-top: 32px;
+  }
+
+  .section-intro {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 18px;
+  }
+
+  .section p.body-text {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 10px 0 0;
+  }
+
+  code.inline {
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1px 5px;
+  }
+
+  a, a:visited {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover { color: #fff; }
+
+  /* ==================================================
+     Annotated code block (code left, notes right)
+     ================================================== */
+
+  .annotated {
+    position: relative;
+    width: calc(100vw - 40px);
+    max-width: 1348px;
+    margin: 18px 0 24px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+  }
+
+  .code-card {
+    position: relative;
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.15);
+    overflow: hidden;
+  }
+
+  .code-scroll {
+    position: relative;
+    overflow-x: auto;
+    padding: 18px 20px;
+  }
+
+  .code-card pre {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+  }
+
+  .code-card code {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+    font-family: "Menlo", "Consolas", "Courier New", monospace;
+    font-size: 12px;
+    line-height: 2.05em;
+    color: rgba(255,255,255,0.9);
+    white-space: pre;
+  }
+
+  .code-groups {
+    position: absolute;
+    top: 18px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    font-size: 12px;
+    pointer-events: none;
+  }
+
+  .grp {
+    position: absolute;
+    right: 0;
+    background: rgba(255,255,255,0.04);
+    border-left: 2px solid rgba(255,255,255,0.22);
+  }
+
+  .grp::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .grp[data-level="1"] { left: 0; }
+
+  .grp[data-level="2"] {
+    left: 16px;
+    background: rgba(255,255,255,0.055);
+    border-left-color: rgba(255,255,255,0.32);
+  }
+  .grp[data-level="2"]::after { color: rgba(255,255,255,0.5); }
+
+  .grp[data-alt="1"] {
+    background: rgba(255,255,255,0.09);
+    border-left-color: rgba(255,255,255,0.4);
+  }
+
+  .notes {
+    position: relative;
+    font-size: 13px;
+    min-height: 100%;
+  }
+
+  .note {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.45);
+    border-left: 2px solid rgba(255,255,255,0.28);
+    padding: 8px 14px 10px;
+  }
+
+  .note-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 5px;
+  }
+
+  .note p {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: rgb(164,164,164);
+  }
+
+  .note strong { color: rgb(197,196,196); font-weight: normal; }
+  .note em { color: rgb(197,196,196); font-style: normal; }
+  .note code { font-family: "Menlo","Consolas","Courier New",monospace; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); padding: 0 4px; font-size: 0.95em; }
+
+  .connectors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .conn-h { position: absolute; height: 1px; background: rgba(255,255,255,0.3); }
+  .conn-v { position: absolute; width: 1px; background: rgba(255,255,255,0.3); }
+  .conn-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    margin: -2px 0 0 -2px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+  }
+
+  @media (max-width: 899px) {
+    .connectors { display: none; }
+    .annotated { grid-template-columns: 1fr; width: auto; }
+    .notes { min-height: 0; margin-top: 20px; }
+    .note { position: static; margin-bottom: 14px; }
+  }
+
+  /* ---------- Plain (non-annotated) code snippet ---------- */
+
+  .snippet {
+    margin: 14px 0;
+  }
+
+  /* ---------- Numbered steps ---------- */
+
+  .steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+  }
+
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #fff;
+  }
+
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.6);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .closing {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 22px;
+  }
+
+  .closing strong { color: #fff; font-weight: normal; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <span class="stamp">Last updated August 21, 2026 &mdash; Naomi Sam</span>
+
+  <header class="masthead">
+    <h1>Your First Website</h1>
+    <span class="eyebrow">Two files, one browser</span>
+    <p>The smallest possible website you can make &mdash; a page with words on it, styled with a little color. Everything else in this course builds on exactly this.</p>
+  </header>
+
+  <nav class="guide-nav">
+    <a href="../../index.html">&larr; Course home</a>
+    <span class="current">Your first website</span>
+    <a href="cheatsheet-html.html">HTML</a>
+    <a href="cheatsheet-css.html">CSS</a>
+    <a href="cheatsheet-js.html">JS</a>
+    <a href="cheatsheet-p5.html">p5.js</a>
+    <a href="portfolio-template.html">Portfolio template</a>
+    <a href="ai-assisted-workflows.html">AI-assisted workflows</a>
+    <a href="github-basics.html">GitHub basics</a>
+    <a href="publish-to-github.html">Publish to GitHub</a>
+  </nav>
+
+  <nav class="page-toc">
+    <span class="toc-label">On this page</span>
+    <a href="#folder">Make a project folder</a>
+    <a href="#html">Write the HTML</a>
+    <a href="#css">Write the CSS</a>
+    <a href="#view">Open it in your browser</a>
+    <a href="#image">Add an image</a>
+  </nav>
+
+  <!-- ================= MAKE A PROJECT FOLDER ================= -->
+
+  <section class="section" id="folder">
+    <h2>Make a project folder</h2>
+    <p class="section-intro">Every website starts as a folder of files sitting on your computer, before it's anything else.</p>
+    <ol class="steps">
+      <li>Anywhere on your computer &mdash; your Desktop is fine &mdash; make a new folder. Call it something like <code class="inline">my-first-site</code>.</li>
+      <li>That's it. Two files are about to go inside it, sitting right next to each other.</li>
+    </ol>
+  </section>
+
+  <!-- ================= WRITE THE HTML ================= -->
+
+  <section class="section" id="html">
+    <h2>Write the HTML</h2>
+    <p class="section-intro">Inside that folder, make a new file named exactly <code class="inline">index.html</code>. <code class="inline">index</code> is a special name &mdash; it's the file a browser opens automatically when it's given the folder instead of one specific file. Paste this in &mdash; &ldquo;Hello, world!&rdquo; is the traditional first line to write in any new language or tool, a small, immediate proof that everything is wired up correctly before building anything more complicated:</p>
+
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="PAGE SETUP" style="top: calc(0 * 2.05em); height: calc(2 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="BODY STARTS" style="top: calc(2 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="CONTENT" style="top: calc(3 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="CLOSING" style="top: calc(4 * 2.05em); height: calc(2 * 2.05em);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" data-notes-id="html-example" style="min-height: 510px;">
+
+        <div class="note" data-note="page-setup" style="top: 0px;">
+          <span class="note-label">PAGE SETUP</span>
+          <p>The standard opening every HTML page starts with.<br><code>&lt;!DOCTYPE html&gt;</code> tells the browser this is a modern HTML page.<br><code>&lt;html&gt;</code> wraps everything on it.<br>Full breakdown in the HTML cheat sheet &mdash; for now, just copy this part exactly.</p>
+        </div>
+
+        <div class="note" data-note="body-starts" style="top: 169px;">
+          <span class="note-label">BODY STARTS</span>
+          <p><code>&lt;body&gt;</code> opens the part that actually shows up on screen. Everything visible on the page goes between here and <code>&lt;/body&gt;</code>.</p>
+        </div>
+
+        <div class="note" data-note="content" style="top: 276px;">
+          <span class="note-label">CONTENT</span>
+          <p>The one thing on this page: a heading, using the biggest heading tag, <code>&lt;h1&gt;</code>. Change the words between the tags and that's what shows up.</p>
+        </div>
+
+        <div class="note" data-note="closing" style="top: 382px;">
+          <span class="note-label">CLOSING</span>
+          <p><code>&lt;/body&gt;</code> closes the visible part of the page.<br><code>&lt;/html&gt;</code> closes the whole document.<br>Every opening tag needs a matching closing one &mdash; this is where these two get theirs.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors" data-connectors-id="html-example">
+        <div class="conn-h" style="top:41px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:12px; height:29px;"></div>
+        <div class="conn-h" style="top:12px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:41px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:77px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:77px; height:104px;"></div>
+        <div class="conn-h" style="top:181px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:77px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:102px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:102px; height:186px;"></div>
+        <div class="conn-h" style="top:288px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:102px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:142px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:142px; height:252px;"></div>
+        <div class="conn-h" style="top:394px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:142px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= WRITE THE CSS ================= -->
+
+  <section class="section" id="css">
+    <h2>Write the CSS</h2>
+    <p class="section-intro">Right next to <code class="inline">index.html</code>, in the same folder, make a second file named exactly <code class="inline">style.css</code>. Paste this in:</p>
+
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="BODY RULE" style="top: calc(0 * 2.05em); height: calc(4 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="H1 RULE" style="top: calc(5 * 2.05em); height: calc(3 * 2.05em);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>body {
+  background: black;
+  font-family: sans-serif;
+}
+
+h1 {
+  color: red;
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" data-notes-id="css-example" style="min-height: 340px;">
+
+        <div class="note" data-note="body-rule" style="top: 0px;">
+          <span class="note-label">BODY RULE</span>
+          <p><code>body</code> targets the whole page &mdash; the outermost element every other tag sits inside.<br><code>background</code> sets the page's color.<br><code>font-family</code> sets the typeface for all its text, including headings, unless something more specific overrides it.</p>
+        </div>
+
+        <div class="note" data-note="h1-rule" style="top: 170px;">
+          <span class="note-label">H1 RULE</span>
+          <p><code>h1</code> targets just the heading you wrote.<br><code>color</code> here only affects text inside <code>h1</code> elements &mdash; it doesn't touch the rest of the page.<br>Try changing either color once it's connected below &mdash; the full syntax behind rules like these is in the CSS cheat sheet.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors" data-connectors-id="css-example">
+        <div class="conn-h" style="top:65px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:12px; height:53px;"></div>
+        <div class="conn-h" style="top:12px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:65px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:179px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:179px; height:3px;"></div>
+        <div class="conn-h" style="top:182px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:179px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+
+    <p class="body-text">That file does nothing yet &mdash; nothing points to it. Go back to <code class="inline">index.html</code> and add a <code class="inline">&lt;head&gt;</code> section between <code class="inline">&lt;html&gt;</code> and <code class="inline">&lt;body&gt;</code>, with a <code class="inline">&lt;link&gt;</code> tag inside it:</p>
+
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-alt="1" data-label="CONNECTS TO CSS" style="top: calc(1 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" data-notes-id="link-example" style="min-height: 190px;">
+
+        <div class="note" data-note="connects-css" style="top: 0px;">
+          <span class="note-label">CONNECTS TO CSS</span>
+          <p>This goes between the <code>&lt;html&gt;</code> you already have and <code>&lt;body&gt;</code>.<br><code>&lt;head&gt;</code> starts a section for information about the page rather than content you see.<br><code>&lt;link&gt;</code> pulls in the stylesheet you just wrote, so its rules apply to this page &mdash; without it, the CSS file would just sit there doing nothing.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors" data-connectors-id="link-example">
+        <div class="conn-h" style="top:77px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:12px; height:65px;"></div>
+        <div class="conn-h" style="top:12px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:77px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+
+    <p class="body-text">Save both files, then reload the page in the next section to see the color change.</p>
+  </section>
+
+  <!-- ================= OPEN IT IN YOUR BROWSER ================= -->
+
+  <section class="section" id="view">
+    <h2>Open it in your browser</h2>
+    <p class="section-intro">Two files, saved in the same folder. Now to actually see it:</p>
+    <ol class="steps">
+      <li>Find <code class="inline">index.html</code> in your folder and double-click it. It should open in your default browser and show &ldquo;Hello, world!&rdquo; in whatever color you chose.</li>
+      <li>If it opens as plain text instead of a webpage, right-click the file, choose <strong>Open With</strong>, and pick a browser &mdash; Chrome, Safari, or Firefox &mdash; instead.</li>
+      <li>Every time you save a change to either file, switch back to the browser tab and refresh it to see the update. The browser only reads the files when you tell it to.</li>
+    </ol>
+  </section>
+
+  <!-- ================= ADD AN IMAGE ================= -->
+
+  <section class="section" id="image">
+    <h2>Add an image</h2>
+    <p class="section-intro">One more line to try, now that the page works. Pick any image on your computer &mdash; a photo, a screenshot, a drawing &mdash; and drag it into the same folder as <code class="inline">index.html</code>.</p>
+
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;br&gt;
+&lt;img src="photo.jpg" alt="A description of the photo"&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-text" style="margin-top: 0;">Add these two lines right under your <code class="inline">&lt;h1&gt;</code>, still inside <code class="inline">&lt;body&gt;</code>.<br><code class="inline">&lt;br&gt;</code> is a line break &mdash; it just pushes whatever comes after it onto a new line, so the image doesn't sit jammed against the heading.<br><code class="inline">src</code> is the image's file name &mdash; change <code class="inline">"photo.jpg"</code> to match whatever you dragged in, exactly, including the file extension.<br><code class="inline">alt</code> is a short written description of the image, used by screen readers and shown if the image ever fails to load.<br>Save, then reload the page to see it appear below the heading &mdash; the full picture on images, including sizing and when to use them versus embedding, is in the HTML cheat sheet.</p>
+  </section>
+
+  <p class="closing">That's a real website &mdash; just not on the internet yet, only on your own computer. Next up: <a href="cheatsheet-html.html">the HTML cheat sheet</a> for the full breakdown of what you just wrote, then <a href="cheatsheet-css.html">the CSS cheat sheet</a> for real styling power. When you're ready to put it online, see <a href="publish-to-github.html">Publish to GitHub</a>.</p>
+
+</div>
+
+</body>
+</html>

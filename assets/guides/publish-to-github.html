@@ -55,7 +55,7 @@
   .masthead {
     padding-bottom: 28px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 
   .eyebrow {
@@ -81,6 +81,20 @@
     line-height: 1.7;
     margin: 14px 0 0;
   }
+
+  /* ---------- Nav strip ---------- */
+
+  .guide-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    margin-bottom: 32px;
+    font-size: 12.5px;
+  }
+
+  .guide-nav a { padding: 2px 0; color: rgba(255, 255, 255, 0.6); text-decoration: none; border-bottom: 1px solid transparent; }
+  .guide-nav a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.4); }
+  .guide-nav .current { padding: 2px 0; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.5); }
 
   /* ---------- Prerequisites ---------- */
 
@@ -292,6 +306,19 @@
     <h1>Publish to GitHub</h1>
     <span class="eyebrow">No terminal required</span>
   </header>
+
+  <nav class="guide-nav">
+    <a href="../../index.html">&larr; Course home</a>
+    <a href="your-first-website.html">Your first website</a>
+    <a href="cheatsheet-html.html">HTML</a>
+    <a href="cheatsheet-css.html">CSS</a>
+    <a href="cheatsheet-js.html">JS</a>
+    <a href="cheatsheet-p5.html">p5.js</a>
+    <a href="portfolio-template.html">Portfolio template</a>
+    <a href="ai-assisted-workflows.html">AI-assisted workflows</a>
+    <a href="github-basics.html">GitHub basics</a>
+    <span class="current">Publish to GitHub</span>
+  </nav>
 
   <section class="prereqs">
     <h2>Before you start</h2>
