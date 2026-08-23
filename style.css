@@ -15,7 +15,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   min-height: 100%;
 }
@@ -35,8 +36,19 @@ body {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: transparent;
   padding: var(--page-pad) var(--page-pad) 0;
+  display: flow-root;
+}
+
+.header-ornament {
+  float: left;
+  margin: 0 12px 0 0;
+  font-family: monospace;
+  font-size: clamp(3.33px, 0.4667vw, 6px);
+  line-height: 1;
+  white-space: pre;
+  color: #fff;
+  pointer-events: none;
 }
 
 .stamp {
@@ -53,9 +65,13 @@ body {
   margin: 0;
   font-size: clamp(20px, 2.8vw, 36px);
   font-weight: normal;
-  letter-spacing: normal;
   line-height: 1;
   color: rgb(255, 255, 255);
+}
+
+.site-header.on-light .site-title,
+.site-header.on-light .header-ornament {
+  color: #000;
 }
 
 .site-meta {
@@ -64,15 +80,10 @@ body {
   font-size: clamp(10px, 0.9vw, 12px);
   line-height: 1.25;
   color: rgb(130, 129, 129);
-  letter-spacing: normal;
 }
 
 .canvas-wrap {
   padding: 64px var(--page-pad) 0;
-}
-
-.embed-frame {
-  position: relative;
 }
 
 .embed-fallback {
@@ -101,7 +112,6 @@ body {
   width: 100%;
   height: clamp(400px, 78vh, 640px);
   border: 0;
-  border-radius: 1px;
   background: #000;
 }
 
@@ -114,6 +124,24 @@ body {
   padding: 12px var(--page-pad) 40px;
 }
 
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin-bottom: 20px;
+  font-size: 12.5px;
+}
+
+.site-nav a {
+  padding: 2px 0;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: #fff;
+}
+
 .below-canvas h2 {
   margin: 0 0 12px;
   font-weight: normal;
@@ -122,7 +150,8 @@ body {
 }
 
 .below-canvas p {
-  width: 50vw;
+  width: 100%;
+  max-width: 70ch;
   margin: 0;
   font-size: 13px;
   line-height: 1.7;
@@ -133,14 +162,14 @@ body {
   margin-top: 12px;
 }
 
-.below-canvas a,
-.below-canvas a:visited {
+.below-canvas p a,
+.below-canvas p a:visited {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-.below-canvas a:hover {
+.below-canvas p a:hover {
   color: #fff;
 }
 
@@ -149,10 +178,31 @@ body {
 }
 
 .diagram-section h2 {
-  margin: 0 0 12px;
   font-weight: normal;
   font-size: clamp(16px, 1.8vw, 22px);
   color: rgba(255, 255, 255, 0.85);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.section-ornament {
+  margin: 0;
+  font-family: monospace;
+  font-size: 2.5px;
+  line-height: 1;
+  white-space: pre;
+  color: rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  flex-shrink: 0;
 }
 
 .diagram-embed {
@@ -160,7 +210,6 @@ body {
   width: 50%;
   margin: 0;
   border: 0;
-  border-radius: 1px;
   background: #fff;
 }
 
@@ -172,10 +221,6 @@ body {
   color: #666;
 }
 
-.diagram-section .embed-fallback a {
-  color: #111;
-}
-
 @media (max-width: 700px) {
   .diagram-embed,
   .diagram-section .embed-fallback {
@@ -183,11 +228,11 @@ body {
   }
 
   .site-title {
-    font-size: 30px;
+    font-size: clamp(18px, 7vw, 30px);
   }
 
-  .site-meta {
-    font-size: 12px;
+  .header-ornament {
+    font-size: clamp(3px, 1.1667vw, 5px);
   }
 
   .below-canvas h2,
@@ -195,12 +240,8 @@ body {
     font-size: 24px;
   }
 
-  .below-canvas p {
-    font-size: 13px;
-  }
-
-  .embed-fallback {
-    font-size: 20px;
+  body {
+    background-attachment: scroll;
   }
 }
 

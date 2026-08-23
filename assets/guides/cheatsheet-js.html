@@ -2,415 +2,44 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>JS Cheat Sheet</title>
+<title>⚔︎ JS Essentials ⚔︎</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-  @font-face {
-    font-family: "VCR OSD Mono";
-    src: url("../fonts/VCR-OSD-Mono.woff") format("woff"),
-         url("../fonts/VCR-OSD-Mono.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  * { box-sizing: border-box; }
-
-  html, body {
-    margin: 0;
-    min-height: 100%;
-  }
-
-  body {
-    font-family: "VCR OSD Mono", "Space Mono", "Courier New", monospace;
-    color: #c5c4c4;
-    background-color: #111;
-    background-image: url("../images/header-glow.png"), url("../images/header-glow.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: -50vw top, 50vw top;
-    background-size: 100vw auto, 100vw auto;
-    background-attachment: fixed, fixed;
-  }
-
-  .page {
-    position: relative;
-    max-width: 700px;
-    margin: 0;
-    padding: 56px 20px 100px;
-  }
-
-  .stamp {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: rgb(130, 129, 129);
-    margin: 0;
-  }
-
-  /* ---------- Masthead ---------- */
-
-  .masthead {
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    margin-bottom: 20px;
-  }
-
-  .eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    color: rgb(130, 129, 129);
-    margin: 10px 0 0;
-    text-transform: uppercase;
-  }
-
-  h1 {
-    font-weight: normal;
-    font-size: clamp(26px, 5vw, 38px);
-    line-height: 1.1;
-    margin: 0;
-    color: #fff;
-  }
-
-  .masthead p {
-    color: rgb(164, 164, 164);
-    font-size: 14px;
-    line-height: 1.7;
-    margin: 14px 0 0;
-  }
-
-  /* ---------- Nav strip ---------- */
-
-  .guide-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 18px;
-    margin-bottom: 16px;
-    font-size: 12.5px;
-  }
-
-  .guide-nav a, .guide-nav span {
-    padding: 2px 0;
-  }
-
-  .guide-nav a { color: rgba(255, 255, 255, 0.6); text-decoration: none; border-bottom: 1px solid transparent; }
-  .guide-nav a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.4); }
-  .guide-nav .current { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.5); }
-
-  /* ---------- On-this-page table of contents ---------- */
-
-  .page-toc {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 40px;
-    font-size: 12px;
-  }
-
-  .page-toc .toc-label {
-    color: rgba(255, 255, 255, 0.35);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 10px;
-    padding: 2px 0;
-  }
-
-  .page-toc a {
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding: 2px 0;
-  }
-  .page-toc a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.4); }
-
-  /* ---------- Section headings ---------- */
-
-  h2 {
-    font-size: 18px;
-    font-weight: normal;
-    margin: 0 0 6px;
-    color: #fff;
-  }
-
-  h3.sub {
-    font-size: 14px;
-    font-weight: normal;
-    color: #fff;
-    margin: 26px 0 8px;
-  }
-
-  .section {
-    margin-bottom: 48px;
-    scroll-margin-top: 32px;
-  }
-
-  .section-intro {
-    color: #fff;
-    font-size: 14px;
-    line-height: 1.7;
-    margin: 0 0 18px;
-  }
-
-  .section p.body-text {
-    color: #fff;
-    font-size: 14px;
-    line-height: 1.7;
-    margin: 10px 0 0;
-  }
-
-  code.inline {
-    font-size: 0.95em;
-    color: rgba(255, 255, 255, 0.85);
-    background: rgba(255, 255, 255, 0.08);
-    padding: 1px 5px;
-  }
-
-  a, a:visited {
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  a:hover { color: #fff; }
-
-  /* ==================================================
-     Annotated code block (code left, notes right)
-     ================================================== */
-
-  .annotated {
-    position: relative;
-    width: calc(100vw - 40px);
-    max-width: 1348px;
-    margin: 18px 0 24px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 28px;
-    align-items: start;
-  }
-
-  .code-card {
-    position: relative;
-    background: rgba(0,0,0,0.45);
-    border: 1px solid rgba(255,255,255,0.15);
-    overflow: hidden;
-  }
-
-  .code-scroll {
-    position: relative;
-    overflow-x: auto;
-    padding: 18px 20px;
-  }
-
-  .code-card pre {
-    position: relative;
-    z-index: 2;
-    margin: 0;
-  }
-
-  .code-card code {
-    display: block;
-    width: max-content;
-    min-width: 100%;
-    font-family: "Menlo", "Consolas", "Courier New", monospace;
-    font-size: 12px;
-    line-height: 2.05em;
-    color: rgba(255,255,255,0.9);
-    white-space: pre;
-  }
-
-  .code-groups {
-    position: absolute;
-    top: 18px;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    font-size: 12px;
-    pointer-events: none;
-  }
-
-  .grp {
-    position: absolute;
-    right: 0;
-    background: rgba(255,255,255,0.04);
-    border-left: 2px solid rgba(255,255,255,0.22);
-  }
-
-  .grp::after {
-    content: attr(data-label);
-    position: absolute;
-    top: 4px;
-    right: 12px;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    color: rgba(255,255,255,0.4);
-  }
-
-  .grp[data-level="1"] { left: 0; }
-
-  .grp[data-level="2"] {
-    left: 16px;
-    background: rgba(255,255,255,0.055);
-    border-left-color: rgba(255,255,255,0.32);
-  }
-  .grp[data-level="2"]::after { color: rgba(255,255,255,0.5); }
-
-  .grp[data-alt="1"] {
-    background: rgba(255,255,255,0.09);
-    border-left-color: rgba(255,255,255,0.4);
-  }
-
-  .notes {
-    position: relative;
-    font-size: 13px;
-    min-height: 100%;
-  }
-
-  .note {
-    position: absolute;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.45);
-    border-left: 2px solid rgba(255,255,255,0.28);
-    padding: 8px 14px 10px;
-  }
-
-  .note-label {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 5px;
-  }
-
-  .note p {
-    margin: 0;
-    font-size: 12.5px;
-    line-height: 1.65;
-    color: rgb(164,164,164);
-  }
-
-  .note strong { color: rgb(197,196,196); font-weight: normal; }
-  .note em { color: rgb(197,196,196); font-style: normal; }
-  .note code { font-family: "Menlo","Consolas","Courier New",monospace; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); padding: 0 4px; font-size: 0.95em; }
-
-  .connectors {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  .conn-h { position: absolute; height: 1px; background: rgba(255,255,255,0.3); }
-  .conn-v { position: absolute; width: 1px; background: rgba(255,255,255,0.3); }
-  .conn-dot {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    margin: -2px 0 0 -2px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-  }
-
-  @media (max-width: 899px) {
-    .connectors { display: none; }
-    .annotated { grid-template-columns: 1fr; width: auto; }
-    .notes { min-height: 0; margin-top: 20px; }
-    .note { position: static; margin-bottom: 14px; }
-  }
-
-  /* ---------- Plain (non-annotated) code snippet ---------- */
-
-  .snippet {
-    margin: 14px 0;
-  }
-
-  /* ==================================================
-     Reference groups (single column)
-     ================================================== */
-
-  .ref-groups {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .ref-group {
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(0, 0, 0, 0.45);
-    padding: 16px 18px;
-  }
-
-  .ref-group h3 {
-    font-size: 13px;
-    font-weight: normal;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin: 0 0 12px;
-  }
-
-  .ref-group dl {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-  }
-
-  .ref-group dt {
-    font-family: "Menlo","Consolas","Courier New",monospace;
-    font-size: 12.5px;
-    color: rgba(255,255,255,0.85);
-    display: inline;
-  }
-
-  .ref-group dd {
-    display: inline;
-    margin: 0 0 0 8px;
-    font-size: 12.5px;
-    color: rgb(148, 148, 148);
-    line-height: 1.6;
-  }
-
-  .ref-row { display: block; }
-
-  .closing {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #fff;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding-top: 22px;
-  }
-
-  .closing strong { color: #fff; font-weight: normal; }
-</style>
+<link rel="stylesheet" href="guide.css" />
 </head>
-<body>
+<body class="guide-page guide-cheatsheet-js">
+
+<header class="site-header">
+  <pre class="header-ornament">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣰⠦⠔⠛⠃⠉⠉⠉⠙⣶⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠈⠳⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⡶⠟⠛⠛⠐⠢⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣴⠮⠵⠋⠛⠋⠐⠒⠛⠠⢦⡄⡠⠴⠽⠯⠤⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠹⠿⣷⣶⣰⣀⣰⣶⠾⠿⠈⠉⢏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡶⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⢏⠆⣰⡶⠏⠉⠉⠉⠉⠹⠿⣷⣆⣀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆</pre>
+  <h1 class="site-title">IIMC-446-01/IIMC-646-01: Code As Nature</h1>
+</header>
 
 <div class="page">
 
-  <span class="stamp">Last updated August 21, 2026 &mdash; Naomi Sam</span>
+  <span class="stamp">Last updated August 22, 2026 by Naomi Sam</span>
 
   <header class="masthead">
-    <h1>JS Cheat Sheet</h1>
+    <h1>⚔︎ JS Essentials ⚔︎</h1>
     <span class="eyebrow">Logic &amp; interactivity</span>
     <p>Variables, functions, and how to make a page actually react to what someone does.</p>
   </header>
 
   <nav class="guide-nav">
     <a href="../../index.html">&larr; Course home</a>
-    <a href="your-first-website.html">Your first website</a>
-    <a href="cheatsheet-html.html">HTML</a>
-    <a href="cheatsheet-css.html">CSS</a>
-    <span class="current">JS</span>
-    <a href="cheatsheet-p5.html">p5.js</a>
-    <a href="portfolio-template.html">Portfolio template</a>
-    <a href="ai-assisted-workflows.html">AI-assisted workflows</a>
-    <a href="github-basics.html">GitHub basics</a>
-    <a href="publish-to-github.html">Publish to GitHub</a>
+    <a href="your-first-website.html">⭐︎ Open Portal ⭐︎</a>
+    <a href="portfolio-template.html">⟡ Forge Your Archive ⟡</a>
+    <a href="cheatsheet-html.html">༺ HTML ༻</a>
+    <a href="cheatsheet-css.html">༺ CSS ༻</a>
+    <span class="current">⚔︎ JS ⚔︎</span>
+    <a href="cheatsheet-p5.html">✧ p5.js ✧</a>
+    <a href="github-basics.html">❥ GitHub basics <span style="display: inline-block; transform: scaleX(-1);">❥</span></a>
+    <a href="publish-to-github.html">☙ Publish to GitHub ❧</a>
+    <a href="ai-assisted-workflows.html">✢ Machine Rituals ✢</a>
   </nav>
 
   <nav class="page-toc">
@@ -427,7 +56,7 @@
 
   <section class="section" id="anatomy">
     <h2>Anatomy of a function</h2>
-    <p class="section-intro">A function is a named, reusable block of code &mdash; one of the most common shapes you'll write in JavaScript.</p>
+    <p class="section-intro">A function is a named, reusable block of code, one of the most common shapes you'll write in JavaScript.</p>
 
     <div class="annotated">
 
@@ -439,7 +68,7 @@
         </div>
         <div class="code-scroll">
 <pre><code>function greet(name) {
-  return "Hi " + name;
+  return "Greetings, " + name;
 }</code></pre>
         </div>
       </div>
@@ -448,12 +77,12 @@
 
         <div class="note" style="top: 0px;">
           <span class="note-label">HEADER</span>
-          <p><code>function</code> is the keyword that starts a function definition. <code>greet</code> is the name you're giving it &mdash; what you'll use to run it later. <code>(name)</code> is a <strong>parameter</strong>: a placeholder for a value the function expects each time it runs. The <code>{</code> opens the function's body.</p>
+          <p><code>function</code> is the keyword that starts a function definition. <code>greet</code> is the name you're giving it, what you'll use to run it later. <code>(name)</code> is a <strong>parameter</strong>: a placeholder for a value the function expects each time it runs. The <code>{</code> opens the function's body.</p>
         </div>
 
         <div class="note" style="top: 163px;">
           <span class="note-label">BODY</span>
-          <p>The code that actually runs when the function is called. <code>return</code> sends a value back out of the function &mdash; here, a greeting built by joining two strings together with <code>+</code>.</p>
+          <p>The code that actually runs when the function is called. <code>return</code> sends a value back out of the function, here a greeting built by joining two strings together with <code>+</code>.</p>
         </div>
 
         <div class="note" style="top: 282px;">
@@ -493,19 +122,19 @@
       <div class="ref-group">
         <h3>Declaring a variable</h3>
         <dl>
-          <div class="ref-row"><dt>let score = 10;</dt><dd>&mdash; a variable that can be reassigned later, e.g. <code class="inline">score = 20;</code>.</dd></div>
-          <div class="ref-row"><dt>const name = "Kai";</dt><dd>&mdash; a variable that can't be reassigned once set. Use this by default; switch to <code class="inline">let</code> only when you actually need to change it.</dd></div>
+          <div class="ref-row"><dt>let score = 10;:</dt><dd>a variable that can be reassigned later, e.g. <code class="inline">score = 20;</code>.</dd></div>
+          <div class="ref-row"><dt>const artistname = "serenityspellcaster";:</dt><dd>a variable that can't be reassigned once set. Use this by default; switch to <code class="inline">let</code> only when you actually need to change it.</dd></div>
         </dl>
       </div>
 
       <div class="ref-group">
         <h3>Basic types</h3>
         <dl>
-          <div class="ref-row"><dt>"hello"</dt><dd>&mdash; a <strong>string</strong>. Text, always in quotes.</dd></div>
-          <div class="ref-row"><dt>10, 3.14</dt><dd>&mdash; a <strong>number</strong>. No quotes.</dd></div>
-          <div class="ref-row"><dt>true, false</dt><dd>&mdash; a <strong>boolean</strong>. Exactly one of two values.</dd></div>
-          <div class="ref-row"><dt>[1, 2, 3]</dt><dd>&mdash; an <strong>array</strong>. An ordered list of values, indexed from 0 &mdash; the first item is <code class="inline">arr[0]</code>, not <code class="inline">arr[1]</code>.</dd></div>
-          <div class="ref-row"><dt>{ key: "value" }</dt><dd>&mdash; an <strong>object</strong>. Groups related values under names you choose, e.g. <code class="inline">const person = { name: "Kai", age: 25 };</code> has a <code class="inline">name</code> and an <code class="inline">age</code>. Access one with a dot on the variable holding it: <code class="inline">person.name</code> returns <code class="inline">"Kai"</code> &mdash; compare to an array, where you'd access by numbered position instead, like <code class="inline">arr[0]</code>.</dd></div>
+          <div class="ref-row"><dt>"hello":</dt><dd>a <strong>string</strong>. Text, always in quotes.</dd></div>
+          <div class="ref-row"><dt>10, 3.14:</dt><dd>a <strong>number</strong>. No quotes.</dd></div>
+          <div class="ref-row"><dt>true, false:</dt><dd>a <strong>boolean</strong>. Exactly one of two values.</dd></div>
+          <div class="ref-row"><dt>[1, 2, 3]:</dt><dd>an <strong>array</strong>. An ordered list of values, indexed from 0: the first item is <code class="inline">arr[0]</code>, not <code class="inline">arr[1]</code>.</dd></div>
+          <div class="ref-row"><dt>{ key: "value" }:</dt><dd>an <strong>object</strong>. Groups related values under names you choose, e.g. <code class="inline">const specimen = { artistname: "serenityspellcaster", age: 25 };</code> has an <code class="inline">artistname</code> and an <code class="inline">age</code>. Access one with a dot on the variable holding it: <code class="inline">specimen.artistname</code> returns <code class="inline">"serenityspellcaster"</code>. Compare that to an array, where you'd access by numbered position instead, like <code class="inline">arr[0]</code>.</dd></div>
         </dl>
       </div>
     </div>
@@ -515,13 +144,13 @@
 
   <section class="section" id="click-example">
     <h2>Reacting to a click</h2>
-    <p class="section-intro">A small working example &mdash; variables, finding elements on the page, and reacting to an event, all in one place. Given this HTML:</p>
+    <p class="section-intro">A small working example: variables, finding elements on the page, and reacting to an event, all in one place. Given this HTML:</p>
 
     <div class="snippet">
       <div class="code-card">
         <div class="code-scroll">
-<pre><code>&lt;button id="btn"&gt;Click me&lt;/button&gt;
-&lt;p id="txt"&gt;Mood: neutral&lt;/p&gt;</code></pre>
+<pre><code>&lt;button id="btn"&gt;pulseButton&lt;/button&gt;
+&lt;p id="txt"&gt;Signal: dormant&lt;/p&gt;</code></pre>
         </div>
       </div>
     </div>
@@ -540,7 +169,7 @@
 const text = document.querySelector("#txt");
 
 button.addEventListener("click", function () {
-  text.textContent = "Mood: happy!";
+  text.textContent = "Signal: alive";
   document.body.style.background = "yellow";
 });</code></pre>
         </div>
@@ -550,12 +179,12 @@ button.addEventListener("click", function () {
 
         <div class="note" style="top: 0px;">
           <span class="note-label">SELECT ELEMENTS</span>
-          <p><code>document.querySelector("#id")</code> finds one element already on the page and hands it back. Both results are stored in variables &mdash; <code>button</code> and <code>text</code> &mdash; so they can be reused below without searching the page again.</p>
+          <p><code>document.querySelector("#id")</code> finds one element already on the page and hands it back. Both results are stored in variables (<code>button</code> and <code>text</code>) so they can be reused below without searching the page again.</p>
         </div>
 
         <div class="note" style="top: 160px;">
           <span class="note-label">EVENT LISTENER</span>
-          <p><code>addEventListener("click", &hellip;)</code> tells the browser to run a function every time this element is clicked. Everything inside the function's <code>{ }</code> runs on each click &mdash; here, changing the paragraph's text and the page's background color.</p>
+          <p><code>addEventListener("click", &hellip;)</code> tells the browser to run a function every time this element is clicked. Everything inside the function's <code>{ }</code> runs on each click, here changing the paragraph's text and the page's background color.</p>
         </div>
 
       </div>
@@ -585,32 +214,32 @@ button.addEventListener("click", function () {
       <div class="ref-group">
         <h3>Functions</h3>
         <dl>
-          <div class="ref-row"><dt>function name() { }</dt><dd>&mdash; a named, reusable block of code.</dd></div>
-          <div class="ref-row"><dt>return</dt><dd>&mdash; sends a value back out of a function, and immediately stops it.</dd></div>
+          <div class="ref-row"><dt>function name() { }:</dt><dd>a named, reusable block of code.</dd></div>
+          <div class="ref-row"><dt>return:</dt><dd>sends a value back out of a function, and immediately stops it.</dd></div>
         </dl>
       </div>
 
       <div class="ref-group">
         <h3>Control flow</h3>
         <dl>
-          <div class="ref-row"><dt>if / else</dt><dd>&mdash; run one block of code only when a condition is true, otherwise run the other.</dd></div>
-          <div class="ref-row"><dt>for (let i = 0; i &lt; 5; i++)</dt><dd>&mdash; repeat a block a set number of times.</dd></div>
-          <div class="ref-row"><dt>while</dt><dd>&mdash; repeat a block for as long as a condition stays true.</dd></div>
-          <div class="ref-row"><dt>===</dt><dd>&mdash; strict equality: checks value <em>and</em> type. Use this over <code class="inline">==</code> almost always.</dd></div>
+          <div class="ref-row"><dt>if / else:</dt><dd>run one block of code only when a condition is true, otherwise run the other.</dd></div>
+          <div class="ref-row"><dt>for (let i = 0; i &lt; 5; i++):</dt><dd>repeat a block a set number of times.</dd></div>
+          <div class="ref-row"><dt>while:</dt><dd>repeat a block for as long as a condition stays true.</dd></div>
+          <div class="ref-row"><dt>===:</dt><dd>strict equality: checks value <em>and</em> type. Use this over <code class="inline">==</code> almost always.</dd></div>
         </dl>
       </div>
     </div>
 
     <h3 class="sub">Control flow in practice</h3>
-    <p class="body-text" style="margin-top: 0;">Put together, these building blocks look like this &mdash; a loop that checks every item in a list, reacting differently depending on what it finds:</p>
+    <p class="body-text" style="margin-top: 0;">Put together, these building blocks look like this: a loop that checks every item in a list, reacting differently depending on what it finds:</p>
 
     <div class="snippet">
       <div class="code-card">
         <div class="code-scroll">
-<pre><code>const fruits = ["apple", "banana", "cherry"];
+<pre><code>const materials = ["glass", "metal", "spikes", "thorns"];
 
-for (let i = 0; i &lt; fruits.length; i++) {
-  if (fruits[i] === "banana") {
+for (let i = 0; i &lt; materials.length; i++) {
+  if (materials[i] === "spikes") {
     console.log("Found it!");
   } else {
     console.log("Not yet");
@@ -620,13 +249,13 @@ for (let i = 0; i &lt; fruits.length; i++) {
       </div>
     </div>
 
-    <p class="body-text"><code class="inline">fruits</code> is an <strong>array</strong> &mdash; an ordered list of values, from the types reference above &mdash; holding three strings. <code class="inline">fruits.length</code> is the number of items it holds, so here it's <code class="inline">3</code>; add or remove items and <code class="inline">.length</code> updates automatically.</p>
+    <p class="body-text"><code class="inline">materials</code> is an <strong>array</strong> (an ordered list of values, from the types reference above) holding four strings. <code class="inline">materials.length</code> is the number of items it holds, so here it's <code class="inline">4</code>; add or remove items and <code class="inline">.length</code> updates automatically.</p>
 
-    <p class="body-text">The <code class="inline">for</code> loop's parentheses have three parts, separated by semicolons: <code class="inline">let i = 0</code> runs once, before the loop starts. <code class="inline">i &lt; fruits.length</code> is checked before every pass &mdash; as long as it's true, the loop keeps going. <code class="inline">i++</code> runs after each pass, adding 1 to <code class="inline">i</code>. Together, these repeat the block once for every item in <code class="inline">fruits</code>, with <code class="inline">i</code> counting 0, 1, 2, and so on.</p>
+    <p class="body-text">The <code class="inline">for</code> loop's parentheses have three parts, separated by semicolons: <code class="inline">let i = 0</code> runs once, before the loop starts. <code class="inline">i &lt; materials.length</code> is checked before every pass. As long as it's true, the loop keeps going. <code class="inline">i++</code> runs after each pass, adding 1 to <code class="inline">i</code>. Together, these repeat the block once for every item in <code class="inline">materials</code>, with <code class="inline">i</code> counting 0, 1, 2, and so on.</p>
 
-    <p class="body-text">Inside that loop, <code class="inline">if (fruits[i] === "banana")</code> checks a condition on each pass. <code class="inline">===</code> is strict equality &mdash; it checks both value and type, the safer choice over <code class="inline">==</code>, which allows mismatched types to sneak through as equal. If the condition is true, the first <code class="inline">{ }</code> block runs; if it's false, the <code class="inline">else</code> block runs instead &mdash; never both, and never neither.</p>
+    <p class="body-text">Inside that loop, <code class="inline">if (materials[i] === "spikes")</code> checks a condition on each pass. <code class="inline">===</code> is strict equality: it checks both value and type, the safer choice over <code class="inline">==</code>, which allows mismatched types to sneak through as equal. If the condition is true, the first <code class="inline">{ }</code> block runs; if it's false, the <code class="inline">else</code> block runs instead, never both, and never neither.</p>
 
-    <p class="body-text">Once <code class="inline">i</code> reaches <code class="inline">fruits.length</code>, the loop's condition becomes false, the loop stops, and execution moves on to whatever code comes after the closing <code class="inline">}</code>.</p>
+    <p class="body-text">Once <code class="inline">i</code> reaches <code class="inline">materials.length</code>, the loop's condition becomes false, the loop stops, and execution moves on to whatever code comes after the closing <code class="inline">}</code>.</p>
   </section>
 
   <!-- ================= DOM & EVENTS ================= -->
@@ -635,25 +264,25 @@ for (let i = 0; i &lt; fruits.length; i++) {
     <h2>The DOM &amp; events</h2>
     <p class="section-intro">How JavaScript finds, changes, and reacts to what's on the page.</p>
 
-    <p class="body-text" style="margin-top: 0;">"DOM" stands for <strong>Document Object Model</strong> &mdash; it's the browser's live copy of your HTML, built in memory as a tree of elements the moment the page loads. It's not the HTML file itself; it's what the browser is actually showing you right now. JavaScript reads and changes this live copy &mdash; not the file on disk &mdash; so updates show up on screen instantly, without ever touching your HTML.</p>
+    <p class="body-text" style="margin-top: 0;">"DOM" stands for <strong>Document Object Model</strong>: it's the browser's live copy of your HTML, built in memory as a tree of elements the moment the page loads. It's not the HTML file itself; it's what the browser is actually showing you right now. JavaScript reads and changes this live copy (not the file on disk), so updates show up on screen instantly, without ever touching your HTML.</p>
 
     <div class="ref-groups">
       <div class="ref-group">
         <h3>The DOM</h3>
         <dl>
-          <div class="ref-row"><dt>document.querySelector("&hellip;")</dt><dd>&mdash; finds the first element on the page matching that CSS selector.</dd></div>
-          <div class="ref-row"><dt>.textContent</dt><dd>&mdash; reads or changes an element's text.</dd></div>
-          <div class="ref-row"><dt>.style</dt><dd>&mdash; reads or changes an element's inline CSS, e.g. <code class="inline">el.style.color = "red"</code>.</dd></div>
-          <div class="ref-row"><dt>.classList.add("&hellip;")</dt><dd>&mdash; adds a class, usually to trigger a CSS change. <code class="inline">.remove("&hellip;")</code> takes it back off.</dd></div>
+          <div class="ref-row"><dt>document.querySelector("&hellip;"):</dt><dd>finds the first element on the page matching that CSS selector.</dd></div>
+          <div class="ref-row"><dt>.textContent:</dt><dd>reads or changes an element's text.</dd></div>
+          <div class="ref-row"><dt>.style:</dt><dd>reads or changes an element's inline CSS, e.g. <code class="inline">el.style.color = "red"</code>.</dd></div>
+          <div class="ref-row"><dt>.classList.add("&hellip;"):</dt><dd>adds a class, usually to trigger a CSS change. <code class="inline">.remove("&hellip;")</code> takes it back off.</dd></div>
         </dl>
       </div>
 
       <div class="ref-group">
         <h3>Events</h3>
         <dl>
-          <div class="ref-row"><dt>addEventListener("click", fn)</dt><dd>&mdash; runs <code class="inline">fn</code> every time the element is clicked.</dd></div>
-          <div class="ref-row"><dt>"input"</dt><dd>&mdash; fires as someone types into a field.</dd></div>
-          <div class="ref-row"><dt>"keydown"</dt><dd>&mdash; fires when a key is pressed.</dd></div>
+          <div class="ref-row"><dt>addEventListener("click", fn):</dt><dd>runs <code class="inline">fn</code> every time the element is clicked.</dd></div>
+          <div class="ref-row"><dt>"input":</dt><dd>fires as someone types into a field.</dd></div>
+          <div class="ref-row"><dt>"keydown":</dt><dd>fires when a key is pressed.</dd></div>
         </dl>
       </div>
     </div>
@@ -663,12 +292,14 @@ for (let i = 0; i &lt; fruits.length; i++) {
 
   <section class="section" id="inline">
     <h2>JS inside HTML</h2>
-    <p class="section-intro">Covered in full in the HTML cheat sheet: JavaScript can live in a separate file, get written directly into the page, or run straight from an attribute like <code class="inline">onclick</code>. <a href="cheatsheet-html.html#js-in-html">See that section</a> for the details and the tradeoffs between the three.</p>
+    <p class="section-intro">Covered in full in the HTML essentials: JavaScript can live in a separate file, get written directly into the page, or run straight from an attribute like <code class="inline">onclick</code>. <a href="cheatsheet-html.html#js-in-html">See that section</a> for the details and the tradeoffs between the three.</p>
   </section>
 
-  <p class="closing">Next up: <a href="cheatsheet-p5.html">the p5.js cheat sheet</a>, which builds on this to draw and animate on a canvas.</p>
+  <p class="closing">Next up: <a href="cheatsheet-p5.html">the p5.js essentials</a>, which builds on this to draw and animate on a canvas.</p>
 
 </div>
+
+<script src="../cursor-sparkle.js?v=20260822"></script>
 
 </body>
 </html>

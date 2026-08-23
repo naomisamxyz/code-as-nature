@@ -1,0 +1,194 @@
+/* Everything is scoped to the diagram so it can later
+   be embedded inside another webpage */
+
+.diagram-frame,
+.diagram-frame * {
+  box-sizing: border-box;
+}
+
+.diagram-frame {
+  position: relative;
+
+  width: 100%;
+  max-width: 560px;
+
+  margin: 30px auto;
+  padding: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+}
+
+
+/* MAIN DIAGRAM */
+
+.fs-diagram {
+  display: flex;
+  align-items: flex-start;
+
+  width: 100%;
+}
+
+
+/* ROOT STEP-GROUP -- same width as every box in the right column */
+
+.fs-diagram > .step-group {
+  flex: 0 0 210px;
+}
+
+
+/* RIGHT COLUMN: everything the root contains */
+
+.fs-right-col {
+  flex: 0 0 210px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fs-right-col .step-group {
+  width: 100%;
+}
+
+
+/* CATEGORY BUTTONS */
+
+.step {
+  display: block;
+
+  width: 100%;
+  height: 40px;
+
+  padding: 4px 6px;
+
+  border: 1px solid #111;
+  background: transparent;
+  color: #111;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  hyphens: auto;
+
+  cursor: pointer;
+}
+
+.step:hover,
+.step.active {
+  background: #111;
+  color: white;
+}
+
+
+/* ARROWS BETWEEN CATEGORIES */
+
+.arrow {
+  flex: 0 0 35px;
+
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 19px;
+  font-weight: 300;
+}
+
+
+/* DETAIL LIST */
+
+.detail {
+  display: none;
+
+  padding: 10px 5px 0;
+
+  font-size: 11px;
+  font-weight: 300;
+}
+
+.step-group.active .detail {
+  display: block;
+}
+
+
+/* DETAIL CATEGORIES */
+
+.detail-group {
+  padding: 6px 3px 7px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.detail-group:last-child {
+  border-bottom: none;
+}
+
+
+/* DETAIL CATEGORY TITLE */
+
+.detail-group h3 {
+  margin: 0 0 3px;
+
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.15;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* INDIVIDUAL ITEMS */
+
+.detail-group p {
+  position: relative;
+
+  margin: 1px 0;
+  padding-left: 12px;
+
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.2;
+
+  color: #333;
+}
+
+
+/* SMALL DASH */
+
+.detail-group p::before {
+  content: "–";
+
+  position: absolute;
+  left: 1px;
+
+  color: #888;
+}
+
+
+/* RESPONSIVE -- stack instead of shrinking, so text stays readable */
+
+@media (max-width: 500px) {
+
+  .fs-diagram {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fs-diagram > .step-group,
+  .fs-right-col {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .arrow {
+    flex-basis: auto;
+    width: 40px;
+    height: 24px;
+    transform: rotate(90deg);
+  }
+}

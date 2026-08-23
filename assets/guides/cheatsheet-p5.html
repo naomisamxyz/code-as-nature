@@ -2,414 +2,44 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>p5.js Cheat Sheet</title>
+<title>✧ p5.js Essentials ✧</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-  @font-face {
-    font-family: "VCR OSD Mono";
-    src: url("../fonts/VCR-OSD-Mono.woff") format("woff"),
-         url("../fonts/VCR-OSD-Mono.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  * { box-sizing: border-box; }
-
-  html, body {
-    margin: 0;
-    min-height: 100%;
-  }
-
-  body {
-    font-family: "VCR OSD Mono", "Space Mono", "Courier New", monospace;
-    color: #c5c4c4;
-    background-color: #111;
-    background-image: url("../images/header-glow.png"), url("../images/header-glow.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: -50vw top, 50vw top;
-    background-size: 100vw auto, 100vw auto;
-    background-attachment: fixed, fixed;
-  }
-
-  .page {
-    position: relative;
-    max-width: 700px;
-    margin: 0;
-    padding: 56px 20px 100px;
-  }
-
-  .stamp {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: rgb(130, 129, 129);
-    margin: 0;
-  }
-
-  /* ---------- Masthead ---------- */
-
-  .masthead {
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    margin-bottom: 20px;
-  }
-
-  .eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    color: rgb(130, 129, 129);
-    margin: 10px 0 0;
-    text-transform: uppercase;
-  }
-
-  h1 {
-    font-weight: normal;
-    font-size: clamp(26px, 5vw, 38px);
-    line-height: 1.1;
-    margin: 0;
-    color: #fff;
-  }
-
-  .masthead p {
-    color: rgb(164, 164, 164);
-    font-size: 14px;
-    line-height: 1.7;
-    margin: 14px 0 0;
-  }
-
-  /* ---------- Nav strip ---------- */
-
-  .guide-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 18px;
-    margin-bottom: 16px;
-    font-size: 12.5px;
-  }
-
-  .guide-nav a, .guide-nav span {
-    padding: 2px 0;
-  }
-
-  .guide-nav a { color: rgba(255, 255, 255, 0.6); text-decoration: none; border-bottom: 1px solid transparent; }
-  .guide-nav a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.4); }
-  .guide-nav .current { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.5); }
-
-  /* ---------- On-this-page table of contents ---------- */
-
-  .page-toc {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 40px;
-    font-size: 12px;
-  }
-
-  .page-toc .toc-label {
-    color: rgba(255, 255, 255, 0.35);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 10px;
-    padding: 2px 0;
-  }
-
-  .page-toc a {
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding: 2px 0;
-  }
-  .page-toc a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.4); }
-
-  /* ---------- Section headings ---------- */
-
-  h2 {
-    font-size: 18px;
-    font-weight: normal;
-    margin: 0 0 6px;
-    color: #fff;
-  }
-
-  h3.sub {
-    font-size: 14px;
-    font-weight: normal;
-    color: #fff;
-    margin: 26px 0 8px;
-  }
-
-  .section {
-    margin-bottom: 48px;
-    scroll-margin-top: 32px;
-  }
-
-  .section-intro {
-    color: #fff;
-    font-size: 14px;
-    line-height: 1.7;
-    margin: 0 0 18px;
-  }
-
-  .section p.body-text {
-    color: #fff;
-    font-size: 14px;
-    line-height: 1.7;
-    margin: 10px 0 0;
-  }
-
-  code.inline {
-    font-size: 0.95em;
-    color: rgba(255, 255, 255, 0.85);
-    background: rgba(255, 255, 255, 0.08);
-    padding: 1px 5px;
-  }
-
-  a, a:visited {
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  a:hover { color: #fff; }
-
-  /* ==================================================
-     Annotated code block (code left, notes right)
-     ================================================== */
-
-  .annotated {
-    position: relative;
-    width: calc(100vw - 40px);
-    max-width: 1348px;
-    margin: 18px 0 24px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 28px;
-    align-items: start;
-  }
-
-  .code-card {
-    position: relative;
-    background: rgba(0,0,0,0.45);
-    border: 1px solid rgba(255,255,255,0.15);
-    overflow: hidden;
-  }
-
-  .code-scroll {
-    position: relative;
-    overflow-x: auto;
-    padding: 18px 20px;
-  }
-
-  .code-card pre {
-    position: relative;
-    z-index: 2;
-    margin: 0;
-  }
-
-  .code-card code {
-    display: block;
-    width: max-content;
-    min-width: 100%;
-    font-family: "Menlo", "Consolas", "Courier New", monospace;
-    font-size: 12px;
-    line-height: 2.05em;
-    color: rgba(255,255,255,0.9);
-    white-space: pre;
-  }
-
-  .code-groups {
-    position: absolute;
-    top: 18px;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    font-size: 12px;
-    pointer-events: none;
-  }
-
-  .grp {
-    position: absolute;
-    right: 0;
-    background: rgba(255,255,255,0.04);
-    border-left: 2px solid rgba(255,255,255,0.22);
-  }
-
-  .grp::after {
-    content: attr(data-label);
-    position: absolute;
-    top: 4px;
-    right: 12px;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    color: rgba(255,255,255,0.4);
-  }
-
-  .grp[data-level="1"] { left: 0; }
-
-  .grp[data-alt="1"] {
-    background: rgba(255,255,255,0.09);
-    border-left-color: rgba(255,255,255,0.4);
-  }
-
-  .notes {
-    position: relative;
-    font-size: 13px;
-    min-height: 100%;
-  }
-
-  .note {
-    position: absolute;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.45);
-    border-left: 2px solid rgba(255,255,255,0.28);
-    padding: 8px 14px 10px;
-  }
-
-  .note-label {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 5px;
-  }
-
-  .note p {
-    margin: 0;
-    font-size: 12.5px;
-    line-height: 1.65;
-    color: rgb(164,164,164);
-  }
-
-  .note strong { color: rgb(197,196,196); font-weight: normal; }
-  .note em { color: rgb(197,196,196); font-style: normal; }
-  .note code { font-family: "Menlo","Consolas","Courier New",monospace; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); padding: 0 4px; font-size: 0.95em; }
-
-  .connectors {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  .conn-h { position: absolute; height: 1px; background: rgba(255,255,255,0.3); }
-  .conn-v { position: absolute; width: 1px; background: rgba(255,255,255,0.3); }
-  .conn-dot {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    margin: -2px 0 0 -2px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-  }
-
-  @media (max-width: 899px) {
-    .connectors { display: none; }
-    .annotated { grid-template-columns: 1fr; width: auto; }
-    .notes { min-height: 0; margin-top: 20px; }
-    .note { position: static; margin-bottom: 14px; }
-  }
-
-  /* ---------- Plain (non-annotated) code snippet ---------- */
-
-  .snippet {
-    margin: 14px 0;
-  }
-
-  .snippet code.wrap {
-    width: 100%;
-    white-space: pre-wrap;
-    word-break: break-all;
-  }
-
-  /* ==================================================
-     Reference groups (single column)
-     ================================================== */
-
-  .ref-groups {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .ref-group {
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(0, 0, 0, 0.45);
-    padding: 16px 18px;
-  }
-
-  .ref-group h3 {
-    font-size: 13px;
-    font-weight: normal;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin: 0 0 12px;
-  }
-
-  .ref-group dl {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-  }
-
-  .ref-group dt {
-    font-family: "Menlo","Consolas","Courier New",monospace;
-    font-size: 12.5px;
-    color: rgba(255,255,255,0.85);
-    display: inline;
-  }
-
-  .ref-group dd {
-    display: inline;
-    margin: 0 0 0 8px;
-    font-size: 12.5px;
-    color: rgb(148, 148, 148);
-    line-height: 1.6;
-  }
-
-  .ref-row { display: block; }
-
-  .closing {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #fff;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding-top: 22px;
-  }
-
-  .closing strong { color: #fff; font-weight: normal; }
-</style>
+<link rel="stylesheet" href="guide.css" />
 </head>
-<body>
+<body class="guide-page guide-cheatsheet-p5">
+
+<header class="site-header">
+  <pre class="header-ornament">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣰⠦⠔⠛⠃⠉⠉⠉⠙⣶⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠈⠳⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⡶⠟⠛⠛⠐⠢⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣴⠮⠵⠋⠛⠋⠐⠒⠛⠠⢦⡄⡠⠴⠽⠯⠤⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠹⠿⣷⣶⣰⣀⣰⣶⠾⠿⠈⠉⢏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡶⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⢏⠆⣰⡶⠏⠉⠉⠉⠉⠹⠿⣷⣆⣀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆</pre>
+  <h1 class="site-title">IIMC-446-01/IIMC-646-01: Code As Nature</h1>
+</header>
 
 <div class="page">
 
-  <span class="stamp">Last updated August 21, 2026 &mdash; Naomi Sam</span>
+  <span class="stamp">Last updated August 22, 2026 by Naomi Sam</span>
 
   <header class="masthead">
-    <h1>p5.js Cheat Sheet</h1>
+    <h1>✧ p5.js Essentials ✧</h1>
     <span class="eyebrow">Drawing &amp; animation</span>
-    <p>A JavaScript library built for exactly this class &mdash; drawing shapes, animating them, and reacting to input, without touching the raw Canvas API.</p>
+    <p>A JavaScript library built for exactly this class: drawing shapes, animating them, and reacting to input, without touching the raw Canvas API.</p>
   </header>
 
   <nav class="guide-nav">
     <a href="../../index.html">&larr; Course home</a>
-    <a href="your-first-website.html">Your first website</a>
-    <a href="cheatsheet-html.html">HTML</a>
-    <a href="cheatsheet-css.html">CSS</a>
-    <a href="cheatsheet-js.html">JS</a>
-    <span class="current">p5.js</span>
-    <a href="portfolio-template.html">Portfolio template</a>
-    <a href="ai-assisted-workflows.html">AI-assisted workflows</a>
-    <a href="github-basics.html">GitHub basics</a>
-    <a href="publish-to-github.html">Publish to GitHub</a>
+    <a href="your-first-website.html">⭐︎ Open Portal ⭐︎</a>
+    <a href="portfolio-template.html">⟡ Forge Your Archive ⟡</a>
+    <a href="cheatsheet-html.html">༺ HTML ༻</a>
+    <a href="cheatsheet-css.html">༺ CSS ༻</a>
+    <a href="cheatsheet-js.html">⚔︎ JS ⚔︎</a>
+    <span class="current">✧ p5.js ✧</span>
+    <a href="github-basics.html">❥ GitHub basics <span style="display: inline-block; transform: scaleX(-1);">❥</span></a>
+    <a href="publish-to-github.html">☙ Publish to GitHub ❧</a>
+    <a href="ai-assisted-workflows.html">✢ Machine Rituals ✢</a>
   </nav>
 
   <nav class="page-toc">
@@ -450,12 +80,12 @@ function draw() {
 
         <div class="note" style="top: 0px;">
           <span class="note-label">SETUP</span>
-          <p>Runs once, right when the sketch starts. This is where anything that only needs to happen a single time goes &mdash; almost always includes <code>createCanvas(width, height)</code>, which creates the drawing area itself.</p>
+          <p>Runs once, right when the sketch starts. This is where anything that only needs to happen a single time goes. It almost always includes <code>createCanvas(width, height)</code>, which creates the drawing area itself.</p>
         </div>
 
         <div class="note" style="top: 160px;">
           <span class="note-label">DRAW</span>
-          <p>Runs over and over, about 60 times a second, for as long as the sketch is open. <code>background(220)</code> repaints the canvas each frame &mdash; this is what erases the previous frame before the new one draws. <code>mouseX</code> / <code>mouseY</code> are built-in variables that always hold the mouse's current position, which is why the circle follows it. Move <code>background(220)</code> into <code>setup()</code> instead, and it only paints once, before the loop even starts &mdash; nothing inside <code>draw()</code> ever clears the canvas again, so every new circle stacks on top of the last instead of replacing it, leaving a trail across the screen as the mouse moves.</p>
+          <p>Runs over and over, about 60 times a second, for as long as the sketch is open. <code>background(220)</code> repaints the canvas each frame. This is what erases the previous frame before the new one draws. <code>mouseX</code> / <code>mouseY</code> are built-in variables that always hold the mouse's current position, which is why the circle follows it. Move <code>background(220)</code> into <code>setup()</code> instead, and it only paints once, before the loop even starts. Nothing inside <code>draw()</code> ever clears the canvas again, so every new circle stacks on top of the last instead of replacing it, leaving a trail across the screen as the mouse moves.</p>
         </div>
 
       </div>
@@ -479,7 +109,7 @@ function draw() {
 
   <section class="section" id="loading">
     <h2>Loading the library</h2>
-    <p class="section-intro">p5.js isn't built into the browser &mdash; it has to be loaded first, before your own sketch file.</p>
+    <p class="section-intro">p5.js isn't built into the browser. It has to be loaded first, before your own sketch file.</p>
 
     <div class="snippet">
       <div class="code-card">
@@ -489,7 +119,7 @@ function draw() {
         </div>
       </div>
     </div>
-    <p class="body-text">The first line loads the p5.js library itself from a <strong>CDN</strong> &mdash; a server that hosts the file for you, no download needed. The second loads your own sketch file, which can now use <code class="inline">setup()</code>, <code class="inline">draw()</code>, and everything else on this page, because the library just defined them. Order matters: the library has to load first.</p>
+    <p class="body-text">The first line loads the p5.js library itself from a <strong>CDN</strong>, a server that hosts the file for you, no download needed. The second loads your own sketch file, which can now use <code class="inline">setup()</code>, <code class="inline">draw()</code>, and everything else on this page, because the library just defined them. Order matters: the library has to load first.</p>
     <p class="body-text">Try p5.js's own <a href="https://p5js.org/tutorials/setting-up-your-environment/" target="_blank" rel="noopener">setting up your environment tutorial</a>.</p>
   </section>
 
@@ -499,28 +129,28 @@ function draw() {
     <h2>Shapes &amp; color</h2>
     <p class="section-intro">The functions you'll use in almost every sketch.</p>
 
-    <p class="body-text" style="margin-top: 0;"><code class="inline">x</code> and <code class="inline">y</code> are pixel positions on the canvas, measured from its top-left corner: <code class="inline">x</code> counts rightward from <code class="inline">0</code> at the left edge, <code class="inline">y</code> counts <strong>downward</strong> from <code class="inline">0</code> at the top edge &mdash; the opposite of a typical math graph, where <code class="inline">y</code> increases upward. So <code class="inline">rect(10, 10, 50, 50)</code> sits near the top-left of the canvas, not the bottom.</p>
+    <p class="body-text" style="margin-top: 0;"><code class="inline">x</code> and <code class="inline">y</code> are pixel positions on the canvas, measured from its top-left corner: <code class="inline">x</code> counts rightward from <code class="inline">0</code> at the left edge, <code class="inline">y</code> counts <strong>downward</strong> from <code class="inline">0</code> at the top edge, the opposite of a typical math graph, where <code class="inline">y</code> increases upward. So <code class="inline">rect(10, 10, 50, 50)</code> sits near the top-left of the canvas, not the bottom.</p>
 
     <div class="ref-groups">
       <div class="ref-group">
         <h3>Canvas &amp; shapes</h3>
         <dl>
-          <div class="ref-row"><dt>createCanvas(w, h)</dt><dd>&mdash; creates the drawing area. Call once, in <code class="inline">setup()</code>.</dd></div>
-          <div class="ref-row"><dt>background(color)</dt><dd>&mdash; fills the whole canvas with a color. Usually the first line in <code class="inline">draw()</code>.</dd></div>
-          <div class="ref-row"><dt>rect(x, y, w, h)</dt><dd>&mdash; a rectangle. <code class="inline">x, y</code> is its top-left corner by default; <code class="inline">w, h</code> its width and height.</dd></div>
-          <div class="ref-row"><dt>ellipse(x, y, w, h)</dt><dd>&mdash; an ellipse; a circle when <code class="inline">w</code> equals <code class="inline">h</code>. <code class="inline">x, y</code> is its <strong>center</strong> here, not a corner.</dd></div>
-          <div class="ref-row"><dt>line(x1, y1, x2, y2)</dt><dd>&mdash; a straight line between two points: <code class="inline">x1, y1</code> where it starts, <code class="inline">x2, y2</code> where it ends.</dd></div>
-          <div class="ref-row"><dt>triangle(x1, y1, x2, y2, x3, y3)</dt><dd>&mdash; a triangle from three <code class="inline">x, y</code> points, one per corner.</dd></div>
+          <div class="ref-row"><dt>createCanvas(w, h):</dt><dd>creates the drawing area. Call once, in <code class="inline">setup()</code>.</dd></div>
+          <div class="ref-row"><dt>background(color):</dt><dd>fills the whole canvas with a color. Usually the first line in <code class="inline">draw()</code>.</dd></div>
+          <div class="ref-row"><dt>rect(x, y, w, h):</dt><dd>a rectangle. <code class="inline">x, y</code> is its top-left corner by default; <code class="inline">w, h</code> its width and height.</dd></div>
+          <div class="ref-row"><dt>ellipse(x, y, w, h):</dt><dd>an ellipse; a circle when <code class="inline">w</code> equals <code class="inline">h</code>. <code class="inline">x, y</code> is its <strong>center</strong> here, not a corner.</dd></div>
+          <div class="ref-row"><dt>line(x1, y1, x2, y2):</dt><dd>a straight line between two points: <code class="inline">x1, y1</code> where it starts, <code class="inline">x2, y2</code> where it ends.</dd></div>
+          <div class="ref-row"><dt>triangle(x1, y1, x2, y2, x3, y3):</dt><dd>a triangle from three <code class="inline">x, y</code> points, one per corner.</dd></div>
         </dl>
       </div>
 
       <div class="ref-group">
         <h3>Color</h3>
         <dl>
-          <div class="ref-row"><dt>fill(color)</dt><dd>&mdash; sets the fill color for shapes drawn after it.</dd></div>
-          <div class="ref-row"><dt>stroke(color)</dt><dd>&mdash; sets the outline color.</dd></div>
-          <div class="ref-row"><dt>noFill() / noStroke()</dt><dd>&mdash; turns off the fill or outline entirely.</dd></div>
-          <div class="ref-row"><dt>colorMode(HSB)</dt><dd>&mdash; switches how color values are interpreted. Default is RGB.</dd></div>
+          <div class="ref-row"><dt>fill(color):</dt><dd>sets the fill color for shapes drawn after it.</dd></div>
+          <div class="ref-row"><dt>stroke(color):</dt><dd>sets the outline color.</dd></div>
+          <div class="ref-row"><dt>noFill() / noStroke():</dt><dd>turns off the fill or outline entirely.</dd></div>
+          <div class="ref-row"><dt>colorMode(HSB):</dt><dd>switches how color values are interpreted. Default is RGB.</dd></div>
         </dl>
       </div>
     </div>
@@ -536,20 +166,20 @@ function draw() {
       <div class="ref-group">
         <h3>Input</h3>
         <dl>
-          <div class="ref-row"><dt>mouseX / mouseY</dt><dd>&mdash; variables that always hold the mouse's current position.</dd></div>
-          <div class="ref-row"><dt>mousePressed()</dt><dd>&mdash; a function p5 calls automatically, once, the moment a mouse button is pressed.</dd></div>
-          <div class="ref-row"><dt>keyPressed()</dt><dd>&mdash; same idea, for the keyboard.</dd></div>
-          <div class="ref-row"><dt>key</dt><dd>&mdash; a variable holding the most recently pressed key.</dd></div>
+          <div class="ref-row"><dt>mouseX / mouseY:</dt><dd>variables that always hold the mouse's current position.</dd></div>
+          <div class="ref-row"><dt>mousePressed():</dt><dd>a function p5 calls automatically, once, the moment a mouse button is pressed.</dd></div>
+          <div class="ref-row"><dt>keyPressed():</dt><dd>same idea, for the keyboard.</dd></div>
+          <div class="ref-row"><dt>key:</dt><dd>a variable holding the most recently pressed key.</dd></div>
         </dl>
       </div>
 
       <div class="ref-group">
         <h3>Motion &amp; animation</h3>
         <dl>
-          <div class="ref-row"><dt>frameCount</dt><dd>&mdash; a variable that counts up by 1 every frame since the sketch started.</dd></div>
-          <div class="ref-row"><dt>random(min, max)</dt><dd>&mdash; a random number in that range.</dd></div>
-          <div class="ref-row"><dt>map(value, s1, e1, s2, e2)</dt><dd>&mdash; rescales a number from one range into another. <code class="inline">map(mouseX, 0, width, 0, 255)</code> takes <code class="inline">mouseX</code>, which ranges from <code class="inline">0</code> to <code class="inline">width</code> as it crosses the canvas, and converts it to a matching position between <code class="inline">0</code> and <code class="inline">255</code> &mdash; handy for turning mouse position directly into a color or size value.</dd></div>
-          <div class="ref-row"><dt>lerp(start, stop, amt)</dt><dd>&mdash; a value partway between <code class="inline">start</code> and <code class="inline">stop</code>, where <code class="inline">amt</code> is <code class="inline">0</code> to <code class="inline">1</code>: <code class="inline">lerp(0, 100, 0.5)</code> returns <code class="inline">50</code>, halfway between. For smooth movement, run it every frame with the current position as <code class="inline">start</code>: <code class="inline">x = lerp(x, targetX, 0.1);</code> nudges <code class="inline">x</code> 10% closer to <code class="inline">targetX</code> each frame, easing toward it instead of jumping straight there.</dd></div>
+          <div class="ref-row"><dt>frameCount:</dt><dd>a variable that counts up by 1 every frame since the sketch started.</dd></div>
+          <div class="ref-row"><dt>random(min, max):</dt><dd>a random number in that range.</dd></div>
+          <div class="ref-row"><dt>map(value, s1, e1, s2, e2):</dt><dd>rescales a number from one range into another. <code class="inline">map(mouseX, 0, width, 0, 255)</code> takes <code class="inline">mouseX</code>, which ranges from <code class="inline">0</code> to <code class="inline">width</code> as it crosses the canvas, and converts it to a matching position between <code class="inline">0</code> and <code class="inline">255</code>, handy for turning mouse position directly into a color or size value.</dd></div>
+          <div class="ref-row"><dt>lerp(start, stop, amt):</dt><dd>a value partway between <code class="inline">start</code> and <code class="inline">stop</code>, where <code class="inline">amt</code> is <code class="inline">0</code> to <code class="inline">1</code>: <code class="inline">lerp(0, 100, 0.5)</code> returns <code class="inline">50</code>, halfway between. For smooth movement, run it every frame with the current position as <code class="inline">start</code>: <code class="inline">x = lerp(x, targetX, 0.1);</code> nudges <code class="inline">x</code> 10% closer to <code class="inline">targetX</code> each frame, easing toward it instead of jumping straight there.</dd></div>
         </dl>
       </div>
     </div>
@@ -559,18 +189,20 @@ function draw() {
 
   <section class="section" id="beyond">
     <h2>Beyond p5.js</h2>
-    <p class="section-intro">Two libraries worth knowing exist, once a project outgrows what's on this page. Not covered in depth here &mdash; just pointers.</p>
+    <p class="section-intro">Two libraries worth knowing exist, once a project outgrows what's on this page. Not covered in depth here, just pointers.</p>
 
-    <h3 class="sub">ml5.js &mdash; machine learning</h3>
-    <p class="body-text">Friendly, pre-trained machine-learning models &mdash; pose detection, hand tracking, image classification &mdash; built to drop straight into a p5 sketch. <a href="https://ml5js.org/" target="_blank" rel="noopener">ml5js.org</a> &middot; <a href="https://docs.ml5js.org/" target="_blank" rel="noopener">Getting Started tutorial</a> (builds a hand-tracking sketch from zero).</p>
+    <h3 class="sub">ml5.js: machine learning</h3>
+    <p class="body-text">Friendly, pre-trained machine-learning models (pose detection, hand tracking, image classification) built to drop straight into a p5 sketch. <a href="https://ml5js.org/" target="_blank" rel="noopener">ml5js.org</a> &middot; <a href="https://docs.ml5js.org/" target="_blank" rel="noopener">Getting Started tutorial</a> (builds a hand-tracking sketch from zero).</p>
 
-    <h3 class="sub">three.js &mdash; real 3D</h3>
-    <p class="body-text">3D graphics using WebGL, where p5 is primarily 2D. A different mental model &mdash; scene, camera, renderer, and mesh, instead of <code class="inline">setup()</code>/<code class="inline">draw()</code>. <a href="https://threejs.org/" target="_blank" rel="noopener">threejs.org</a> &middot; <a href="https://threejs.org/docs/#manual/en/introduction/Creating-a-scene" target="_blank" rel="noopener">Creating a Scene tutorial</a> (builds a first rotating cube).</p>
+    <h3 class="sub">three.js: real 3D</h3>
+    <p class="body-text">3D graphics using WebGL, where p5 is primarily 2D. A different mental model: scene, camera, renderer, and mesh, instead of <code class="inline">setup()</code>/<code class="inline">draw()</code>. <a href="https://threejs.org/" target="_blank" rel="noopener">threejs.org</a> &middot; <a href="https://threejs.org/docs/#manual/en/introduction/Creating-a-scene" target="_blank" rel="noopener">Creating a Scene tutorial</a> (builds a first rotating cube).</p>
   </section>
 
   <p class="closing">Next up: <a href="portfolio-template.html">the portfolio template guide</a>, which explains how your weekly sketches actually turn into your class portfolio site.</p>
 
 </div>
+
+<script src="../cursor-sparkle.js?v=20260822"></script>
 
 </body>
 </html>
