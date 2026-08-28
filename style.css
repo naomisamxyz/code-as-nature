@@ -24,12 +24,28 @@ body {
 body {
   font-family: "VCR OSD Mono", "Space Mono", "Courier New", monospace;
   color: #c5c4c4;
-  background-color: #111;
-  background-image: url("assets/images/header-glow.png");
-  background-repeat: no-repeat;
-  background-position: center -8vw;
-  background-size: 120vw auto;
-  background-attachment: fixed;
+  background-color: #000;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+    url("assets/images/header-glow.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center -8vw;
+  background-size: cover, 120vw auto;
+  background-attachment: fixed, fixed;
+}
+
+a,
+a:visited {
+  text-decoration-line: underline;
+  text-decoration-color: rgba(218, 217, 217, 0.22);
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-shadow 0.15s, text-decoration-color 0.15s;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration-color: rgba(218, 217, 217, 0.45);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.55);
 }
 
 .site-header {
@@ -77,7 +93,7 @@ body {
 .site-meta {
   margin: 18px 0 0;
   padding: 0 var(--page-pad);
-  font-size: clamp(10px, 0.9vw, 12px);
+  font-size: clamp(12px, 0.9vw, 14.5px);
   line-height: 1.25;
   color: rgb(130, 129, 129);
 }
@@ -107,15 +123,6 @@ body {
   display: none;
 }
 
-.tldraw-embed {
-  display: block;
-  width: 100%;
-  height: clamp(400px, 78vh, 640px);
-  border: 0;
-  background: #000;
-}
-
-.tldraw-embed[hidden],
 .diagram-embed[hidden] {
   display: none;
 }
@@ -129,13 +136,12 @@ body {
   flex-wrap: wrap;
   gap: 4px 18px;
   margin-bottom: 20px;
-  font-size: 12.5px;
+  font-size: 14px;
 }
 
 .site-nav a {
   padding: 2px 0;
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
+  color: rgb(168, 167, 167);
 }
 
 .site-nav a:hover {
@@ -146,30 +152,33 @@ body {
   margin: 0 0 12px;
   font-weight: normal;
   font-size: clamp(16px, 1.8vw, 22px);
-  color: rgb(255, 254, 254);
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.below-canvas p {
-  width: 100%;
-  max-width: 70ch;
+.below-canvas p,
+.below-canvas .syllabus-copy {
+  width: 50%;
+  max-width: none;
   margin: 0;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.7;
-  color: rgb(164, 164, 164);
+  color: rgb(218, 217, 217);
 }
 
-.below-canvas p + p {
+.below-canvas p + p,
+.below-canvas .syllabus-copy + .syllabus-copy {
   margin-top: 12px;
 }
 
 .below-canvas p a,
-.below-canvas p a:visited {
+.below-canvas p a:visited,
+.below-canvas .syllabus-copy a,
+.below-canvas .syllabus-copy a:visited {
   color: rgba(255, 255, 255, 0.85);
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
-.below-canvas p a:hover {
+.below-canvas p a:hover,
+.below-canvas .syllabus-copy a:hover {
   color: #fff;
 }
 
@@ -200,7 +209,7 @@ body {
   font-size: 2.5px;
   line-height: 1;
   white-space: pre;
-  color: rgba(255, 255, 255, 0.8);
+  color: #fff;
   pointer-events: none;
   flex-shrink: 0;
 }
@@ -221,6 +230,175 @@ body {
   color: #666;
 }
 
+.syllabus-section {
+  padding: 0 var(--page-pad) 100px;
+}
+
+.syllabus-week + .syllabus-week {
+  margin-top: 64px;
+}
+
+.syllabus-week {
+  scroll-margin-top: 112px;
+}
+
+.week-heading h2 a,
+.week-heading h2 a:visited {
+  color: inherit;
+  text-decoration-color: rgba(218, 217, 217, 0.22);
+}
+
+.week-heading {
+  width: 50%;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-bottom: 24px;
+}
+
+.week-heading .section-ornament {
+  align-self: center;
+}
+
+.week-title {
+  display: flow-root;
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+}
+
+.week-title .section-ornament {
+  display: none;
+}
+
+.week-title::before {
+  float: left;
+  margin-right: 10px;
+  content: "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\A⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣰⠦⠔⠛⠃⠉⠉⠉⠙⣶⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\A⠈⠳⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⡶⠟⠛⠛⠐⠢⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣴⠮⠵⠋⠛⠋⠐⠒⠛⠠⢦⡄⡠⠴⠽⠯⠤⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀\A⠀⠀⠈⠹⠿⣷⣶⣰⣀⣰⣶⠾⠿⠈⠉⢏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡶⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⢏⠆⣰⡶⠏⠉⠉⠉⠉⠹⠿⣷⣆⣀⠀⠀⠀\A⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀\A⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆";
+  color: #fff;
+  font-family: monospace;
+  font-size: 2.5px;
+  line-height: 1;
+  white-space: pre;
+}
+
+.week-title h2 {
+  white-space: normal;
+}
+
+.week-heading h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: clamp(16px, 1.8vw, 22px);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.week-heading time {
+  flex-basis: 100%;
+  flex-shrink: 0;
+  color: rgb(164, 164, 164);
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.syllabus-week > p,
+.syllabus-week > .syllabus-copy,
+.syllabus-week ul {
+  width: 50%;
+}
+
+.syllabus-week > p,
+.syllabus-week > .syllabus-copy {
+  margin: 0 0 32px;
+  color: rgb(218, 217, 217);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.syllabus-week ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.syllabus-week li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgb(218, 217, 217);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.syllabus-week li::before {
+  content: "⠂⡇⠀⠂⠀\A⣄⡤⠤⢬⣅⠇⠉⠁⠀\A⢀⠔⣊⠎⠀⠀⠀⡇⡇⠀⠀⠀\A⡇⠀⡇⠀⠀⠠⠔⠋⠀";
+  flex: 0 0 44px;
+  width: 44px;
+  height: 24px;
+  overflow: hidden;
+  color: #fff;
+  font-family: monospace;
+  font-size: 4px;
+  line-height: 1;
+  white-space: pre;
+}
+
+.syllabus-week li + li {
+  margin-top: 12px;
+}
+
+.canvas-page .list-object li::before {
+  color: #fff;
+}
+
+.syllabus-week li a,
+.syllabus-week li a:visited {
+  padding: 0;
+  color: inherit;
+}
+
+.syllabus-week li a:hover {
+  color: inherit;
+}
+
+.week-guide-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 18px;
+  margin-top: 0;
+  vertical-align: baseline;
+}
+
+.mirror-symbol {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
+.syllabus-bullet {
+  display: none;
+}
+
+.syllabus-week cite {
+  font-style: normal;
+  color: rgb(197, 196, 196);
+}
+
+@media (max-width: 800px) {
+  .week-title h2 {
+    white-space: normal;
+  }
+
+  .week-heading,
+  .below-canvas p,
+  .below-canvas .syllabus-copy,
+  .syllabus-week > p,
+  .syllabus-week > .syllabus-copy,
+  .syllabus-week ul {
+    width: 100%;
+  }
+}
+
 @media (max-width: 700px) {
   .diagram-embed,
   .diagram-section .embed-fallback {
@@ -236,21 +414,16 @@ body {
   }
 
   .below-canvas h2,
-  .diagram-section h2 {
+  .diagram-section h2,
+  .week-heading h2 {
     font-size: 24px;
+  }
+
+  .week-heading time {
+    font-size: 16px;
   }
 
   body {
     background-attachment: scroll;
-  }
-}
-
-/* Guard against a short viewport where the tldraw board alone would
-   fill the whole screen, trapping scroll input inside its canvas. */
-@media (max-height: 650px) {
-  .tldraw-embed,
-  .canvas-wrap .embed-fallback {
-    height: 45vh;
-    min-height: 220px;
   }
 }

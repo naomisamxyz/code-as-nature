@@ -3,7 +3,7 @@
 
   var header = document.querySelector(".site-header");
   var lightAreas = Array.from(
-    document.querySelectorAll(".tldraw-embed, .diagram-embed")
+    document.querySelectorAll(".diagram-embed")
   );
 
   function updateHeaderContrast() {

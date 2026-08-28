@@ -17,12 +17,25 @@
   body {
     font-family: "VCR OSD Mono", "Space Mono", "Courier New", monospace;
     color: #c5c4c4;
-    background-color: #111;
-    background-image: url("../images/header-glow.png"), url("../images/header-glow.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: -50vw top, 50vw top;
-    background-size: 100vw auto, 100vw auto;
-    background-attachment: fixed, fixed;
+    background-color: #000;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+      url("../images/header-glow.png"),
+      url("../images/header-glow.png");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center, -50vw top, 50vw top;
+    background-size: cover, 100vw auto, 100vw auto;
+    background-attachment: fixed, fixed, fixed;
+  }
+
+  a {
+    transition: color 0.15s, text-shadow 0.15s;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: #fff;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.55);
   }
 
   .page {

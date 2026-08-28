@@ -4,7 +4,7 @@
 
   var style = document.createElement("style");
   style.textContent =
-    "body { cursor: none; }" +
+    "body:not(.edit-mode), body:not(.edit-mode) * { cursor: none !important; }" +
     ".cursor-orb { position: fixed; left: 0; top: 0; pointer-events: none; z-index: 1000; width: 14px; height: auto;" +
     " filter: brightness(0) invert(0.28) blur(0.3px) drop-shadow(0 0 4px rgba(90,95,110,0.55));" +
     " animation: dark-shimmer-img 1.2s ease-in-out infinite; }" +
@@ -12,11 +12,11 @@
     " 0%, 100% { opacity: 0.85; filter: brightness(0) invert(0.28) blur(0.3px) drop-shadow(0 0 3px rgba(90,95,110,0.4)); }" +
     " 50% { opacity: 1; filter: brightness(0) invert(0.4) blur(0.3px) drop-shadow(0 0 8px rgba(110,115,135,0.85)); } }" +
     ".cursor-orb.is-hover { animation: none; opacity: 1; filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,0.8)); }" +
-    "a, button, input, select, textarea, label, [onclick] { cursor: none; }" +
+    "a, button, input, select, textarea, label, [onclick] { cursor: none !important; }" +
     ".sparkle { position: fixed; left: 0; top: 0; z-index: 999; pointer-events: none;" +
-    " color: rgba(20, 20, 25, 0.95); font-size: 11px;" +
+    " color: rgba(255, 255, 255, 0.95); font-size: 11px;" +
+    " text-shadow: 0 0 5px rgba(255, 255, 255, 0.85);" +
     " animation: sparkle-fade 420ms ease-out forwards; }" +
-    ".sparkle.is-hover { color: rgba(255, 255, 255, 0.95); text-shadow: 0 0 5px rgba(255, 255, 255, 0.85); }" +
     "@keyframes sparkle-fade {" +
     " 0% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }" +
     " 100% { opacity: 0; transform: translate(calc(-50% + var(--dx, 0px)), calc(-50% + var(--dy, -40px))) scale(0.3) rotate(45deg); } }" +
@@ -33,7 +33,9 @@
   var artEl = document.createElement("pre");
   artEl.className = "corner-ornament";
   artEl.textContent = brailleArt;
-  document.body.appendChild(artEl);
+  if (!document.body.classList.contains("canvas-page")) {
+    document.body.appendChild(artEl);
+  }
 
   var lastSpawn = 0;
   var chars = ["◆", "⬥", "♦"];
@@ -42,7 +44,7 @@
 
   function spawnSparkle(x, y) {
     var s = document.createElement("span");
-    s.className = "sparkle" + (isHovering ? " is-hover" : "");
+    s.className = "sparkle";
     s.textContent = chars[Math.floor(Math.random() * chars.length)];
     var jitterX = (Math.random() - 0.5) * 32;
     var jitterY = (Math.random() - 0.5) * 32;
@@ -77,6 +79,10 @@
     isHovering = !!isInteractive;
     orb.classList.toggle("is-hover", isHovering);
 
+    // The trail appears only over interactive elements. The former dark
+    // particles on the rest of the page are intentionally omitted.
+    if (!isHovering) return;
+
     var now = Date.now();
     if (now - lastSpawn < 18) return;
     lastSpawn = now;
@@ -88,7 +94,7 @@
 
   // Keep sparkling even while the cursor sits still.
   setInterval(function () {
-    if (lastX === null) return;
+    if (lastX === null || !isHovering) return;
     spawnSparkle(lastX, lastY);
   }, 180);
 

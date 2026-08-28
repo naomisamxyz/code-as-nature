@@ -59,7 +59,7 @@
 
   hyphens: auto;
 
-  cursor: pointer;
+  cursor: none;
 }
 
 .step:hover,
@@ -265,7 +265,6 @@
     font-size: 9.5px;
   }
 }
-
 
 
 
