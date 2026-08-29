@@ -13,10 +13,6 @@
   background: linear-gradient(#000 15%, transparent);
 }
 
-.canvas-header .site-meta {
-  margin-top: 12px;
-}
-
 .canvas-viewport {
   position: fixed;
   inset: 0;
@@ -255,6 +251,13 @@
   text-decoration: none;
   pointer-events: auto;
   cursor: pointer;
+  transition: transform 0.15s, color 0.15s, text-shadow 0.15s;
+}
+
+.media-play:hover,
+.media-play:focus-visible {
+  left: 50%;
+  transform: translate(calc(-50% + 4px), -50%);
 }
 
 .media-link svg {
@@ -280,6 +283,12 @@
   background: transparent;
   box-shadow: 0 0 3px rgba(255, 255, 255, 0.22);
   transform: none;
+}
+
+.media-link:hover,
+.media-link:focus-visible {
+  left: auto;
+  transform: translateX(4px);
 }
 
 .media-play::after {
@@ -343,8 +352,10 @@
 
 .canvas-controls {
   position: fixed;
-  left: 14px;
-  bottom: calc(var(--page-pad) - 10px);
+  top: var(--page-pad);
+  right: 14px;
+  bottom: auto;
+  left: auto;
   z-index: 120;
   display: flex;
   align-items: center;
@@ -357,7 +368,7 @@
 
 .canvas-controls button {
   align-self: stretch;
-  padding: 0 12px;
+  padding: 0 8px;
   border: 0;
   border-left: 0;
   color: rgba(255, 255, 255, 0.74);
@@ -384,33 +395,35 @@
 }
 
 #zoom-readout {
-  padding: 0 8px;
+  padding: 0 5px;
   border-left: 0;
   color: rgba(255, 255, 255, 0.42);
-  font-size: 10px;
+  font-size: 10.5px;
 }
 
 .view-toggle {
   position: fixed;
-  left: 14px;
-  bottom: calc(var(--page-pad) - 10px);
+  top: var(--page-pad);
+  right: 14px;
+  bottom: auto;
+  left: auto;
   z-index: 120;
   display: grid;
   grid-template-columns: auto auto auto;
-  gap: 6px;
+  gap: 5px;
   align-items: center;
   padding: 3px;
   border: 0;
   color: rgba(255, 255, 255, 0.5);
   background: transparent;
   box-shadow: none;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .canvas-controls .view-toggle {
   position: static;
   z-index: auto;
-  padding: 0 5px 0 0;
+  padding: 0;
   border: 0;
   background: transparent;
   box-shadow: none;
@@ -418,8 +431,8 @@
 
 .view-toggle > span,
 .view-toggle > a {
-  padding: 7px 6px;
-  transition: color 0.15s, background 0.15s, text-shadow 0.15s;
+  padding: 6px 5px;
+  transition: color 0.15s, background 0.15s, text-shadow 0.15s, left 0.15s;
 }
 
 .view-toggle > a,
@@ -439,7 +452,7 @@
   padding-right: 0;
   padding-left: 0;
   color: rgba(255, 255, 255, 0.62);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1;
 }
 
@@ -697,13 +710,17 @@
   }
 
   .canvas-controls {
-    left: 8px;
-    bottom: calc(var(--page-pad) - 10px);
+    top: var(--page-pad);
+    right: 8px;
+    bottom: auto;
+    left: auto;
   }
 
   .view-toggle {
-    left: 8px;
-    bottom: calc(var(--page-pad) - 10px);
+    top: var(--page-pad);
+    right: 8px;
+    bottom: auto;
+    left: auto;
   }
 
   #zoom-readout {

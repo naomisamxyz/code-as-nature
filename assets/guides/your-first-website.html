@@ -5,7 +5,7 @@
 <title>⭐︎ Open Portal ⭐︎</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=3" />
+<link rel="stylesheet" href="guide.css?v=12" />
 </head>
 <body class="guide-page guide-your-first-website">
 
@@ -21,12 +21,12 @@
 
 <div class="page">
 
-  <span class="stamp">Last updated August 22, 2026 by Naomi Sam</span>
+  <span class="stamp" data-last-updated></span>
 
   <header class="masthead">
     <h1>⭐︎ Open Portal ⭐︎</h1>
     <span class="eyebrow">The first incantation</span>
-    <p>The smallest possible website you can make: a page with words on it, styled with a little color. Everything else in this course builds on exactly this.</p>
+    <p>The smallest possible website you can make.</p>
   </header>
 
   <nav class="guide-nav">
@@ -58,7 +58,7 @@
     <p class="section-intro">Every website starts as a folder of files sitting on your computer, before it's anything else.</p>
     <ol class="steps">
       <li>Anywhere on your computer (your Desktop is fine), make a new folder. Call it something like <code class="inline">open-portal</code>.</li>
-      <li>That's it. Two files are about to go inside it, sitting right next to each other.</li>
+      <li>Next, add two files inside it.</li>
     </ol>
   </section>
 
@@ -66,7 +66,7 @@
 
   <section class="section" id="html">
     <h2>Write the HTML</h2>
-    <p class="section-intro">Inside that folder, make a new file named exactly <code class="inline">index.html</code>. <code class="inline">index</code> is a special name: it's the file a browser opens automatically when it's given the folder instead of one specific file. Traditionally the first line you'd write here is &ldquo;Hello, world!&rdquo;, a small, immediate proof that everything is wired up correctly before building anything more complicated. Let's write our own instead. Paste this in:</p>
+    <p class="section-intro">Inside that folder, make a new file named exactly <code class="inline">index.html</code>. A browser opens this file automatically when given the folder. Paste this in:</p>
 
     <div class="annotated">
 
@@ -91,7 +91,7 @@
 
         <div class="note" data-note="page-setup" style="top: 0px;">
           <span class="note-label">PAGE SETUP</span>
-          <p>The standard opening every HTML page starts with.<br><code>&lt;!DOCTYPE html&gt;</code> tells the browser this is a modern HTML page.<br><code>&lt;html&gt;</code> wraps everything on it.<br>Full breakdown in the HTML essentials. For now, just copy this part exactly.</p>
+          <p>The standard opening every HTML page starts with.<br><code>&lt;!DOCTYPE html&gt;</code> tells the browser this is a modern HTML page.<br><code>&lt;html&gt;</code> wraps everything on it.<br>The HTML essentials cover these lines in detail.</p>
         </div>
 
         <div class="note" data-note="body-starts" style="top: 169px;">
@@ -231,7 +231,7 @@ h1 {
 
   <section class="section" id="view">
     <h2>Open it in your browser</h2>
-    <p class="section-intro">Two files, saved in the same folder. Now to actually see it:</p>
+    <p class="section-intro">To view the page:</p>
     <ol class="steps">
       <li>Find <code class="inline">index.html</code> in your folder and double-click it. It should open in your default browser and show &ldquo;⭐︎ Open Portal ⭐︎&rdquo; in whatever color you chose.</li>
       <li>If it opens as plain text instead of a webpage, right-click the file, choose <strong>Open With</strong>, and pick a browser (Chrome, Safari, or Firefox) instead.</li>
@@ -258,10 +258,11 @@ h1 {
     <p class="body-text" style="margin-top: 0;">Add these two lines right under your <code class="inline">&lt;h1&gt;</code>, still inside <code class="inline">&lt;body&gt;</code>.<br><code class="inline">&lt;br&gt;</code> is a line break. It just pushes whatever comes after it onto a new line, so the image doesn't sit jammed against the heading.<br><code class="inline">src</code> is the image's file name. Change <code class="inline">"assets/images/header-glow.png"</code> to match whatever you dragged in, exactly, including the file extension.<br><code class="inline">alt</code> is a short written description of the image, used by screen readers and shown if the image ever fails to load.<br>Save, then reload the page to see it appear below the heading. The full picture on images, including sizing and when to use them versus embedding, is in the HTML essentials.</p>
   </section>
 
-  <p class="closing">That's a real website, just not on the internet yet, only on your own computer. Next up: <a href="cheatsheet-html.html">the HTML essentials</a> for the full breakdown of what you just wrote, then <a href="cheatsheet-css.html">the CSS essentials</a> for real styling power. When you're ready to put it online, see <a href="publish-to-github.html">Publish to GitHub</a>.</p>
+  <p class="closing"><a href="../../index.html">&larr; Course home</a> ✧ Next: <a href="portfolio-template.html">⟡ Forge Your Archive ⟡</a></p>
 
 </div>
 
+<script src="../last-updated.js?v=2"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 
 </body>

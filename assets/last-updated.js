@@ -1,8 +1,16 @@
 (function () {
   "use strict";
 
-  const updated = window.CANVAS_DATA?.lastUpdated;
-  if (!updated) return;
+  const updated = {
+    datetime: "2026-08-28",
+    label: "August 28, 2026",
+    by: "Naomi Sam"
+  };
+
+  window.SITE_LAST_UPDATED = updated;
+  if (window.CANVAS_DATA) {
+    window.CANVAS_DATA.lastUpdated = { ...updated };
+  }
 
   document.querySelectorAll("[data-last-updated]").forEach(element => {
     const time = document.createElement("time");

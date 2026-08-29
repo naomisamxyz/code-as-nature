@@ -5,7 +5,7 @@
 <title>✢ Machine Rituals ✢</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=3" />
+<link rel="stylesheet" href="guide.css?v=12" />
 </head>
 <body class="guide-page guide-ai-assisted-workflows">
 
@@ -21,7 +21,7 @@
 
 <div class="page">
 
-  <span class="stamp">Last updated August 22, 2026 by Naomi Sam</span>
+  <span class="stamp" data-last-updated></span>
 
   <header class="masthead">
     <h1>✢ Machine Rituals ✢</h1>
@@ -44,7 +44,7 @@
   <nav class="page-toc">
     <span class="toc-label">On this page</span>
     <a href="#intro">AI-assisted workflows</a>
-    <a href="#chatbots">General-purpose chat tools</a>
+    <a href="#chatbots">Chatbots</a>
     <a href="#agents">Coding agents</a>
     <a href="#prompting">Prompt writing</a>
   </nav>
@@ -52,18 +52,17 @@
   <h2 id="intro">AI-assisted workflows</h2>
 
   <div class="page-intro">
-    <p>Every tool shapes how you understand what you're working on, not just what you can build with it. This is well documented in how tools mediate cognition. Each comes with politics: who owns it, whose labor and data built it, how much energy it uses, what happens to what you type, who benefits. You don't need a perfect answer before using one, but you should understand the tradeoffs.</p>
-    <p>AI can speed up your process and be a genuinely useful creative tool, the same way any other creative software is. The goal is understanding the relationship between your decisions and what the work actually does. Use it as a debugger, critic, explainer, or pair programmer.</p>
+    <p>Every tool shapes how you understand what you're working on, not just what you can build with it. Each comes with politics: who owns it, whose labor and data built it, how much energy it uses, what happens to what you type, and who benefits. Understand these tradeoffs before choosing a tool.</p>
+    <p>AI can speed up your process and be a useful creative tool. The goal is understanding the relationship between your decisions and what the work does. Use it as a debugger, critic, explainer, or pair programmer.</p>
   </div>
 
-  <!-- ================= GENERAL-PURPOSE CHAT TOOLS ================= -->
+  <!-- ================= CHATBOTS ================= -->
 
   <section class="section" id="chatbots">
-    <h2>General-purpose chat tools</h2>
+    <h2>Chatbots</h2>
 
     <div class="ref-groups">
       <div class="ref-group">
-        <h3>Chatbots</h3>
         <dl>
           <div class="ref-row"><dt>ChatGPT (OpenAI):</dt><dd>a good general-purpose starting point. Explains code, helps debug, revises writing, analyzes and generates images. Free tier available, with usage limits that change often. Check openai.com for the current ones.</dd></div>
           <div class="ref-row"><dt>Claude (Anthropic):</dt><dd>especially useful for reading code carefully, explaining what it thinks is wrong, and working through a problem in stages. Also strong for writing and revision. Free tier available, with usage limits that change often. Check claude.ai for the current ones.</dd></div>
@@ -72,8 +71,6 @@
         </dl>
       </div>
     </div>
-
-    <p class="body-text">Try them all for free and see what you find helpful.</p>
   </section>
 
   <!-- ================= CODING AGENTS ================= -->
@@ -93,14 +90,14 @@
       </div>
     </div>
 
-    <p class="body-text">The same questions about ownership, data, labor, energy use, and institutional power still apply. Try these once you're comfortable with files, the terminal, Git, and basic debugging, not as where you start.</p>
+    <p class="body-text">The same questions about ownership, data, labor, energy use, and institutional power still apply. Try these after you are comfortable with files, the terminal, Git, and basic debugging.</p>
   </section>
 
   <!-- ================= PROMPT WRITING ================= -->
 
   <section class="section" id="prompting">
     <h2>Prompt writing</h2>
-    <p class="section-intro">Understanding how code works is important in order to know what to ask and how to ask for it.</p>
+    <p class="section-intro">Understanding code helps you know what to ask and how to ask for it.</p>
     <ol class="steps">
       <li>Name the problem yourself first.</li>
       <li>Give it the smallest useful bit of code, the exact error, and what you expected vs. what happened.</li>
@@ -112,10 +109,11 @@
     <p class="body-text">More on this: <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener">Anthropic's guide to writing good prompts</a>.</p>
   </section>
 
-<p class="closing">Next up: <a href="publish-to-github.html">Publish to GitHub</a>.</p>
+<p class="closing">Previous: <a href="publish-to-github.html">☙ Publish to GitHub ❧</a> ✧ <a href="../../index.html">&larr; Course home</a></p>
 
 </div>
 
+<script src="../last-updated.js?v=2"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 
 </body>

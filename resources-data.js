@@ -970,7 +970,7 @@ window.CANVAS_DATA = {
       "x": 3563.240856564889,
       "y": 2864.133046316172,
       "width": 1050,
-      "height": 444,
+      "height": 152,
       "source": "assets/diagram/index.html",
       "title": "Computational Pipeline"
     },
@@ -986,7 +986,7 @@ window.CANVAS_DATA = {
       "url": "https://www.textezurkunst.de/en/118/dismantling-blue-gaze/",
       "meta": "article",
       "alt": "Dismantling the Blue Gaze Magnus Schaefer on American Artist at the Queens Museum, New York",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Etextezurkunst.de%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "image": "https://iad.microlink.io/dwPXZA6TdKctiImDR40hxucjC9ftyqauXhjD53c0q0g3yrQXX54_-EAzfhPzZymgHpP4-EtQgcMcgC2pMxNP8w.png",
       "previewHeight": 155
     },
     {
@@ -1033,6 +1033,22 @@ window.CANVAS_DATA = {
       "alt": "Do it - curated by Hans Ulrich Obrist",
       "image": "https://i.ytimg.com/vi/_edLhDly7gs/hqdefault.jpg",
       "previewHeight": 135
+    },
+    {
+      "id": "item1787962996438",
+      "type": "media",
+      "x": 4952.35490210702,
+      "y": 2179.394735393802,
+      "width": 232.3168570562983,
+      "height": 178.90186110859221,
+      "mediaKind": "link",
+      "title": "Why Is AI Fueling A Return to Spirituality?",
+      "url": "https://www.sleek-mag.com/article/why-is-ai-fueling-a-return-to-spirituality/",
+      "meta": "Sleek Mag",
+      "alt": "Why Is AI Fueling A Return to Spirituality?",
+      "image": "https://iad.microlink.io/78m2_1QzZ6lDQvOxSdBvCb5T05mPlnZTCWoEUepfQHkjFRFq-D9rY0ev2mrxAZiSwgi8kP1eAg5oe7J9V5nu9A.png",
+      "previewHeight": 155,
+      "heightMode": "manual"
     }
   ],
   "connections": [

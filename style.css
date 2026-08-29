@@ -36,14 +36,17 @@ body {
 
 a,
 a:visited {
+  position: relative;
+  left: 0;
   text-decoration-line: underline;
   text-decoration-color: rgba(218, 217, 217, 0.22);
   text-underline-offset: 3px;
-  transition: color 0.15s, text-shadow 0.15s, text-decoration-color 0.15s;
+  transition: color 0.15s, text-shadow 0.15s, text-decoration-color 0.15s, left 0.15s;
 }
 
 a:hover,
 a:focus-visible {
+  left: 4px;
   text-decoration-color: rgba(218, 217, 217, 0.45);
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.55);
 }
@@ -91,8 +94,11 @@ a:focus-visible {
 }
 
 .site-meta {
-  margin: 18px 0 0;
-  padding: 0 var(--page-pad);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 14px;
+  margin: 12px 0 0;
+  padding: 0;
   font-size: clamp(12px, 0.9vw, 14.5px);
   line-height: 1.25;
   color: rgb(130, 129, 129);
@@ -135,17 +141,36 @@ a:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 18px;
-  margin-bottom: 20px;
-  font-size: 14px;
+  max-width: 660px;
+  margin-left: calc(20px - var(--page-pad));
+  margin-bottom: 16px;
+  font-size: 12.5px;
+}
+
+.site-nav a,
+.site-nav span {
+  padding: 2px 0;
 }
 
 .site-nav a {
-  padding: 2px 0;
-  color: rgb(168, 167, 167);
+  position: relative;
+  left: 0;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, text-shadow 0.15s, border-color 0.15s, left 0.15s;
 }
 
-.site-nav a:hover {
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  left: 4px;
   color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+.site-nav .current {
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .below-canvas h2 {

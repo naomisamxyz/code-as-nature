@@ -83,7 +83,7 @@
     container.innerHTML =
       "<br><br>" +
       (heading
-        ? `<div class="section-heading" id="${heading.id}">${ornamentHTML}<h2><a href="index.html#${heading.id}" style="color:inherit">${heading.title}</a></h2></div><br>`
+        ? `<div class="section-heading" id="${heading.id}">${ornamentHTML}<h2><a href="canvas.html#${heading.id}" style="color:inherit">${heading.title}</a></h2></div><br>`
         : "") +
       (body ? `<div class="syllabus-copy">${body.text}</div>` : "");
   }
@@ -99,7 +99,7 @@
     const heading = week.querySelector("h2");
     if (heading && !heading.closest("a")) {
       const link = document.createElement("a");
-      link.href = `index.html#${id}`;
+      link.href = `canvas.html#${id}`;
       link.style.color = "inherit";
       link.innerHTML = heading.innerHTML;
       heading.replaceChildren(link);
@@ -109,24 +109,26 @@
   const toggle = document.createElement("div");
   toggle.className = "view-toggle is-list";
   toggle.innerHTML =
-    '<a href="index.html" data-view-switch="canvas">canvas</a>' +
+    '<span class="view-current" aria-current="page">list</span>' +
     '<span class="view-diamond" aria-hidden="true">✧</span>' +
-    '<span class="view-current" aria-current="page">list</span>';
+    '<a href="canvas.html" data-view-switch="canvas">canvas</a>';
   document.body.append(toggle);
 
-  function currentWeek() {
+  function currentAnchor() {
     const threshold = innerHeight * 0.45;
-    let current = weeks[0];
-    for (const week of weeks) {
-      if (week.getBoundingClientRect().top <= threshold) current = week;
+    const syllabus = document.querySelector("#syllabus");
+    const anchors = [syllabus, ...weeks].filter(Boolean);
+    let current = anchors[0];
+    for (const anchor of anchors) {
+      if (anchor.getBoundingClientRect().top <= threshold) current = anchor;
       else break;
     }
-    return current?.id || "week01";
+    return current?.id || "syllabus";
   }
 
   toggle.querySelector("[data-view-switch]").addEventListener("click", event => {
     event.preventDefault();
-    location.href = `index.html#${currentWeek()}`;
+    location.href = `canvas.html#${currentAnchor()}`;
   });
 
   if (location.hash) {

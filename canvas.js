@@ -207,7 +207,7 @@
         (edit
           ? '<span' + editableAttributes("title") + '>' + resource.title +
             "</span>"
-          : '<a href="list.html#week' +
+          : '<a href="index.html#week' +
             String(resource.week).padStart(2, "0") +
             '" data-week="' + resource.week + '">' + resource.title +
             "</a>") +
@@ -241,7 +241,7 @@
         (edit
           ? '<span' + editableAttributes("title") + '>' + resource.title +
             "</span>"
-          : '<a href="list.html#' + resource.id + '">' + resource.title +
+          : '<a href="index.html#' + resource.id + '">' + resource.title +
             "</a>") +
         "</h2></div></div>";
     } else if (resource.type === "diagram") {
@@ -847,10 +847,13 @@
     return resource ? centerResource(resource.id) : false;
   }
 
-  function nearestWeek() {
-    let bestWeek = 1;
+  function nearestListAnchor() {
+    let bestAnchor = "syllabus";
     let bestDistance = Infinity;
-    for (const resource of data.resources.filter(item => item.type === "week")) {
+    const anchors = data.resources.filter(
+      item => item.id === "syllabus" || item.type === "week"
+    );
+    for (const resource of anchors) {
       const screenX =
         (resource.x + resource.width / 2) * camera.zoom + camera.x;
       const screenY =
@@ -859,10 +862,12 @@
         (screenX - innerWidth / 2) ** 2 + (screenY - innerHeight / 2) ** 2;
       if (distance < bestDistance) {
         bestDistance = distance;
-        bestWeek = resource.week;
+        bestAnchor = resource.id === "syllabus"
+          ? "syllabus"
+          : "week" + String(resource.week).padStart(2, "0");
       }
     }
-    return bestWeek;
+    return bestAnchor;
   }
 
   function selectedResources() {
@@ -1175,9 +1180,8 @@
     .querySelector("[data-view-switch]")
     .addEventListener("click", event => {
       event.preventDefault();
-      const week = data ? nearestWeek() : 1;
-      location.href =
-        "list.html#week" + String(week).padStart(2, "0");
+      const anchor = data ? nearestListAnchor() : "syllabus";
+      location.href = "index.html#" + anchor;
     });
 
   function youtubeThumbnail(urlValue) {

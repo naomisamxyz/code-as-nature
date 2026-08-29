@@ -5,7 +5,7 @@
 <title>✧ p5.js Essentials ✧</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=3" />
+<link rel="stylesheet" href="guide.css?v=12" />
 </head>
 <body class="guide-page guide-cheatsheet-p5">
 
@@ -21,12 +21,12 @@
 
 <div class="page">
 
-  <span class="stamp">Last updated August 22, 2026 by Naomi Sam</span>
+  <span class="stamp" data-last-updated></span>
 
   <header class="masthead">
     <h1>✧ p5.js Essentials ✧</h1>
     <span class="eyebrow">Drawing &amp; animation</span>
-    <p>A JavaScript library built for exactly this class: drawing shapes, animating them, and reacting to input, without touching the raw Canvas API.</p>
+    <p>A JavaScript library for creative coding that provides simple functions for drawing, animation, and interaction.</p>
   </header>
 
   <nav class="guide-nav">
@@ -120,6 +120,19 @@ function draw() {
       </div>
     </div>
     <p class="body-text">The first line loads the p5.js library itself from a <strong>CDN</strong>, a server that hosts the file for you, no download needed. The second loads your own sketch file, which can now use <code class="inline">setup()</code>, <code class="inline">draw()</code>, and everything else on this page, because the library just defined them. Order matters: the library has to load first.</p>
+
+    <h3 class="sub">Working offline</h3>
+    <p class="body-text">Download <a href="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.min.js" target="_blank" rel="noopener">p5.min.js</a> while you have internet access and save it next to <code class="inline">index.html</code> and <code class="inline">sketch.js</code>. Then load the local file instead of the CDN:</p>
+
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code class="wrap">&lt;script src="p5.min.js"&gt;&lt;/script&gt;
+&lt;script src="sketch.js"&gt;&lt;/script&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">The files must stay in the same folder for this path to work. Once downloaded, p5.js will load without an internet connection.</p>
     <p class="body-text">Try p5.js's own <a href="https://p5js.org/tutorials/setting-up-your-environment/" target="_blank" rel="noopener">setting up your environment tutorial</a>.</p>
   </section>
 
@@ -131,6 +144,7 @@ function draw() {
 
     <p class="body-text" style="margin-top: 0;"><code class="inline">x</code> and <code class="inline">y</code> are pixel positions on the canvas, measured from its top-left corner: <code class="inline">x</code> counts rightward from <code class="inline">0</code> at the left edge, <code class="inline">y</code> counts <strong>downward</strong> from <code class="inline">0</code> at the top edge, the opposite of a typical math graph, where <code class="inline">y</code> increases upward. So <code class="inline">rect(10, 10, 50, 50)</code> sits near the top-left of the canvas, not the bottom.</p>
 
+    <br>
     <div class="ref-groups">
       <div class="ref-group">
         <h3>Canvas &amp; shapes</h3>
@@ -189,19 +203,19 @@ function draw() {
 
   <section class="section" id="beyond">
     <h2>Beyond p5.js</h2>
-    <p class="section-intro">Two libraries worth knowing exist, once a project outgrows what's on this page. Not covered in depth here, just pointers.</p>
 
     <h3 class="sub">ml5.js: machine learning</h3>
     <p class="body-text">Friendly, pre-trained machine-learning models (pose detection, hand tracking, image classification) built to drop straight into a p5 sketch. <a href="https://ml5js.org/" target="_blank" rel="noopener">ml5js.org</a> &middot; <a href="https://docs.ml5js.org/" target="_blank" rel="noopener">Getting Started tutorial</a> (builds a hand-tracking sketch from zero).</p>
 
     <h3 class="sub">three.js: real 3D</h3>
-    <p class="body-text">3D graphics using WebGL, where p5 is primarily 2D. A different mental model: scene, camera, renderer, and mesh, instead of <code class="inline">setup()</code>/<code class="inline">draw()</code>. <a href="https://threejs.org/" target="_blank" rel="noopener">threejs.org</a> &middot; <a href="https://threejs.org/docs/#manual/en/introduction/Creating-a-scene" target="_blank" rel="noopener">Creating a Scene tutorial</a> (builds a first rotating cube).</p>
+    <p class="body-text">3D graphics using WebGL, where p5 is primarily 2D. A different mental model: scene, camera, renderer, and mesh, instead of <code class="inline">setup()</code>/<code class="inline">draw()</code>. <a href="https://threejs.org/" target="_blank" rel="noopener">threejs.org</a> &middot; <a href="https://threejs.org/docs/#manual/en/introduction/Creating-a-scene" target="_blank" rel="noopener">Creating a Scene tutorial</a>.</p>
   </section>
 
-  <p class="closing">Next up: <a href="portfolio-template.html">the portfolio template guide</a>, which explains how your weekly sketches actually turn into your class portfolio site.</p>
+  <p class="closing">Previous: <a href="cheatsheet-js.html">⚔︎ JS ⚔︎</a> ✧ Next: <a href="github-basics.html">❥ GitHub basics <span style="display: inline-block; transform: scaleX(-1);">❥</span></a></p>
 
 </div>
 
+<script src="../last-updated.js?v=2"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 
 </body>
