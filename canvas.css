@@ -60,15 +60,19 @@
 }
 
 .pipeline-diagram-object {
-  color: #fff;
-  font-family: "VCR OSD Mono", monospace;
+  color: #111;
 }
 
 .pipeline-diagram-mount {
   width: 100%;
   min-height: 40px;
-  color: rgba(255, 255, 255, 0.72);
-  font: 12px/1.4 "VCR OSD Mono", monospace;
+  display: flow-root;
+  color: #fff;
+  background: transparent;
+}
+
+.pipeline-diagram-mount .diagram-frame {
+  filter: invert(1);
 }
 
 .pipeline-diagram-heading {
@@ -87,86 +91,6 @@
   font-size: 22px;
   font-weight: normal;
   line-height: 1.15;
-}
-
-.pipeline-diagram-object .diagram-frame {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 55px 0 0;
-  color: #fff;
-  font-family: inherit;
-}
-
-.pipeline-diagram-object .step {
-  height: 40px;
-  border-color: rgba(255, 255, 255, 0.78);
-  color: #fff;
-  background: transparent;
-  font-family: inherit;
-  font-size: 10px;
-  letter-spacing: 1px;
-  transition: color 0.15s, background 0.15s, box-shadow 0.15s;
-}
-
-.pipeline-diagram-object .step:hover,
-.pipeline-diagram-object .step:focus-visible,
-.pipeline-diagram-object .step.active {
-  color: #050505;
-  background: #fff;
-  box-shadow: 0 0 9px rgba(255, 255, 255, 0.7);
-}
-
-.pipeline-diagram-object .arrow,
-.pipeline-diagram-object .feedback-label,
-.pipeline-diagram-object .feedback-left,
-.pipeline-diagram-object .feedback-right,
-.pipeline-diagram-object .detail-group h3 {
-  color: #fff;
-}
-
-.pipeline-diagram-object .arrow {
-  flex: 0 0 35px;
-  height: 40px;
-  font-size: 19px;
-}
-
-.pipeline-diagram-object .detail {
-  padding: 10px 5px 0;
-}
-
-.pipeline-diagram-object .detail-group {
-  padding: 6px 3px 7px;
-}
-
-.pipeline-diagram-object .detail-group h3 {
-  font-size: 10.5px;
-}
-
-.pipeline-diagram-object .detail-group p {
-  padding-left: 12px;
-  font-size: 11px;
-}
-
-.pipeline-diagram-object .feedback-line {
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
-}
-
-.pipeline-diagram-object .feedback-label {
-  background: #050505;
-}
-
-.pipeline-diagram-object .detail-group {
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.pipeline-diagram-object .detail-group p {
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.pipeline-diagram-object .detail-group p::before {
-  color: rgba(255, 255, 255, 0.48);
 }
 
 .canvas-object.text-object {
@@ -658,6 +582,47 @@
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
 }
 
+.connection-arrow-image {
+  filter: invert(1) drop-shadow(0 0 1px rgba(255, 255, 255, 0.45));
+}
+
+/* Canvas-only layout overrides formerly kept in cursor-fix.css. */
+.canvas-page .canvas-object.week-object {
+  --frame-x: 34px;
+  --frame-y: 22px;
+  padding: 34px 22px 34px 54px;
+}
+
+.canvas-page .week-object .week-heading { width: 100%; margin: 0; }
+.canvas-page .week-object .week-title { min-width: 0; }
+.canvas-page .canvas-object.list-object { padding: 54px 60px; }
+.canvas-page .list-object p { margin: 0 0 32px; font-size: 15px; line-height: 1.7; }
+.canvas-page .list-object ul { margin: 0; padding: 0; list-style: none; }
+.canvas-page .list-object li {
+  position: relative;
+  padding-left: 44px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.canvas-page .list-object li::before {
+  content: var(--list-sigil);
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 44px;
+  height: 24px;
+  overflow: hidden;
+  color: #fff;
+  font: 4px/1 monospace;
+  white-space: pre;
+}
+.canvas-page .list-object li + li { margin-top: 12px; }
+.canvas-page .canvas-object.text-object:not(.week-object):not(.list-object) { padding: 54px 60px; }
+.canvas-page .canvas-object.text-object:not(.week-object):not(.list-object) > p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
 .edit-mode .connection-path {
   pointer-events: none;
 }
@@ -703,7 +668,7 @@
   pointer-events: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .canvas-header .site-meta {
     max-width: 88%;
     font-size: 10px;

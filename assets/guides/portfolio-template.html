@@ -5,7 +5,9 @@
 <title>⟡ Forge Your Archive ⟡</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=12" />
+<link rel="stylesheet" href="guide.css?v=25" />
+<link rel="stylesheet" href="../site-shell.css?v=3" />
+<link rel="stylesheet" href="../navigation.css?v=3" />
 </head>
 <body class="guide-page guide-portfolio-template">
 
@@ -17,6 +19,8 @@
 ⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆</pre>
   <h1 class="site-title">IIMC-446-01/IIMC-646-01: Code As Nature</h1>
+  <p class="site-meta"><span>Fall 2026</span><span>Wednesdays, 10:00–11:50 AM</span><span>September 8–December 13</span><span>Main Building, MACLAB Studio</span></p>
+  <a class="site-home-link" href="../../index.html" aria-label="Code As Nature home"></a>
 </header>
 
 <div class="page">
@@ -24,26 +28,14 @@
   <span class="stamp" data-last-updated></span>
 
   <header class="masthead">
+    <br>
     <h1>⟡ Forge Your Archive ⟡</h1>
-    <span class="eyebrow">Weekly portfolio setup</span>
     <p>A ready-made home page with folders for every week of the course. Open the relevant week folder and add your work.</p>
   </header>
 
-  <nav class="guide-nav">
-    <a href="../../index.html">&larr; Course home</a>
-    <a href="your-first-website.html">⭐︎ Open Portal ⭐︎</a>
-    <span class="current">⟡ Forge Your Archive ⟡</span>
-    <a href="cheatsheet-html.html">༺ HTML ༻</a>
-    <a href="cheatsheet-css.html">༺ CSS ༻</a>
-    <a href="cheatsheet-js.html">⚔︎ JS ⚔︎</a>
-    <a href="cheatsheet-p5.html">✧ p5.js ✧</a>
-    <a href="github-basics.html">❥ GitHub basics <span style="display: inline-block; transform: scaleX(-1);">❥</span></a>
-    <a href="publish-to-github.html">☙ Publish to GitHub ❧</a>
-    <a href="ai-assisted-workflows.html">✢ Machine Rituals ✢</a>
-  </nav>
+  <nav class="guide-nav" data-site-navigation></nav>
 
   <nav class="page-toc">
-    <span class="toc-label">On this page</span>
     <a href="#setup">Install your tools</a>
     <a href="#structure">How the template is organized</a>
     <a href="#add-week">Adding a new week</a>
@@ -57,10 +49,10 @@
     <p class="section-intro">Two programs, both free, one-time installs.</p>
 
     <h3 class="sub">1. VS Code</h3>
-    <p class="body-text" style="margin-top: 0;">The text editor for every HTML, CSS, and JS file. Download from <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a> and run the installer.</p>
+    <p class="body-text no-top-margin">The text editor for every HTML, CSS, and JS file. Download from <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a> and run the installer.</p>
 
     <h3 class="sub">2. Live Server (optional)</h3>
-    <p class="body-text" style="margin-top: 0;">A VS Code extension that opens your page in a browser tab and reloads it on every save. In VS Code, open Extensions (the four-squares icon), search <code class="inline">Live Server</code>, install the one by Ritwick Dey.</p>
+    <p class="body-text no-top-margin">A VS Code extension that opens your page in a browser tab and reloads it on every save. In VS Code, open Extensions (the four-squares icon), search <code class="inline">Live Server</code>, install the one by Ritwick Dey.</p>
     <p class="body-text">Without it, double-clicking <code class="inline">index.html</code> still opens the page, but you'd have to reload the browser manually after every change.</p>
   </section>
 
@@ -119,6 +111,7 @@
 
 </div>
 
+<script src="../navigation.js?v=1"></script>
 <script src="../last-updated.js?v=2"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 

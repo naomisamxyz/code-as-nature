@@ -5,7 +5,9 @@
 <title>✧ p5.js Essentials ✧</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=12" />
+<link rel="stylesheet" href="guide.css?v=25" />
+<link rel="stylesheet" href="../site-shell.css?v=3" />
+<link rel="stylesheet" href="../navigation.css?v=3" />
 </head>
 <body class="guide-page guide-cheatsheet-p5">
 
@@ -17,6 +19,8 @@
 ⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆</pre>
   <h1 class="site-title">IIMC-446-01/IIMC-646-01: Code As Nature</h1>
+  <p class="site-meta"><span>Fall 2026</span><span>Wednesdays, 10:00–11:50 AM</span><span>September 8–December 13</span><span>Main Building, MACLAB Studio</span></p>
+  <a class="site-home-link" href="../../index.html" aria-label="Code As Nature home"></a>
 </header>
 
 <div class="page">
@@ -24,26 +28,14 @@
   <span class="stamp" data-last-updated></span>
 
   <header class="masthead">
+    <br>
     <h1>✧ p5.js Essentials ✧</h1>
-    <span class="eyebrow">Drawing &amp; animation</span>
     <p>A JavaScript library for creative coding that provides simple functions for drawing, animation, and interaction.</p>
   </header>
 
-  <nav class="guide-nav">
-    <a href="../../index.html">&larr; Course home</a>
-    <a href="your-first-website.html">⭐︎ Open Portal ⭐︎</a>
-    <a href="portfolio-template.html">⟡ Forge Your Archive ⟡</a>
-    <a href="cheatsheet-html.html">༺ HTML ༻</a>
-    <a href="cheatsheet-css.html">༺ CSS ༻</a>
-    <a href="cheatsheet-js.html">⚔︎ JS ⚔︎</a>
-    <span class="current">✧ p5.js ✧</span>
-    <a href="github-basics.html">❥ GitHub basics <span style="display: inline-block; transform: scaleX(-1);">❥</span></a>
-    <a href="publish-to-github.html">☙ Publish to GitHub ❧</a>
-    <a href="ai-assisted-workflows.html">✢ Machine Rituals ✢</a>
-  </nav>
+  <nav class="guide-nav" data-site-navigation></nav>
 
   <nav class="page-toc">
-    <span class="toc-label">On this page</span>
     <a href="#anatomy">Anatomy of a p5 sketch</a>
     <a href="#loading">Loading the library</a>
     <a href="#shapes">Shapes &amp; color</a>
@@ -142,7 +134,7 @@ function draw() {
     <h2>Shapes &amp; color</h2>
     <p class="section-intro">The functions you'll use in almost every sketch.</p>
 
-    <p class="body-text" style="margin-top: 0;"><code class="inline">x</code> and <code class="inline">y</code> are pixel positions on the canvas, measured from its top-left corner: <code class="inline">x</code> counts rightward from <code class="inline">0</code> at the left edge, <code class="inline">y</code> counts <strong>downward</strong> from <code class="inline">0</code> at the top edge, the opposite of a typical math graph, where <code class="inline">y</code> increases upward. So <code class="inline">rect(10, 10, 50, 50)</code> sits near the top-left of the canvas, not the bottom.</p>
+    <p class="body-text no-top-margin"><code class="inline">x</code> and <code class="inline">y</code> are pixel positions on the canvas, measured from its top-left corner: <code class="inline">x</code> counts rightward from <code class="inline">0</code> at the left edge, <code class="inline">y</code> counts <strong>downward</strong> from <code class="inline">0</code> at the top edge, the opposite of a typical math graph, where <code class="inline">y</code> increases upward. So <code class="inline">rect(10, 10, 50, 50)</code> sits near the top-left of the canvas, not the bottom.</p>
 
     <br>
     <div class="ref-groups">
@@ -211,10 +203,11 @@ function draw() {
     <p class="body-text">3D graphics using WebGL, where p5 is primarily 2D. A different mental model: scene, camera, renderer, and mesh, instead of <code class="inline">setup()</code>/<code class="inline">draw()</code>. <a href="https://threejs.org/" target="_blank" rel="noopener">threejs.org</a> &middot; <a href="https://threejs.org/docs/#manual/en/introduction/Creating-a-scene" target="_blank" rel="noopener">Creating a Scene tutorial</a>.</p>
   </section>
 
-  <p class="closing">Previous: <a href="cheatsheet-js.html">⚔︎ JS ⚔︎</a> ✧ Next: <a href="github-basics.html">❥ GitHub basics <span style="display: inline-block; transform: scaleX(-1);">❥</span></a></p>
+  <p class="closing">Previous: <a href="cheatsheet-js.html">⚔︎ JS ⚔︎</a> ✧ Next: <a href="github-basics.html">❥ GitHub basics <span class="mirror-symbol">❥</span></a></p>
 
 </div>
 
+<script src="../navigation.js?v=1"></script>
 <script src="../last-updated.js?v=2"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 

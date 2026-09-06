@@ -117,7 +117,8 @@
   function currentAnchor() {
     const threshold = innerHeight * 0.45;
     const syllabus = document.querySelector("#syllabus");
-    const anchors = [syllabus, ...weeks].filter(Boolean);
+    const pipeline = document.querySelector("#pipeline-diagram");
+    const anchors = [syllabus, pipeline, ...weeks].filter(Boolean);
     let current = anchors[0];
     for (const anchor of anchors) {
       if (anchor.getBoundingClientRect().top <= threshold) current = anchor;

@@ -5,7 +5,9 @@
 <title>⚔︎ JS Essentials ⚔︎</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=12" />
+<link rel="stylesheet" href="guide.css?v=25" />
+<link rel="stylesheet" href="../site-shell.css?v=3" />
+<link rel="stylesheet" href="../navigation.css?v=3" />
 </head>
 <body class="guide-page guide-cheatsheet-js">
 
@@ -17,6 +19,8 @@
 ⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆</pre>
   <h1 class="site-title">IIMC-446-01/IIMC-646-01: Code As Nature</h1>
+  <p class="site-meta"><span>Fall 2026</span><span>Wednesdays, 10:00–11:50 AM</span><span>September 8–December 13</span><span>Main Building, MACLAB Studio</span></p>
+  <a class="site-home-link" href="../../index.html" aria-label="Code As Nature home"></a>
 </header>
 
 <div class="page">
@@ -24,26 +28,14 @@
   <span class="stamp" data-last-updated></span>
 
   <header class="masthead">
+    <br>
     <h1>⚔︎ JS Essentials ⚔︎</h1>
-    <span class="eyebrow">Logic &amp; interactivity</span>
     <p>Use variables and functions to make a page respond to clicks, typing, movement, and other input.</p>
   </header>
 
-  <nav class="guide-nav">
-    <a href="../../index.html">&larr; Course home</a>
-    <a href="your-first-website.html">⭐︎ Open Portal ⭐︎</a>
-    <a href="portfolio-template.html">⟡ Forge Your Archive ⟡</a>
-    <a href="cheatsheet-html.html">༺ HTML ༻</a>
-    <a href="cheatsheet-css.html">༺ CSS ༻</a>
-    <span class="current">⚔︎ JS ⚔︎</span>
-    <a href="cheatsheet-p5.html">✧ p5.js ✧</a>
-    <a href="github-basics.html">❥ GitHub basics <span style="display: inline-block; transform: scaleX(-1);">❥</span></a>
-    <a href="publish-to-github.html">☙ Publish to GitHub ❧</a>
-    <a href="ai-assisted-workflows.html">✢ Machine Rituals ✢</a>
-  </nav>
+  <nav class="guide-nav" data-site-navigation></nav>
 
   <nav class="page-toc">
-    <span class="toc-label">On this page</span>
     <a href="#anatomy">Anatomy of a function</a>
     <a href="#variables">Variables &amp; values</a>
     <a href="#click-example">Reacting to a click</a>
@@ -231,7 +223,7 @@ button.addEventListener("click", function () {
     </div>
 
     <h3 class="sub">Control flow in practice</h3>
-    <p class="body-text" style="margin-top: 0;">Put together, these building blocks look like this: a loop that checks every item in a list, reacting differently depending on what it finds:</p>
+    <p class="body-text no-top-margin">Put together, these building blocks look like this: a loop that checks every item in a list, reacting differently depending on what it finds:</p>
 
     <div class="snippet">
       <div class="code-card">
@@ -264,7 +256,7 @@ for (let i = 0; i &lt; materials.length; i++) {
     <h2>The DOM &amp; events</h2>
     <p class="section-intro">How JavaScript finds, changes, and reacts to what's on the page.</p>
 
-    <p class="body-text" style="margin-top: 0;">"DOM" stands for <strong>Document Object Model</strong>: it's the browser's live copy of your HTML, built in memory as a tree of elements the moment the page loads. It's not the HTML file itself; it's what the browser is actually showing you right now. JavaScript reads and changes this live copy (not the file on disk), so updates show up on screen instantly, without ever touching your HTML.</p>
+    <p class="body-text no-top-margin">"DOM" stands for <strong>Document Object Model</strong>: it's the browser's live copy of your HTML, built in memory as a tree of elements the moment the page loads. It's not the HTML file itself; it's what the browser is actually showing you right now. JavaScript reads and changes this live copy (not the file on disk), so updates show up on screen instantly, without ever touching your HTML.</p>
 
     <div class="ref-groups">
       <div class="ref-group">
@@ -299,6 +291,7 @@ for (let i = 0; i &lt; materials.length; i++) {
 
 </div>
 
+<script src="../navigation.js?v=1"></script>
 <script src="../last-updated.js?v=2"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 

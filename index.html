@@ -4,8 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Code As Nature</title>
-<link rel="stylesheet" href="style.css?v=26" />
-<link rel="stylesheet" href="canvas.css?v=59" />
+<link rel="stylesheet" href="style.css?v=34" />
+<link rel="stylesheet" href="assets/site-shell.css?v=3" />
+<link rel="stylesheet" href="assets/navigation.css?v=3" />
+<link rel="stylesheet" href="canvas.css?v=71" />
 </head>
 <body>
 
@@ -22,24 +24,12 @@
 
 <main class="page-content" id="main-content">
   <section class="below-canvas">
-    <br><br><br><br>
-    <nav class="site-nav">
-      <span class="current">&larr; Course home</span>
-      <a href="assets/guides/your-first-website.html">⭐︎ Open Portal ⭐︎</a>
-      <a href="assets/guides/portfolio-template.html">⟡ Forge Your Archive ⟡</a>
-      <a href="assets/guides/cheatsheet-html.html">༺ HTML ༻</a>
-      <a href="assets/guides/cheatsheet-css.html">༺ CSS ༻</a>
-      <a href="assets/guides/cheatsheet-js.html">⚔︎ JS ⚔︎</a>
-      <a href="assets/guides/cheatsheet-p5.html">✧ p5.js ✧</a>
-      <a href="assets/guides/github-basics.html">❥ GitHub basics <span style="display: inline-block; transform: scaleX(-1);">❥</span></a>
-      <a href="assets/guides/publish-to-github.html">☙ Publish to GitHub ❧</a>
-      <a href="assets/guides/ai-assisted-workflows.html">✢ Machine Rituals ✢</a>
-    </nav>
+    <nav class="site-nav" data-site-navigation></nav>
 
     <div id="syllabus-intro"></div>
   </section>
 
-  <section class="diagram-section">
+  <section class="diagram-section" id="pipeline-diagram">
     <div class="section-heading">
       <pre class="section-ornament">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣰⠦⠔⠛⠃⠉⠉⠉⠙⣶⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -47,7 +37,7 @@
 ⠀⠀⠈⠹⠿⣷⣶⣰⣀⣰⣶⠾⠿⠈⠉⢏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡶⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⢏⠆⣰⡶⠏⠉⠉⠉⠉⠹⠿⣷⣆⣀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆</pre>
-      <h2>Computational Pipeline</h2>
+      <h2><a href="canvas.html#pipeline-diagram">Computational Pipeline</a></h2>
     </div>
     <br>
     <div class="embed-frame">
@@ -69,10 +59,11 @@
 
 <footer class="stamp" data-last-updated></footer>
 
-<script src="assets/site.js?v=4"></script>
-<script src="resources-data.js?v=28"></script>
+<script src="assets/navigation.js?v=1"></script>
+<script src="assets/site.js?v=5"></script>
+<script src="resources-data.js?v=38"></script>
 <script src="assets/last-updated.js?v=2"></script>
-<script src="list-view.js?v=14"></script>
+<script src="list-view.js?v=15"></script>
 <script src="assets/cursor-sparkle.js?v=6"></script>
 
 </body>

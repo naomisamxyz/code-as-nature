@@ -3,7 +3,7 @@
 
   var header = document.querySelector(".site-header");
   var lightAreas = Array.from(
-    document.querySelectorAll(".diagram-embed")
+    document.querySelectorAll(".diagram-embed[data-light-background]")
   );
 
   function updateHeaderContrast() {

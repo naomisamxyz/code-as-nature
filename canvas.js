@@ -148,7 +148,10 @@
     heading.className = "section-heading pipeline-diagram-heading";
     heading.innerHTML =
       '<div class="week-title"><h2>' +
-      escapeHTML(resource.title || "Computational Pipeline") +
+      (edit
+        ? escapeHTML(resource.title || "Computational Pipeline")
+        : '<a href="index.html#pipeline-diagram">' +
+          escapeHTML(resource.title || "Computational Pipeline") + "</a>") +
       "</h2></div>";
     const mount = document.createElement("div");
     mount.className = "pipeline-diagram-mount";
@@ -250,13 +253,14 @@
       let mediaKind = String(resource.mediaKind || "image")
         .toLowerCase()
         .replace(/[^a-z0-9-]/g, "") || "image";
+      const mediaTarget = resource.url || resource.image;
       const linkFallbackImage =
         /^https:\/\/image\.thum\.io\//.test(String(resource.image || "")) ||
         (
           String(resource.image || "").startsWith("data:image/svg+xml") &&
           /link%20preview/i.test(String(resource.image || ""))
         );
-      const detectedYoutubeThumbnail = youtubeThumbnail(resource.url);
+      const detectedYoutubeThumbnail = youtubeThumbnail(mediaTarget);
       if (
         mediaKind === "link" &&
         detectedYoutubeThumbnail &&
@@ -283,14 +287,14 @@
         '" height="' + Math.round(resource.height) +
         '" alt="' + escapeHTML(resource.alt || resource.title) + '">' +
         (mediaKind === "youtube"
-          ? '<a class="media-play" href="' + escapeHTML(resource.url) +
+          ? '<a class="media-play" href="' + escapeHTML(mediaTarget) +
             '" target="_blank" rel="noopener" aria-label="Open video"></a>'
           : mediaKind === "link"
-            ? '<a class="media-link" href="' + escapeHTML(resource.url) +
+            ? '<a class="media-link" href="' + escapeHTML(mediaTarget) +
               '" target="_blank" rel="noopener" aria-label="Open link"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 16 16 8"></path><path d="M10 8h6v6"></path></svg></a>'
             : "") +
         '</div><div class="media-title"><a href="' +
-        escapeHTML(resource.url) +
+        escapeHTML(mediaTarget) +
         '" target="_blank" rel="noopener">' +
         escapeHTML(resource.title) + "</a>" +
         (resource.meta
@@ -590,8 +594,8 @@
     const normalY = deltaX / length;
     const tangentX = deltaX / length;
     const tangentY = deltaY / length;
-    const bend = Math.min(150, Math.max(26, length * 0.1));
-    const shake = Math.min(18, Math.max(6, length * 0.018));
+    const bend = Math.min(240, Math.max(54, length * 0.16));
+    const shake = Math.min(9, Math.max(3, length * 0.009));
     const bendDirection = random() < 0.5 ? -1 : 1;
     const segments = Math.round(clamp(length / 34, 9, 36));
     const points = [start];
@@ -600,10 +604,8 @@
       const progress = index / segments;
       const envelope = Math.sin(Math.PI * progress);
       tremor = tremor * 0.28 + (random() - 0.5) * shake * 2;
-      const broadDrift = bendDirection * bend * (
-        Math.sin(Math.PI * progress) * 0.42 +
-        Math.sin(Math.PI * 2 * progress) * 0.2
-      );
+      const broadDrift = bendDirection * bend *
+        Math.sin(Math.PI * progress);
       const sideOffset = broadDrift + tremor * envelope;
       const alongOffset = (random() - 0.5) * shake * 0.7 * envelope;
       points.push({
@@ -679,6 +681,41 @@
   function drawConnections() {
     const svgNamespace = "http://www.w3.org/2000/svg";
     lines.innerHTML = "";
+
+    const definitions = document.createElementNS(svgNamespace, "defs");
+    const arrowClip = document.createElementNS(svgNamespace, "clipPath");
+    arrowClip.setAttribute("id", "connection-arrow-clip");
+    const arrowClipRect = document.createElementNS(svgNamespace, "rect");
+    arrowClipRect.setAttribute("x", "0");
+    arrowClipRect.setAttribute("y", "0");
+    arrowClipRect.setAttribute("width", "32");
+    arrowClipRect.setAttribute("height", "41");
+    arrowClip.append(arrowClipRect);
+    definitions.append(arrowClip);
+
+    const arrowMarker = document.createElementNS(svgNamespace, "marker");
+    arrowMarker.setAttribute("id", "connection-arrow");
+    arrowMarker.setAttribute("viewBox", "0 0 42 41");
+    arrowMarker.setAttribute("refX", "31");
+    arrowMarker.setAttribute("refY", "20.5");
+    arrowMarker.setAttribute("markerWidth", "16.8");
+    arrowMarker.setAttribute("markerHeight", "16.4");
+    arrowMarker.setAttribute("markerUnits", "userSpaceOnUse");
+    arrowMarker.setAttribute("orient", "auto");
+
+    const arrowImage = document.createElementNS(svgNamespace, "image");
+    arrowImage.setAttribute("href", "assets/images/connection-arrow.png");
+    arrowImage.setAttribute("width", "42");
+    arrowImage.setAttribute("height", "41");
+    arrowImage.setAttribute("preserveAspectRatio", "xMidYMid meet");
+    arrowImage.setAttribute("transform", "translate(42 0) scale(-1 1)");
+    arrowImage.setAttribute("clip-path", "url(#connection-arrow-clip)");
+    arrowImage.setAttribute("class", "connection-arrow-image");
+    arrowMarker.append(arrowImage);
+
+    definitions.append(arrowMarker);
+    lines.append(definitions);
+
     (data.connections || []).forEach(connection => {
       const from = data.resources.find(item => item.id === connection.from);
       const to = data.resources.find(item => item.id === connection.to);
@@ -704,6 +741,7 @@
           (selectedConnection === connection ? " selected-connection" : "")
       );
       path.setAttribute("d", smoothConnectionPath(points));
+      path.setAttribute("marker-end", "url(#connection-arrow)");
       lines.append(path);
 
       if (edit) {
@@ -851,7 +889,8 @@
     let bestAnchor = "syllabus";
     let bestDistance = Infinity;
     const anchors = data.resources.filter(
-      item => item.id === "syllabus" || item.type === "week"
+      item => item.id === "syllabus" || item.id === "pipeline-diagram" ||
+        item.type === "week"
     );
     for (const resource of anchors) {
       const screenX =
@@ -862,8 +901,9 @@
         (screenX - innerWidth / 2) ** 2 + (screenY - innerHeight / 2) ** 2;
       if (distance < bestDistance) {
         bestDistance = distance;
-        bestAnchor = resource.id === "syllabus"
-          ? "syllabus"
+        bestAnchor = resource.id === "syllabus" ||
+          resource.id === "pipeline-diagram"
+          ? resource.id
           : "week" + String(resource.week).padStart(2, "0");
       }
     }
@@ -1481,7 +1521,7 @@
         finish({
           mediaKind,
           title: finalTitle,
-          url: urlValue || image,
+          url: mediaKind === "image" ? urlValue : (urlValue || image),
           meta: meta.value.trim() || automatic?.description ||
             (mediaKind === "youtube" ? "YouTube" :
               mediaKind === "link" ? "Link" : "Image"),

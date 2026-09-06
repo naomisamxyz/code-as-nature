@@ -5,7 +5,9 @@
 <title>⭐︎ Open Portal ⭐︎</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=12" />
+<link rel="stylesheet" href="guide.css?v=25" />
+<link rel="stylesheet" href="../site-shell.css?v=3" />
+<link rel="stylesheet" href="../navigation.css?v=3" />
 </head>
 <body class="guide-page guide-your-first-website">
 
@@ -17,6 +19,8 @@
 ⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆</pre>
   <h1 class="site-title">IIMC-446-01/IIMC-646-01: Code As Nature</h1>
+  <p class="site-meta"><span>Fall 2026</span><span>Wednesdays, 10:00–11:50 AM</span><span>September 8–December 13</span><span>Main Building, MACLAB Studio</span></p>
+  <a class="site-home-link" href="../../index.html" aria-label="Code As Nature home"></a>
 </header>
 
 <div class="page">
@@ -24,26 +28,14 @@
   <span class="stamp" data-last-updated></span>
 
   <header class="masthead">
+    <br>
     <h1>⭐︎ Open Portal ⭐︎</h1>
-    <span class="eyebrow">The first incantation</span>
     <p>The smallest possible website you can make.</p>
   </header>
 
-  <nav class="guide-nav">
-    <a href="../../index.html">&larr; Course home</a>
-    <span class="current">⭐︎ Open Portal ⭐︎</span>
-    <a href="portfolio-template.html">⟡ Forge Your Archive ⟡</a>
-    <a href="cheatsheet-html.html">༺ HTML ༻</a>
-    <a href="cheatsheet-css.html">༺ CSS ༻</a>
-    <a href="cheatsheet-js.html">⚔︎ JS ⚔︎</a>
-    <a href="cheatsheet-p5.html">✧ p5.js ✧</a>
-    <a href="github-basics.html">❥ GitHub basics <span style="display: inline-block; transform: scaleX(-1);">❥</span></a>
-    <a href="publish-to-github.html">☙ Publish to GitHub ❧</a>
-    <a href="ai-assisted-workflows.html">✢ Machine Rituals ✢</a>
-  </nav>
+  <nav class="guide-nav" data-site-navigation></nav>
 
   <nav class="page-toc">
-    <span class="toc-label">On this page</span>
     <a href="#folder">Make a project folder</a>
     <a href="#html">Write the HTML</a>
     <a href="#css">Write the CSS</a>
@@ -255,13 +247,14 @@ h1 {
       </div>
     </div>
 
-    <p class="body-text" style="margin-top: 0;">Add these two lines right under your <code class="inline">&lt;h1&gt;</code>, still inside <code class="inline">&lt;body&gt;</code>.<br><code class="inline">&lt;br&gt;</code> is a line break. It just pushes whatever comes after it onto a new line, so the image doesn't sit jammed against the heading.<br><code class="inline">src</code> is the image's file name. Change <code class="inline">"assets/images/header-glow.png"</code> to match whatever you dragged in, exactly, including the file extension.<br><code class="inline">alt</code> is a short written description of the image, used by screen readers and shown if the image ever fails to load.<br>Save, then reload the page to see it appear below the heading. The full picture on images, including sizing and when to use them versus embedding, is in the HTML essentials.</p>
+    <p class="body-text no-top-margin">Add these two lines right under your <code class="inline">&lt;h1&gt;</code>, still inside <code class="inline">&lt;body&gt;</code>.<br><code class="inline">&lt;br&gt;</code> is a line break. It just pushes whatever comes after it onto a new line, so the image doesn't sit jammed against the heading.<br><code class="inline">src</code> is the image's file name. Change <code class="inline">"assets/images/header-glow.png"</code> to match whatever you dragged in, exactly, including the file extension.<br><code class="inline">alt</code> is a short written description of the image, used by screen readers and shown if the image ever fails to load.<br>Save, then reload the page to see it appear below the heading. The full picture on images, including sizing and when to use them versus embedding, is in the HTML essentials.</p>
   </section>
 
   <p class="closing"><a href="../../index.html">&larr; Course home</a> ✧ Next: <a href="portfolio-template.html">⟡ Forge Your Archive ⟡</a></p>
 
 </div>
 
+<script src="../navigation.js?v=1"></script>
 <script src="../last-updated.js?v=2"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 

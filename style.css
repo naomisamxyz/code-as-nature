@@ -1,29 +1,6 @@
-@font-face {
-  font-family: "VCR OSD Mono";
-  src: url("assets/fonts/VCR-OSD-Mono.woff") format("woff"),
-       url("assets/fonts/VCR-OSD-Mono.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-:root {
-  --page-pad: clamp(5px, 0.7vw, 9px);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  min-height: 100%;
-}
+@import url("assets/base.css?v=1");
 
 body {
-  font-family: "VCR OSD Mono", "Space Mono", "Courier New", monospace;
-  color: #c5c4c4;
   background-color: #000;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
@@ -32,80 +9,6 @@ body {
   background-position: center, center -8vw;
   background-size: cover, 120vw auto;
   background-attachment: fixed, fixed;
-}
-
-a,
-a:visited {
-  position: relative;
-  left: 0;
-  text-decoration-line: underline;
-  text-decoration-color: rgba(218, 217, 217, 0.22);
-  text-underline-offset: 3px;
-  transition: color 0.15s, text-shadow 0.15s, text-decoration-color 0.15s, left 0.15s;
-}
-
-a:hover,
-a:focus-visible {
-  left: 4px;
-  text-decoration-color: rgba(218, 217, 217, 0.45);
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.55);
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  padding: var(--page-pad) var(--page-pad) 0;
-  display: flow-root;
-}
-
-.header-ornament {
-  float: left;
-  margin: 0 12px 0 0;
-  font-family: monospace;
-  font-size: clamp(3.33px, 0.4667vw, 6px);
-  line-height: 1;
-  white-space: pre;
-  color: #fff;
-  pointer-events: none;
-}
-
-.stamp {
-  position: fixed;
-  right: var(--page-pad);
-  bottom: var(--page-pad);
-  z-index: 20;
-  margin: 0;
-  font-size: 11px;
-  color: rgb(130, 129, 129);
-}
-
-.site-title {
-  margin: 0;
-  font-size: clamp(20px, 2.8vw, 36px);
-  font-weight: normal;
-  line-height: 1;
-  color: rgb(255, 255, 255);
-}
-
-.site-header.on-light .site-title,
-.site-header.on-light .header-ornament {
-  color: #000;
-}
-
-.site-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3px 14px;
-  margin: 12px 0 0;
-  padding: 0;
-  font-size: clamp(12px, 0.9vw, 14.5px);
-  line-height: 1.25;
-  color: rgb(130, 129, 129);
-}
-
-.canvas-wrap {
-  padding: 64px var(--page-pad) 0;
 }
 
 .embed-fallback {
@@ -134,43 +37,12 @@ a:focus-visible {
 }
 
 .below-canvas {
-  padding: 12px var(--page-pad) 40px;
+  padding: 88px var(--page-pad) 40px;
 }
 
 .site-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 18px;
   max-width: 660px;
   margin-left: calc(20px - var(--page-pad));
-  margin-bottom: 16px;
-  font-size: 12.5px;
-}
-
-.site-nav a,
-.site-nav span {
-  padding: 2px 0;
-}
-
-.site-nav a {
-  position: relative;
-  left: 0;
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: color 0.15s, text-shadow 0.15s, border-color 0.15s, left 0.15s;
-}
-
-.site-nav a:hover,
-.site-nav a:focus-visible {
-  left: 4px;
-  color: #fff;
-  border-bottom-color: rgba(255, 255, 255, 0.4);
-}
-
-.site-nav .current {
-  color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .below-canvas h2 {
@@ -187,7 +59,7 @@ a:focus-visible {
   margin: 0;
   font-size: 15px;
   line-height: 1.7;
-  color: rgb(218, 217, 217);
+  color: var(--text-primary);
 }
 
 .below-canvas p + p,
@@ -209,6 +81,12 @@ a:focus-visible {
 
 .diagram-section {
   padding: 0 var(--page-pad) 80px;
+}
+
+.diagram-section .section-heading h2 a,
+.pipeline-diagram-heading h2 a {
+  color: inherit;
+  text-decoration-color: rgba(218, 217, 217, 0.22);
 }
 
 .diagram-section h2 {
@@ -244,7 +122,8 @@ a:focus-visible {
   width: 50%;
   margin: 0;
   border: 0;
-  background: #fff;
+  background: transparent;
+  filter: invert(1);
 }
 
 .diagram-section .embed-fallback {
@@ -320,7 +199,7 @@ a:focus-visible {
 .week-heading time {
   flex-basis: 100%;
   flex-shrink: 0;
-  color: rgb(164, 164, 164);
+  color: var(--text-muted);
   font-size: 14px;
   line-height: normal;
   letter-spacing: 0;
@@ -335,7 +214,7 @@ a:focus-visible {
 .syllabus-week > p,
 .syllabus-week > .syllabus-copy {
   margin: 0 0 32px;
-  color: rgb(218, 217, 217);
+  color: var(--text-primary);
   font-size: 15px;
   line-height: 1.7;
 }
@@ -350,13 +229,13 @@ a:focus-visible {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  color: rgb(218, 217, 217);
+  color: var(--text-primary);
   font-size: 15px;
   line-height: 1.7;
 }
 
 .syllabus-week li::before {
-  content: "⠂⡇⠀⠂⠀\A⣄⡤⠤⢬⣅⠇⠉⠁⠀\A⢀⠔⣊⠎⠀⠀⠀⡇⡇⠀⠀⠀\A⡇⠀⡇⠀⠀⠠⠔⠋⠀";
+  content: var(--list-sigil);
   flex: 0 0 44px;
   width: 44px;
   height: 24px;
@@ -395,20 +274,6 @@ a:focus-visible {
   vertical-align: baseline;
 }
 
-.mirror-symbol {
-  display: inline-block;
-  transform: scaleX(-1);
-}
-
-.syllabus-bullet {
-  display: none;
-}
-
-.syllabus-week cite {
-  font-style: normal;
-  color: rgb(197, 196, 196);
-}
-
 @media (max-width: 800px) {
   .week-title h2 {
     white-space: normal;
@@ -424,18 +289,10 @@ a:focus-visible {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .diagram-embed,
   .diagram-section .embed-fallback {
     width: 100%;
-  }
-
-  .site-title {
-    font-size: clamp(18px, 7vw, 30px);
-  }
-
-  .header-ornament {
-    font-size: clamp(3px, 1.1667vw, 5px);
   }
 
   .below-canvas h2,
