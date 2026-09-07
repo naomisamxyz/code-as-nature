@@ -80,12 +80,15 @@
     if (!heading && !body) return;
     const ornament = document.querySelector(".diagram-section .section-ornament");
     const ornamentHTML = ornament ? ornament.outerHTML : "";
+    const attendance =
+      "Attendance and active participation are essential to this course, as each session builds on the technical and conceptual work of the previous weeks. Each week, you’ll finish the sketch or project we started in class and add it to your website archive. By the end of the semester, your website will be a collection of everything you made and experimented with throughout the course, which you’ll present during our final session. There will also be one short written assignment to be added to the website.";
     container.innerHTML =
-      "<br><br>" +
       (heading
         ? `<div class="section-heading" id="${heading.id}">${ornamentHTML}<h2><a href="canvas.html#${heading.id}" style="color:inherit">${heading.title}</a></h2></div><br>`
         : "") +
-      (body ? `<div class="syllabus-copy">${body.text}</div>` : "");
+      (body ? `<div class="syllabus-copy">${body.text}</div>` : "") +
+      `<div class="section-heading" id="attendance-coursework">${ornamentHTML}<h2>Attendance and Coursework</h2></div><br>` +
+      `<div class="syllabus-copy">${attendance}</div>`;
   }
 
   buildIntro();

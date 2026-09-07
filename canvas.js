@@ -138,7 +138,7 @@
       element.style.setProperty("--h", resource.height + "px");
       drawConnections();
       saveLocal();
-      if (location.hash.slice(1) === resource.id) centerResource(resource.id);
+      if (location.hash.slice(1) === resource.id) focusResource(resource.id);
     });
   }
 
@@ -878,11 +878,27 @@
     return true;
   }
 
+  function focusResource(id) {
+    const resource = data.resources.find(item => item.id === id);
+    if (!resource) return false;
+    camera.zoom = clamp(
+      data.home.zoom * 1.18,
+      minimumZoom,
+      maximumZoom
+    );
+    camera.x =
+      innerWidth / 2 - (resource.x + resource.width / 2) * camera.zoom;
+    camera.y =
+      innerHeight * 0.22 - (resource.y + resource.height / 2) * camera.zoom;
+    applyCamera(true);
+    return true;
+  }
+
   function centerWeek(number) {
     const resource = data.resources.find(
       item => item.week === Number(number) && item.type === "week"
     );
-    return resource ? centerResource(resource.id) : false;
+    return resource ? focusResource(resource.id) : false;
   }
 
   function nearestListAnchor() {
@@ -1776,6 +1792,10 @@
       const weekMatch = location.hash.match(/week(\d+)/);
       const id = location.hash.slice(1);
       if (weekMatch && centerWeek(weekMatch[1])) return;
+      if (
+        (id === "syllabus" || id === "pipeline-diagram") &&
+        focusResource(id)
+      ) return;
       if (id && centerResource(id)) return;
       applyCamera(true);
     });

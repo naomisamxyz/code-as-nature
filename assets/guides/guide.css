@@ -1,4 +1,4 @@
-@import url("../base.css?v=1");
+@import url("../base.css?v=2");
 
   body {
     background-color: #000;
@@ -18,15 +18,12 @@
     flex-direction: column;
     max-width: 700px;
     margin: 0;
-    padding: 88px 20px 100px;
+    padding: 68px var(--page-pad) 100px;
   }
 
   .guide-nav {
-    order: -1;
-    width: 100%;
-    max-width: 660px;
+    margin-left: calc(20px - var(--page-pad));
   }
-
 
   /* ---------- Masthead ---------- */
 
@@ -35,17 +32,9 @@
     margin-bottom: 20px;
   }
 
-  .masthead h1 {
-    font-weight: normal;
-    font-size: clamp(18px, 2.1vw, 28px);
-    line-height: 1.1;
-    margin: 0;
-    color: #fff;
-  }
-
   .masthead p {
     color: var(--text-muted);
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.7;
     margin: 14px 0 0;
   }
@@ -245,11 +234,7 @@
   }
 
   .note,
-  .ref-row,
-  .guide-publish-to-github .prereqs,
-  .guide-publish-to-github .explain,
-  .guide-publish-to-github .live {
-    border-left: var(--fade-box-border);
+  .ref-row {
     background: var(--fade-box-background);
   }
 
@@ -377,16 +362,16 @@
   }
 
   .guide-page .section > h2 {
-    margin-left: 58px;
+    margin-left: 34px;
   }
 
   .guide-page .section::before {
     content: "0" counter(guide-section);
     position: absolute;
     left: 0;
-    top: -5px;
-    color: rgba(255, 255, 255, 0.25);
-    font-size: 26px;
+    top: 0;
+    color: #fff;
+    font-size: 18px;
     width: auto;
     height: auto;
     overflow: visible;
@@ -406,11 +391,11 @@
 
   @media (max-width: 600px) {
     .guide-page .section::before {
-      font-size: 22px;
+      font-size: 16px;
     }
 
     .guide-page .section > h2 {
-      margin-left: 38px;
+      margin-left: 30px;
     }
   }
 
@@ -434,15 +419,6 @@
     color: rgba(255,255,255,0.35);
     margin-left: 8px;
   }
-
-  .closing {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #fff;
-    padding-top: 0;
-  }
-
-  .closing strong { color: #fff; font-weight: normal; }
 
 /* ---------- Numbered steps ---------- */
 
@@ -527,17 +503,14 @@
   }
 
 
-.diagram-embed-frame {
-    background: #fff;
-    padding: 16px;
-  }
-
-  .structure-diagram {
-    display: block;
-    width: 100%;
-    height: 410px;
-    border: 0;
-    overflow: hidden;
+.folder-tree {
+    margin: 18px 0 24px;
+    padding: 16px 20px;
+    background: var(--fade-box-background);
+    color: var(--text-primary);
+    font: 13px/1.7 "VCR OSD Mono", "Space Mono", "Courier New", monospace;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
   }
 
 
@@ -552,210 +525,4 @@
     width: 100%;
     white-space: pre-wrap;
     word-break: break-all;
-  }
-
-  
-
-/* ---------- Prerequisites ---------- */
-
-  .guide-publish-to-github .prereqs {
-    padding: 18px 20px;
-    margin-bottom: 36px;
-  }
-
-  .guide-publish-to-github .prereqs::before {
-    left: 20px;
-    top: 16px;
-  }
-
-  .guide-publish-to-github .prereqs h2 {
-    font-size: 18px;
-    font-weight: normal;
-    margin: 0 0 14px 58px;
-    color: #fff;
-  }
-
-  .guide-publish-to-github .prereqs ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .guide-publish-to-github .prereqs li {
-    font-size: 13px;
-    line-height: 1.6;
-    color: var(--text-muted);
-    padding-left: 16px;
-    position: relative;
-  }
-
-  .guide-publish-to-github .prereqs li::before {
-    content: "-";
-    position: absolute;
-    left: 0;
-    color: var(--text-muted);
-  }
-
-  .guide-publish-to-github .prereqs strong { color: #fff; font-weight: normal; }
-
-  /* ---------- Steps ---------- */
-
-  .guide-publish-to-github .steps {
-    list-style: none;
-    margin: 0 0 40px;
-    padding: 0;
-  }
-
-  .guide-publish-to-github .step {
-    padding: 26px 0;
-    margin-bottom: 0;
-    scroll-margin-top: 32px;
-  }
-
-  .guide-publish-to-github .step:first-child { padding-top: 0; }
-
-  .guide-publish-to-github .step::before {
-    top: 21px;
-  }
-
-  .guide-publish-to-github .step:first-child::before {
-    top: -5px;
-  }
-
-  .guide-publish-to-github .step-body h2 {
-    margin: 0 0 14px 58px;
-    font-size: 18px;
-    font-weight: normal;
-    color: #fff;
-  }
-
-  .guide-publish-to-github .do {
-    margin: 0 0 14px;
-    font-size: 14px;
-    line-height: 1.7;
-    color: var(--text-primary);
-  }
-
-  .guide-publish-to-github .click {
-    display: inline-block;
-    font-size: 12.5px;
-    color: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    padding: 1px 7px;
-    margin: 0 1px;
-  }
-
-  .guide-publish-to-github .explain {
-    padding: 12px 16px;
-  }
-
-  .guide-publish-to-github .explain-mark {
-    color: var(--text-muted);
-    margin-right: 8px;
-  }
-
-  .guide-publish-to-github .explain-text {
-    display: inline;
-    font-size: 13px;
-    line-height: 1.75;
-    color: var(--text-muted);
-  }
-
-  .guide-publish-to-github .explain-text strong { color: var(--text-primary); font-weight: normal; }
-  .guide-publish-to-github .explain p { margin: 0 0 10px; }
-  .guide-publish-to-github .explain p:last-child { margin-bottom: 0; }
-
-  /* ---------- Live section ---------- */
-
-  .guide-publish-to-github .live {
-    padding: 24px 20px 26px;
-    margin-bottom: 32px;
-  }
-
-  .guide-publish-to-github .live::before {
-    left: 20px;
-    top: 19px;
-  }
-
-  .guide-publish-to-github .live h2 {
-    font-size: 18px;
-    font-weight: normal;
-    margin: 0 0 10px 58px;
-    color: #fff;
-  }
-
-  .guide-publish-to-github .live > p {
-    color: var(--text-muted);
-    font-size: 13.5px;
-    line-height: 1.7;
-    margin: 0 0 20px;
-  }
-
-  .guide-publish-to-github .live-steps {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px;
-  }
-
-  .guide-publish-to-github .live-steps li {
-    font-size: 12px;
-    line-height: 1.5;
-    color: var(--text-muted);
-  }
-
-  .guide-publish-to-github .live-steps li::before {
-    content: var(--list-sigil);
-    display: block;
-    width: 44px;
-    height: 24px;
-    overflow: hidden;
-    color: #fff;
-    font-family: monospace;
-    font-size: 4px;
-    line-height: 1;
-    white-space: pre;
-    margin-bottom: 6px;
-  }
-
-  .guide-publish-to-github .live-steps strong {
-    display: block;
-    color: #fff;
-    font-weight: normal;
-    font-size: 13px;
-    margin-bottom: 2px;
-  }
-
-  @media (max-width: 600px) {
-    .guide-publish-to-github .prereqs::before,
-    .guide-publish-to-github .live::before {
-      left: 18px;
-    }
-
-    .guide-publish-to-github .prereqs h2,
-    .guide-publish-to-github .live h2,
-    .guide-publish-to-github .step-body h2 {
-      margin-left: 38px;
-    }
-  }
-
-  /* ---------- Closing / footer ---------- */
-
-  .guide-publish-to-github .closing {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #fff;
-    padding-top: 0;
-    margin-bottom: 24px;
-  }
-
-  .guide-publish-to-github .closing strong { color: #fff; font-weight: normal; }
-
-  @media (max-width: 600px) {
-    .guide-publish-to-github .live-steps { grid-template-columns: repeat(2, 1fr); }
   }

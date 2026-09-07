@@ -5,11 +5,11 @@
 <title>☙ Publish to GitHub ❧</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=25" />
-<link rel="stylesheet" href="../site-shell.css?v=3" />
-<link rel="stylesheet" href="../navigation.css?v=3" />
+<link rel="stylesheet" href="guide.css?v=45" />
+<link rel="stylesheet" href="../site-shell.css?v=5" />
+<link rel="stylesheet" href="../navigation.css?v=6" />
 </head>
-<body class="guide-page guide-publish-to-github">
+<body class="guide-page">
 
 <header class="site-header">
   <pre class="header-ornament">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -27,12 +27,13 @@
 
   <span class="stamp" data-last-updated></span>
 
-  <header class="masthead">
-    <br>
-    <h1>☙ Publish to GitHub ❧</h1>
-  </header>
-
   <nav class="guide-nav" data-site-navigation></nav>
+  <br>
+    <br>
+
+  <header class="masthead">
+    <div class="section-heading"><pre class="section-ornament guide-title-ornament" aria-hidden="true"></pre><h1>Publish to GitHub</h1></div>
+  </header>
 
   <nav class="page-toc">
     <a href="#prerequisites">Before you start</a>
@@ -46,110 +47,82 @@
     <a href="#live">Make it a live website</a>
   </nav>
 
-  <section class="section prereqs" id="prerequisites">
+  <section class="section" id="prerequisites">
     <h2>Before you start</h2>
-    <ul>
+    <ul class="steps">
       <li><strong>VS Code</strong>: installed, with your project open as a folder.</li>
       <li><strong>A free GitHub.com account</strong>: sign up at github.com if you don't have one yet.</li>
       <li><strong>A finished-enough project</strong>: any folder of files works. It doesn't need to be complete.</li>
     </ul>
   </section>
 
-  <ol class="steps">
+  <section class="section" id="source-control">
+    <h2>Open the Source Control panel</h2>
+    <p class="section-intro">Click the branching icon in the left sidebar, or press <code class="inline">Cmd/Ctrl + Shift + G</code>.</p>
+    <div class="ref-row"><p class="body-text no-top-margin">This opens VS Code's controls for <strong>Git</strong>, which keeps a history of changes to your project. Opening the panel does not change the project.</p></div>
+  </section>
 
-    <li class="step section" id="source-control">
-      <div class="step-body">
-        <h2>Open the Source Control panel</h2>
-        <p class="do">Click the branching icon in the left sidebar, or press <code class="inline">Cmd/Ctrl + Shift + G</code>.</p>
-        <div class="explain">
-          <p><span class="explain-mark">&gt;</span><span class="explain-text">This opens VS Code's controls for <strong>Git</strong>, which keeps a history of changes to your project. Opening the panel does not change the project.</span></p>
-        </div>
-      </div>
-    </li>
+  <section class="section" id="initialize">
+    <h2>Initialize the repository</h2>
+    <p class="section-intro">If you see a button labeled <code class="inline">Initialize Repository</code>, click it.</p>
+    <div class="ref-row"><p class="body-text no-top-margin"><strong>Initializing</strong> tells Git to start tracking this folder. It creates a hidden <code class="inline">.git</code> folder where Git stores the project's history. Do this once per project.</p></div>
+  </section>
 
-    <li class="step section" id="initialize">
-      <div class="step-body">
-        <h2>Initialize the repository</h2>
-        <p class="do">If you see a button labeled <span class="click">Initialize Repository</span>, click it.</p>
-        <div class="explain">
-          <p><span class="explain-mark">&gt;</span><span class="explain-text"><strong>Initializing</strong> tells Git to start tracking this folder. It creates a hidden <code class="inline">.git</code> folder where Git stores the project's history. Do this once per project.</span></p>
-        </div>
-      </div>
-    </li>
+  <section class="section" id="gitignore">
+    <h2>Add a .gitignore</h2>
+    <p class="section-intro">Create a new file at the top level of your project named exactly <code class="inline">.gitignore</code>, and put this line in it: <code class="inline">.DS_Store</code></p>
+    <div class="ref-row">
+      <p class="body-text no-top-margin">Not every file on your computer belongs in your project's history. macOS quietly drops an invisible housekeeping file called <code class="inline">.DS_Store</code> into folders you open in Finder. It's meaningless clutter, not part of your actual project.</p>
+      <p class="body-text">A <strong>.gitignore</strong> lists files Git should not track. Those files stop appearing as changes and cannot be staged accidentally. This step is optional on operating systems that do not create <code class="inline">.DS_Store</code>.</p>
+    </div>
+  </section>
 
-    <li class="step section" id="gitignore">
-      <div class="step-body">
-        <h2>Add a .gitignore</h2>
-        <p class="do">Create a new file at the top level of your project named exactly <code class="inline">.gitignore</code>, and put this line in it: <code class="inline">.DS_Store</code></p>
-        <div class="explain">
-          <p><span class="explain-mark">&gt;</span><span class="explain-text">Not every file on your computer belongs in your project's history. macOS quietly drops an invisible housekeeping file called <code class="inline">.DS_Store</code> into folders you open in Finder. It's meaningless clutter, not part of your actual project.</span></p>
-          <p><span class="explain-mark">&gt;</span><span class="explain-text">A <strong>.gitignore</strong> lists files Git should not track. Those files stop appearing as changes and cannot be staged accidentally. This step is optional on operating systems that do not create <code class="inline">.DS_Store</code>.</span></p>
-        </div>
-      </div>
-    </li>
+  <section class="section" id="stage">
+    <h2>Stage your changes</h2>
+    <p class="section-intro">Hover over "Changes" and click <code class="inline">+</code> to stage everything at once, or stage individual files one at a time.</p>
+    <div class="ref-row"><p class="body-text no-top-margin"><strong>Staging</strong> selects which changes the next commit will save. It does not create the save point yet.</p></div>
+  </section>
 
-    <li class="step section" id="stage">
-      <div class="step-body">
-        <h2>Stage your changes</h2>
-        <p class="do">Hover over "Changes" and click the <span class="click">+</span> to stage everything at once, or stage individual files one at a time.</p>
-        <div class="explain">
-          <p><span class="explain-mark">&gt;</span><span class="explain-text"><strong>Staging</strong> selects which changes the next commit will save. It does not create the save point yet.</span></p>
-        </div>
-      </div>
-    </li>
+  <section class="section" id="commit">
+    <h2>Commit</h2>
+    <p class="section-intro">Type a message in the box at the top, then click <code class="inline">&check; Commit</code>.</p>
+    <div class="ref-row">
+      <p class="body-text no-top-margin">A <strong>commit</strong> is a snapshot of the staged changes in your project's history. The message briefly describes what changed.</p>
+      <p class="body-text">For your very first commit, there's not much to describe yet. Something like <em>"Initial commit"</em> or <em>"First version"</em> is completely normal. Later on, describe what changed: <em>"Fix header spacing,"</em> <em>"Add contact page."</em></p>
+    </div>
+  </section>
 
-    <li class="step section" id="commit">
-      <div class="step-body">
-        <h2>Commit</h2>
-        <p class="do">Type a message in the box at the top, then click <span class="click">&check; Commit</span>.</p>
-        <div class="explain">
-          <p><span class="explain-mark">&gt;</span><span class="explain-text">A <strong>commit</strong> is a snapshot of the staged changes in your project's history. The message briefly describes what changed.</span></p>
-          <p><span class="explain-mark">&gt;</span><span class="explain-text">For your very first commit, there's not much to describe yet. Something like <em>"Initial commit"</em> or <em>"First version"</em> is completely normal. Later on, describe what changed: <em>"Fix header spacing,"</em> <em>"Add contact page."</em></span></p>
-        </div>
-      </div>
-    </li>
+  <section class="section" id="publish">
+    <h2>Publish</h2>
+    <p class="section-intro">Click <code class="inline">Publish Branch</code>.</p>
+    <div class="ref-row">
+      <p class="body-text no-top-margin">Everything so far has stayed on your own computer. GitHub doesn't know this project exists yet. <strong>Publishing</strong> does two things at once: it creates a new project on GitHub.com under your account, and it uploads your commit and its whole history there.</p>
+      <p class="body-text">VS Code will open a browser tab to sign in, the first time only, then ask whether the project should be <strong>Public</strong> (anyone can view the files) or <strong>Private</strong> (just you, unless you invite others). If you plan to host this as a free website with GitHub Pages, it needs to be Public.</p>
+    </div>
+  </section>
 
-    <li class="step section" id="publish">
-      <div class="step-body">
-        <h2>Publish</h2>
-        <p class="do">Click <span class="click">Publish Branch</span>.</p>
-        <div class="explain">
-          <p><span class="explain-mark">&gt;</span><span class="explain-text">Everything so far has stayed on your own computer. GitHub doesn't know this project exists yet. <strong>Publishing</strong> does two things at once: it creates a new project on GitHub.com under your account, and it uploads your commit and its whole history there.</span></p>
-          <p><span class="explain-mark">&gt;</span><span class="explain-text">VS Code will open a browser tab to sign in, the first time only, then ask whether the project should be <strong>Public</strong> (anyone can view the files) or <strong>Private</strong> (just you, unless you invite others). If you plan to host this as a free website with GitHub Pages, it needs to be Public.</span></p>
-        </div>
-      </div>
-    </li>
+  <section class="section" id="sync">
+    <h2>Every time after</h2>
+    <p class="section-intro">Stage &rarr; write a commit message &rarr; click <code class="inline">Sync Changes</code>.</p>
+    <div class="ref-row"><p class="body-text no-top-margin">Each commit adds another snapshot to the history. <strong>Sync Changes</strong> sends new commits to the connected GitHub repository.</p></div>
+  </section>
 
-    <li class="step section" id="sync">
-      <div class="step-body">
-        <h2>Every time after</h2>
-        <p class="do">Stage &rarr; write a commit message &rarr; click <span class="click">Sync Changes</span>.</p>
-        <div class="explain">
-          <p><span class="explain-mark">&gt;</span><span class="explain-text">Each commit adds another snapshot to the history. <strong>Sync Changes</strong> sends new commits to the connected GitHub repository.</span></p>
-        </div>
-      </div>
-    </li>
-
-  </ol>
-
-  <section class="section live" id="live">
+  <section class="section" id="live">
     <h2>Make it a live website</h2>
-    <p>GitHub can turn any public repository into a real website with its own URL, for free, using a feature called <strong>GitHub Pages</strong>. This part happens on github.com in a browser, and only needs doing once per project.</p>
-    <ol class="live-steps">
-      <li><strong>Open your repository</strong>on github.com</li>
-      <li><strong>Settings</strong>top right of the page</li>
-      <li><strong>Pages</strong>left sidebar</li>
-      <li><strong>Deploy from a branch</strong>as the source</li>
-      <li><strong>main / root</strong>then Save</li>
+    <p class="section-intro">GitHub can turn any public repository into a real website with its own URL, for free, using a feature called <strong>GitHub Pages</strong>. This part happens on github.com in a browser, and only needs doing once per project.</p>
+    <ol class="steps">
+      <li><strong>Open your repository</strong> on github.com.</li>
+      <li><strong>Settings</strong> at the top right of the page.</li>
+      <li><strong>Pages</strong> in the left sidebar.</li>
+      <li>Choose <strong>Deploy from a branch</strong> as the source.</li>
+      <li>Choose <strong>main / root</strong>, then Save.</li>
     </ol>
   </section>
 
-  <p class="closing">Previous: <a href="github-basics.html">❥ GitHub basics <span class="mirror-symbol">❥</span></a> ✧ Next: <a href="ai-assisted-workflows.html">✢ Machine Rituals ✢</a></p>
-
 </div>
 
-<script src="../navigation.js?v=1"></script>
-<script src="../last-updated.js?v=2"></script>
+<script src="../navigation.js?v=6"></script>
+<script src="../last-updated.js?v=3"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 
 </body>

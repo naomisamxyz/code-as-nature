@@ -16,7 +16,6 @@
     rgba(0, 0, 0, 0.18) 76%,
     transparent
   );
-  --fade-box-border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 * {

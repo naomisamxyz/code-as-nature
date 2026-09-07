@@ -1,6 +1,7 @@
 :root {
   --page-pad: clamp(5px, 0.7vw, 9px);
   --list-sigil: "⠂⡇⠀⠂⠀\A⣄⡤⠤⢬⣅⠇⠉⠁⠀\A⢀⠔⣊⠎⠀⠀⠀⡇⡇⠀⠀⠀\A⡇⠀⡇⠀⠀⠠⠔⠋⠀";
+  --heading-sigil: "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\A⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣰⠦⠔⠛⠃⠉⠉⠉⠙⣶⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\A⠈⠳⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⡶⠟⠛⠛⠐⠢⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣴⠮⠵⠋⠛⠋⠐⠒⠛⠠⢦⡄⡠⠴⠽⠯⠤⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀\A⠀⠀⠈⠹⠿⣷⣶⣰⣀⣰⣶⠾⠿⠈⠉⢏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡶⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⢏⠆⣰⡶⠏⠉⠉⠉⠉⠹⠿⣷⣆⣀⠀⠀⠀\A⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀\A⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆";
 }
 
 .site-header {
@@ -65,6 +66,36 @@
   color: var(--text-muted);
 }
 
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.section-heading h1,
+.section-heading h2 {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(16px, 1.8vw, 22px);
+  font-weight: normal;
+}
+
+.section-ornament {
+  flex-shrink: 0;
+  margin: 0;
+  color: #fff;
+  font-family: monospace;
+  font-size: 2.5px;
+  line-height: 1;
+  white-space: pre;
+  pointer-events: none;
+}
+
+.guide-title-ornament::before {
+  content: var(--heading-sigil);
+}
+
 .site-header.on-light .site-title,
 .site-header.on-light .header-ornament {
   color: #000;
@@ -77,5 +108,10 @@
 
   .header-ornament {
     font-size: clamp(3px, 1.1667vw, 5px);
+  }
+
+  .section-heading h1,
+  .section-heading h2 {
+    font-size: 24px;
   }
 }

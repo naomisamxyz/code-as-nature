@@ -1,4 +1,4 @@
-@import url("assets/base.css?v=1");
+@import url("assets/base.css?v=2");
 
 body {
   background-color: #000;
@@ -37,19 +37,15 @@ body {
 }
 
 .below-canvas {
-  padding: 88px var(--page-pad) 40px;
+  padding: 68px var(--page-pad) 64px;
+}
+
+#attendance-coursework {
+  margin-top: 64px;
 }
 
 .site-nav {
-  max-width: 660px;
   margin-left: calc(20px - var(--page-pad));
-}
-
-.below-canvas h2 {
-  margin: 0 0 12px;
-  font-weight: normal;
-  font-size: clamp(16px, 1.8vw, 22px);
-  color: rgba(255, 255, 255, 0.85);
 }
 
 .below-canvas p,
@@ -87,34 +83,6 @@ body {
 .pipeline-diagram-heading h2 a {
   color: inherit;
   text-decoration-color: rgba(218, 217, 217, 0.22);
-}
-
-.diagram-section h2 {
-  font-weight: normal;
-  font-size: clamp(16px, 1.8vw, 22px);
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.section-heading {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.section-heading h2 {
-  margin: 0;
-}
-
-.section-ornament {
-  margin: 0;
-  font-family: monospace;
-  font-size: 2.5px;
-  line-height: 1;
-  white-space: pre;
-  color: #fff;
-  pointer-events: none;
-  flex-shrink: 0;
 }
 
 .diagram-embed {
@@ -177,7 +145,7 @@ body {
 .week-title::before {
   float: left;
   margin-right: 10px;
-  content: "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\A⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣰⠦⠔⠛⠃⠉⠉⠉⠙⣶⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\A⠈⠳⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⡶⠟⠛⠛⠐⠢⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣴⠮⠵⠋⠛⠋⠐⠒⠛⠠⢦⡄⡠⠴⠽⠯⠤⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀\A⠀⠀⠈⠹⠿⣷⣶⣰⣀⣰⣶⠾⠿⠈⠉⢏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡶⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⢏⠆⣰⡶⠏⠉⠉⠉⠉⠹⠿⣷⣆⣀⠀⠀⠀\A⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀\A⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆";
+  content: var(--heading-sigil);
   color: #fff;
   font-family: monospace;
   font-size: 2.5px;
@@ -187,13 +155,6 @@ body {
 
 .week-title h2 {
   white-space: normal;
-}
-
-.week-heading h2 {
-  margin: 0;
-  font-weight: normal;
-  font-size: clamp(16px, 1.8vw, 22px);
-  color: rgba(255, 255, 255, 0.85);
 }
 
 .week-heading time {
@@ -293,12 +254,6 @@ body {
   .diagram-embed,
   .diagram-section .embed-fallback {
     width: 100%;
-  }
-
-  .below-canvas h2,
-  .diagram-section h2,
-  .week-heading h2 {
-    font-size: 24px;
   }
 
   .week-heading time {

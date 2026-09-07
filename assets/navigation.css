@@ -1,6 +1,8 @@
 :is(.site-nav, .guide-nav) {
   display: flex;
   flex-wrap: wrap;
+  width: calc(100vw - 40px);
+  max-width: 960px;
   gap: 4px 18px;
   margin-bottom: 16px;
   font-size: 12.5px;

@@ -122,6 +122,12 @@
   color: inherit;
 }
 
+.section-object a {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
+}
+
 .media-object {
   box-sizing: border-box;
   width: max-content;

@@ -10,8 +10,41 @@
     ["cheatsheet-p5.html", "✧ p5.js ✧"],
     ["github-basics.html", "❥ GitHub basics <span class=\"mirror-symbol\">❥</span>"],
     ["publish-to-github.html", "☙ Publish to GitHub ❧"],
-    ["ai-assisted-workflows.html", "✢ Machine Rituals ✢"]
+    ["ai-assisted-workflows.html", "✢ Machine Rituals ✢"],
+    ["meme-generator.html", "♦︎ Meme Generator ♦︎"],
+    ["databases.html", "⌗ Databases ⌗"],
+    ["multiplayer-sketch.html", "⠿ Networked Systems ⠿"],
+    ["google-collab.html", "☁︎ Google Collab ☁︎"],
+    ["hallucinations.html", "𖦹 Hallucinations 𖦹"],
+    ["web-ar-characters.html", "༶ Web AR ༶"],
+    ["unreal-engine-blueprints.html", "⟷ UE Blueprints ⟷"],
+    ["unreal-interconnected.html", "◇ UE Interconnected ◇"],
+    ["autonomous-artworks-exhibition-systems.html", "✣ Autonomous Artworks ✣"]
   ];
+
+  var disabledGuides = new Set([
+    "ai-assisted-workflows.html",
+    "meme-generator.html",
+    "databases.html",
+    "multiplayer-sketch.html",
+    "google-collab.html",
+    "hallucinations.html",
+    "web-ar-characters.html",
+    "unreal-engine-blueprints.html",
+    "unreal-interconnected.html",
+    "autonomous-artworks-exhibition-systems.html"
+  ]);
+
+  var sharedHeader = [
+    '<pre class="header-ornament">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣰⠦⠔⠛⠃⠉⠉⠉⠙⣶⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠈⠳⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⡶⠟⠛⠛⠐⠢⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣴⠮⠵⠋⠛⠋⠐⠒⠛⠠⢦⡄⡠⠴⠽⠯⠤⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀\n⠀⠀⠈⠹⠿⣷⣶⣰⣀⣰⣶⠾⠿⠈⠉⢏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡶⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⢏⠆⣰⡶⠏⠉⠉⠉⠉⠹⠿⣷⣆⣀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆</pre>',
+    '<h1 class="site-title">IIMC-446-01/IIMC-646-01: Code As Nature</h1>',
+    '<p class="site-meta"><span>Fall 2026</span><span>Wednesdays, 10:00–11:50 AM</span><span>September 8–December 13</span><span>Main Building, MACLAB Studio</span></p>',
+    '<a class="site-home-link" href="../../index.html" aria-label="Code As Nature home"></a>'
+  ].join("");
+
+  document.querySelectorAll("[data-site-header]").forEach(function (header) {
+    header.innerHTML = sharedHeader;
+  });
 
   document.querySelectorAll("[data-site-navigation]").forEach(function (nav) {
     var onGuide = document.body.classList.contains("guide-page");
@@ -29,6 +62,11 @@
       var label = guide[1];
       if (onGuide && currentFile === file) {
         parts.push('<span class="current">' + label + "</span>");
+      } else if (disabledGuides.has(file)) {
+        parts.push(
+          '<a class="is-disabled-guide" role="link" aria-disabled="true" tabindex="0" data-href="' +
+          (onGuide ? file : "assets/guides/" + file) + '">' + label + "</a>"
+        );
       } else {
         parts.push('<a href="' + (onGuide ? file : "assets/guides/" + file) + '">' + label + "</a>");
       }
