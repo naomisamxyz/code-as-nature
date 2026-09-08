@@ -366,7 +366,7 @@
   }
 
   .guide-page .section::before {
-    content: "0" counter(guide-section);
+    content: counter(guide-section, decimal-leading-zero);
     position: absolute;
     left: 0;
     top: 0;

@@ -388,7 +388,7 @@ window.CANVAS_DATA = {
       "description": "",
       "items": [
         "Virtual Bodies, Simulation, and Extended Reality<br><br>“Becoming Chimeric, Chimeric Becoming: Glitching Toward Radical Hybrid Identities and Unruly Kinship” - Martina Menegon (2024–ongoing)<br><br>“The Maw Of” - Rachel Rossin (2022)<br><br>“4th Wall” - Nancy Baker Cahill (2018–ongoing)<br><br>“Posthuman Ethics for AI” - Rosi Braidotti (2025)",
-        "<a href=\"assets/guides/web-ar-characters.html\">༶ Web AR ༶</a>"
+        "<a class=\"is-disabled-guide\" role=\"link\" aria-disabled=\"true\" tabindex=\"0\" data-href=\"assets/guides/web-ar-characters.html\">༶ Web AR ༶</a>"
       ]
     },
     {

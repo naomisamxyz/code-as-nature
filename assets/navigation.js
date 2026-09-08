@@ -74,4 +74,29 @@
 
     nav.innerHTML = parts.join("");
   });
+
+  function markExternalLinks(root) {
+    var links = [];
+    if (root.nodeType === 1 && root.matches("a[href]")) links.push(root);
+    if (root.querySelectorAll) {
+      links = links.concat(Array.from(root.querySelectorAll("a[href]")));
+    }
+    links.forEach(function (link) {
+      try {
+        var url = new URL(link.getAttribute("href"), window.location.href);
+        if (!/^https?:$/.test(url.protocol) || url.origin === window.location.origin) return;
+        link.target = "_blank";
+        link.rel = "noopener";
+      } catch (error) {
+        // Leave incomplete or nonstandard links unchanged.
+      }
+    });
+  }
+
+  markExternalLinks(document);
+  new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(markExternalLinks);
+    });
+  }).observe(document.body, { childList: true, subtree: true });
 })();
