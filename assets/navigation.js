@@ -36,8 +36,8 @@
   ]);
 
   var sharedHeader = [
-    '<pre class="header-ornament">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣰⠦⠔⠛⠃⠉⠉⠉⠙⣶⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠈⠳⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⡶⠟⠛⠛⠐⠢⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣴⠮⠵⠋⠛⠋⠐⠒⠛⠠⢦⡄⡠⠴⠽⠯⠤⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀\n⠀⠀⠈⠹⠿⣷⣶⣰⣀⣰⣶⠾⠿⠈⠉⢏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡶⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⢏⠆⣰⡶⠏⠉⠉⠉⠉⠹⠿⣷⣆⣀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆</pre>',
-    '<h1 class="site-title">IIMC-446-01/IIMC-646-01: Code As Nature</h1>',
+    '<pre class="header-ornament" aria-hidden="true"></pre>',
+    '<h1 class="site-title">IIMC-446/IIMC-646: Code As Nature</h1>',
     '<p class="site-meta"><span>Fall 2026</span><span>Wednesdays, 10:00–11:50 AM</span><span>September 8–December 13</span><span>Main Building, MACLAB Studio</span></p>',
     '<a class="site-home-link" href="../../index.html" aria-label="Code As Nature home"></a>'
   ].join("");

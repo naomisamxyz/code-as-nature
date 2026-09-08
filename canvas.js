@@ -11,6 +11,8 @@
   let data;
   let camera;
   let gesture = null;
+  const touchPoints = new Map();
+  let pinch = null;
   let selected = null;
   let selectedIds = new Set();
   let connectFrom = null;
@@ -129,7 +131,7 @@
     });
   }
 
-  function measurePipelineDiagram(element, resource, frame) {
+  function measurePipelineDiagram(element, resource) {
     if (resource.heightMode === "manual") return;
     requestAnimationFrame(() => {
       element.style.height = "auto";
@@ -184,10 +186,10 @@
             group.classList.add("active");
             button.classList.add("active");
           }
-          measurePipelineDiagram(element, resource, frame);
+          measurePipelineDiagram(element, resource);
         });
 
-        measurePipelineDiagram(element, resource, frame);
+        measurePipelineDiagram(element, resource);
       })
       .catch(() => {
         mount.innerHTML =
@@ -372,25 +374,18 @@
     }
   }
 
-  function applyCamera(crisp) {
+  function applyCamera() {
     const zoom = camera.zoom;
-    if (crisp) {
-      const translateX = camera.x / zoom;
-      const translateY = camera.y / zoom;
-      world.style.zoom = zoom;
-      world.style.transform =
-        "translate(" + translateX + "px," + translateY + "px)";
-      lines.style.zoom = zoom;
-      lines.style.transform =
-        "translate(" + translateX + "px," + translateY + "px)";
-    } else {
-      const transform =
-        "translate(" + camera.x + "px," + camera.y + "px) scale(" + zoom + ")";
-      world.style.zoom = "";
-      world.style.transform = transform;
-      lines.style.zoom = "";
-      lines.style.transform = transform;
-    }
+    // Always scale with a transform. The CSS `zoom` property was used here for
+    // crisper text while panning, but Chrome fails to scale some descendant
+    // text (list items, paragraphs) under it, so headings and body copy drift
+    // out of proportion as you zoom.
+    const transform =
+      "translate(" + camera.x + "px," + camera.y + "px) scale(" + zoom + ")";
+    world.style.zoom = "";
+    world.style.transform = transform;
+    lines.style.zoom = "";
+    lines.style.transform = transform;
     world.style.transformOrigin = "0 0";
     lines.style.transformOrigin = "0 0";
     const displayedZoom = clamp(
@@ -1074,11 +1069,35 @@
     });
   }
 
+  function beginPinch() {
+    stopZoomMomentum(false);
+    const [a, b] = [...touchPoints.values()];
+    const midX = (a.x + b.x) / 2;
+    const midY = (a.y + b.y) / 2;
+    pinch = {
+      startDistance: Math.hypot(a.x - b.x, a.y - b.y) || 1,
+      startZoom: camera.zoom,
+      worldX: (midX - camera.x) / camera.zoom,
+      worldY: (midY - camera.y) / camera.zoom
+    };
+  }
+
   viewport.addEventListener("pointerdown", event => {
     if (event.button !== 0) return;
     const object = event.target.closest(".canvas-object");
     if ((edit && object) || event.target.closest("a, button")) return;
     event.preventDefault();
+
+    if (event.pointerType === "touch") {
+      touchPoints.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (touchPoints.size >= 2) {
+        beginPinch();
+        gesture = null;
+        viewport.classList.remove("is-panning");
+        return;
+      }
+    }
+
     gesture = {
       kind: "pan",
       startX: event.clientX,
@@ -1090,6 +1109,25 @@
   });
 
   addEventListener("pointermove", event => {
+    if (pinch && touchPoints.has(event.pointerId)) {
+      touchPoints.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      const points = [...touchPoints.values()];
+      if (points.length < 2) return;
+      const [a, b] = points;
+      const distance = Math.hypot(a.x - b.x, a.y - b.y) || 1;
+      const midX = (a.x + b.x) / 2;
+      const midY = (a.y + b.y) / 2;
+      const newZoom = clamp(
+        pinch.startZoom * (distance / pinch.startDistance),
+        minimumZoom,
+        maximumZoom
+      );
+      camera.zoom = newZoom;
+      camera.x = midX - pinch.worldX * newZoom;
+      camera.y = midY - pinch.worldY * newZoom;
+      applyCamera(false);
+      return;
+    }
     if (!gesture) return;
     const deltaX = event.clientX - gesture.startX;
     const deltaY = event.clientY - gesture.startY;
@@ -1134,10 +1172,33 @@
     applyCamera(true);
   });
 
-  addEventListener("pointerup", () => {
+  addEventListener("pointerup", event => {
+    if (event.pointerType === "touch" && touchPoints.has(event.pointerId)) {
+      touchPoints.delete(event.pointerId);
+      if (pinch && touchPoints.size < 2) {
+        pinch = null;
+        applyCamera(true);
+        saveLocal();
+        const rest = [...touchPoints.values()][0];
+        gesture = rest
+          ? { kind: "pan", startX: rest.x, startY: rest.y, x: camera.x, y: camera.y }
+          : null;
+      }
+      if (touchPoints.size > 0) return;
+    }
     gesture = null;
+    pinch = null;
     viewport.classList.remove("is-panning");
     saveLocal();
+  });
+
+  addEventListener("pointercancel", event => {
+    touchPoints.delete(event.pointerId);
+    if (touchPoints.size < 2) pinch = null;
+    if (touchPoints.size === 0) {
+      gesture = null;
+      viewport.classList.remove("is-panning");
+    }
   });
 
   function zoomAround(factor, clientX, clientY) {
@@ -1321,42 +1382,6 @@
     } finally {
       clearTimeout(timeout);
     }
-  }
-
-  function chooseLocalImage() {
-    return new Promise(resolve => {
-      const input = document.createElement("input");
-      input.type = "file";
-      input.accept = "image/*";
-      input.hidden = true;
-      document.body.append(input);
-      let settled = false;
-      const finish = value => {
-        if (settled) return;
-        settled = true;
-        input.remove();
-        resolve(value);
-      };
-      input.addEventListener("cancel", () => finish(null), { once: true });
-      input.addEventListener("change", () => {
-        const file = input.files?.[0];
-        if (!file) {
-          finish(null);
-          return;
-        }
-        const reader = new FileReader();
-        reader.addEventListener("load", () => finish({
-          image: reader.result,
-          name: file.name
-        }), { once: true });
-        reader.addEventListener("error", () => {
-          alert("That image could not be loaded.");
-          finish(null);
-        }, { once: true });
-        reader.readAsDataURL(file);
-      }, { once: true });
-      input.click();
-    });
   }
 
   function readLocalImageFile(file) {
@@ -1590,10 +1615,6 @@
     return true;
   }
 
-  async function chooseThumbnail(resource) {
-    return editMediaResource(resource);
-  }
-
   async function editSelectedMedia() {
     if (!selected || selected.type !== "media") {
       alert("Select a media object first.");
@@ -1673,13 +1694,6 @@
     if (action === "add-link") await addResource("link");
     if (action === "add-youtube") await addResource("youtube");
     if (action === "edit-media") await editSelectedMedia();
-    if (action === "thumbnail") {
-      if (!selected || selected.type !== "media") {
-        alert("Select a media object first.");
-      } else {
-        await chooseThumbnail(selected);
-      }
-    }
     if (action === "group") groupSelection();
     if (action === "ungroup") ungroupSelection();
     if (action === "delete") deleteSelection();

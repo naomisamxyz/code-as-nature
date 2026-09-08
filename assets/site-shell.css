@@ -30,16 +30,25 @@
   float: left;
   margin: 0 12px 0 0;
   font-family: monospace;
-  font-size: clamp(3.33px, 0.4667vw, 6px);
+  font-size: clamp(3.33px, 0.37vw, 6px);
   line-height: 1;
   white-space: pre;
   color: #fff;
   pointer-events: none;
 }
 
+/* The braille art itself lives once, as --heading-sigil at the top of
+   this file. Every .header-ornament / .section-ornament <pre> is left
+   empty in the markup and filled from here, so there is one source of
+   truth instead of a copy pasted into every page. */
+.header-ornament::before,
+.section-ornament::before {
+  content: var(--heading-sigil);
+}
+
 .site-title {
   margin: 0;
-  font-size: clamp(20px, 2.8vw, 36px);
+  font-size: clamp(20px, 2.2vw, 36px);
   font-weight: normal;
   line-height: 1;
   color: #fff;
@@ -90,15 +99,6 @@
   line-height: 1;
   white-space: pre;
   pointer-events: none;
-}
-
-.guide-title-ornament::before {
-  content: var(--heading-sigil);
-}
-
-.site-header.on-light .site-title,
-.site-header.on-light .header-ornament {
-  color: #000;
 }
 
 @media (max-width: 600px) {

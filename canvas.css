@@ -2,6 +2,10 @@
   height: 100vh;
   overflow: hidden;
   user-select: none;
+  /* Stop the browser's font auto-sizing from inflating long list/paragraph
+     text when the whole canvas is scaled down. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .canvas-header {
@@ -118,14 +122,16 @@
 }
 
 .week-object a,
-.list-object a {
+.list-object a,
+.section-object a {
   color: inherit;
 }
 
-.section-object a {
-  position: relative;
+/* The Syllabus heading frame overlaps the syllabus body text, which is
+   painted after it and was swallowing clicks on the heading link. Lift
+   the whole section node so its link behaves like every other heading. */
+.canvas-page .section-object {
   z-index: 1;
-  pointer-events: auto;
 }
 
 .media-object {

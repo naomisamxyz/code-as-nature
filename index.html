@@ -5,20 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Code As Nature</title>
 <link rel="stylesheet" href="style.css?v=40" />
-<link rel="stylesheet" href="assets/site-shell.css?v=5" />
+<link rel="stylesheet" href="assets/site-shell.css?v=7" />
 <link rel="stylesheet" href="assets/navigation.css?v=6" />
-<link rel="stylesheet" href="canvas.css?v=72" />
+<link rel="stylesheet" href="canvas.css?v=74" />
 </head>
 <body>
 
 <header class="site-header">
-  <pre class="header-ornament">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣰⠦⠔⠛⠃⠉⠉⠉⠙⣶⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠈⠳⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⡶⠟⠛⠛⠐⠢⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣴⠮⠵⠋⠛⠋⠐⠒⠛⠠⢦⡄⡠⠴⠽⠯⠤⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
-⠀⠀⠈⠹⠿⣷⣶⣰⣀⣰⣶⠾⠿⠈⠉⢏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡶⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⢏⠆⣰⡶⠏⠉⠉⠉⠉⠹⠿⣷⣆⣀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆</pre>
-  <h1 class="site-title">IIMC-446-01/IIMC-646-01: Code As Nature</h1>
+  <pre class="header-ornament" aria-hidden="true"></pre>
+  <h1 class="site-title">IIMC-446/IIMC-646: Code As Nature</h1>
   <p class="site-meta"><span>Fall 2026</span><span>Wednesdays, 10:00–11:50 AM</span><span>September 8–December 13</span><span>Main Building, MACLAB Studio</span></p>
 </header>
 
@@ -33,12 +28,7 @@
 
   <section class="diagram-section" id="pipeline-diagram">
     <div class="section-heading">
-      <pre class="section-ornament">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣰⠦⠔⠛⠃⠉⠉⠉⠙⣶⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠈⠳⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⡶⠟⠛⠛⠐⠢⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣴⠮⠵⠋⠛⠋⠐⠒⠛⠠⢦⡄⡠⠴⠽⠯⠤⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
-⠀⠀⠈⠹⠿⣷⣶⣰⣀⣰⣶⠾⠿⠈⠉⢏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡶⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⢏⠆⣰⡶⠏⠉⠉⠉⠉⠹⠿⣷⣆⣀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠈⢙⡿⢯⠟⠉⠉⠚⠲⠤⠤⠤⠤⢤⡶⣲⠽⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠐⠢⠤⠤⠶⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣄⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠽⣤⣤⣤⣤⡄⠶⠴⠖⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆</pre>
+      <pre class="section-ornament" aria-hidden="true"></pre>
       <h2><a href="canvas.html#pipeline-diagram">Computational Pipeline</a></h2>
     </div>
     <div class="embed-frame">
@@ -60,11 +50,12 @@
 
 <footer class="stamp" data-last-updated></footer>
 
-<script src="assets/navigation.js?v=7"></script>
-<script src="assets/site.js?v=5"></script>
-<script src="resources-data.js?v=45"></script>
+<script src="assets/navigation.js?v=9"></script>
+<script src="assets/site.js?v=6"></script>
+<script src="resources-data.js?v=47"></script>
 <script src="assets/last-updated.js?v=3"></script>
 <script src="list-view.js?v=20"></script>
+<script src="assets/header-controls.js?v=1"></script>
 <script src="assets/cursor-sparkle.js?v=6"></script>
 
 </body>
