@@ -28,6 +28,32 @@
   const maximumZoom = 1.6;
   const connectionGap = 10;
 
+  // Native image lazy-loading is inconsistent inside the transformed canvas:
+  // some browsers treat most of the oversized world as visible and request
+  // every remote preview at once. Observe the rendered objects ourselves so
+  // only thumbnails near the viewport begin downloading.
+  const mediaImageObserver = "IntersectionObserver" in window
+    ? new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const image = entry.target;
+          mediaImageObserver.unobserve(image);
+          image.src = image.dataset.src;
+          image.removeAttribute("data-src");
+        });
+      }, { rootMargin: "600px" })
+    : null;
+
+  function loadMediaImageWhenNear(image) {
+    if (!image?.dataset.src) return;
+    if (mediaImageObserver) {
+      mediaImageObserver.observe(image);
+    } else {
+      image.src = image.dataset.src;
+      image.removeAttribute("data-src");
+    }
+  }
+
   const clamp = (number, minimum, maximum) =>
     Math.min(maximum, Math.max(minimum, number));
 
@@ -131,7 +157,11 @@
     });
   }
 
-  function measurePipelineDiagram(element, resource) {
+  // focusAfter is only set for the one-time measurement after the diagram
+  // finishes loading, so arriving via #pipeline-diagram jumps the camera to
+  // it. Expanding or collapsing a step re-measures without focusAfter, so it
+  // no longer yanks the camera back (and resets the zoom) on every click.
+  function measurePipelineDiagram(element, resource, focusAfter) {
     if (resource.heightMode === "manual") return;
     requestAnimationFrame(() => {
       element.style.height = "auto";
@@ -140,7 +170,9 @@
       element.style.setProperty("--h", resource.height + "px");
       drawConnections();
       saveLocal();
-      if (location.hash.slice(1) === resource.id) focusResource(resource.id);
+      if (focusAfter && location.hash.slice(1) === resource.id) {
+        focusResource(resource.id);
+      }
     });
   }
 
@@ -189,11 +221,35 @@
           measurePipelineDiagram(element, resource);
         });
 
-        measurePipelineDiagram(element, resource);
+        measurePipelineDiagram(element, resource, true);
       })
       .catch(() => {
-        mount.innerHTML =
-          '<a href="assets/diagram/index.html">Open computational pipeline</a>';
+        const fallback = document.createElement("iframe");
+        fallback.className = "pipeline-diagram-fallback";
+        fallback.src = resource.source || "assets/diagram/index.html";
+        fallback.title = resource.title || "Computational Pipeline";
+        fallback.addEventListener("load", function () {
+          try {
+            const frameDocument = fallback.contentWindow.document;
+            const resize = function () {
+              fallback.style.height = Math.max(
+                frameDocument.documentElement.scrollHeight,
+                frameDocument.body ? frameDocument.body.scrollHeight : 0
+              ) + "px";
+              measurePipelineDiagram(element, resource);
+            };
+            resize();
+            frameDocument.querySelectorAll(".step").forEach(function (step) {
+              step.addEventListener("click", function () {
+                requestAnimationFrame(resize);
+              });
+            });
+          } catch (error) {
+            measurePipelineDiagram(element, resource);
+          }
+        });
+        mount.replaceChildren(fallback);
+        measurePipelineDiagram(element, resource);
       });
   }
 
@@ -203,7 +259,8 @@
     element.dataset.id = resource.id;
     element.style.cssText =
       "--x:" + resource.x + "px;--y:" + resource.y + "px;" +
-      "--w:" + resource.width + "px;--h:" + resource.height + "px";
+      (Number.isFinite(resource.width) ? "--w:" + resource.width + "px;" : "") +
+      (Number.isFinite(resource.height) ? "--h:" + resource.height + "px;" : "");
     if (resource.type === "week") {
       element.classList.add("text-object", "week-object");
       element.innerHTML =
@@ -283,7 +340,7 @@
       element.style.height = "auto";
       element.innerHTML =
         '<div class="media-visual">' +
-        '<img loading="lazy" decoding="async" src="' +
+        '<img loading="lazy" decoding="async" fetchpriority="low" data-src="' +
         escapeHTML(resource.image) +
         '" width="' + Math.round(resource.width) +
         '" height="' + Math.round(resource.height) +
@@ -304,6 +361,7 @@
           : "") +
         "</div>";
       const image = element.querySelector("img");
+      loadMediaImageWhenNear(image);
       image.addEventListener("error", () => {
         if (
           mediaKind === "youtube" &&
@@ -342,13 +400,16 @@
     } else {
       element.classList.add("sigil-object");
       element.textContent = resource.text;
+      if (Number.isFinite(resource.fontSize)) {
+        element.style.setProperty("--sigil-font", resource.fontSize + "px");
+      }
     }
 
     if (edit && ["week", "list", "text", "section"].includes(resource.type)) {
       bindEditableCopy(element, resource);
     }
 
-    if (edit && resource.type !== "sigil") {
+    if (edit) {
       const dragHandle = document.createElement("i");
       dragHandle.className = "drag-handle";
       dragHandle.title = "Drag";
@@ -1056,6 +1117,19 @@
       event.preventDefault();
       event.stopPropagation();
       selectResource(resource, false);
+      if (resource.type === "sigil") {
+        // Sigils have no box to stretch — the drag scales the glyph itself.
+        gesture = {
+          kind: "resize-sigil",
+          startX: event.clientX,
+          startY: event.clientY,
+          startWidth: element.offsetWidth || 1,
+          fontSize: Number.isFinite(resource.fontSize) ? resource.fontSize : 10,
+          resource,
+          element
+        };
+        return;
+      }
       resource.heightMode = "manual";
       gesture = {
         kind: "resize",
@@ -1155,6 +1229,20 @@
       );
       gesture.element.style.setProperty("--w", gesture.resource.width + "px");
       gesture.element.style.setProperty("--h", gesture.resource.height + "px");
+    } else if (gesture.kind === "resize-sigil") {
+      // Scale from the drag distance. A floor on the reference width keeps a
+      // small glyph from resizing wildly on the first pixel of movement.
+      const base = Math.max(gesture.startWidth, 160);
+      const factor = Math.max(0.15, (base + deltaX / camera.zoom) / base);
+      gesture.resource.fontSize = clamp(
+        Math.round(gesture.fontSize * factor),
+        3,
+        400
+      );
+      gesture.element.style.setProperty(
+        "--sigil-font",
+        gesture.resource.fontSize + "px"
+      );
     } else if (gesture.kind === "connection-point") {
       const point = gesture.connection.manualPoints[gesture.pointIndex];
       point.x = gesture.x + deltaX / camera.zoom;
@@ -1300,6 +1388,25 @@
       const anchor = data ? nearestListAnchor() : "syllabus";
       location.href = "index.html#" + anchor;
     });
+
+  function migrateLocalThumbnails(layout, published) {
+    if (!layout?.resources || !published?.resources) return;
+    const publishedById = new Map(
+      published.resources.map(resource => [resource.id, resource])
+    );
+    layout.resources.forEach(resource => {
+      const currentImage = String(resource.image || "");
+      const publishedImage = String(
+        publishedById.get(resource.id)?.image || ""
+      );
+      if (
+        /^https:\/\/iad\.microlink\.io\//.test(currentImage) &&
+        publishedImage.startsWith("assets/thumbnails/")
+      ) {
+        resource.image = publishedImage;
+      }
+    });
+  }
 
   function youtubeThumbnail(urlValue) {
     try {
@@ -1652,9 +1759,113 @@
     saveLocal();
   }
 
+  const rasterImageExtensions = {
+    "image/jpeg": "jpg",
+    "image/jpg": "jpg",
+    "image/png": "png",
+    "image/webp": "webp",
+    "image/gif": "gif",
+    "image/avif": "avif"
+  };
+
+  // Turn a raster "data:" URI into bytes + an extension so it can be written
+  // out as a file. SVG data URIs (link placeholders) return null and stay
+  // inline, since they are tiny.
+  function decodeImageDataUri(value) {
+    if (typeof value !== "string" || !value.startsWith("data:")) return null;
+    const comma = value.indexOf(",");
+    if (comma < 0) return null;
+    const header = value.slice(5, comma);
+    const extension = rasterImageExtensions[header.split(";")[0].toLowerCase()];
+    if (!extension) return null;
+    const payload = value.slice(comma + 1);
+    const bytes = /;base64/i.test(header)
+      ? Uint8Array.from(atob(payload), character => character.charCodeAt(0))
+      : new TextEncoder().encode(decodeURIComponent(payload));
+    return { extension, bytes };
+  }
+
+  async function writeFileInto(directoryHandle, path, contents) {
+    const parts = path.split("/");
+    const name = parts.pop();
+    let directory = directoryHandle;
+    for (const part of parts) {
+      directory = await directory.getDirectoryHandle(part, { create: true });
+    }
+    const handle = await directory.getFileHandle(name, { create: true });
+    const writer = await handle.createWritable();
+    await writer.write(contents);
+    await writer.close();
+  }
+
   async function exportFile() {
+    // Split embedded raster images out to files under assets/thumbnails/ so
+    // resources-data.js stays small — base64 thumbnails add several MB, and
+    // the file loads on every page.
+    const exportData = structuredClone(data);
+    const imageFiles = [];
+    const remap = [];
+
+    exportData.resources.forEach((resource, index) => {
+      const original = data.resources[index];
+      const decoded = decodeImageDataUri(resource.image);
+      if (decoded) {
+        const path =
+          "assets/thumbnails/" + resource.id + "." + decoded.extension;
+        if (!imageFiles.some(file => file.path === path)) {
+          imageFiles.push({ path, bytes: decoded.bytes });
+        }
+        resource.image = path;
+      }
+      // Image nodes often carry the same picture again in `url`; point it at
+      // the extracted file instead of leaving a second copy embedded.
+      if (
+        String(resource.url || "").startsWith("data:image/") &&
+        !String(resource.image || "").startsWith("data:")
+      ) {
+        resource.url = resource.image;
+      }
+      if (resource.image !== original.image || resource.url !== original.url) {
+        remap.push({ index, image: resource.image, url: resource.url });
+      }
+    });
+
     const contents =
-      "window.CANVAS_DATA = " + JSON.stringify(data, null, 2) + ";\n";
+      "window.CANVAS_DATA = " + JSON.stringify(exportData, null, 2) + ";\n";
+
+    if (imageFiles.length && window.showDirectoryPicker) {
+      try {
+        const root = await showDirectoryPicker({
+          id: "code-as-nature-project",
+          mode: "readwrite"
+        });
+        await writeFileInto(root, "resources-data.js", contents);
+        for (const file of imageFiles) {
+          await writeFileInto(root, file.path, file.bytes);
+        }
+        // Adopt the new paths in the live data so the local cache shrinks too.
+        remap.forEach(entry => {
+          data.resources[entry.index].image = entry.image;
+          data.resources[entry.index].url = entry.url;
+        });
+        saveLocal();
+        alert(
+          "Saved resources-data.js and " + imageFiles.length + " image" +
+          (imageFiles.length === 1 ? "" : "s") + " into assets/thumbnails/."
+        );
+        return;
+      } catch (error) {
+        if (error.name === "AbortError") return;
+      }
+    }
+
+    // No embedded images, or the project folder was unavailable. Save just the
+    // data file; if images could not be split out, keep them embedded so the
+    // file still works on its own.
+    const fallbackContents = imageFiles.length
+      ? "window.CANVAS_DATA = " + JSON.stringify(data, null, 2) + ";\n"
+      : contents;
+
     if (window.showSaveFilePicker) {
       try {
         const handle = await showSaveFilePicker({
@@ -1667,14 +1878,22 @@
           ]
         });
         const writer = await handle.createWritable();
-        await writer.write(contents);
+        await writer.write(fallbackContents);
         await writer.close();
+        if (imageFiles.length) {
+          alert(
+            "Saved resources-data.js with images still embedded — the project " +
+            "folder wasn't available. Run this in Chrome and allow folder " +
+            "access to split them into assets/thumbnails/."
+          );
+        }
         return;
       } catch (error) {
         if (error.name === "AbortError") return;
       }
     }
-    const blob = new Blob([contents], { type: "text/javascript" });
+
+    const blob = new Blob([fallbackContents], { type: "text/javascript" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "resources-data.js";
@@ -1791,6 +2010,7 @@
     }
     data =
       edit && cached && cached.version === json.version ? cached : json;
+    migrateLocalThumbnails(data, json);
     data.lastUpdated = { ...json.lastUpdated };
     saveLocal();
     camera = { ...data.home };

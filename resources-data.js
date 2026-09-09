@@ -1,8 +1,8 @@
 window.CANVAS_DATA = {
-  "version": 21,
+  "version": 22,
   "lastUpdated": {
-    "datetime": "2026-09-06",
-    "label": "September 6, 2026",
+    "datetime": "2026-09-08",
+    "label": "September 8, 2026",
     "by": "Naomi Sam"
   },
   "home": {
@@ -17,7 +17,7 @@ window.CANVAS_DATA = {
       "x": 3341.9760532251807,
       "y": 1920.87975640378,
       "width": 540,
-      "height": 89,
+      "height": 90,
       "title": "Syllabus",
       "groupId": "group-1787883267744"
     },
@@ -49,7 +49,7 @@ window.CANVAS_DATA = {
       "x": 2019.6081190951088,
       "y": 2446.360192229149,
       "width": 650,
-      "height": 286,
+      "height": 287,
       "text": "Computation is everywhere, and it existed long before computers. Slime mold finds the shortest path through a maze, plants respond to their environments, and ant colonies solve problems without a central brain telling them what to do. Humans have found ways to translate computational processes into mathematics, logic, 0s and 1s, and eventually digital computers."
     },
     {
@@ -59,7 +59,7 @@ window.CANVAS_DATA = {
       "x": 2018.652151851162,
       "y": 2650.192766400084,
       "width": 650,
-      "height": 397,
+      "height": 398,
       "description": "",
       "items": [
         "Syllabus, Website and Computational Pipeline",
@@ -105,10 +105,10 @@ window.CANVAS_DATA = {
       "id": "week02",
       "type": "week",
       "week": 2,
-      "x": 2640.3546035583645,
-      "y": 3780.825081365331,
+      "x": 2600.6362872404557,
+      "y": 3739.6198951183806,
       "width": 650,
-      "height": 117,
+      "height": 118,
       "title": "Week 02 ✧ Specters of the Web",
       "date": "Wednesday, September 16",
       "groupId": "group-1787888674196"
@@ -117,13 +117,13 @@ window.CANVAS_DATA = {
       "id": "week02-content",
       "type": "list",
       "week": 2,
-      "x": 2746.1403062841,
-      "y": 3850.224110905377,
+      "x": 2706.421989966191,
+      "y": 3809.018924658427,
       "width": 650,
       "height": 246,
       "description": "",
       "items": [
-        "DEAD INTERNET THEORY",
+        "Dead Internet Theory",
         "<a href=\"assets/guides/your-first-website.html\">⭐︎ Open Portal ⭐︎</a>",
         "<a href=\"assets/guides/portfolio-template.html\">⟡ Forge Your Archive ⟡</a><span class=\"week-guide-list\"><a href=\"assets/guides/cheatsheet-html.html\">༺ HTML ༻</a><a href=\"assets/guides/cheatsheet-css.html\">༺ CSS ༻</a><a href=\"assets/guides/cheatsheet-js.html\">⚔︎ JS ⚔︎</a></span>",
         "<a href=\"assets/guides/github-basics.html\">❥ GitHub basics <span class=\"mirror-symbol\">❥</span></a> <a href=\"assets/guides/publish-to-github.html\">☙ Publish to GitHub ❧</a>"
@@ -137,7 +137,7 @@ window.CANVAS_DATA = {
       "x": 4472.899760118021,
       "y": 4084.6453726649743,
       "width": 650,
-      "height": 117,
+      "height": 118,
       "title": "Week 03 ✧ On Centaurism",
       "date": "Wednesday, September 23"
     },
@@ -148,7 +148,7 @@ window.CANVAS_DATA = {
       "x": 4553.20941898551,
       "y": 4163.918512750007,
       "width": 650,
-      "height": 271,
+      "height": 272,
       "description": "",
       "items": [
         "“The Rules Are the Art: Creating with AI” — Holly Herndon (2026)",
@@ -175,7 +175,7 @@ window.CANVAS_DATA = {
       "x": 5292.483089560511,
       "y": 2973.4905089241183,
       "width": 650,
-      "height": 397,
+      "height": 398,
       "description": "",
       "items": [
         "“Triple-Chaser” — Forensic Architecture + Praxis Films (2019)",
@@ -204,7 +204,7 @@ window.CANVAS_DATA = {
       "x": 5008.284900356741,
       "y": 1446.7046398075302,
       "width": 650,
-      "height": 283,
+      "height": 284,
       "description": "",
       "items": [
         "<a href=\"assets/images/digital-occultism.jpg\">Digital Occultism: A Meme-Explainer</a>",
@@ -237,7 +237,7 @@ window.CANVAS_DATA = {
       "x": 3674.7725817629635,
       "y": 235.49255125253796,
       "width": 650,
-      "height": 117,
+      "height": 118,
       "title": "Week 06 ✧ Excavating AI",
       "date": "Wednesday, October 14"
     },
@@ -245,10 +245,10 @@ window.CANVAS_DATA = {
       "id": "week06-content",
       "type": "list",
       "week": 6,
-      "x": 3759.1732386612966,
-      "y": 445.02707520696055,
+      "x": 3775.8469588177404,
+      "y": 302.7623192793709,
       "width": 650,
-      "height": 310,
+      "height": 311,
       "description": "",
       "items": [
         "“From Spectacle to Extraction. And All Over Again,” a video interview with Kate Crawford and Trevor Paglen (2019)",
@@ -263,7 +263,7 @@ window.CANVAS_DATA = {
       "x": 1992.4023389065194,
       "y": 302.2254721856963,
       "width": 650,
-      "height": 117,
+      "height": 118,
       "title": "Week 07 ✧ Networked Systems",
       "date": "Wednesday, October 21"
     },
@@ -271,8 +271,8 @@ window.CANVAS_DATA = {
       "id": "week07-content",
       "type": "list",
       "week": 7,
-      "x": 2114.241985474001,
-      "y": 445.34699521582553,
+      "x": 2106.3023870622305,
+      "y": 355.4306205837287,
       "width": 650,
       "height": 234,
       "description": "",
@@ -290,15 +290,15 @@ window.CANVAS_DATA = {
       "y": 850.994111685492,
       "width": 780,
       "height": 139,
-      "title": "Week 08 ✧ Inventing Eliza",
+      "title": "Week 08 ✧ Completely Automated Public Turing Test to Tell Computers and Humans Apart (CAPTCHA)",
       "date": "Wednesday, October 28"
     },
     {
       "id": "week08-content",
       "type": "list",
       "week": 8,
-      "x": 572.7960608893288,
-      "y": 1065.9472140958496,
+      "x": 446.69224764801186,
+      "y": 929.9935654934432,
       "width": 650,
       "height": 321,
       "description": "",
@@ -318,7 +318,7 @@ window.CANVAS_DATA = {
       "x": -450.08661614824507,
       "y": 2305.6640625,
       "width": 650,
-      "height": 117,
+      "height": 118,
       "title": "Week 09 ✧ Hallucinations",
       "date": "Wednesday, November 4"
     },
@@ -326,8 +326,8 @@ window.CANVAS_DATA = {
       "id": "week09-content",
       "type": "list",
       "week": 9,
-      "x": -210.07378472222211,
-      "y": 2439.8654513888887,
+      "x": -296.4220273952888,
+      "y": 2368.021090442457,
       "width": 650,
       "height": 171,
       "description": "",
@@ -340,20 +340,19 @@ window.CANVAS_DATA = {
       "id": "week10",
       "type": "week",
       "week": 10,
-      "x": 565.9505208333335,
-      "y": 4298.593414904315,
+      "x": 587.4106082462362,
+      "y": 4208.072734624606,
       "width": 650,
-      "height": 117,
+      "height": 118,
       "title": "Week 10 ✧ Black Gooey Universe",
-      "date": "Wednesday, November 11",
-      "groupId": "group-1787895857005"
+      "date": "Wednesday, November 11"
     },
     {
       "id": "week10-content",
       "type": "list",
       "week": 10,
-      "x": 601.9676312399879,
-      "y": 4487.358145858678,
+      "x": 688.8301959600983,
+      "y": 4267.305458030986,
       "width": 648.5681288840159,
       "height": 271.2493008425529,
       "description": "",
@@ -363,8 +362,7 @@ window.CANVAS_DATA = {
         "Legacy Russell, <cite>Glitch Feminism</cite>",
         "Fuser"
       ],
-      "heightMode": "manual",
-      "groupId": "group-1787895857005"
+      "heightMode": "manual"
     },
     {
       "id": "week11",
@@ -373,50 +371,51 @@ window.CANVAS_DATA = {
       "x": 2549.092073669577,
       "y": 5521.728775933552,
       "width": 650,
-      "height": 117,
-      "title": "Week 11 ✧ Becoming Virtual",
+      "height": 118,
+      "title": "Week 11 ✧ Simulated Worlds",
       "date": "Wednesday, November 18"
     },
     {
       "id": "week11-content",
       "type": "list",
       "week": 11,
-      "x": 2709.1788792251323,
-      "y": 5686.832942600219,
+      "x": 2688.4902748827953,
+      "y": 5583.209908172069,
       "width": 650,
-      "height": 283,
+      "height": 284,
       "description": "",
       "items": [
-        "Virtual Bodies, Simulation, and Extended Reality<br><br>“Becoming Chimeric, Chimeric Becoming: Glitching Toward Radical Hybrid Identities and Unruly Kinship” - Martina Menegon (2024–ongoing)<br><br>“The Maw Of” - Rachel Rossin (2022)<br><br>“4th Wall” - Nancy Baker Cahill (2018–ongoing)<br><br>“Posthuman Ethics for AI” - Rosi Braidotti (2025)",
-        "<a class=\"is-disabled-guide\" role=\"link\" aria-disabled=\"true\" tabindex=\"0\" data-href=\"assets/guides/web-ar-characters.html\">༶ Web AR ༶</a>"
+        "“Posthuman Wombs” — Anan Fries (2021)",
+        "“Morphogenic Angels” — Keiken (2023)",
+        "“2065 / Geomancer” — Lawrence Lek (2017)",
+        "“Posthuman Ethics for AI” — Rosi Braidotti (2025)",
+        "UNREAL ENGINE BLUEPRINTS"
       ]
     },
     {
       "id": "week12",
       "type": "week",
       "week": 12,
-      "x": 5526.1537056140205,
-      "y": 5519.081206489109,
+      "x": 5508.345304735129,
+      "y": 5562.657141924895,
       "width": 650,
-      "height": 117,
-      "title": "Week 12 ✧ Simulated Worlds",
-      "date": "Wednesday, November 25",
-      "groupId": "group-1787895926243"
+      "height": 118,
+      "title": "Week 12 ✧ Poetics of Encryption",
+      "date": "Wednesday, November 25"
     },
     {
       "id": "week12-content",
       "type": "list",
       "week": 12,
-      "x": 5636.1537056140205,
-      "y": 5717.779123155776,
+      "x": 5616.0758587025475,
+      "y": 5616.303383274033,
       "width": 650,
-      "height": 196,
+      "height": 197,
       "description": "",
       "items": [
-        "“Posthuman Wombs” - Anan Fries (2021)<br><br>“Morphogenic Angels” - Keiken (2023)<br><br>“2065 / Geomancer” - Lawrence Lek (2017)",
-        "<a href=\"assets/guides/unreal-engine-blueprints.html\">⟷ UE Blueprints ⟷</a>"
-      ],
-      "groupId": "group-1787895926243"
+        "“Poetics of Encryption: Art and the Technocene” — Nadim Samman (2024)",
+        "UNREAL INTERCONNECTED"
+      ]
     },
     {
       "id": "week13",
@@ -425,27 +424,25 @@ window.CANVAS_DATA = {
       "x": 7349.591205614022,
       "y": 3872.857248155775,
       "width": 650,
-      "height": 117,
-      "title": "Week 13 ✧ Transcoding and Transmediality",
-      "date": "Wednesday, December 2",
-      "groupId": "group-1787895932750"
+      "height": 118,
+      "title": "Week 13 ✧ Autonomous Artworks",
+      "date": "Wednesday, December 2"
     },
     {
       "id": "week13-content",
       "type": "list",
       "week": 13,
-      "x": 7459.591205614022,
-      "y": 4073.508289822442,
+      "x": 7420.8306103436835,
+      "y": 3934.274882662096,
       "width": 650,
       "height": 246,
       "description": "",
       "items": [
-        "“Xeno Computer 0.1: Labor” - Tega Brain (2025)",
-        "“Poetics of Encryption: Art and the Technocene” - Nadim Samman (2024)",
-        "<a href=\"assets/guides/unreal-interconnected.html\">◇ UE Interconnected ◇</a>",
-        "<a href=\"assets/guides/autonomous-artworks-exhibition-systems.html\">✣ Autonomous Artworks ✣</a>"
-      ],
-      "groupId": "group-1787895932750"
+        "“BOB (Bag of Beliefs)” — Ian Cheng (2018–2019)",
+        "“Undercurrents” — Rafael Lozano-Hemmer (2026)",
+        "“Xeno Computer 0.1: Labor” — Tega Brain (2025)",
+        "EXHIBITION SYSTEMS"
+      ]
     },
     {
       "id": "week14",
@@ -454,25 +451,23 @@ window.CANVAS_DATA = {
       "x": 7186.13634450291,
       "y": 1774.940581489108,
       "width": 650,
-      "height": 117,
+      "height": 118,
       "title": "Week 14 ✧ Presentation",
-      "date": "Wednesday, December 9",
-      "groupId": "group-1787895937567"
+      "date": "Wednesday, December 9"
     },
     {
       "id": "week14-content",
       "type": "list",
       "week": 14,
-      "x": 7296.809087558466,
-      "y": 1974.940581489108,
+      "x": 7286.05975677525,
+      "y": 1844.9199679964343,
       "width": 650,
       "height": 171,
       "description": "",
       "items": [
         "Presentation of websites and individual sketches",
         "Setup for IM class show"
-      ],
-      "groupId": "group-1787895937567"
+      ]
     },
     {
       "id": "item1787880329889",
@@ -527,8 +522,8 @@ window.CANVAS_DATA = {
       "height": 237.5625,
       "mediaKind": "image",
       "title": "Nam June Paik",
-      "image": "assets/images/Naam June Paik Large.jpeg",
-      "url": "assets/images/Naam June Paik Large.jpeg",
+      "image": "assets/thumbnails/item1787884476275.jpg",
+      "url": "assets/thumbnails/item1787884476275.jpg",
       "meta": "print",
       "alt": "Naam June Paik"
     },
@@ -541,8 +536,8 @@ window.CANVAS_DATA = {
       "height": 143.0228253551734,
       "mediaKind": "image",
       "title": "Grapefruit Bandage",
-      "image": "assets/images/Grapefruit bandage.jpg",
-      "url": "assets/images/Grapefruit bandage.jpg",
+      "image": "assets/thumbnails/item1787884540602.jpg",
+      "url": "assets/thumbnails/item1787884540602.jpg",
       "meta": "Yoko Ono",
       "alt": "Grapefruit Bandage",
       "heightMode": "manual"
@@ -556,8 +551,8 @@ window.CANVAS_DATA = {
       "height": 143.63578926905132,
       "mediaKind": "image",
       "title": "Grapefruit Collecting Piece",
-      "image": "assets/images/Grapefruit_Collecting-Piece.jpg",
-      "url": "assets/images/Grapefruit_Collecting-Piece.jpg",
+      "image": "assets/thumbnails/item1787884593328.jpg",
+      "url": "assets/thumbnails/item1787884593328.jpg",
       "meta": "Yoko Ono",
       "alt": "Grapefruit Collecting Piece",
       "heightMode": "manual"
@@ -574,7 +569,7 @@ window.CANVAS_DATA = {
       "url": "https://www.amygoodchild.com/blog/chatgpt-sol-lewitt-wall-drawings",
       "meta": "Amy Goodchild",
       "alt": "Sol LeWitt's Wall Drawings vs. ChatGPT",
-      "image": "https://iad.microlink.io/Te6LLG1_AOFbjvy5QHTdRFJ30I3jZs2l5rnhek3RctAuhhqtKcbEwAoga7lrlSwQYFGcY7usz_nCP8qTUp7YHw.png",
+      "image": "assets/thumbnails/item1787887307426.jpg",
       "previewHeight": 155
     },
     {
@@ -589,15 +584,15 @@ window.CANVAS_DATA = {
       "url": "https://openprocessing.org/@u429398/2213463#code",
       "meta": "open processing",
       "alt": "Slime Mold sketch p5.js",
-      "image": "assets/images/Slime Mold.jpeg",
+      "image": "assets/thumbnails/item1787887942384.jpg",
       "previewHeight": 155,
       "heightMode": "manual"
     },
     {
       "id": "item1787888976343",
       "type": "media",
-      "x": 2431.435823319181,
-      "y": 4478.833196412555,
+      "x": 2458.8768098670885,
+      "y": 4482.742021070938,
       "width": 421.9407019319426,
       "height": 135,
       "mediaKind": "youtube",
@@ -605,15 +600,15 @@ window.CANVAS_DATA = {
       "url": "https://www.youtube.com/watch?v=J5ZmLvy_Jfg",
       "meta": "Youtube",
       "alt": "The Internet is Dying: AI, Bots, and The End of Human Content",
-      "image": "assets/images/dead internet.jpeg",
+      "image": "assets/thumbnails/item1787888976343.jpg",
       "previewHeight": 135,
       "heightMode": "manual"
     },
     {
       "id": "item1787889139898",
       "type": "media",
-      "x": 3519.671060153418,
-      "y": 3636.1995115031605,
+      "x": 3463.6118794522163,
+      "y": 3643.8599485416494,
       "width": 222.46856060476068,
       "height": 155,
       "mediaKind": "link",
@@ -621,7 +616,7 @@ window.CANVAS_DATA = {
       "url": "https://tina.zone/index.html",
       "meta": "website",
       "alt": "Tina Tarighian",
-      "image": "https://iad.microlink.io/9uaHwL2UjLo8-8uSiHJUhT4y2pp2CxyvzXx6MRTkwc8Zi8FYaTeO7R2M2N-w5aVX244kvC_-bq3akXsvVityvQ.png",
+      "image": "assets/thumbnails/item1787889139898.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578705158"
@@ -629,8 +624,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1787889210805",
       "type": "media",
-      "x": 3554.3594721391382,
-      "y": 4137.414994182683,
+      "x": 3596.7895468341085,
+      "y": 4233.012263910988,
       "width": 100,
       "height": 155,
       "mediaKind": "link",
@@ -638,16 +633,16 @@ window.CANVAS_DATA = {
       "url": "https://contemporary-home-computing.org/vernacular-web-2/",
       "meta": "Blog",
       "alt": "Olia Lialina: Vernacular Web 2",
-      "image": "https://iad.microlink.io/pqDkwq8J4Vg5thZgjqZvAlWhTP831rIlR-IawxLIkRJuh3UmxH---UQzpUwqs-0kn2gIECWB7mubKCmOVJYvNA.png",
+      "image": "assets/thumbnails/item1787889210805.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
-      "groupId": "group-1788578391695"
+      "groupId": "group-1788927311636"
     },
     {
       "id": "item1787889357446",
       "type": "media",
-      "x": 2411.8540729702504,
-      "y": 3929.580569091098,
+      "x": 2457.07661290868,
+      "y": 3878.2725837272274,
       "width": 221.2890625,
       "height": 155,
       "mediaKind": "link",
@@ -655,15 +650,15 @@ window.CANVAS_DATA = {
       "url": "http://wwwwwwwww.jodi.org/",
       "meta": "Net Art",
       "alt": "http://wwwwwwwww.jodi.org/ (1995)",
-      "image": "https://iad.microlink.io/WYhUm9iyQo61FUBcEBqjeDNB61_eEGlvuiUrxkU97UBXzPcjGD0ClZsYzEjCgGV6GwOhF4tuzj_WBvIo52qDog.png",
+      "image": "assets/thumbnails/item1787889357446.jpg",
       "previewHeight": 155,
       "heightMode": "manual"
     },
     {
       "id": "item1787889423065",
       "type": "media",
-      "x": 2497.0929653711974,
-      "y": 4192.613672411341,
+      "x": 2606.5736330117816,
+      "y": 4174.7936069501975,
       "width": 100,
       "height": 155,
       "mediaKind": "link",
@@ -671,7 +666,7 @@ window.CANVAS_DATA = {
       "url": "http://potatoland.org/shredder",
       "meta": "Net Art",
       "alt": "Mark Napier, Shredder 1.0 (1998)",
-      "image": "https://iad.microlink.io/ixQnHCNlwnMkd-Gno0zbJE5uufeKFqB4IkC8lioER8TS4msd3yQEeZnXIucSFhDax8bod1Fw791FPdFeJo9H9Q.png",
+      "image": "assets/thumbnails/item1787889423065.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578507997"
@@ -679,25 +674,25 @@ window.CANVAS_DATA = {
     {
       "id": "item1787889460596",
       "type": "media",
-      "x": 3339.3697668083246,
-      "y": 4317.602373683313,
-      "width": 205.56783966864032,
+      "x": 3712.4033229628185,
+      "y": 4216.621938192208,
+      "width": 100,
       "height": 155,
       "mediaKind": "link",
       "title": "Olia Lialina, My Boyfriend Came Back from the War (1996)",
       "url": "http://www.teleportacia.org/war/",
       "meta": "Net Art",
       "alt": "Olia Lialina, My Boyfriend Came Back from the War (1996)",
-      "image": "https://iad.microlink.io/HnRprmZtDTL0L36u4WjHUMNnccaTtIKeOYmWpKRTSvydlohx2_Nqf_0hOmRya8vtzV2y6KA7hrUZed6rRRaXgA.png",
+      "image": "assets/thumbnails/item1787889460596.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
-      "groupId": "group-1788578391695"
+      "groupId": "group-1788927311636"
     },
     {
       "id": "item1787889507374",
       "type": "media",
-      "x": 3283.6927301262467,
-      "y": 4128.066118688407,
+      "x": 3367.383361935474,
+      "y": 4207.463760997691,
       "width": 211.93278354192108,
       "height": 155,
       "mediaKind": "link",
@@ -705,16 +700,16 @@ window.CANVAS_DATA = {
       "url": "https://www.are.na/block/49515017",
       "meta": "Are.na",
       "alt": "Digital Folklore (2009)",
-      "image": "assets/images/digital-folklore-2009.png",
+      "image": "assets/thumbnails/item1787889507374.png",
       "previewHeight": 155,
       "heightMode": "manual",
-      "groupId": "group-1788578391695"
+      "groupId": "group-1788927311636"
     },
     {
       "id": "item1787889770564",
       "type": "media",
-      "x": 2275.6511841934866,
-      "y": 4279.989782926154,
+      "x": 2385.131851834071,
+      "y": 4262.16971746501,
       "width": 210,
       "height": 155,
       "mediaKind": "link",
@@ -722,15 +717,15 @@ window.CANVAS_DATA = {
       "url": "https://sites.rhizome.org/anthology/world-of-awe.html",
       "meta": "Net Art",
       "alt": "Yael Kanarek, World of Awe (2000)",
-      "image": "https://iad.microlink.io/lWgHH4ZjvfcglJZyfI4XAUJNBwpFBnKFOiEH-ye7RP5U_NuCtge6binGPU_trUpemDrWM7ueI1EG4Ocwrom_-Q.png",
+      "image": "assets/thumbnails/item1787889770564.jpg",
       "previewHeight": 155,
       "groupId": "group-1788578507997"
     },
     {
       "id": "item1787889816144",
       "type": "media",
-      "x": 2385.48753200754,
-      "y": 4164.148467134539,
+      "x": 2494.968199648124,
+      "y": 4146.328401673395,
       "width": 100,
       "height": 155,
       "mediaKind": "link",
@@ -738,7 +733,7 @@ window.CANVAS_DATA = {
       "url": "https://nag.iap.de/?ac=create&name=anonymous&query=internet&comp=4&width=600&ext=jpg",
       "meta": "Net Art",
       "alt": "Net Art Generator (1997)",
-      "image": "https://iad.microlink.io/MrBEPmbmX54q_n5UYgkBMIkG94A5YrPmqgfd3__cS2WH4QsbwKTxBibOd-kmxMRa8eEgLxAN6T4f4tM5NSULpw.png",
+      "image": "assets/thumbnails/item1787889816144.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578507997"
@@ -746,8 +741,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1787889905455",
       "type": "media",
-      "x": 3394.936592116604,
-      "y": 3857.8921309199663,
+      "x": 3338.8774114154025,
+      "y": 3865.5525679584553,
       "width": 201.06445327397546,
       "height": 155,
       "mediaKind": "link",
@@ -755,7 +750,7 @@ window.CANVAS_DATA = {
       "url": "https://sadgrl.online/guides/",
       "meta": "Guides for DIY website making",
       "alt": "Sadgirl Online",
-      "image": "https://iad.microlink.io/bUfio6xAcsQ6OXRUmX3tTQVtdzXmirxodqbgiSSOHtr2YHVXW6nxjfsEy_OqkxuJ9k_zGWq1VI_CXo_PfRRguA.png",
+      "image": "assets/thumbnails/item1787889905455.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578705158"
@@ -763,8 +758,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1787890448597",
       "type": "media",
-      "x": 2276.815049141941,
-      "y": 4135.069371665665,
+      "x": 2386.2957167825252,
+      "y": 4117.249306204521,
       "width": 100,
       "height": 155,
       "mediaKind": "link",
@@ -772,7 +767,7 @@ window.CANVAS_DATA = {
       "url": "https://net-art.org/browser-art",
       "meta": "website",
       "alt": "Net Art Database",
-      "image": "https://iad.microlink.io/b055qCRrUjcoYNaFF8cZ2VSW5fQUX4Sxs1SPxMbkkrSalk8oTRbRW8-O5hgQSm6O-TcsOVPFAmnftML_7wIs8A.png",
+      "image": "assets/thumbnails/item1787890448597.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578507997"
@@ -780,8 +775,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1787891980962",
       "type": "text",
-      "x": 2642.8471286660065,
-      "y": 4037.2506762701664,
+      "x": 2745.964915502428,
+      "y": 3998.120447260589,
       "width": 646.6282850817136,
       "height": 494.197519045168,
       "text": "“AI- and bot-generated content have surpassed human-generated elements in the realm of digital artifacts.”\n\nSommerer argues that this gives the Dead Internet Theory a new relevance: online spaces are increasingly populated by synthetic content produced, circulated, and responded to by automated systems. The important issue is therefore not whether the internet is literally “dead,” but whether human communication is becoming submerged within an environment of machine-generated signs. He connects this to Baudrillard's theory of simulation, where signs increasingly circulate without stable relationships to human experience or an external reality.<br><br>- Thomas Sommerer, “Baudrillard and the Dead Internet Theory: Revisiting Baudrillard’s (dis)trust in Artificial Intelligence,” Philosophy &amp; Technology 38 (2025)",
@@ -812,10 +807,10 @@ window.CANVAS_DATA = {
       "height": 152.48246844319775,
       "mediaKind": "image",
       "title": "On Centaurism",
-      "url": "assets/images/Centaurism.png",
+      "url": "assets/thumbnails/item1787892606200.png",
       "meta": "Holly Herndon",
       "alt": "On Centaurism",
-      "image": "assets/images/Centaurism.png"
+      "image": "assets/thumbnails/item1787892606200.png"
     },
     {
       "id": "item1787892661209",
@@ -871,7 +866,7 @@ window.CANVAS_DATA = {
       "url": "https://www.praxisfilms.org/shorts/triple-chaser",
       "meta": "Website",
       "alt": "Triple-Chaser” - Forensic Architecture + Praxis Films (2019)",
-      "image": "https://iad.microlink.io/juAiPbK6Z3VZ1fKBwzaTPqUjxEYSMJJUYBmDJHEyw-SsR5VfmUz4CL1E2fbgW9F09qQuqdNTgtCJfNdPTZit3Q.png",
+      "image": "assets/thumbnails/item1787893209425.jpg",
       "previewHeight": 155,
       "heightMode": "manual"
     },
@@ -951,10 +946,10 @@ window.CANVAS_DATA = {
       "height": 286.2224466642463,
       "mediaKind": "image",
       "title": "Digital Occultism",
-      "url": "assets/images/digital occultism Medium.jpeg",
+      "url": "assets/thumbnails/item1787894636880.jpg",
       "meta": "Image",
       "alt": "Digital Occultism",
-      "image": "assets/images/digital occultism Medium.jpeg",
+      "image": "assets/thumbnails/item1787894636880.jpg",
       "heightMode": "manual"
     },
     {
@@ -980,7 +975,7 @@ window.CANVAS_DATA = {
       "url": "https://www.textezurkunst.de/en/118/dismantling-blue-gaze/",
       "meta": "article",
       "alt": "Dismantling the Blue Gaze Magnus Schaefer on American Artist at the Queens Museum, New York",
-      "image": "https://iad.microlink.io/dwPXZA6TdKctiImDR40hxucjC9ftyqauXhjD53c0q0g3yrQXX54_-EAzfhPzZymgHpP4-EtQgcMcgC2pMxNP8w.png",
+      "image": "assets/thumbnails/item1787950086838.jpg",
       "previewHeight": 155
     },
     {
@@ -1010,15 +1005,15 @@ window.CANVAS_DATA = {
       "url": "https://www.sleek-mag.com/article/why-is-ai-fueling-a-return-to-spirituality/",
       "meta": "Sleek Mag",
       "alt": "Why Is AI Fueling A Return to Spirituality?",
-      "image": "https://iad.microlink.io/78m2_1QzZ6lDQvOxSdBvCb5T05mPlnZTCWoEUepfQHkjFRFq-D9rY0ev2mrxAZiSwgi8kP1eAg5oe7J9V5nu9A.png",
+      "image": "assets/thumbnails/item1787962996438.jpg",
       "previewHeight": 155,
       "heightMode": "manual"
     },
     {
       "id": "item1788047874291",
       "type": "media",
-      "x": 2321.80699963184,
-      "y": 4738.729977314505,
+      "x": 2445.020482748761,
+      "y": 4708.885130070777,
       "width": 210,
       "height": 155,
       "mediaKind": "link",
@@ -1026,66 +1021,66 @@ window.CANVAS_DATA = {
       "url": "https://themotherboard.mmm.page/",
       "meta": "Net Art",
       "alt": "Motherboard Ascension Network",
-      "image": "https://iad.microlink.io/6qtr2AY-xQGmp4sVv9uBvbQ6c5hXzoB7-hwt5ljXnUbhj9Dy0v5QpeqeJORIziGk3cqbr88ZC8UY16qTJOBRuw.png",
+      "image": "assets/thumbnails/item1788047874291.jpg",
       "previewHeight": 155,
       "groupId": "group-1788578807145"
     },
     {
       "id": "item1788048064440",
       "type": "media",
-      "x": 2973.3226933913065,
-      "y": 4621.308542100961,
-      "width": 178.92410952079268,
+      "x": 3816.707808863017,
+      "y": 3923.4779502921524,
+      "width": 100,
       "height": 155,
       "mediaKind": "link",
       "title": "Chia Amisola",
       "url": "https://everythingi.love/",
       "meta": "Artist Website",
       "alt": "Chia Amisola",
-      "image": "https://iad.microlink.io/-4UzgYalRv7gWuhtjm0ml_NDzamWH6Eb_ObEtCeLzHadYHodq6A9ABJVInXiC6RPubnR2BDMWOC0UjpvhItQ0g.png",
+      "image": "assets/thumbnails/item1788048064440.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
-      "groupId": "group-1788579260300"
+      "groupId": "group-1788927236122"
     },
     {
       "id": "item1788048225985",
       "type": "media",
-      "x": 2728.7114963171275,
-      "y": 4544.516198698722,
-      "width": 182.29650287701475,
+      "x": 3590.214832935133,
+      "y": 3945.709007630942,
+      "width": 100,
       "height": 155,
       "mediaKind": "link",
       "title": "Chia Amisola 2",
       "url": "https://chia.design/",
       "meta": "Website",
       "alt": "Chia Amisola 2",
-      "image": "https://iad.microlink.io/wJw5YmGyyQTg7Q_5KwuYzVcIJ8h7Zxxb1-mTTztHoT_3NIXJgxjo-uCtE4CNVAKaiQ4I3JZJLNK0G8uP7C8oSg.png",
+      "image": "assets/thumbnails/item1788048225985.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
-      "groupId": "group-1788579260300"
+      "groupId": "group-1788927236122"
     },
     {
       "id": "item1788048264550",
       "type": "media",
-      "x": 3084.042395166808,
-      "y": 4528.36203086313,
-      "width": 210.726522744248,
+      "x": 3926.6894920849472,
+      "y": 3952.0217775570104,
+      "width": 100,
       "height": 155,
       "mediaKind": "link",
       "title": "The Life of Saint Fiona Bianco Xena",
       "url": "https://saint-fiona-bianco-xena.fantasia-malware.net/",
       "meta": "Browser Game by Fantasia Malware",
       "alt": "The Life of Saint Fiona Bianco Xena",
-      "image": "https://iad.microlink.io/WDp64GMZFJpVZ3dvpm1UwdeK1InEqaGKo_pJAbi0nV2xwDP63NWvpYONIfmMP3dxlrAze5dWiTY-ZFdJh6o3og.png",
+      "image": "assets/thumbnails/item1788048264550.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
-      "groupId": "group-1788579260300"
+      "groupId": "group-1788927236122"
     },
     {
       "id": "item1788048332592",
       "type": "media",
-      "x": 3273.66485676346,
-      "y": 3700.4771634872686,
+      "x": 3217.6056760622587,
+      "y": 3708.1376005257575,
       "width": 225.57873590560803,
       "height": 155,
       "mediaKind": "link",
@@ -1093,7 +1088,7 @@ window.CANVAS_DATA = {
       "url": "https://welcometomyhomepage.net/",
       "meta": "Web Residency",
       "alt": "Welcome to my Homepage",
-      "image": "https://iad.microlink.io/7seLa8DFPH_EJvBKw8rqnxVYvwGr7O2LFwvusMgQTY82gn8Jn54E--kreZxYB02Sdhi-wzv8ah3Whem7LxMH0w.png",
+      "image": "assets/thumbnails/item1788048332592.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578705158"
@@ -1101,8 +1096,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1788051656348",
       "type": "media",
-      "x": 2495.389704150012,
-      "y": 4837.77399889588,
+      "x": 2618.603187266933,
+      "y": 4807.9291516521525,
       "width": 205.46948417619436,
       "height": 155,
       "mediaKind": "link",
@@ -1110,7 +1105,7 @@ window.CANVAS_DATA = {
       "url": "https://beyondresolution.info/",
       "meta": "Website",
       "alt": "Rosa Menkman",
-      "image": "https://iad.microlink.io/5RkJoN3jYPighxYzf005P3kJDXw2-MM1GL3HT6IqSE3OZY8CUusn718Vlez1yByKZcVcU-YpY5426l4hRfOiuw.png",
+      "image": "assets/thumbnails/item1788051656348.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578807145"
@@ -1118,41 +1113,42 @@ window.CANVAS_DATA = {
     {
       "id": "item1788052139511",
       "type": "media",
-      "x": 2861.0956468535906,
-      "y": 4584.807052964195,
-      "width": 191.89977785772976,
+      "x": 3704.3677886128307,
+      "y": 3947.9275380644317,
+      "width": 100,
       "height": 155,
       "mediaKind": "link",
       "title": "Molly Sode",
       "url": "https://www.mollysoda.exposed/",
       "meta": "website",
       "alt": "Molly Soda",
-      "image": "https://iad.microlink.io/5NWJ59GLWgfOuuv5_NlWZz8AngfnyW5SeooGeUXWakAsOwVLSiklL2wnnudXdUsABhLJaoip8tcVd3JfKBA0ag.png",
+      "image": "assets/thumbnails/item1788052139511.jpg",
       "previewHeight": 155,
       "heightMode": "manual",
-      "groupId": "group-1788579260300"
+      "groupId": "group-1788927236122"
     },
     {
       "id": "item1788577608692",
       "type": "media",
-      "x": 3355.339867087748,
-      "y": 4745.062406255857,
-      "width": 210,
+      "x": 3491.2001000790224,
+      "y": 4758.887291316356,
+      "width": 100,
       "height": 155,
       "mediaKind": "link",
       "title": "White with white",
       "url": "https://www.petracortright.com/white_with_white.html",
       "meta": "Net Art",
       "alt": "Petra Cortright",
-      "image": "https://iad.microlink.io/jxQbKqRWNLCmsYQIT7X2Qm2oeW1Tjrz279Lv5dzcKaywGV4PeQ-xjVnVa2s3MhN2A4KrbPGsW6oHJqTvIVYTuw.png",
+      "image": "assets/thumbnails/item1788577608692.jpg",
       "previewHeight": 155,
-      "groupId": "group-1788578323903"
+      "heightMode": "manual",
+      "groupId": "group-1788927280400"
     },
     {
       "id": "item1788577675706",
       "type": "media",
-      "x": 3492.6716046805545,
-      "y": 4785.028782961762,
+      "x": 3481.2106498854923,
+      "y": 4545.359326412379,
       "width": 210,
       "height": 155,
       "mediaKind": "link",
@@ -1160,41 +1156,43 @@ window.CANVAS_DATA = {
       "url": "https://www.petracortright.com/dog_drip_and_gold_drip/gold_drip.html",
       "meta": "Net Art",
       "alt": "Petra Cortright",
-      "image": "https://iad.microlink.io/cyYm22XBufnF9VHw2SIgjHSEy24vMAbXVwEiAvQ8lU8xNnB6OnhQcVl8R3xPW0x765sqWazZT8SjCyw1j2OrMw.png",
+      "image": "assets/thumbnails/item1788577675706.jpg",
       "previewHeight": 155,
-      "groupId": "group-1788578323903"
+      "groupId": "group-1788927280400"
     },
     {
       "id": "item1788577768635",
       "type": "media",
-      "x": 3596.9557464560453,
-      "y": 4875.66317751484,
-      "width": 210,
+      "x": 3369.297000609821,
+      "y": 4711.6409723041,
+      "width": 100,
       "height": 155,
       "mediaKind": "link",
       "title": "System Landscapes",
       "url": "https://www.petracortright.com/works/selected_show/system_landscapes.html",
       "meta": "Net Art",
       "alt": "Petra Cortright",
-      "image": "https://iad.microlink.io/aAQj3h5l4xZgc-9cFTesyMqs01pBevv3KeEFoS_3d8slgP-fPE02EK7QRnK_jp7tS032_lNHhS7yJ0mfHHUflQ.png",
+      "image": "assets/thumbnails/item1788577768635.jpg",
       "previewHeight": 155,
-      "groupId": "group-1788578323903"
+      "heightMode": "manual",
+      "groupId": "group-1788927280400"
     },
     {
       "id": "item1788577894194",
       "type": "media",
-      "x": 3549.406919631065,
-      "y": 4663.134214651459,
-      "width": 210,
+      "x": 3367.5248788273284,
+      "y": 4499.102310453432,
+      "width": 100,
       "height": 155,
       "mediaKind": "link",
       "title": "Petra Cortright",
       "url": "https://www.petracortright.com/hello.html",
       "meta": "Website",
       "alt": "Petra Cortright",
-      "image": "https://iad.microlink.io/7koQaefaxgQYfS93vWYL9GbTQzjvonmWFGr8TWHtWSIq5t_yGCDAScs4rLYRxaEqdOcWAtBEk2oDTfi1J2nOpA.png",
+      "image": "assets/thumbnails/item1788577894194.jpg",
       "previewHeight": 155,
-      "groupId": "group-1788578323903"
+      "heightMode": "manual",
+      "groupId": "group-1788927280400"
     },
     {
       "id": "item1788737403107",
@@ -1214,8 +1212,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1788746366736",
       "type": "media",
-      "x": 3419.8726639682336,
-      "y": 4518.611348074008,
+      "x": 2669.154619730518,
+      "y": 4576.4034697516645,
       "width": 210,
       "height": 155,
       "mediaKind": "link",
@@ -1223,8 +1221,24 @@ window.CANVAS_DATA = {
       "url": "https://edgecases.rhizome.org/m/karlie/",
       "meta": "Net Art",
       "alt": "Karlie",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eedgecases.rhizome.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "image": "assets/thumbnails/item1788746366736.jpg",
       "previewHeight": 155
+    },
+    {
+      "id": "sigil-sphere",
+      "type": "sigil",
+      "x": -2667.8792225970155,
+      "y": 4082.15313703023,
+      "text": "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⡿⠋⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠈⠹⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣶⣶⣶⣶⣾⣿⣿⡁⢀⡇⠀⠀⠀⠀⢣⡀⠀⠀⠀⠀⣰⠃⠀⠀⠀⠀⣇⠀⣹⣿⣿⣶⣶⣶⣶⣤⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⣠⡴⠞⠛⠉⠉⠉⠉⠉⠛⠛⠿⢿⣿⣿⣴⡆⠀⠀⢀⣾⠈⢙⣶⣞⠉⢸⣆⠀⠀⠀⣶⣿⣿⣿⡿⠟⠛⠋⠉⠉⠉⠉⠙⠛⠷⣤⡀⠀⠀⠀⠀⠀\n⠀⠀⢀⡴⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣷⣶⣴⣿⣇⣴⡿⠁⠹⣷⣄⣿⣷⣴⣶⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⣄⠀⠀⠀\n⠀⡰⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢸⢃⣿⡿⠿⣿⣿⣿⠁⠀⠀⢹⣿⣿⡟⠿⣿⣇⢿⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⡀⠀\n⠘⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⡞⠉⠀⢉⣾⡿⠁⠀⣿⠛⢿⣄⠀⢀⣼⠟⢻⡇⠀⠹⣿⣎⠀⠈⠙⣷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣶⣿⣿⣿⡀⢀⣠⡿⠃⠀⢀⡼⠃⠀⠀⠀⠀⠀⠀⠀⠀⠻⣄⠀⠀⠻⣧⣀⠀⣸⣿⣿⣷⣶⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⣠⣾⡿⠛⠋⠉⠉⠻⣿⣿⡟⠋⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⡀⠈⠛⣿⣿⣿⠋⠉⠉⠛⠻⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⣠⠾⠛⠁⠀⠀⠀⠀⠀⢰⣿⠃⠀⠀⠀⠁⠀⠐⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⠀⠁⠀⠀⠀⢻⣿⠀⠀⠀⠀⠀⠀⠘⠻⢦⡀⠀⠀⠀⠀⠀\n⠀⠀⠀⢠⡾⠉⠀⠀⠀⠀⠀⠀⠀⣠⣿⠇⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⢿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠹⣦⡀⠀⠀⠀\n⠀⠀⣰⠋⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⡏⠀⢀⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⡀⠀⠀⠀⠀⢀⠀⠈⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠈⢳⡄⠀⠀\n⠀⡼⠃⠀⠀⠀⠀⠀⠀⢀⣴⠿⠛⣿⠃⠀⠘⡆⠀⠀⠀⣴⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⣄⠀⠀⠀⡞⠀⠀⣿⡟⠻⢷⣄⠀⠀⠀⠀⠀⠀⠀⠻⡄⠀\n⣰⠁⠀⠀⠀⠀⠀⠀⢠⠟⠁⠀⠀⣿⠀⠀⢀⣿⢀⣠⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣷⣄⢸⣇⠀⠀⢸⡇⠀⠀⠙⢧⠀⠀⠀⠀⠀⠀⠀⢹⡀\n⠇⠀⠀⠀⠀⠀⠀⢠⠇⠀⠀⠀⠀⣿⣷⣦⣾⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣤⣴⣿⡇⠀⠀⠀⠀⢧⠀⠀⠀⠀⠀⠀⠀⣇\n⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⣠⣿⡿⠻⣿⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⢿⡿⠻⣿⣷⡀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠈\n⠀⠀⠀⠀⠀⠀⠀⠗⠀⠀⠀⢠⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣧⠀⠀⠀⠠⠇⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+      "fontSize": 86
+    },
+    {
+      "id": "sigil-jellyfish",
+      "type": "sigil",
+      "x": 5746.644079677129,
+      "y": -170.0521479702345,
+      "text": "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠄⠀⠀⠀⠀⢀⡲⢷⠷⢧⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⢠⠜⠁⠀⠀⠀⠀⠀⢠⣣⡓⡉⣧⠎⠋⢖⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠈⠉⢰⣻⣷⡦⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⢀⣔⠦⣤⣇⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⠸⣙⣯⣡⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠈⠀⠀⢹⣧⣢⠀⠀⠀⠀⡇⠀⠀⠀⣤⠂⡟⡟⣈⡳⡀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠛⠸⣻⡘⠀⡀⡀⣜⣇⡄⠀⠀⣧⡧⣿⣿⣿⣻⣇⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀\n⠐⠂⠐⢓⣶⢾⡿⣵⣖⡓⣒⢈⠛⣁⣞⣭⣏⣿⣿⣿⣦⣿⡕⣘⣥⡀⢠⡀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠸⠂⠑⠋⠉⣳⣭⣿⡋⡹⠉⠠⠷⣿⣿⣶⣲⠓⣿⡟⠛⠛⠋⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠀⠟⣞⡌⠗⠀⢺⣞⢯⡇⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⢰⣋⣂⣀⠀⠰⢷⠿⠁⠀⠀⣤⢺⢋⣁⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⣠⠛⠉⠀⣔⠛⣶⡟⡲⠀⠀⠀⢈⠸⣿⠃⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⢰⠂⠀⠀⠀⡨⢭⢿⠋⡱⣀⡀⠀⢸⠀⡿⠀⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠸⠀⠀⠀⠀⠉⠀⢳⣧⡛⠉⠉⠳⡘⠀⡽⠈⡄⠀⡀⠀⢀⣇⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠐⠜⢼⡤⠀⣠⠰⠳⠠⣸⢀⠃⠀⠀⠀⢏⣗⡑⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⢀⣀⠀⢸⠀⠀⢸⠔⢄⡀⠀⠀⡇⡻⠋⠀⠀⠉⠉⢹⣋⠇⢀⢀⠀⠀⠀\n⠐⠂⠒⠒⠒⠒⠒⠛⠓⢫⠛⢻⡱⠛⠫⣺⢽⣧⡧⢾⠈⡈⠈⠉⢻⢸⢵⣈⠺⠋⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠰⡄⠀⠀⠸⣲⡌⢿⣾⡰⡃⢀⡤⠼⣽⣮⢣⠅⠤⠄⢀⠆\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠁⠀⠘⠥⡍⣿⠟⠱⣒⣬⣤⡃⠼⣥⡤⠄⠊⠁⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⡿⠁⠀⠚⠀⠀⠈⢻⠂⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⣻⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⡟⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡧⣾⠄⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣯⣗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣗⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡷⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣯⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣵⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+      "fontSize": 84
     }
   ],
   "connections": [

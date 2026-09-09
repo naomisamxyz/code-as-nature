@@ -81,7 +81,9 @@
     const ornament = document.querySelector(".diagram-section .section-ornament");
     const ornamentHTML = ornament ? ornament.outerHTML : "";
     const attendance =
-      "Attendance and active participation are essential to this course, as each session builds on the technical and conceptual work of the previous weeks. Each week, you’ll finish the sketch or project we started in class and add it to your website archive. By the end of the semester, your website will be a collection of everything you made and experimented with throughout the course, which you’ll present during our final session. There will also be one short written assignment to be added to the website.";
+      "Attendance and active participation are essential to this course, as each session builds on the technical and conceptual work of the previous weeks. Each week, you’ll finish the sketch or project we started in class and add it to your website archive. By the end of the semester, your website will be a collection of everything you made and experimented with throughout the course, which you’ll present during our final session. There will also be one short written assignment and one digital collaging assignment to be added to the website." +
+      "<br><br>AI-assisted coding tools are welcome once we talk about them critically in week 3. They can dramatically speed up writing and debugging code and help us artists access new tools. Computational literacy, understanding the basics of code, where it goes, what it can do, how different systems connect, and how to troubleshoot problems will be the main focus of this course." +
+      "<br><br>Optional: You’re invited to share your work in the collective Integrated Media show on the last gallery night of the semester.";
     container.innerHTML =
       (heading
         ? `<div class="section-heading" id="${heading.id}">${ornamentHTML}<h2><a href="canvas.html#${heading.id}" style="color:inherit">${heading.title}</a></h2></div><br>`
