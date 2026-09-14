@@ -5,7 +5,7 @@
 <title>⭐︎ Open Portal ⭐︎</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=39" />
+<link rel="stylesheet" href="guide.css?v=47" />
 <link rel="stylesheet" href="../site-shell.css?v=7" />
 <link rel="stylesheet" href="../navigation.css?v=6" />
 </head>
@@ -28,14 +28,15 @@
 
   <header class="masthead">
     <div class="section-heading"><pre class="section-ornament guide-title-ornament" aria-hidden="true"></pre><h1>Open Portal</h1></div>
-    <p>The smallest possible website you can make</p>
+    <p>The smallest possible website you can make.</p>
   </header>
 
   <nav class="page-toc">
     <a href="#folder">Make a project folder</a>
-    <a href="#html">Write the HTML</a>
+    <a href="#html">Create an HTML file with TextEdit</a>
+    <a href="#view">Open the page in your browser</a>
     <a href="#css">Write the CSS</a>
-    <a href="#view">Open it in your browser</a>
+    <a href="#connect">Connect the CSS to the HTML</a>
     <a href="#image">Add an image</a>
   </nav>
 
@@ -43,92 +44,158 @@
 
   <section class="section" id="folder">
     <h2>Make a project folder</h2>
-    <p class="section-intro">Every website starts as a folder of files sitting on your computer, before it's anything else.</p>
+    <p class="section-intro">Every website starts as a folder of files sitting on your computer.</p>
+    <p class="body-text">This is what the folder is going to look like:</p>
+    <pre class="folder-tree" aria-label="Overview of the finished OpenPortal project">OpenPortal/
+├── index.html
+├── style.css
+└── portal.jpg</pre>
+    <p class="body-text"><code class="inline">index.html</code> contains the page’s words, structure, and image.</p>
+    <p class="body-text"><code class="inline">style.css</code> controls the page’s colors, type, and spacing.</p>
+    <p class="body-text"><code class="inline">portal.jpg</code> is the image displayed on the page. Your image can have a different name and file extension.</p>
+    <br>
     <ol class="steps">
-      <li>Anywhere on your computer (your Desktop is fine), make a new folder. Call it something like <code class="inline">open-portal</code>.</li>
-      <li>Next, add two files inside it.</li>
+      <li>Create a new folder.</li>
+      <li>Name the folder <code class="inline">OpenPortal</code>.</li>
+      <li>Open the folder. All the files for this website will go inside it.</li>
     </ol>
+    <p class="body-text">For now, the folder is empty. First, we will create the HTML file.</p>
   </section>
 
   <!-- ================= WRITE THE HTML ================= -->
 
   <section class="section" id="html">
-    <h2>Write the HTML</h2>
-    <p class="section-intro">Inside that folder, make a new file named exactly <code class="inline">index.html</code>. A browser opens this file automatically when given the folder. Paste this in:</p>
+    <h2>Create an HTML file with TextEdit</h2>
+    <p class="section-intro">HTML must be saved as plain text. If TextEdit is using rich text, the browser may display your code instead of turning it into a webpage.</p>
+    <ol class="steps">
+      <li>Open TextEdit.</li>
+      <li>Choose <strong>File → New</strong>.</li>
+      <li>Choose <strong>Format → Make Plain Text</strong>.<br>You can also press <strong>Shift + Command + T</strong>.</li>
+      <li>If TextEdit asks whether you want to convert the document to plain text, confirm.</li>
+      <li>Paste this code into the document:</li>
+    </ol>
 
     <div class="annotated">
 
       <div class="code-card">
         <div class="code-groups">
-          <span class="grp" data-level="1" data-label="PAGE SETUP" style="top: calc(0 * 2.05em); height: calc(2 * 2.05em - 6px);"></span>
-          <span class="grp" data-level="1" data-alt="1" data-label="BODY STARTS" style="top: calc(2 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
-          <span class="grp" data-level="1" data-label="CONTENT" style="top: calc(3 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
-          <span class="grp" data-level="1" data-alt="1" data-label="CLOSING" style="top: calc(4 * 2.05em); height: calc(2 * 2.05em);"></span>
+          <span class="grp" data-level="1" data-label="HTML" style="top: calc(1 * 2.05em); height: calc(5 * 2.05em);"></span>
+          <span class="grp" data-level="2" data-alt="1" data-label="BODY" style="top: calc(2 * 2.05em); height: calc(3 * 2.05em);"></span>
         </div>
         <div class="code-scroll">
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-&lt;body&gt;
-  &lt;h1&gt;⭐︎ Open Portal ⭐︎&lt;/h1&gt;
-&lt;/body&gt;
+  &lt;body&gt;
+    &lt;h1&gt;⭐︎ Open Portal ⭐︎&lt;/h1&gt;
+  &lt;/body&gt;
 &lt;/html&gt;</code></pre>
         </div>
       </div>
 
       <div class="notes" data-notes-id="html-example" style="min-height: 510px;">
 
-        <div class="note" data-note="page-setup" style="top: 0px;">
-          <span class="note-label">PAGE SETUP</span>
-          <p>The standard opening every HTML page starts with.<br><code>&lt;!DOCTYPE html&gt;</code> tells the browser this is a modern HTML page.<br><code>&lt;html&gt;</code> wraps everything on it.<br>The HTML essentials cover these lines in detail.</p>
+        <div class="note" data-note="html" style="top: 0px;">
+          <span class="note-label">HTML</span>
+          <p><code>&lt;!DOCTYPE html&gt;</code> tells the browser this is a modern HTML page. The line from <code>&lt;html&gt;</code> to <code>&lt;/html&gt;</code> shows that the HTML element wraps the entire document.</p>
         </div>
 
-        <div class="note" data-note="body-starts" style="top: 169px;">
-          <span class="note-label">BODY STARTS</span>
-          <p><code>&lt;body&gt;</code> opens the part that actually shows up on screen. Everything visible on the page goes between here and <code>&lt;/body&gt;</code>.</p>
-        </div>
-
-        <div class="note" data-note="content" style="top: 276px;">
-          <span class="note-label">CONTENT</span>
-          <p>The one thing on this page: a heading, using the biggest heading tag, <code>&lt;h1&gt;</code>. Change the words between the tags and that's what shows up.</p>
-        </div>
-
-        <div class="note" data-note="closing" style="top: 382px;">
-          <span class="note-label">CLOSING</span>
-          <p><code>&lt;/body&gt;</code> closes the visible part of the page.<br><code>&lt;/html&gt;</code> closes the whole document.<br>Every opening tag needs a matching closing one. This is where these two get theirs.</p>
+        <div class="note" data-note="body" style="top: 150px;">
+          <span class="note-label">BODY</span>
+          <p>The nested line from <code>&lt;body&gt;</code> to <code>&lt;/body&gt;</code> contains everything visible on the page. The indented <code>&lt;h1&gt;</code> is the heading inside it.</p>
         </div>
 
       </div>
 
       <div class="connectors" data-connectors-id="html-example">
-        <div class="conn-h" style="top:41px; left:calc(50% - 14px); width:14px;"></div>
-        <div class="conn-v" style="left:50%; top:12px; height:29px;"></div>
+        <div class="conn-h" style="top:65px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:12px; height:53px;"></div>
         <div class="conn-h" style="top:12px; left:50%; width:14px;"></div>
-        <div class="conn-dot" style="top:41px; left:calc(50% - 14px);"></div>
-
-        <div class="conn-h" style="top:77px; left:calc(50% - 14px); width:14px;"></div>
-        <div class="conn-v" style="left:50%; top:77px; height:104px;"></div>
-        <div class="conn-h" style="top:181px; left:50%; width:14px;"></div>
-        <div class="conn-dot" style="top:77px; left:calc(50% - 14px);"></div>
+        <div class="conn-dot" style="top:65px; left:calc(50% - 14px);"></div>
 
         <div class="conn-h" style="top:102px; left:calc(50% - 14px); width:14px;"></div>
-        <div class="conn-v" style="left:50%; top:102px; height:186px;"></div>
-        <div class="conn-h" style="top:288px; left:50%; width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:102px; height:60px;"></div>
+        <div class="conn-h" style="top:162px; left:50%; width:14px;"></div>
         <div class="conn-dot" style="top:102px; left:calc(50% - 14px);"></div>
 
-        <div class="conn-h" style="top:142px; left:calc(50% - 14px); width:14px;"></div>
-        <div class="conn-v" style="left:50%; top:142px; height:252px;"></div>
-        <div class="conn-h" style="top:394px; left:50%; width:14px;"></div>
-        <div class="conn-dot" style="top:142px; left:calc(50% - 14px);"></div>
       </div>
 
     </div>
+
+    <ol class="steps" start="6">
+      <li>Choose <strong>File → Save</strong>.</li>
+      <li>In the save window, enter <code class="inline">index.html</code> as the file name. Make sure TextEdit does not add <code class="inline">.txt</code> at the end.</li>
+      <li>Select the <code class="inline">OpenPortal</code> folder as the location.</li>
+      <li>If TextEdit asks whether you want to use <code class="inline">.txt</code> or <code class="inline">.html</code>, choose <code class="inline">.html</code>.</li>
+    </ol>
+    <p class="body-text">Your project folder should now look like this:</p>
+    <pre class="folder-tree" aria-label="OpenPortal folder containing index.html">OpenPortal/
+└── index.html</pre>
+    <p class="body-text">The name <code class="inline">index.html</code> is important. Web browsers and web servers usually treat a file with this name as the first page of a website.</p>
+
+    <details class="guide-disclosure">
+      <summary>Make plain text the TextEdit default</summary>
+      <p class="body-text">You can make TextEdit open new documents as plain text automatically:</p>
+      <ol class="steps">
+        <li>Open <strong>TextEdit → Settings</strong>.</li>
+        <li>Select <strong>New Document</strong>.</li>
+        <li>Under <strong>Format</strong>, choose <strong>Plain text</strong>.</li>
+      </ol>
+      <p class="body-text">You will still need to give each file the correct extension when saving it, such as <code class="inline">.html</code> or <code class="inline">.css</code>.</p>
+    </details>
+  </section>
+
+  <!-- ================= OPEN IT IN YOUR BROWSER ================= -->
+
+  <section class="section" id="view">
+    <h2>Open the page in your browser</h2>
+    <p class="section-intro">Find <code class="inline">index.html</code> inside your project folder and double-click it. It should open in your default browser and display:</p>
+    <div class="portal-preview">⭐︎ Open Portal ⭐︎</div>
+
+    <details class="guide-disclosure">
+      <summary>If it opens in TextEdit instead</summary>
+      <ol class="steps">
+        <li>Right-click <code class="inline">index.html</code>.</li>
+        <li>Choose <strong>Open With</strong>.</li>
+        <li>Select Safari, Chrome, or Firefox.</li>
+      </ol>
+    </details>
+
+    <p class="body-text">Whenever you change your code:</p>
+    <ol class="steps">
+      <li>Save the file in TextEdit.</li>
+      <li>Return to the browser.</li>
+      <li>Refresh the page.</li>
+    </ol>
+    <p class="body-text">The browser does not automatically know when you have changed the file. Refreshing makes it read the newest version.</p>
+
+    <details class="guide-disclosure">
+      <summary>If the browser displays the code</summary>
+      <p class="body-text">If you see <code>&lt;html&gt;</code>, <code>&lt;body&gt;</code>, and the other tags instead of a webpage, return to TextEdit and choose <strong>Format → Make Plain Text</strong>. Then save the file again and refresh the browser.</p>
+      <p class="body-text">Also make sure the file is named <code class="inline">index.html</code>, not <code class="inline">index.html.txt</code>.</p>
+    </details>
+
+    <details class="guide-disclosure">
+      <summary>To show complete file extensions in Finder</summary>
+      <ol class="steps">
+        <li>Open Finder.</li>
+        <li>Choose <strong>Finder → Settings</strong>.</li>
+        <li>Select <strong>Advanced</strong>.</li>
+        <li>Turn on <strong>Show all filename extensions</strong>.</li>
+      </ol>
+    </details>
   </section>
 
   <!-- ================= WRITE THE CSS ================= -->
 
   <section class="section" id="css">
     <h2>Write the CSS</h2>
-    <p class="section-intro">Right next to <code class="inline">index.html</code>, in the same folder, make a second file named exactly <code class="inline">style.css</code>. Paste this in:</p>
+    <p class="section-intro">HTML gives the page its content and structure. CSS controls what the page looks like.</p>
+    <p class="body-text">Create a second plain-text file with TextEdit:</p>
+    <ol class="steps">
+      <li>Choose <strong>File → New</strong>.</li>
+      <li>Choose <strong>Format → Make Plain Text</strong> if the document is not already plain text.</li>
+      <li>Paste this code:</li>
+    </ol>
 
     <div class="annotated">
 
@@ -177,20 +244,83 @@ h1 {
 
     </div>
 
-    <p class="body-text">That file does nothing yet: nothing points to it. Go back to <code class="inline">index.html</code> and add a <code class="inline">&lt;head&gt;</code> section between <code class="inline">&lt;html&gt;</code> and <code class="inline">&lt;body&gt;</code>, with a <code class="inline">&lt;link&gt;</code> tag inside it:</p>
+    <ol class="steps" start="4">
+      <li>Choose <strong>File → Save</strong>.</li>
+      <li>Name the file <code class="inline">style.css</code>.</li>
+      <li>Save it inside the same <code class="inline">OpenPortal</code> folder as <code class="inline">index.html</code>.</li>
+      <li>If TextEdit asks which extension to use, choose <code class="inline">.css</code>.</li>
+    </ol>
+    <p class="body-text">Your folder should now look like this:</p>
+    <pre class="folder-tree">OpenPortal/
+├── index.html
+└── style.css</pre>
+
+    <details class="guide-disclosure">
+      <summary>Try different body styles</summary>
+      <p class="body-text">You can add more properties between the <code class="inline">body</code> rule’s curly brackets:</p>
+    <div class="snippet"><div class="code-card"><div class="code-scroll"><pre><code>body {
+  background: midnightblue;
+  color: white;
+  font-family: monospace;
+  text-align: center;
+  padding: 40px;
+}</code></pre></div></div></div>
+    <p class="body-text no-top-margin">Try changing one value at a time.</p>
+    <p class="body-text">Some background options:</p>
+    <div class="snippet"><div class="code-card"><div class="code-scroll"><pre><code>background: black;
+background: hotpink;
+background: linear-gradient(black, darkblue);</code></pre></div></div></div>
+    <p class="body-text">Some font options:</p>
+    <div class="snippet"><div class="code-card"><div class="code-scroll"><pre><code>font-family: sans-serif;
+font-family: serif;
+font-family: monospace;</code></pre></div></div></div>
+      <p class="body-text">Center everything inside the body with <code class="inline">text-align: center;</code>, or add space around the page’s content with <code class="inline">padding: 40px;</code>.</p>
+    <h3 class="sub">Try different heading styles</h3>
+    <p class="body-text">You can also experiment with the <code class="inline">&lt;h1&gt;</code>:</p>
+    <div class="snippet"><div class="code-card"><div class="code-scroll"><pre><code>h1 {
+  color: silver;
+  font-size: 60px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}</code></pre></div></div></div>
+    <p class="body-text">Try <code class="inline">color: white;</code>, <code class="inline">color: lime;</code>, or <code class="inline">color: rgb(255, 100, 200);</code>. Add a glow with <code class="inline">text-shadow: 0 0 12px white;</code>, a border with <code class="inline">border: 1px solid silver;</code>, and space inside it with <code class="inline">padding: 20px;</code>.</p>
+    <p class="body-text">You can combine several properties in the same rule:</p>
+    <div class="snippet"><div class="code-card"><div class="code-scroll"><pre><code>h1 {
+  color: white;
+  font-size: 60px;
+  letter-spacing: 5px;
+  border: 1px solid silver;
+  padding: 20px;
+  text-shadow: 0 0 12px white;
+}</code></pre></div></div></div>
+    <p class="body-text no-top-margin">Save <code class="inline">style.css</code> and refresh the browser after every change.</p>
+    </details>
+  </section>
+
+  <!-- ================= CONNECT THE CSS ================= -->
+
+  <section class="section" id="connect">
+    <h2>Connect the CSS to the HTML</h2>
+    <p class="section-intro">The CSS file does nothing yet because nothing in the HTML points to it.</p>
+    <p class="body-text">Return to <code class="inline">index.html</code>. Add a <code class="inline">&lt;head&gt;</code> section between <code class="inline">&lt;html&gt;</code> and <code class="inline">&lt;body&gt;</code>, with a <code class="inline">&lt;link&gt;</code> tag inside it. Your complete HTML should now look like this:</p>
 
     <div class="annotated">
 
       <div class="code-card">
         <div class="code-groups">
-          <span class="grp" data-level="1" data-alt="1" data-label="CONNECTS TO CSS" style="top: calc(1 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-label="CONNECTS TO CSS" style="top: calc(3 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="HEAD" style="top: calc(2 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
         </div>
         <div class="code-scroll">
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-  &lt;link rel="stylesheet" href="style.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;</code></pre>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;⭐︎ Open Portal ⭐︎&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
         </div>
       </div>
 
@@ -198,7 +328,7 @@ h1 {
 
         <div class="note" data-note="connects-css" style="top: 0px;">
           <span class="note-label">CONNECTS TO CSS</span>
-          <p>This goes between the <code>&lt;html&gt;</code> you already have and <code>&lt;body&gt;</code>.<br><code>&lt;head&gt;</code> starts a section for information about the page rather than content you see.<br><code>&lt;link&gt;</code> pulls in the stylesheet you just wrote, so its rules apply to this page. Without it, the CSS file would just sit there doing nothing.</p>
+          <p>The <code>&lt;head&gt;</code> contains information about the page that does not appear as regular page content.<br>The <code>&lt;link&gt;</code> tag tells the browser to load your CSS file.<br><code>rel="stylesheet"</code> tells the browser what kind of file it is loading.<br><code>href="style.css"</code> tells the browser where to find it. Because both files are in the same folder, only the file name is needed.</p>
         </div>
 
       </div>
@@ -212,38 +342,89 @@ h1 {
 
     </div>
 
-    <p class="body-text">Save both files, then reload the page in the next section to see the color change.</p>
-  </section>
-
-  <!-- ================= OPEN IT IN YOUR BROWSER ================= -->
-
-  <section class="section" id="view">
-    <h2>Open it in your browser</h2>
-    <p class="section-intro">To view the page:</p>
-    <ol class="steps">
-      <li>Find <code class="inline">index.html</code> in your folder and double-click it. It should open in your default browser and show &ldquo;⭐︎ Open Portal ⭐︎&rdquo; in whatever color you chose.</li>
-      <li>If it opens as plain text instead of a webpage, right-click the file, choose <strong>Open With</strong>, and pick a browser (Chrome, Safari, or Firefox) instead.</li>
-      <li>Every time you save a change to either file, switch back to the browser tab and refresh it to see the update. The browser only reads the files when you tell it to.</li>
-    </ol>
+    <p class="body-text">Save <code class="inline">index.html</code>, return to the browser, and refresh. The CSS should now change the page’s appearance.</p>
   </section>
 
   <!-- ================= ADD AN IMAGE ================= -->
 
   <section class="section" id="image">
     <h2>Add an image</h2>
-    <p class="section-intro">One more line to try, now that the page works. Pick any image on your computer (a photo, a screenshot, a drawing) and drag it into the same folder as <code class="inline">index.html</code>.</p>
+    <p class="section-intro">Pick any image on your computer, a photograph, screenshot, drawing, or collage, and drag a copy into the same <code class="inline">OpenPortal</code> folder as <code class="inline">index.html</code>.</p>
+    <p class="body-text">For this example, imagine the file is named <code class="inline">portal.jpg</code>. Your folder would look like this:</p>
+    <pre class="folder-tree">OpenPortal/
+├── index.html
+├── style.css
+└── portal.jpg</pre>
+    <p class="body-text">Add an <code class="inline">&lt;img&gt;</code> tag underneath the <code class="inline">&lt;h1&gt;</code> in <code class="inline">index.html</code>:</p>
 
     <div class="snippet">
       <div class="code-card">
         <div class="code-scroll">
-<pre><code>&lt;h1&gt;⭐︎ Open Portal ⭐︎&lt;/h1&gt;
-&lt;br&gt;
-&lt;img src="assets/images/header-glow.png" alt="a diamond shaped opening of light"&gt;</code></pre>
+<pre><code>&lt;body&gt;
+  &lt;h1&gt;⭐︎ Open Portal ⭐︎&lt;/h1&gt;
+  &lt;img src="portal.jpg" alt="A glowing portal"&gt;
+&lt;/body&gt;</code></pre>
         </div>
       </div>
     </div>
 
-    <p class="body-text no-top-margin">Add these two lines right under your <code class="inline">&lt;h1&gt;</code>, still inside <code class="inline">&lt;body&gt;</code>.<br><code class="inline">&lt;br&gt;</code> is a line break. It just pushes whatever comes after it onto a new line, so the image doesn't sit jammed against the heading.<br><code class="inline">src</code> is the image's file name. Change <code class="inline">"assets/images/header-glow.png"</code> to match whatever you dragged in, exactly, including the file extension.<br><code class="inline">alt</code> is a short written description of the image, used by screen readers and shown if the image ever fails to load.<br>Save, then reload the page to see it appear below the heading. The full picture on images, including sizing and when to use them versus embedding, is in the HTML essentials.</p>
+    <p class="body-text no-top-margin">Replace <code class="inline">portal.jpg</code> with the exact name of your own image. The name must match its capitalization, spaces, hyphens, and extension, such as <code class="inline">.jpg</code>, <code class="inline">.jpeg</code>, <code class="inline">.png</code>, <code class="inline">.gif</code>, or <code class="inline">.webp</code>. Short names with lowercase letters and hyphens, such as <code class="inline">my-portal.jpg</code>, are easiest to use.</p>
+
+    <details class="guide-disclosure">
+      <summary>Understand the image path</summary>
+      <p class="body-text">The <code class="inline">src</code> attribute is a path from the HTML file to the image. Because <code class="inline">portal.jpg</code> is beside <code class="inline">index.html</code>, the path is simply <code class="inline">src="portal.jpg"</code>.</p>
+      <p class="body-text">Do not use a complete Mac path such as <code class="inline">/Users/your-name/Desktop/OpenPortal/portal.jpg</code>. It will only work on your computer and will break when the website is moved or published. Website paths describe where a file is located inside the project folder.</p>
+      <p class="body-text">If you later make an <code class="inline">images</code> folder and move the image into it:</p>
+      <pre class="folder-tree">OpenPortal/
+├── index.html
+├── style.css
+└── images/
+    └── portal.jpg</pre>
+      <p class="body-text">Then the path must include that folder:</p>
+      <div class="snippet"><div class="code-card"><div class="code-scroll"><pre><code>&lt;img src="images/portal.jpg" alt="A glowing portal"&gt;</code></pre></div></div></div>
+      <p class="body-text">For this first website, keeping the image beside <code class="inline">index.html</code> is completely fine.</p>
+    </details>
+
+    <h3 class="sub">Write useful alternative text</h3>
+    <p class="body-text">The <code class="inline">alt</code> attribute describes the image for people using screen readers. It also appears if the image cannot load. For example:</p>
+    <div class="snippet"><div class="code-card"><div class="code-scroll"><pre><code>alt="A glowing circular portal surrounded by blue light"</code></pre></div></div></div>
+
+    <h3 class="sub">Resize the image with CSS</h3>
+    <p class="body-text">If the image is too large, add this rule to <code class="inline">style.css</code>:</p>
+    <div class="annotated">
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="SIZE" style="top: calc(1 * 2.05em); height: calc(2 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="OPTIONAL STYLE" style="top: calc(3 * 2.05em); height: calc(2 * 2.05em - 6px);"></span>
+        </div>
+        <div class="code-scroll"><pre><code>img {
+  width: 500px;
+  max-width: 100%;
+  border: 1px solid silver;
+  border-radius: 20px;
+}</code></pre></div>
+      </div>
+      <div class="notes" style="min-height: 280px;">
+        <div class="note" style="top: 0px;">
+          <span class="note-label">SIZE</span>
+          <p><code>width: 500px</code> gives the image a preferred width. <code>max-width: 100%</code> stops it from becoming wider than the browser window on a small screen.</p>
+        </div>
+        <div class="note" style="top: 145px;">
+          <span class="note-label">OPTIONAL STYLE</span>
+          <p>Add <code>border: 1px solid silver;</code> for a border, or <code>border-radius: 20px;</code> for rounded corners. You can use either line or both. Save both files and refresh the browser.</p>
+        </div>
+      </div>
+      <div class="connectors">
+        <div class="conn-h" style="top:65px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:12px; height:53px;"></div>
+        <div class="conn-h" style="top:12px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:65px; left:calc(50% - 14px);"></div>
+        <div class="conn-h" style="top:114px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:114px; height:43px;"></div>
+        <div class="conn-h" style="top:157px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:114px; left:calc(50% - 14px);"></div>
+      </div>
+    </div>
   </section>
 
 </div>

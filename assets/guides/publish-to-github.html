@@ -5,7 +5,7 @@
 <title>☙ Publish to GitHub ❧</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=45" />
+<link rel="stylesheet" href="guide.css?v=47" />
 <link rel="stylesheet" href="../site-shell.css?v=7" />
 <link rel="stylesheet" href="../navigation.css?v=6" />
 </head>
@@ -40,6 +40,7 @@
     <a href="#publish">Publish</a>
     <a href="#sync">Every time after</a>
     <a href="#live">Make it a live website</a>
+    <a href="#alternatives">Alternative publishing platforms</a>
   </nav>
 
   <section class="section" id="prerequisites">
@@ -54,52 +55,88 @@
   <section class="section" id="source-control">
     <h2>Open the Source Control panel</h2>
     <p class="section-intro">Click the branching icon in the left sidebar, or press <code class="inline">Cmd/Ctrl + Shift + G</code>.</p>
-    <div class="ref-row"><p class="body-text no-top-margin">This opens VS Code's controls for <strong>Git</strong>, which keeps a history of changes to your project. Opening the panel does not change the project.</p></div>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>Source Control panel:</dt><dd>opens VS Code's controls for Git, which keeps a history of changes to your project. Opening the panel does not change the project.</dd></div>
+        </dl>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="initialize">
     <h2>Initialize the repository</h2>
     <p class="section-intro">If you see a button labeled <code class="inline">Initialize Repository</code>, click it.</p>
-    <div class="ref-row"><p class="body-text no-top-margin"><strong>Initializing</strong> tells Git to start tracking this folder. It creates a hidden <code class="inline">.git</code> folder where Git stores the project's history. Do this once per project.</p></div>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>Initializing:</dt><dd>tells Git to start tracking this folder. It creates a hidden <code class="inline">.git</code> folder where Git stores the project's history. Do this once per project.</dd></div>
+        </dl>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="gitignore">
     <h2>Add a .gitignore</h2>
     <p class="section-intro">Create a new file at the top level of your project named exactly <code class="inline">.gitignore</code>, and put this line in it: <code class="inline">.DS_Store</code></p>
-    <div class="ref-row">
-      <p class="body-text no-top-margin">Not every file on your computer belongs in your project's history. macOS quietly drops an invisible housekeeping file called <code class="inline">.DS_Store</code> into folders you open in Finder. It's meaningless clutter, not part of your actual project.</p>
-      <p class="body-text">A <strong>.gitignore</strong> lists files Git should not track. Those files stop appearing as changes and cannot be staged accidentally. This step is optional on operating systems that do not create <code class="inline">.DS_Store</code>.</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>.DS_Store:</dt><dd>an invisible housekeeping file macOS quietly drops into folders you open in Finder. Meaningless clutter, not part of your actual project.</dd></div>
+          <div class="ref-row"><dt>.gitignore:</dt><dd>lists files Git should not track. Those files stop appearing as changes and cannot be staged accidentally. Optional on operating systems that do not create <code class="inline">.DS_Store</code>.</dd></div>
+        </dl>
+      </div>
     </div>
   </section>
 
   <section class="section" id="stage">
     <h2>Stage your changes</h2>
     <p class="section-intro">Hover over "Changes" and click <code class="inline">+</code> to stage everything at once, or stage individual files one at a time.</p>
-    <div class="ref-row"><p class="body-text no-top-margin"><strong>Staging</strong> selects which changes the next commit will save. It does not create the save point yet.</p></div>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>Staging:</dt><dd>selects which changes the next commit will save. It does not create the save point yet.</dd></div>
+        </dl>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="commit">
     <h2>Commit</h2>
     <p class="section-intro">Type a message in the box at the top, then click <code class="inline">&check; Commit</code>.</p>
-    <div class="ref-row">
-      <p class="body-text no-top-margin">A <strong>commit</strong> is a snapshot of the staged changes in your project's history. The message briefly describes what changed.</p>
-      <p class="body-text">For your very first commit, there's not much to describe yet. Something like <em>"Initial commit"</em> or <em>"First version"</em> is completely normal. Later on, describe what changed: <em>"Fix header spacing,"</em> <em>"Add contact page."</em></p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>Commit:</dt><dd>a snapshot of the staged changes in your project's history. The message briefly describes what changed.</dd></div>
+          <div class="ref-row"><dt>First commit message:</dt><dd>there's not much to describe yet &mdash; <em>"Initial commit"</em> or <em>"First version"</em> is completely normal. Later on, describe what changed: <em>"Fix header spacing,"</em> <em>"Add contact page."</em></dd></div>
+        </dl>
+      </div>
     </div>
   </section>
 
   <section class="section" id="publish">
     <h2>Publish</h2>
     <p class="section-intro">Click <code class="inline">Publish Branch</code>.</p>
-    <div class="ref-row">
-      <p class="body-text no-top-margin">Everything so far has stayed on your own computer. GitHub doesn't know this project exists yet. <strong>Publishing</strong> does two things at once: it creates a new project on GitHub.com under your account, and it uploads your commit and its whole history there.</p>
-      <p class="body-text">VS Code will open a browser tab to sign in, the first time only, then ask whether the project should be <strong>Public</strong> (anyone can view the files) or <strong>Private</strong> (just you, unless you invite others). If you plan to host this as a free website with GitHub Pages, it needs to be Public.</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>Publishing:</dt><dd>creates a new project on GitHub.com under your account and uploads your commit and its whole history there. Until now, everything has stayed on your own computer.</dd></div>
+          <div class="ref-row"><dt>Public vs. Private:</dt><dd>VS Code opens a browser tab to sign in, the first time only, then asks whether the project should be Public (anyone can view the files) or Private (just you, unless you invite others). GitHub Pages requires Public.</dd></div>
+        </dl>
+      </div>
     </div>
   </section>
 
   <section class="section" id="sync">
     <h2>Every time after</h2>
     <p class="section-intro">Stage &rarr; write a commit message &rarr; click <code class="inline">Sync Changes</code>.</p>
-    <div class="ref-row"><p class="body-text no-top-margin">Each commit adds another snapshot to the history. <strong>Sync Changes</strong> sends new commits to the connected GitHub repository.</p></div>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>Sync Changes:</dt><dd>sends new commits to the connected GitHub repository. Each commit adds another snapshot to the history.</dd></div>
+        </dl>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="live">
@@ -112,6 +149,20 @@
       <li>Choose <strong>Deploy from a branch</strong> as the source.</li>
       <li>Choose <strong>main / root</strong>, then Save.</li>
     </ol>
+  </section>
+
+  <section class="section" id="alternatives">
+    <h2>Alternative publishing platforms</h2>
+    <p class="section-intro">GitHub Pages is not the only free option. These connect to the same GitHub repository and redeploy automatically on every push, with their own URL.</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>Netlify:</dt><dd>drag-and-drop or connect a GitHub repo; free tier includes custom domains and automatic HTTPS.</dd></div>
+          <div class="ref-row"><dt>Vercel:</dt><dd>similar to Netlify, built by the makers of Next.js; strong for JavaScript-framework projects.</dd></div>
+          <div class="ref-row"><dt>Cloudflare Pages:</dt><dd>fast global hosting on Cloudflare's network, generous free tier.</dd></div>
+        </dl>
+      </div>
+    </div>
   </section>
 
 </div>

@@ -133,6 +133,47 @@
     margin-top: 0;
   }
 
+  /* ---------- Collapsible guide notes ---------- */
+
+  .guide-disclosure {
+    margin: 18px 0 0;
+    border: solid rgba(255,255,255,0.15);
+    border-width: 1px 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.045), rgba(0,0,0,0.15));
+  }
+
+  .guide-disclosure summary {
+    position: relative;
+    padding: 12px 34px 12px 14px;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .guide-disclosure summary::-webkit-details-marker { display: none; }
+  .guide-disclosure summary::after {
+    content: "+";
+    position: absolute;
+    right: 14px;
+    color: rgba(255,255,255,0.6);
+    font-family: "Menlo", "Consolas", "Courier New", monospace;
+  }
+  .guide-disclosure[open] summary::after { content: "−"; }
+  .guide-disclosure > :not(summary) { margin-right: 14px; margin-left: 14px; }
+  .guide-disclosure > :last-child { margin-bottom: 14px; }
+  .portal-preview {
+    margin: 18px 0;
+    padding: 32px 20px;
+    border: solid rgba(255,255,255,0.15);
+    border-width: 1px 0;
+    background: #fff;
+    color: #000;
+    font-family: serif;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
   code.inline {
     font-size: 0.95em;
     color: rgba(255, 255, 255, 0.85);
@@ -221,6 +262,13 @@
     border-left-color: rgba(255,255,255,0.32);
   }
   .grp[data-level="2"]::after { color: rgba(255,255,255,0.5); }
+
+  .grp[data-level="3"] {
+    left: 32px;
+    background: rgba(255,255,255,0.07);
+    border-left-color: rgba(255,255,255,0.42);
+  }
+  .grp[data-level="3"]::after { color: rgba(255,255,255,0.6); }
 
   .grp[data-alt="1"] {
     background: rgba(255,255,255,0.09);

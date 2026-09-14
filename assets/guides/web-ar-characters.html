@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>༶ Web AR ༶</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="guide.css?v=46">
+<link rel="stylesheet" href="guide.css?v=47">
 <link rel="stylesheet" href="../site-shell.css?v=7">
 <link rel="stylesheet" href="../navigation.css?v=6">
 </head>
@@ -80,7 +80,13 @@
       <li>Select the appropriate finger setting and start automatic rigging.</li>
       <li>Preview the rigged character.</li>
     </ol>
-    <div class="ref-row"><p class="body-text no-top-margin">If the rig fails, check that the body parts are visually distinct and that the original model is in a neutral pose.</p></div>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>If the rig fails:</dt><dd>check that the body parts are visually distinct and that the original model is in a neutral pose.</dd></div>
+        </dl>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="animation">
@@ -89,12 +95,17 @@
       <li>Choose an animation that loops clearly: dancing, waving, idle movement, walking in place, stretching, or looking around.</li>
       <li>Adjust speed, arm spacing, or animation length, then select <strong>Download</strong>.</li>
     </ol>
-    <div class="ref-groups"><div class="ref-group"><h3>Download settings</h3><dl>
-      <div class="ref-row"><dt>Format:</dt><dd>FBX Binary</dd></div>
-      <div class="ref-row"><dt>Skin:</dt><dd>With Skin</dd></div>
-      <div class="ref-row"><dt>Frames per second:</dt><dd>30</dd></div>
-      <div class="ref-row"><dt>Keyframe reduction:</dt><dd>None</dd></div>
-    </dl></div></div>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <h3>Download settings</h3>
+        <dl>
+          <div class="ref-row"><dt>Format:</dt><dd>FBX Binary</dd></div>
+          <div class="ref-row"><dt>Skin:</dt><dd>With Skin</dd></div>
+          <div class="ref-row"><dt>Frames per second:</dt><dd>30</dd></div>
+          <div class="ref-row"><dt>Keyframe reduction:</dt><dd>None</dd></div>
+        </dl>
+      </div>
+    </div>
     <p class="body-text">The resulting FBX should contain the character, skeleton, textures, and animation.</p>
   </section>
 
@@ -121,9 +132,12 @@
       <li>Transfer it to an iPhone or iPad and open it in Apple Quick Look.</li>
       <li>Enter AR mode and confirm its scale, textures, and animation.</li>
     </ol>
-    <div class="ref-row">
-      <p class="body-text no-top-margin"><strong>If animation is missing:</strong> confirm in Blender that the character uses one skeleton and that the animation is baked. Export again, reopen it in Reality Converter, and test the new USDZ.</p>
-      <p class="body-text">Simple characters with baked animation are more reliable than multiple skeletons, constraints, modifiers, procedural effects, or complex materials.</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>If animation is missing:</dt><dd>confirm in Blender that the character uses one skeleton and that the animation is baked. Export again, reopen it in Reality Converter, and test the new USDZ. Simple characters with baked animation are more reliable than multiple skeletons, constraints, modifiers, procedural effects, or complex materials.</dd></div>
+        </dl>
+      </div>
     </div>
   </section>
 
@@ -135,87 +149,185 @@
 ├── character.glb
 └── character.usdz</pre>
     <p class="body-text">Add this to <code class="inline">index.html</code>:</p>
-    <div class="snippet"><pre><code>&lt;!doctype html&gt;
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="HEAD" style="top: calc(2 * 2.05em); height: calc(48 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="BODY" style="top: calc(50 * 2.05em); height: calc(20 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-label="LOAD MODEL-VIEWER" style="top: calc(6 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-label="PAGE STYLES" style="top: calc(9 * 2.05em); height: calc(40 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-label="HEADER" style="top: calc(52 * 2.05em); height: calc(4 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-label="THE VIEWER" style="top: calc(56 * 2.05em); height: calc(12 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="3" data-label="BUTTON" style="top: calc(64 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>&lt;!doctype html&gt;
 &lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-  &lt;title&gt;My AR Character&lt;/title&gt;
-  &lt;script type="module"
-    src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"&gt;
-  &lt;/script&gt;
-  &lt;style&gt;
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #e8ff52;
-      color: #111;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    main {
-      display: grid;
-      grid-template-rows: auto 1fr;
-      min-height: 100vh;
-    }
-    header { padding: 18px 22px; }
-    h1 { margin: 0; font-size: clamp(1.5rem, 5vw, 3rem); }
-    p { max-width: 42rem; line-height: 1.4; }
-    model-viewer {
-      width: 100%;
-      min-height: 70vh;
-      background: transparent;
-    }
-    .ar-button {
-      position: absolute;
-      right: 20px;
-      bottom: 20px;
-      padding: 12px 18px;
-      border: 2px solid #111;
-      border-radius: 999px;
-      background: #fff;
-      color: #111;
-      font: inherit;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .ar-button:focus {
-      outline: 3px solid #725cff;
-      outline-offset: 3px;
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;main&gt;
-    &lt;header&gt;
-      &lt;h1&gt;My AR Character&lt;/h1&gt;
-      &lt;p&gt;Drag to rotate, scroll or pinch to zoom, or place the character in your space.&lt;/p&gt;
-    &lt;/header&gt;
-    &lt;model-viewer
-      src="character.glb"
-      ios-src="character.usdz"
-      alt="An animated three-dimensional character"
-      camera-controls autoplay loop
-      shadow-intensity="1" exposure="1"
-      ar ar-placement="floor" ar-scale="auto"
-      ar-modes="webxr scene-viewer quick-look"&gt;
-      &lt;button class="ar-button" slot="ar-button"&gt;
-        View in your space
-      &lt;/button&gt;
-    &lt;/model-viewer&gt;
-  &lt;/main&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre></div>
-    <div class="ref-groups"><div class="ref-group"><h3>Important attributes</h3><dl>
-      <div class="ref-row"><dt>src:</dt><dd>loads the GLB used by the webpage and Android.</dd></div>
-      <div class="ref-row"><dt>ios-src:</dt><dd>provides the dedicated Apple USDZ.</dd></div>
-      <div class="ref-row"><dt>autoplay and loop:</dt><dd>start and repeat the animation.</dd></div>
-      <div class="ref-row"><dt>camera-controls:</dt><dd>allows rotation and zoom.</dd></div>
-      <div class="ref-row"><dt>ar:</dt><dd>enables the AR button.</dd></div>
-      <div class="ref-row"><dt>ar-placement="floor":</dt><dd>uses a horizontal surface. Change <code class="inline">floor</code> to <code class="inline">wall</code> for a wall placement.</dd></div>
-      <div class="ref-row"><dt>ar-scale="auto":</dt><dd>lets viewers resize the character.</dd></div>
-      <div class="ref-row"><dt>ar-modes:</dt><dd>provides WebXR, Android Scene Viewer, and Apple Quick Look.</dd></div>
-    </dl></div></div>
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;title&gt;My AR Character&lt;/title&gt;
+    &lt;script type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"&gt;
+    &lt;/script&gt;
+    &lt;style&gt;
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #e8ff52;
+        color: #111;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      main {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        min-height: 100vh;
+      }
+      header { padding: 18px 22px; }
+      h1 { margin: 0; font-size: clamp(1.5rem, 5vw, 3rem); }
+      p { max-width: 42rem; line-height: 1.4; }
+      model-viewer {
+        width: 100%;
+        min-height: 70vh;
+        background: transparent;
+      }
+      .ar-button {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        padding: 12px 18px;
+        border: 2px solid #111;
+        border-radius: 999px;
+        background: #fff;
+        color: #111;
+        font: inherit;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .ar-button:focus {
+        outline: 3px solid #725cff;
+        outline-offset: 3px;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+      &lt;header&gt;
+        &lt;h1&gt;My AR Character&lt;/h1&gt;
+        &lt;p&gt;Drag to rotate, scroll or pinch to zoom, or place the character in your space.&lt;/p&gt;
+      &lt;/header&gt;
+      &lt;model-viewer
+        src="character.glb"
+        ios-src="character.usdz"
+        alt="An animated three-dimensional character"
+        camera-controls autoplay loop
+        shadow-intensity="1" exposure="1"
+        ar ar-placement="floor" ar-scale="auto"
+        ar-modes="webxr scene-viewer quick-look"&gt;
+        &lt;button class="ar-button" slot="ar-button"&gt;
+          View in your space
+        &lt;/button&gt;
+      &lt;/model-viewer&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" data-notes-id="ar-page-example" style="min-height: 1670px;">
+
+        <div class="note" data-note="head" style="top: 49px;">
+          <span class="note-label">HEAD</span>
+          <p>Everything the page needs before it can display anything: metadata, the <code>model-viewer</code> script, and all the CSS.</p>
+        </div>
+
+        <div class="note" data-note="body" style="top: 1230px;">
+          <span class="note-label">BODY</span>
+          <p>What actually appears on screen &mdash; the page layout wrapping the header and the AR viewer.</p>
+        </div>
+
+        <div class="note" data-note="load-model-viewer" style="top: 148px;">
+          <span class="note-label">LOAD MODEL-VIEWER</span>
+          <p>Loads Google's <code>&lt;model-viewer&gt;</code> custom element from a CDN. Everything below depends on this one script.</p>
+        </div>
+
+        <div class="note" data-note="page-styles" style="top: 232px;">
+          <span class="note-label">PAGE STYLES</span>
+          <p>Ordinary CSS: page layout, background, and the floating AR button's shape and position. None of it is AR-specific &mdash; <code>model-viewer</code> is just another element to style.</p>
+        </div>
+
+        <div class="note" data-note="header" style="top: 1312px;">
+          <span class="note-label">HEADER</span>
+          <p>The title and instructions shown above the viewer.</p>
+        </div>
+
+        <div class="note" data-note="the-viewer" style="top: 1378px;">
+          <span class="note-label">THE VIEWER</span>
+          <p>The 3D viewer itself, configured entirely through attributes. See what each one does below.</p>
+        </div>
+
+        <div class="note" data-note="button" style="top: 1574px;">
+          <span class="note-label">BUTTON</span>
+          <p>A custom trigger dropped into <code>model-viewer</code>'s <code>ar-button</code> slot, so it can be styled like the rest of the page instead of using the library's default button.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors" data-connectors-id="ar-page-example">
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:61px;"></div>
+        <div class="conn-h" style="top:61px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:1242px;"></div>
+        <div class="conn-h" style="top:1242px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:160px;"></div>
+        <div class="conn-h" style="top:160px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:244px;"></div>
+        <div class="conn-h" style="top:244px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:1324px;"></div>
+        <div class="conn-h" style="top:1324px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:1390px;"></div>
+        <div class="conn-h" style="top:1390px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:1586px;"></div>
+        <div class="conn-h" style="top:1586px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <h3>Important attributes</h3>
+        <dl>
+          <div class="ref-row"><dt>src:</dt><dd>loads the GLB used by the webpage and Android.</dd></div>
+          <div class="ref-row"><dt>ios-src:</dt><dd>provides the dedicated Apple USDZ.</dd></div>
+          <div class="ref-row"><dt>autoplay and loop:</dt><dd>start and repeat the animation.</dd></div>
+          <div class="ref-row"><dt>camera-controls:</dt><dd>allows rotation and zoom.</dd></div>
+          <div class="ref-row"><dt>ar:</dt><dd>enables the AR button.</dd></div>
+          <div class="ref-row"><dt>ar-placement="floor":</dt><dd>uses a horizontal surface. Change <code class="inline">floor</code> to <code class="inline">wall</code> for a wall placement.</dd></div>
+          <div class="ref-row"><dt>ar-scale="auto":</dt><dd>lets viewers resize the character.</dd></div>
+          <div class="ref-row"><dt>ar-modes:</dt><dd>provides WebXR, Android Scene Viewer, and Apple Quick Look.</dd></div>
+        </dl>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="local-test">
@@ -237,7 +349,7 @@
       <li>Choose <strong>Deploy from a branch</strong>, <strong>main</strong>, and <strong>/root</strong>.</li>
       <li>Save and wait for the site to publish.</li>
     </ol>
-    <div class="snippet"><pre><code>https://USERNAME.github.io/REPOSITORY-NAME/</code></pre></div>
+    <div class="snippet"><div class="code-card"><div class="code-scroll"><pre><code>https://USERNAME.github.io/REPOSITORY-NAME/</code></pre></div></div></div>
     <p class="body-text">GitHub Pages provides the HTTPS required by browser-based WebXR.</p>
   </section>
 
@@ -259,15 +371,20 @@
 
   <section class="section" id="troubleshooting">
     <h2>Troubleshooting</h2>
-    <div class="ref-groups"><div class="ref-group"><h3>Common problems</h3><dl>
-      <div class="ref-row"><dt>White or missing textures:</dt><dd>Include textures during Blender export, use GLB, and convert unsupported procedural materials to image textures.</dd></div>
-      <div class="ref-row"><dt>No webpage animation:</dt><dd>Test the GLB in the <code class="inline">&lt;model-viewer&gt;</code> editor, include animation during export, and confirm <code class="inline">autoplay</code>. For several animations, specify <code class="inline">animation-name="Dance"</code>.</dd></div>
-      <div class="ref-row"><dt>No animation in iPhone AR:</dt><dd>Confirm <code class="inline">ios-src</code>, open the USDZ directly, bake the animation, and use one skeleton and one animation.</dd></div>
-      <div class="ref-row"><dt>Wrong direction:</dt><dd>Correct and apply rotation in Blender, then export both formats again.</dd></div>
-      <div class="ref-row"><dt>Wrong scale:</dt><dd>Adjust scale before export and test the USDZ on a device.</dd></div>
-      <div class="ref-row"><dt>No AR button:</dt><dd>The browser or device may not support the requested AR modes. Interactive 3D should still work.</dd></div>
-      <div class="ref-row"><dt>GitHub Pages 404:</dt><dd>Check <code class="inline">index.html</code>, the branch, folder, and filename capitalization, then wait several minutes.</dd></div>
-    </dl></div></div>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <h3>Common problems</h3>
+        <dl>
+          <div class="ref-row"><dt>White or missing textures:</dt><dd>Include textures during Blender export, use GLB, and convert unsupported procedural materials to image textures.</dd></div>
+          <div class="ref-row"><dt>No webpage animation:</dt><dd>Test the GLB in the <code class="inline">&lt;model-viewer&gt;</code> editor, include animation during export, and confirm <code class="inline">autoplay</code>. For several animations, specify <code class="inline">animation-name="Dance"</code>.</dd></div>
+          <div class="ref-row"><dt>No animation in iPhone AR:</dt><dd>Confirm <code class="inline">ios-src</code>, open the USDZ directly, bake the animation, and use one skeleton and one animation.</dd></div>
+          <div class="ref-row"><dt>Wrong direction:</dt><dd>Correct and apply rotation in Blender, then export both formats again.</dd></div>
+          <div class="ref-row"><dt>Wrong scale:</dt><dd>Adjust scale before export and test the USDZ on a device.</dd></div>
+          <div class="ref-row"><dt>No AR button:</dt><dd>The browser or device may not support the requested AR modes. Interactive 3D should still work.</dd></div>
+          <div class="ref-row"><dt>GitHub Pages 404:</dt><dd>Check <code class="inline">index.html</code>, the branch, folder, and filename capitalization, then wait several minutes.</dd></div>
+        </dl>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="assignment">

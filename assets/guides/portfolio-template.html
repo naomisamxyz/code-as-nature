@@ -5,7 +5,7 @@
 <title>⟡ Forge Your Archive ⟡</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=39" />
+<link rel="stylesheet" href="guide.css?v=47" />
 <link rel="stylesheet" href="../site-shell.css?v=7" />
 <link rel="stylesheet" href="../navigation.css?v=6" />
 </head>
@@ -28,21 +28,22 @@
 
   <header class="masthead">
     <div class="section-heading"><pre class="section-ornament guide-title-ornament" aria-hidden="true"></pre><h1>Forge Your Archive</h1></div>
-    <p>A ready-made home page with folders for every week of the course</p>
+    <p>A portfolio template for your class projects</p>
   </header>
 
   <nav class="page-toc">
     <a href="#setup">Install your tools</a>
+    <a href="#download">Download the template</a>
     <a href="#structure">How the template is organized</a>
     <a href="#add-week">Adding a new week</a>
     <a href="#preview">Previewing it live</a>
+    <a href="#p5-week2">Add your p5.js sketch to Week 2</a>
   </nav>
 
   <!-- ================= INSTALL YOUR TOOLS ================= -->
 
   <section class="section" id="setup">
     <h2>Install your tools</h2>
-    <p class="section-intro">Two programs, both free, one-time installs.</p>
 
     <h3 class="sub">1. VS Code</h3>
     <p class="body-text no-top-margin">The text editor for every HTML, CSS, and JS file. Download from <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a> and run the installer.</p>
@@ -50,6 +51,15 @@
     <h3 class="sub">2. Live Server (optional)</h3>
     <p class="body-text no-top-margin">A VS Code extension that opens your page in a browser tab and reloads it on every save. In VS Code, open Extensions (the four-squares icon), search <code class="inline">Live Server</code>, install the one by Ritwick Dey.</p>
     <p class="body-text">Without it, double-clicking <code class="inline">index.html</code> still opens the page, but you'd have to reload the browser manually after every change.</p>
+  </section>
+
+  <!-- ================= DOWNLOAD THE TEMPLATE ================= -->
+
+  <section class="section" id="download">
+    <h2>Download the template</h2>
+    <p class="section-intro">Download the portfolio template, then double-click the ZIP file to open it.</p>
+    <p class="body-text"><a href="../downloads/Portfolio%20Website.zip" download>Download Portfolio Website.zip</a></p>
+    <p class="body-text">This creates the <code class="inline">Portfolio Website</code> folder that you will edit throughout the course.</p>
   </section>
 
   <!-- ================= STRUCTURE ================= -->
@@ -66,7 +76,7 @@
                  /fonts
                  /week1/index.html
                        /preview.html
-                       /script.js
+                       /sketch.js
                  /week2/index.html
                  …</pre>
 
@@ -109,6 +119,21 @@
       <li>Right-click <code class="inline">index.html</code> in the file list and choose <strong>Open with Live Server</strong>.</li>
       <li>A browser tab opens automatically, showing the real page. Every time you save a change to any file, that tab refreshes on its own, no manual reloading needed.</li>
     </ol>
+  </section>
+
+  <!-- ================= ADD P5 SKETCH TO WEEK 2 ================= -->
+
+  <section class="section" id="p5-week2">
+    <h2>Add your p5.js sketch to Week 2</h2>
+    <p class="section-intro">Move the p5.js sketch you made in the web editor during the previous week into your local portfolio.</p>
+    <ol class="steps">
+      <li>In the p5.js Web Editor, download your sketch and open the downloaded folder.</li>
+      <li>Open <code class="inline">Portfolio Website/week2</code> on your computer.</li>
+      <li>Put your p5 code into a JavaScript file inside the <code class="inline">week2</code> folder. You can name it <code class="inline">sketch.js</code>.</li>
+      <li>Open the <code class="inline">week1</code> folder and use its <code class="inline">index.html</code> and <code class="inline">sketch.js</code> as a model for how the files should be arranged and connected.</li>
+      <li>Make sure <code class="inline">week2/index.html</code> loads the p5.js library before it loads your own JavaScript file. See <a href="cheatsheet-p5.html#loading">02 Loading the library</a> in the p5.js guide.</li>
+    </ol>
+    <p class="body-text">Save the files, then preview <code class="inline">week2/index.html</code> with Live Server.</p>
   </section>
 
 </div>
