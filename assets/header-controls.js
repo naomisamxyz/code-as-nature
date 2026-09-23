@@ -1,7 +1,7 @@
 /*
  * Keeps the fixed top-right view controls (list / canvas / back to origin)
  * clear of the header. When the title or meta line grows wide enough to sit
- * under the controls, the controls drop below the header — and the more the
+ * under the controls, the controls drop below the header - and the more the
  * header wraps, the further down they go.
  */
 (function () {

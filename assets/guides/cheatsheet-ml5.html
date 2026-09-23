@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>⌁ ml5.js Essentials ⌁</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="guide.css?v=48" />
+<link rel="stylesheet" href="../site-shell.css?v=7" />
+<link rel="stylesheet" href="../navigation.css?v=6" />
+</head>
+<body class="guide-page guide-cheatsheet-ml5">
+
+<header class="site-header">
+  <pre class="header-ornament" aria-hidden="true"></pre>
+  <h1 class="site-title">IIMC-446/IIMC-646: Code As Nature</h1>
+  <p class="site-meta"><span>Fall 2026</span><span>Wednesdays, 10:00–11:50 AM</span><span>September 8–December 13</span><span>Main Building, MACLAB Studio</span></p>
+  <a class="site-home-link" href="../../index.html" aria-label="Code As Nature home"></a>
+</header>
+
+<div class="page">
+
+  <span class="stamp" data-last-updated></span>
+
+  <nav class="guide-nav" data-site-navigation></nav>
+  <br>
+  <br>
+
+  <header class="masthead">
+    <div class="section-heading"><pre class="section-ornament guide-title-ornament" aria-hidden="true"></pre><h1>ml5.js Essentials</h1></div>
+    <p>A JavaScript library for using machine learning in creative coding projects</p>
+  </header>
+
+  <nav class="page-toc">
+    <a href="#loading">Loading the library</a>
+    <a href="#loading-model">Loading the model</a>
+    <a href="#face-mesh">Face triangle mesh</a>
+    <a href="#examples">Example sketches</a>
+    <a href="#other-models">Other models</a>
+  </nav>
+
+  <!-- ================= LOADING THE LIBRARY ================= -->
+
+  <section class="section" id="loading">
+    <h2>Loading the library</h2>
+    <p class="section-intro">ml5.js and p5.js are JavaScript libraries that need to be loaded before your own sketch file inside the <code class="inline">index.html</code> file with a <code class="inline">&lt;script&gt;</code> tag.</p>
+
+    <pre class="folder-tree" aria-label="How the HTML file and sketch file relate">index.html
+ ├── loads p5.js library
+ ├── loads ml5.js library
+ └── loads sketch.js
+
+sketch.js
+ └── your p5.js + ml5.js code</pre>
+
+    <ul class="steps">
+      <li>
+        <h3 class="sub" style="margin-top: 0;">Working in the p5.js Web Editor</h3>
+        <p class="body-text no-top-margin">Open <code class="inline">index.html</code> from the file list in the p5.js Web Editor. Add the ml5.js script inside the <code class="inline">&lt;head&gt;</code>, before its closing <code class="inline">&lt;/head&gt;</code> tag:</p>
+
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code class="wrap">&lt;script src="https://unpkg.com/ml5@1/dist/ml5.min.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <p class="body-text">The Web Editor already loads p5.js and your <code class="inline">sketch.js</code> file. This additional line makes the <code class="inline">ml5</code> library available to that sketch.</p>
+      </li>
+      <li>
+        <h3 class="sub" style="margin-top: 0;">Working in your own local website with internet access</h3>
+        <p class="body-text no-top-margin">In your local <code class="inline">index.html</code>, load p5.js first, ml5.js second, and your own sketch last:</p>
+
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code class="wrap">&lt;script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/ml5@1/dist/ml5.min.js"&gt;&lt;/script&gt;
+&lt;script src="sketch.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <p class="body-text">Order matters. Your sketch can use p5.js and ml5.js only after both libraries have loaded.</p>
+      </li>
+      <li>
+        <h3 class="sub" style="margin-top: 0;">Working in your own local website without internet access</h3>
+        <p class="body-text no-top-margin">While you still have internet access, download <a href="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.min.js" target="_blank" rel="noopener">p5.min.js</a> and <a href="https://unpkg.com/ml5@1/dist/ml5.min.js" target="_blank" rel="noopener">ml5.min.js</a>. Save both files next to <code class="inline">index.html</code> and <code class="inline">sketch.js</code>.</p>
+
+        <pre class="folder-tree" aria-label="Offline ml5.js project folder structure">your-project/
+├── index.html
+├── p5.min.js
+├── ml5.min.js
+└── sketch.js</pre>
+
+        <p class="body-text">Then load the local library files instead of the internet addresses:</p>
+
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code class="wrap">&lt;script src="p5.min.js"&gt;&lt;/script&gt;
+&lt;script src="ml5.min.js"&gt;&lt;/script&gt;
+&lt;script src="sketch.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <p class="body-text">This makes the p5.js and ml5.js library files available offline. Many ml5.js models load additional model data when the sketch starts. Those model files must also be saved locally and connected using that model’s instructions before the complete project can run without internet access.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= LOADING THE MODEL ================= -->
+
+  <section class="section" id="loading-model">
+    <h2>Loading the model</h2>
+    <p class="section-intro">The <code class="inline">&lt;script&gt;</code> tag from the previous step loads the ml5.js library and makes its tools available to your JavaScript as <code class="inline">ml5</code>. Think of <code class="inline">ml5</code> as a toolbox: loading the library gives you access to the toolbox, but it doesn't load every AI model inside it.</p>
+    <p class="body-text">When you call a model in <code class="inline">sketch.js</code>, for example <code class="inline">ml5.faceMesh()</code> or <code class="inline">ml5.handPose()</code>, <code class="inline">ml5</code> then downloads the pretrained model and its weights that it needs to run. This is a separate and usually larger download.</p>
+    <p class="body-text">So there are two steps:</p>
+    <pre class="folder-tree" aria-label="Loading the library vs. loading a model">index.html → loads ml5.js library → sketch.js calls a model → model weights are downloaded</pre>
+
+    <ul class="steps">
+      <li>
+        <h3 class="sub" style="margin-top: 0;">Online</h3>
+        <p class="body-text no-top-margin">By default, the model weights are fetched automatically from ml5's servers the moment you call the model function. Nothing extra to set up, but the sketch needs an internet connection the first time it runs so the model can download.</p>
+
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code class="wrap">const faceMesh = ml5.faceMesh(options, modelLoaded);
+
+function modelLoaded() {
+  console.log("Model loaded");
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <h3 class="sub" style="margin-top: 0;">Offline</h3>
+        <p class="body-text no-top-margin">Not every ml5.js model supports pointing at local files, and the option differs per model, so check that model's own reference page (like the FaceMesh and HandPose links below) for a <code class="inline">modelUrl</code> or similar setting in its options. Where it's supported, download the model files while you still have internet access, save them next to your sketch, and pass their local path in:</p>
+
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code class="wrap">const faceMesh = ml5.faceMesh({ modelUrl: "models/facemesh/model.json" }, modelLoaded);</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <p class="body-text">If a model doesn't offer this option, it will always need internet access the first time it loads, even if the ml5.js and p5.js library files themselves are local.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= FACE TRIANGLE MESH ================= -->
+
+  <section class="section" id="face-mesh">
+    <h2>Face triangle mesh</h2>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>FaceMesh:</dt><dd><a href="https://docs.ml5js.org/#/reference/facemesh" target="_blank" rel="noopener">docs.ml5js.org/#/reference/facemesh</a></dd></div>
+          <div class="ref-row"><dt>HandPose:</dt><dd><a href="https://docs.ml5js.org/#/reference/handpose" target="_blank" rel="noopener">docs.ml5js.org/#/reference/handpose</a></dd></div>
+        </dl>
+      </div>
+    </div>
+    <img src="../images/facemesh-map.jpg" alt="Face triangle mesh keypoint map" style="display: block; width: 100%; margin: 18px 0 0; border: 1px solid rgba(255, 255, 255, 0.15);">
+    <p class="body-text"><a href="../images/facemesh-map.jpg" download>Download face mesh template</a></p>
+  </section>
+
+  <!-- ================= EXAMPLE SKETCHES ================= -->
+
+  <section class="section" id="examples">
+    <h2>Example sketches</h2>
+    <ul class="steps">
+      <li><a href="https://editor.p5js.org/ml5/sketches/QGH3dwJ1A" target="_blank" rel="noopener">handPose-keypoints</a></li>
+      <li><a href="https://editor.p5js.org/naomisamxyz/sketches/p7TBtWduj" target="_blank" rel="noopener">Face-triangle-mesh-with-comments</a></li>
+      <li><a href="https://editor.p5js.org/naomisamxyz/sketches/6hXZ7w0OS" target="_blank" rel="noopener">Facemesh-image</a></li>
+      <li><a href="https://editor.p5js.org/naomisamxyz/sketches/TtIpNIAMT" target="_blank" rel="noopener">Facemesh-example</a></li>
+      <li><a href="https://editor.p5js.org/naomisamxyz/sketches/xQb1ky1JO" target="_blank" rel="noopener">Angelwings</a></li>
+      <li><a href="https://editor.p5js.org/codingtrain/sketches/LdEmvXdGI" target="_blank" rel="noopener">Lips only</a></li>
+      <li><a href="https://editor.p5js.org/codingtrain/sketches/CITZ-7eyA" target="_blank" rel="noopener">Interactive canvas</a></li>
+    </ul>
+  </section>
+
+  <!-- ================= OTHER MODELS ================= -->
+
+  <section class="section" id="other-models">
+    <h2>Other models</h2>
+    <p class="body-text no-top-margin">FaceMesh and HandPose are only two of many models ml5.js offers, covering things like body pose, object detection, sound and image classification, and text generation. Browse the full list on the <a href="https://docs.ml5js.org/#/reference/overview?id=ml5-examples:~:text=the%20examples%20below.-,ml5%20Examples,-BodyPose" target="_blank" rel="noopener">ml5.js examples page</a>.</p>
+    <p class="body-text">Training your own model, instead of using one of ml5's pretrained ones, is also possible with tools like <code class="inline">ml5.neuralNetwork()</code>, or a no-code option like Google's <a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener">Teachable Machine</a>, which can export a model ml5.js can load directly.</p>
+    <br>
+    <ul class="steps">
+      <li><a href="https://editor.p5js.org/codingtrain/sketches/gariW6QrH" target="_blank" rel="noopener">Particles</a></li>
+      <li><a href="https://editor.p5js.org/codingtrain/sketches/Vt9xeTxWJ" target="_blank" rel="noopener">Object classification</a></li>
+    </ul>
+  </section>
+
+</div>
+
+<script src="../navigation.js?v=11"></script>
+<script src="../last-updated.js?v=5"></script>
+<script src="../cursor-sparkle.js?v=20260827"></script>
+
+</body>
+</html>

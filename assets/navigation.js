@@ -8,6 +8,7 @@
     ["cheatsheet-css.html", "༺ CSS ༻"],
     ["cheatsheet-js.html", "⚔︎ JS ⚔︎"],
     ["cheatsheet-p5.html", "✧ p5.js ✧"],
+    ["cheatsheet-ml5.html", "⌁ ml5.js ⌁"],
     ["github-basics.html", "❥ GitHub basics <span class=\"mirror-symbol\">❥</span>"],
     ["publish-to-github.html", "☙ Publish to GitHub ❧"],
     ["ai-assisted-workflows.html", "✢ Machine Rituals ✢"],
@@ -23,7 +24,6 @@
   ];
 
   var disabledGuides = new Set([
-    "ai-assisted-workflows.html",
     "meme-generator.html",
     "databases.html",
     "multiplayer-sketch.html",

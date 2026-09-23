@@ -1,8 +1,8 @@
 window.CANVAS_DATA = {
-  "version": 22,
+  "version": 24,
   "lastUpdated": {
-    "datetime": "2026-09-08",
-    "label": "September 8, 2026",
+    "datetime": "2026-09-22",
+    "label": "September 22, 2026",
     "by": "Naomi Sam"
   },
   "home": {
@@ -148,13 +148,13 @@ window.CANVAS_DATA = {
       "x": 4553.20941898551,
       "y": 4163.918512750007,
       "width": 650,
-      "height": 272,
+      "height": 297,
       "description": "",
       "items": [
-        "“The Rules Are the Art: Creating with AI” — Holly Herndon (2026)",
-        "“The Medium Is the Message” — Marshall McLuhan (1964)",
+        "“The Rules Are the Art: Creating with AI” - Holly Herndon (2026)",
+        "“The Medium Is the Message” - \"The Extensions of Man\" - Marshall McLuhan (1964)",
         "<a href=\"assets/guides/ai-assisted-workflows.html\">✢ Machine Rituals ✢</a>",
-        "p5.js, ml5.js, three.js"
+        "<a href=\"assets/guides/cheatsheet-p5.html\">p5.js</a>, <a href=\"assets/guides/cheatsheet-ml5.html\">ml5.js</a>"
       ]
     },
     {
@@ -178,11 +178,11 @@ window.CANVAS_DATA = {
       "height": 398,
       "description": "",
       "items": [
-        "“Triple-Chaser” — Forensic Architecture + Praxis Films (2019)",
+        "“Triple-Chaser” - Forensic Architecture + Praxis Films (2019)",
         "The Palantir Manifesto and the TESCREAL Bundle, a New Form of Imperialism",
-        "“Art, Automation and Authoritarianism” — Hito Steyerl (2026)",
+        "“Art, Automation and Authoritarianism” - Hito Steyerl (2026)",
         "Hito Steyerl, “Mean Images” (2023)",
-        "<a href=\"https://tegabrain.com/Slop-Evader\">Slop Evader — Tega Brain</a>",
+        "<a href=\"https://tegabrain.com/Slop-Evader\">Slop Evader - Tega Brain</a>",
         "<a href=\"https://ml5js.org/\">ml5.js</a> continued"
       ]
     },
@@ -252,7 +252,7 @@ window.CANVAS_DATA = {
       "description": "",
       "items": [
         "“From Spectacle to Extraction. And All Over Again,” a video interview with Kate Crawford and Trevor Paglen (2019)",
-        "“Feminist Data Set” — Caroline Sinders (2017–ongoing) and “The Library of Missing Datasets” — Mimi Onuoha (2016–ongoing)",
+        "“Feminist Data Set” - Caroline Sinders (2017–ongoing) and “The Library of Missing Datasets” - Mimi Onuoha (2016–ongoing)",
         "DATABASES"
       ]
     },
@@ -277,7 +277,7 @@ window.CANVAS_DATA = {
       "height": 234,
       "description": "",
       "items": [
-        "“SOMEONE” — Lauren Lee McCarthy (2019)",
+        "“SOMEONE” - Lauren Lee McCarthy (2019)",
         "Alexander Galloway, <cite>Protocol: How Control Exists After Decentralization</cite> (2004)",
         "MULTIPLAYER SKETCH"
       ]
@@ -357,7 +357,7 @@ window.CANVAS_DATA = {
       "height": 271.2493008425529,
       "description": "",
       "items": [
-        "“Password Protected with American Artist on Their Dash Cam Video Art” — Pioneer Works (2020)",
+        "“Password Protected with American Artist on Their Dash Cam Video Art” - Pioneer Works (2020)",
         "American Artist, “Black Gooey Universe” (2021)",
         "Legacy Russell, <cite>Glitch Feminism</cite>",
         "Fuser"
@@ -385,10 +385,10 @@ window.CANVAS_DATA = {
       "height": 284,
       "description": "",
       "items": [
-        "“Posthuman Wombs” — Anan Fries (2021)",
-        "“Morphogenic Angels” — Keiken (2023)",
-        "“2065 / Geomancer” — Lawrence Lek (2017)",
-        "“Posthuman Ethics for AI” — Rosi Braidotti (2025)",
+        "“Posthuman Wombs” - Anan Fries (2021)",
+        "“Morphogenic Angels” - Keiken (2023)",
+        "“2065 / Geomancer” - Lawrence Lek (2017)",
+        "“Posthuman Ethics for AI” - Rosi Braidotti (2025)",
         "UNREAL ENGINE BLUEPRINTS"
       ]
     },
@@ -413,7 +413,7 @@ window.CANVAS_DATA = {
       "height": 197,
       "description": "",
       "items": [
-        "“Poetics of Encryption: Art and the Technocene” — Nadim Samman (2024)",
+        "“Poetics of Encryption: Art and the Technocene” - Nadim Samman (2024)",
         "UNREAL INTERCONNECTED"
       ]
     },
@@ -438,9 +438,9 @@ window.CANVAS_DATA = {
       "height": 246,
       "description": "",
       "items": [
-        "“BOB (Bag of Beliefs)” — Ian Cheng (2018–2019)",
-        "“Undercurrents” — Rafael Lozano-Hemmer (2026)",
-        "“Xeno Computer 0.1: Labor” — Tega Brain (2025)",
+        "“BOB (Bag of Beliefs)” - Ian Cheng (2018–2019)",
+        "“Undercurrents” - Rafael Lozano-Hemmer (2026)",
+        "“Xeno Computer 0.1: Labor” - Tega Brain (2025)",
         "EXHIBITION SYSTEMS"
       ]
     },
@@ -785,8 +785,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1787892577071",
       "type": "media",
-      "x": 4962.096585320385,
-      "y": 4380.386751419217,
+      "x": 4935.85680129622,
+      "y": 4364.898359632133,
       "width": 198.0794194650287,
       "height": 135,
       "mediaKind": "youtube",
@@ -801,8 +801,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1787892606200",
       "type": "media",
-      "x": 4306.798024989516,
-      "y": 4276.987117626934,
+      "x": 4328.786484979341,
+      "y": 4288.197573022654,
       "width": 240,
       "height": 152.48246844319775,
       "mediaKind": "image",
@@ -815,8 +815,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1787892661209",
       "type": "media",
-      "x": 5018.183303544581,
-      "y": 4539.242449168785,
+      "x": 4995.0892048114365,
+      "y": 4566.98853545492,
       "width": 184.17658349163017,
       "height": 135,
       "mediaKind": "youtube",
@@ -831,11 +831,11 @@ window.CANVAS_DATA = {
     {
       "id": "item1787892827605",
       "type": "text",
-      "x": 4349.430195787668,
-      "y": 4459.042711922197,
-      "width": 657.9276443795724,
-      "height": 733.8144524024993,
-      "text": "“The medium is the message.”\n<br><br>- Marshall McLuhan, Understanding Media: The Extensions of Man (1964)<br><br>“We shape our tools and thereafter they shape us.”<br><br>- John M. Culkin, “A Schoolman’s Guide to Marshall McLuhan” (1967)<br><br>“I’m not against the materialist practices and skills of artificial intelligence; I am totally beyond against this stupid notion of orthogenetic evolution toward blissing off Earth finally in artificial intelligence or total roboticization. It’s a white male phallic masturbation.”<br><br>- Donna Haraway, “Donna Haraway on AI.”<br><br>“Information, interpretations, and meanings circulate through flexible, interactive human-computational collectivities or, in my terminology, cognitive assemblages.”\n<br><br>- N. Katherine Hayles, “Can Computers Create Meanings? A Cyber/Bio/Semiotic Perspective” (2019).",
+      "x": 4269.804988858777,
+      "y": 4457.705151205792,
+      "width": 659.6589721678126,
+      "height": 209.35484924208765,
+      "text": "“The medium is the message.”\n<br><br>- Marshall McLuhan, Understanding Media: The Extensions of Man (1964)<br>",
       "heightMode": "manual"
     },
     {
@@ -1239,6 +1239,68 @@ window.CANVAS_DATA = {
       "y": -170.0521479702345,
       "text": "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠄⠀⠀⠀⠀⢀⡲⢷⠷⢧⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⢠⠜⠁⠀⠀⠀⠀⠀⢠⣣⡓⡉⣧⠎⠋⢖⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠈⠉⢰⣻⣷⡦⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⢀⣔⠦⣤⣇⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⠸⣙⣯⣡⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠈⠀⠀⢹⣧⣢⠀⠀⠀⠀⡇⠀⠀⠀⣤⠂⡟⡟⣈⡳⡀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠛⠸⣻⡘⠀⡀⡀⣜⣇⡄⠀⠀⣧⡧⣿⣿⣿⣻⣇⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀\n⠐⠂⠐⢓⣶⢾⡿⣵⣖⡓⣒⢈⠛⣁⣞⣭⣏⣿⣿⣿⣦⣿⡕⣘⣥⡀⢠⡀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠸⠂⠑⠋⠉⣳⣭⣿⡋⡹⠉⠠⠷⣿⣿⣶⣲⠓⣿⡟⠛⠛⠋⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠀⠟⣞⡌⠗⠀⢺⣞⢯⡇⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⢰⣋⣂⣀⠀⠰⢷⠿⠁⠀⠀⣤⢺⢋⣁⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⣠⠛⠉⠀⣔⠛⣶⡟⡲⠀⠀⠀⢈⠸⣿⠃⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⢰⠂⠀⠀⠀⡨⢭⢿⠋⡱⣀⡀⠀⢸⠀⡿⠀⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠸⠀⠀⠀⠀⠉⠀⢳⣧⡛⠉⠉⠳⡘⠀⡽⠈⡄⠀⡀⠀⢀⣇⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠐⠜⢼⡤⠀⣠⠰⠳⠠⣸⢀⠃⠀⠀⠀⢏⣗⡑⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⢀⣀⠀⢸⠀⠀⢸⠔⢄⡀⠀⠀⡇⡻⠋⠀⠀⠉⠉⢹⣋⠇⢀⢀⠀⠀⠀\n⠐⠂⠒⠒⠒⠒⠒⠛⠓⢫⠛⢻⡱⠛⠫⣺⢽⣧⡧⢾⠈⡈⠈⠉⢻⢸⢵⣈⠺⠋⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠰⡄⠀⠀⠸⣲⡌⢿⣾⡰⡃⢀⡤⠼⣽⣮⢣⠅⠤⠄⢀⠆\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠁⠀⠘⠥⡍⣿⠟⠱⣒⣬⣤⡃⠼⣥⡤⠄⠊⠁⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⡿⠁⠀⠚⠀⠀⠈⢻⠂⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⣻⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⡟⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡧⣾⠄⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣯⣗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣗⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡷⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣯⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣵⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
       "fontSize": 84
+    },
+    {
+      "id": "item1790107877239",
+      "type": "text",
+      "x": 4809.421345514054,
+      "y": 4970.813586888241,
+      "width": 662.7129633390368,
+      "height": 245.654729539952,
+      "text": "“Information, interpretations, and meanings circulate through flexible, interactive human-computational collectivities or, in my terminology, cognitive assemblages.”<br><br>- N. Katherine Hayles, “Can Computers Create Meanings? A Cyber/Bio/Semiotic Perspective” (2019).",
+      "heightMode": "manual"
+    },
+    {
+      "id": "item1790107910246",
+      "type": "text",
+      "x": 4424.933649472856,
+      "y": 4765.423591350279,
+      "width": 663.7242347753656,
+      "height": 293.9465789138511,
+      "text": "“I’m not against the materialist practices and skills of artificial intelligence; I am totally beyond against this stupid notion of orthogenetic evolution toward blissing off Earth finally in artificial intelligence or total roboticization. It’s a white male phallic masturbation.”<br><br>- Donna Haraway, “Donna Haraway on AI.”",
+      "heightMode": "manual"
+    },
+    {
+      "id": "item1790107948831",
+      "type": "text",
+      "x": 4392.51156264463,
+      "y": 4570.969789059784,
+      "width": 654.3053202981118,
+      "height": 227.3976487258697,
+      "text": "“We shape our tools and thereafter they shape us.”<br><br>- John M. Culkin, “A Schoolman’s Guide to Marshall McLuhan” (1967)",
+      "heightMode": "manual"
+    },
+    {
+      "id": "item1790108148912",
+      "type": "media",
+      "x": 5032.444513369605,
+      "y": 4813.502186652394,
+      "width": 167.99493437151693,
+      "height": 135,
+      "mediaKind": "youtube",
+      "title": "Donna Harraway on Ai",
+      "url": "https://www.youtube.com/watch?v=4FycNIeS6GY",
+      "meta": "Interview",
+      "alt": "Donna Harraway on Ai",
+      "image": "https://i.ytimg.com/vi/4FycNIeS6GY/hqdefault.jpg",
+      "previewHeight": 135,
+      "heightMode": "manual"
+    },
+    {
+      "id": "item1790108331364",
+      "type": "media",
+      "x": 4307.85301629462,
+      "y": 4652.366079454157,
+      "width": 100,
+      "height": 155,
+      "mediaKind": "link",
+      "title": "The Extensions of Man",
+      "url": "https://www.are.na/block/27889207",
+      "meta": "Marshall McLuhan",
+      "alt": "Marshall McLuhan",
+      "image": "https://iad.microlink.io/0CZOFmOEID7NKs5XCC9sju01tbYhs6OqbjXcI_jrzw5N9vXzjEMou1PaxpJm3xTaVGmoC32mlsMfmAZ1k2IzAg.png",
+      "previewHeight": 155,
+      "heightMode": "manual"
     }
   ],
   "connections": [

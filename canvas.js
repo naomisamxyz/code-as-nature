@@ -1118,7 +1118,7 @@
       event.stopPropagation();
       selectResource(resource, false);
       if (resource.type === "sigil") {
-        // Sigils have no box to stretch — the drag scales the glyph itself.
+        // Sigils have no box to stretch - the drag scales the glyph itself.
         gesture = {
           kind: "resize-sigil",
           startX: event.clientX,
@@ -1336,7 +1336,7 @@
     "wheel",
     event => {
       event.preventDefault();
-      if (!event.ctrlKey) {
+      if (!event.ctrlKey && !event.shiftKey) {
         stopZoomMomentum(false);
         camera.x -= event.deltaX;
         camera.y -= event.deltaY;
@@ -1346,7 +1346,14 @@
       clearTimeout(zoomMomentumTimer);
       cancelAnimationFrame(zoomMomentumFrame);
       zoomMomentumFrame = null;
-      const logDelta = clamp(-event.deltaY * 0.008, -0.32, 0.32);
+      // Shift+wheel is often reported as horizontal scroll (deltaX) by the
+      // browser/OS instead of deltaY, so fall back to deltaX when shift is
+      // held and there's no vertical delta (plain mouse, no trackpad).
+      const rawDelta =
+        event.shiftKey && !event.deltaY && event.deltaX
+          ? event.deltaX
+          : event.deltaY;
+      const logDelta = clamp(-rawDelta * 0.008, -0.32, 0.32);
       zoomVelocity = clamp(
         zoomVelocity * 0.35 + logDelta * 0.65,
         -0.075,
@@ -1358,6 +1365,20 @@
     },
     { passive: false }
   );
+
+  const zoomInButton = document.querySelector("#zoom-in");
+  const zoomOutButton = document.querySelector("#zoom-out");
+  function zoomButtonStep(factor) {
+    stopZoomMomentum(false);
+    zoomAround(factor, innerWidth / 2, innerHeight / 2);
+    applyCamera(true);
+  }
+  if (zoomInButton) {
+    zoomInButton.addEventListener("click", () => zoomButtonStep(1.25));
+  }
+  if (zoomOutButton) {
+    zoomOutButton.addEventListener("click", () => zoomButtonStep(1 / 1.25));
+  }
 
   function saveLocal() {
     if (edit) {
@@ -1800,7 +1821,7 @@
 
   async function exportFile() {
     // Split embedded raster images out to files under assets/thumbnails/ so
-    // resources-data.js stays small — base64 thumbnails add several MB, and
+    // resources-data.js stays small - base64 thumbnails add several MB, and
     // the file loads on every page.
     const exportData = structuredClone(data);
     const imageFiles = [];
@@ -1882,7 +1903,7 @@
         await writer.close();
         if (imageFiles.length) {
           alert(
-            "Saved resources-data.js with images still embedded — the project " +
+            "Saved resources-data.js with images still embedded - the project " +
             "folder wasn't available. Run this in Chrome and allow folder " +
             "access to split them into assets/thumbnails/."
           );

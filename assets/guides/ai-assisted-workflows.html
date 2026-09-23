@@ -5,7 +5,7 @@
 <title>✢ Machine Rituals ✢</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=47" />
+<link rel="stylesheet" href="guide.css?v=48" />
 <link rel="stylesheet" href="../site-shell.css?v=7" />
 <link rel="stylesheet" href="../navigation.css?v=6" />
 </head>
@@ -34,15 +34,18 @@
     <a href="#intro">AI-assisted workflows</a>
     <a href="#chatbots">Chatbots</a>
     <a href="#agents">Coding agents</a>
-    <a href="#prompting">Prompt writing</a>
+    <a href="#prompting">Clear instructions</a>
   </nav>
 
-  <h2 id="intro">AI-assisted workflows</h2>
+  <section class="section" id="intro">
+    <h2>AI-assisted workflows</h2>
 
-  <div class="page-intro">
-    <p>Every tool shapes how you understand what you're working on, not just what you can build with it. Each comes with politics: who owns it, whose labor and data built it, how much energy it uses, what happens to what you type, and who benefits. Understand these tradeoffs before choosing a tool.</p>
-    <p>AI can speed up your process and be a useful creative tool. The goal is understanding the relationship between your decisions and what the work does. Use it as a debugger, critic, explainer, or pair programmer.</p>
-  </div>
+    <div class="page-intro">
+      <p>Every tool shapes how you understand what you're working on, not just what you can build with it. Tools also come with politics: who owns them, whose labor and data built them, how much energy they use, what happens to what you put into them, and who benefits.</p>
+      <p>Learning to code has always been a bit of a treasure hunt. You search for solutions, read documentation, find code snippets someone shared online, take them apart, change them, and figure out how they work in your own project. Using AI isn't completely different from this. It can make that process much faster by helping you find solutions, debug problems, explain unfamiliar code, or work through an idea with you.</p>
+      <p>AI can help you write code, but you still need to understand enough to know what to ask for and how to ask for it, where the code goes, what it changes, and when something isn't working.</p>
+    </div>
+  </section>
 
   <!-- ================= CHATBOTS ================= -->
 
@@ -71,36 +74,64 @@
       <div class="ref-group">
         <h3>Agents</h3>
         <dl>
-          <div class="ref-row"><dt>Gemini CLI (Google):</dt><dd><a href="https://ai.google.dev/gemini-api/docs/coding-agents" target="_blank" rel="noopener">docs</a></dd></div>
-          <div class="ref-row"><dt>Codex (OpenAI):</dt><dd><a href="https://developers.openai.com/" target="_blank" rel="noopener">docs</a></dd></div>
-          <div class="ref-row"><dt>Claude Code (Anthropic):</dt><dd><a href="https://docs.anthropic.com/en/docs/claude-code/getting-started" target="_blank" rel="noopener">docs</a></dd></div>
+          <div class="ref-row"><dt>Gemini CLI (Google):</dt><dd>a free, open-source agent that runs in your terminal. Reads and edits files, runs shell commands, and can call out to other tools.</dd></div>
+          <div class="ref-row"><dt>Codex (OpenAI):</dt><dd>OpenAI's coding agent, available in the terminal, IDE extensions, and the ChatGPT app. Can work locally or hand tasks off to a cloud sandbox.</dd></div>
+          <div class="ref-row"><dt>Claude Code (Anthropic):</dt><dd>Anthropic's agent for the terminal and IDEs. Plans multi-step changes, edits across files, runs and tests its own work, and asks before doing anything destructive.</dd></div>
         </dl>
       </div>
     </div>
 
-    <p class="body-text">The same questions about ownership, data, labor, energy use, and institutional power still apply. Try these after you are comfortable with files, the terminal, Git, and basic debugging.</p>
+    <p class="body-text">Try these after you are comfortable with files, the terminal, Git, and basic debugging.</p>
+    <details class="guide-disclosure" open>
+      <summary style="text-transform: uppercase; letter-spacing: 0.08em;">Warning</summary>
+      <p class="body-text no-top-margin" style="margin: 0 14px 14px;">Coding agents can read, edit, and delete files directly. Avoid modes that allow changes without asking for permission, and only give access to folders you're comfortable modifying. Always commit your work with Git first so you can undo unwanted changes.</p>
+    </details>
   </section>
 
   <!-- ================= PROMPT WRITING ================= -->
 
   <section class="section" id="prompting">
-    <h2>Prompt writing</h2>
-    <p class="section-intro">Understanding code helps you know what to ask and how to ask for it.</p>
-    <ol class="steps">
-      <li>Name the problem yourself first.</li>
-      <li>Give it the smallest useful bit of code, the exact error, and what you expected vs. what happened.</li>
-      <li>Ask for a diagnosis before a rewrite. Don't add a line you can't explain yourself.</li>
-      <li>Change one thing at a time, and run it after each change.</li>
-      <li>Check the result yourself: open the page, resize it, click everything, check the console. If a tool edited files directly, check exactly what changed before trusting it.</li>
-      <li>Keep private material (passwords, API keys, other people's unpublished work) out of the prompt, and keep a working version before you start.</li>
-    </ol>
-    <p class="body-text">More on this: <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener">Anthropic's guide to writing good prompts</a>.</p>
+    <h2>Clear instructions</h2>
+    <p class="section-intro">Before giving AI a task, tell it how you want it to work with you. This helps prevent it from acting like an overambitious intern and changing, adding, or "improving" things you never asked for.</p>
+
+    <ul class="steps">
+      <li>
+        <h3 class="sub" style="margin-top: 0;">Intention + boundaries</h3>
+        <p class="body-text no-top-margin">Explain what you're trying to do, what the scope is, and how you want to approach it. Tell it to always ask for permission before making any changes.</p>
+        <p class="body-text no-top-margin" style="color: var(--text-muted); font-size: 12.5px;"><em>"I'm building a simple Unity interaction where clicking an object changes its material. I want to build this one step at a time using basic C# that I can understand. Start by helping me detect when the object is clicked. Don't write the material-changing part yet. Always ask for my permission before making any changes. Only do what I ask you to, keep your answers short and precise."</em></p>
+      </li>
+      <li>
+        <h3 class="sub" style="margin-top: 0;">Give it your input</h3>
+        <p class="body-text no-top-margin">Give it the relevant code, files, errors, or context. Let it understand what already exists before changing anything.</p>
+        <p class="body-text no-top-margin" style="color: var(--text-muted); font-size: 12.5px;"><em>"Here is my current script. Read it and explain how it works. Don't change or rewrite anything yet."</em></p>
+      </li>
+      <li>
+        <h3 class="sub" style="margin-top: 0;">Give exact instructions + approach</h3>
+        <p class="body-text no-top-margin">Tell it precisely what you want changed and how you want it to approach the code. If you're learning or practicing something specific, tell it which concepts, methods, or structures to use.</p>
+        <p class="body-text no-top-margin" style="color: var(--text-muted); font-size: 12.5px;"><em>"Change the script so clicking the object switches between two materials. Use a <code class="inline">bool</code> to keep track of which material is currently active and an <code class="inline">if / else</code> statement to decide which material to apply when the object is clicked. Store both materials as public variables so I can assign them in the Unity Inspector. Keep the code simple and don't introduce additional systems or concepts."</em></p>
+      </li>
+      <li>
+        <h3 class="sub" style="margin-top: 0;">Repeat back</h3>
+        <p class="body-text no-top-margin">Before it starts, make sure it understood your instructions.</p>
+        <p class="body-text no-top-margin" style="color: var(--text-muted); font-size: 12.5px;"><em>"Before you do anything, repeat back what you understood and how you're going to approach it."</em></p>
+      </li>
+      <li>
+        <h3 class="sub" style="margin-top: 0;">Execute</h3>
+        <p class="body-text no-top-margin">After any necessary revisions of step 4, tell it to go ahead without expanding the scope.</p>
+        <p class="body-text no-top-margin" style="color: var(--text-muted); font-size: 12.5px;"><em>"Only make the changes we agreed on. Don't change anything else."</em></p>
+      </li>
+      <li>
+        <h3 class="sub" style="margin-top: 0;">Test + debug</h3>
+        <p class="body-text no-top-margin">Test the change before moving on. If something doesn't work, give AI the exact error message and describe what happened. Ask it to identify the problem before changing more code.</p>
+        <p class="body-text no-top-margin" style="color: var(--text-muted); font-size: 12.5px;"><em>"The material isn't changing when I click. There are no errors in the Console. Help me figure out where the problem is. Let's test one thing at a time, and don't change the code until we know what is causing it."</em></p>
+      </li>
+    </ul>
   </section>
 
 </div>
 
-<script src="../navigation.js?v=9"></script>
-<script src="../last-updated.js?v=4"></script>
+<script src="../navigation.js?v=11"></script>
+<script src="../last-updated.js?v=5"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 
 </body>

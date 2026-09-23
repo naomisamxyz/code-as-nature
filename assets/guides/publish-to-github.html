@@ -5,7 +5,7 @@
 <title>☙ Publish to GitHub ❧</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="guide.css?v=47" />
+<link rel="stylesheet" href="guide.css?v=48" />
 <link rel="stylesheet" href="../site-shell.css?v=7" />
 <link rel="stylesheet" href="../navigation.css?v=6" />
 </head>
@@ -39,16 +39,14 @@
     <a href="#commit">Commit</a>
     <a href="#publish">Publish</a>
     <a href="#sync">Every time after</a>
-    <a href="#live">Make it a live website</a>
-    <a href="#alternatives">Alternative publishing platforms</a>
-  </nav>
+    <a href="#live">Make it a live website</a>  </nav>
 
   <section class="section" id="prerequisites">
     <h2>Before you start</h2>
     <ul class="steps">
       <li><strong>VS Code</strong>: installed, with your project open as a folder.</li>
       <li><strong>A free GitHub.com account</strong>: sign up at github.com if you don't have one yet.</li>
-      <li><strong>A finished-enough project</strong>: any folder of files works. It doesn't need to be complete.</li>
+      <li><strong>A project folder with an index.html file</strong></li>
     </ul>
   </section>
 
@@ -84,6 +82,7 @@
         <dl>
           <div class="ref-row"><dt>.DS_Store:</dt><dd>an invisible housekeeping file macOS quietly drops into folders you open in Finder. Meaningless clutter, not part of your actual project.</dd></div>
           <div class="ref-row"><dt>.gitignore:</dt><dd>lists files Git should not track. Those files stop appearing as changes and cannot be staged accidentally. Optional on operating systems that do not create <code class="inline">.DS_Store</code>.</dd></div>
+          <div class="ref-row"><dt>Windows:</dt><dd>doesn't create <code class="inline">.DS_Store</code>, but Windows Explorer sometimes drops its own clutter file, <code class="inline">Thumbs.db</code>. Add it as a second line in <code class="inline">.gitignore</code> if you see it show up.</dd></div>
         </dl>
       </div>
     </div>
@@ -108,7 +107,7 @@
       <div class="ref-group">
         <dl>
           <div class="ref-row"><dt>Commit:</dt><dd>a snapshot of the staged changes in your project's history. The message briefly describes what changed.</dd></div>
-          <div class="ref-row"><dt>First commit message:</dt><dd>there's not much to describe yet &mdash; <em>"Initial commit"</em> or <em>"First version"</em> is completely normal. Later on, describe what changed: <em>"Fix header spacing,"</em> <em>"Add contact page."</em></dd></div>
+          <div class="ref-row"><dt>First commit message:</dt><dd>there's not much to describe yet - <em>"Initial commit"</em> or <em>"First version"</em> is completely normal. Later on, describe what changed: <em>"Fix header spacing,"</em> <em>"Add contact page."</em></dd></div>
         </dl>
       </div>
     </div>
@@ -151,24 +150,11 @@
     </ol>
   </section>
 
-  <section class="section" id="alternatives">
-    <h2>Alternative publishing platforms</h2>
-    <p class="section-intro">GitHub Pages is not the only free option. These connect to the same GitHub repository and redeploy automatically on every push, with their own URL.</p>
-    <div class="ref-groups">
-      <div class="ref-group">
-        <dl>
-          <div class="ref-row"><dt>Netlify:</dt><dd>drag-and-drop or connect a GitHub repo; free tier includes custom domains and automatic HTTPS.</dd></div>
-          <div class="ref-row"><dt>Vercel:</dt><dd>similar to Netlify, built by the makers of Next.js; strong for JavaScript-framework projects.</dd></div>
-          <div class="ref-row"><dt>Cloudflare Pages:</dt><dd>fast global hosting on Cloudflare's network, generous free tier.</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
 
 </div>
 
-<script src="../navigation.js?v=9"></script>
-<script src="../last-updated.js?v=4"></script>
+<script src="../navigation.js?v=11"></script>
+<script src="../last-updated.js?v=5"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 
 </body>
