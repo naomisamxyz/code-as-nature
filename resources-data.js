@@ -1301,6 +1301,22 @@ window.CANVAS_DATA = {
       "image": "https://iad.microlink.io/0CZOFmOEID7NKs5XCC9sju01tbYhs6OqbjXcI_jrzw5N9vXzjEMou1PaxpJm3xTaVGmoC32mlsMfmAZ1k2IzAg.png",
       "previewHeight": 155,
       "heightMode": "manual"
+    },
+    {
+      "id": "item1790787555027",
+      "type": "media",
+      "x": 5701.709176209217,
+      "y": 3600.0021521594185,
+      "width": 100,
+      "height": 159.40839032454664,
+      "mediaKind": "link",
+      "title": "Mean Images",
+      "url": "https://www.are.na/block/33521913",
+      "meta": "Hito Steyerl",
+      "alt": "Hito Steyerl",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eare.na%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "previewHeight": 155,
+      "heightMode": "manual"
     }
   ],
   "connections": [
