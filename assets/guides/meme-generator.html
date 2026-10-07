@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>♦︎ Meme Generator ♦︎</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="guide.css?v=48">
+<link rel="stylesheet" href="guide.css?v=49">
 <link rel="stylesheet" href="../site-shell.css?v=7">
 <link rel="stylesheet" href="../navigation.css?v=6">
 </head>
@@ -19,9 +19,1567 @@
   <header class="masthead">
     <div class="section-heading"><pre class="section-ornament guide-title-ornament" aria-hidden="true"></pre><h1>Meme Generator</h1></div>
   </header>
+
+  <nav class="page-toc">
+    <a href="#api">What is an API?</a>
+    <a href="#website">Build the meme generator</a>
+    <a href="#more-apis">Where to find APIs</a>
+    <a href="#meme-generators" class="sub">Meme Generators</a>
+    <a href="#random-image-apis" class="sub">Random Image APIs</a>
+    <a href="#gifs" class="sub">GIFs</a>
+    <a href="#anime-images" class="sub">Anime Images</a>
+    <a href="#generated-identities-and-creatures" class="sub">Generated Identities + Creatures</a>
+    <a href="#weird-text-apis" class="sub">Weird Text APIs</a>
+    <a href="#words-and-language" class="sub">Words + Language</a>
+    <a href="#art-and-museum-collections" class="sub">Art + Museum Collections</a>
+    <a href="#space" class="sub">Space</a>
+    <a href="#earth-and-environment" class="sub">Earth + Environment</a>
+    <a href="#plants-animals-and-ecology" class="sub">Plants, Animals + Ecology</a>
+    <a href="#books-and-archives" class="sub">Books + Archives</a>
+    <a href="#sound" class="sub">Sound</a>
+    <a href="#science-and-research" class="sub">Science + Research</a>
+    <a href="#government-and-public-data" class="sub">Government + Public Data</a>
+    <a href="#internet-and-software-culture" class="sub">Internet + Software Culture</a>
+    <a href="#finding-more" class="sub">Finding More</a>
+  </nav>
+
+  <section class="section" id="api">
+    <h2>What is an API?</h2>
+    <p class="section-intro">An API (Application Programming Interface) lets your website request data or functionality from another website or database.</p>
+    <p class="body-text">Instead of storing all the information ourselves, our website can request it from another source:</p>
+
+    <pre class="folder-tree" aria-label="How a request flows through an API">your website → API → data → your website</pre>
+
+    <p class="body-text">Different sources are accessed in different ways:</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>API:</dt><dd>Use <code class="inline">fetch()</code> to request data, then usually <code class="inline">.json()</code> to convert the response into data JavaScript can use.<br>Example: <code class="inline">fetch("https://api.adviceslip.com/advice").then(response =&gt; response.json()).then(data =&gt; { memeText.textContent = data.slip.advice; });</code></dd></div>
+          <div class="ref-row"><dt>Direct Image:</dt><dd>Give the image URL directly to the <code class="inline">src</code> of an image.<br>Example: <code class="inline">memeImage.src = "https://cataas.com/cat";</code></dd></div>
+          <div class="ref-row"><dt>Generated Image:</dt><dd>Build an image URL using your own text or variables.<br>Example: <code class="inline">memeImage.src = "https://robohash.org/hello";</code></dd></div>
+          <div class="ref-row"><dt>API &rarr; Image:</dt><dd>Request data containing an image URL, then give that URL to the image on your page.<br>Example: <code class="inline">fetch("https://yesno.wtf/api").then(response =&gt; response.json()).then(data =&gt; { memeImage.src = data.image; });</code></dd></div>
+          <div class="ref-row"><dt>Dataset:</dt><dd>Load a JSON, CSV, or text file and use values from it on your page.<br>Example: <code class="inline">fetch("data.json").then(response =&gt; response.json()).then(data =&gt; { memeText.textContent = data[0].text; });</code></dd></div>
+          <div class="ref-row"><dt>Directory:</dt><dd>Use the website to find an API or dataset. The directory itself usually isn't accessed by your code.<br>Example: Find an API &rarr; find its endpoint &rarr; use that endpoint in your JavaScript.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="sub">API returning text</h3>
+    <p class="body-text no-top-margin">HTML:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code class="wrap">&lt;p id="meme-text"&gt;&lt;/p&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-text">JavaScript:</p>
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="FIND ELEMENT" style="top: calc(0 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="REQUEST DATA" style="top: calc(2 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="CONVERT JSON" style="top: calc(3 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="RECEIVE DATA" style="top: calc(4 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="USE THE DATA" style="top: calc(5 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>const memeText = document.getElementById("meme-text");
+
+fetch("https://api.adviceslip.com/advice")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeText.textContent = data.slip.advice;
+  });</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" data-notes-id="advice-text-fetch" style="min-height: 436px;">
+
+        <div class="note" data-note="find-element" style="top: 0px;">
+          <span class="note-label">FIND ELEMENT</span>
+          <p>Finds the HTML element where we want to display the text.</p>
+        </div>
+
+        <div class="note" data-note="request-data" style="top: 90px;">
+          <span class="note-label">REQUEST DATA</span>
+          <p>Requests data from the API.</p>
+        </div>
+
+        <div class="note" data-note="convert-json" style="top: 180px;">
+          <span class="note-label">CONVERT JSON</span>
+          <p>The API responds with JSON. This converts it into data JavaScript can use.</p>
+        </div>
+
+        <div class="note" data-note="receive-data" style="top: 270px;">
+          <span class="note-label">RECEIVE DATA</span>
+          <p><code>data</code> now contains everything the API returned.</p>
+        </div>
+
+        <div class="note" data-note="use-the-data" style="top: 360px;">
+          <span class="note-label">USE THE DATA</span>
+          <p>Selects the advice from the returned data and puts it inside our <code>&lt;p&gt;</code> element.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors" data-connectors-id="advice-text-fetch">
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:12px;"></div>
+        <div class="conn-h" style="top:12px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:102px;"></div>
+        <div class="conn-h" style="top:102px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:192px;"></div>
+        <div class="conn-h" style="top:192px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:282px;"></div>
+        <div class="conn-h" style="top:282px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:372px;"></div>
+        <div class="conn-h" style="top:372px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+
+    <h3 class="sub">API returning an image URL</h3>
+    <p class="body-text no-top-margin">HTML:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code class="wrap">&lt;img id="meme-image" src="" alt="Random image"&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-text">JavaScript:</p>
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="FIND ELEMENT" style="top: calc(0 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="REQUEST DATA" style="top: calc(2 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="CONVERT JSON" style="top: calc(3 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="RECEIVE DATA" style="top: calc(4 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="USE THE DATA" style="top: calc(5 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>const memeImage = document.getElementById("meme-image");
+
+fetch("https://yesno.wtf/api")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeImage.src = data.image;
+  });</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" data-notes-id="yesno-image-fetch" style="min-height: 436px;">
+
+        <div class="note" data-note="find-element" style="top: 0px;">
+          <span class="note-label">FIND ELEMENT</span>
+          <p>Finds the HTML image element we want to change.</p>
+        </div>
+
+        <div class="note" data-note="request-data" style="top: 90px;">
+          <span class="note-label">REQUEST DATA</span>
+          <p>Requests data from the API.</p>
+        </div>
+
+        <div class="note" data-note="convert-json" style="top: 180px;">
+          <span class="note-label">CONVERT JSON</span>
+          <p>Converts the JSON response into data JavaScript can use.</p>
+        </div>
+
+        <div class="note" data-note="receive-data" style="top: 270px;">
+          <span class="note-label">RECEIVE DATA</span>
+          <p><code>data</code> now contains everything the API returned.</p>
+        </div>
+
+        <div class="note" data-note="use-the-data" style="top: 360px;">
+          <span class="note-label">USE THE DATA</span>
+          <p>Selects the image URL from the returned data and uses it as the source of our <code>&lt;img&gt;</code>.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors" data-connectors-id="yesno-image-fetch">
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:12px;"></div>
+        <div class="conn-h" style="top:12px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:102px;"></div>
+        <div class="conn-h" style="top:102px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:192px;"></div>
+        <div class="conn-h" style="top:192px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:282px;"></div>
+        <div class="conn-h" style="top:282px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:372px;"></div>
+        <div class="conn-h" style="top:372px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="website">
+    <h2>Build the meme generator</h2>
+    <p class="section-intro">Copy the <code class="inline">index.html</code> from last week's folder into this week's folder, and replace the title and body content with this week's.</p>
+    <p class="body-text">Add this to the <code class="inline">&lt;body&gt;</code>:</p>
+
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;div class="meme"&gt;
+  &lt;img class="meme-image" id="meme-image" src="" alt="Random meme"&gt;
+  &lt;p class="meme-text" id="meme-text"&gt;Click the button.&lt;/p&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;button id="generate-button"&gt;[ Generate Meme ]&lt;/button&gt;
+
+&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-text">Create a <code class="inline">script.js</code> in this week's folder and add this:</p>
+
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>const button = document.getElementById("generate-button");
+const memeText = document.getElementById("meme-text");
+const memeImage = document.getElementById("meme-image");
+
+button.addEventListener("click", generateMeme);
+
+function generateMeme() {
+
+  // Get text
+  fetch("https://corporatebs-generator.sameerkumar.website/?" + Date.now())
+    .then(response => response.json())
+    .then(data => {
+      memeText.textContent = data.phrase;
+    });
+
+  // Get image
+  fetch("https://yesno.wtf/api?" + Date.now())
+    .then(response => response.json())
+    .then(data => {
+      memeImage.src = data.image;
+    });
+
+}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-text">Add this to the shared <code class="inline">style.css</code> at the root of the portfolio:</p>
+
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>/* ========================================
+   SPECIFIC STYLES FOR MEME GENERATOR
+======================================== */
+
+.meme {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.meme-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meme-text {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 80%;
+  margin: 0;
+
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+
+  text-shadow: 2px 2px 0 black;
+}
+
+button {
+  background-color: white;
+  font-family: inherit;
+  font-size: 20px;
+  padding: 10px 20px;
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="more-apis">
+    <h2>Where to find APIs</h2>
+    <p class="section-intro">More sources you can use the same way: request data or an image URL, then put it into <code class="inline">memeText</code> or <code class="inline">memeImage</code>.</p>
+
+    <details class="guide-disclosure" id="meme-generators">
+      <summary><h2 style="display: inline;">Meme Generators</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>Memegen.link</strong> &mdash; Generated Image<br>Open-source meme generator with hundreds of templates. No account required.</p>
+        <p class="body-text">The template and text are part of the image URL:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src =
+  "https://api.memegen.link/images/drake/no/yes.png";</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Changing <code class="inline">no</code> and <code class="inline">yes</code> changes the text:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src =
+  "https://api.memegen.link/images/drake/coding/debugging.png";</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://memegen.link/" target="_blank" rel="noopener">memegen.link</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Imgflip</strong> &mdash; API<br>Large collection of familiar meme templates.</p>
+        <p class="body-text">Request the available templates:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.imgflip.com/get_memes")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">The returned JSON contains template names, IDs, image URLs and dimensions.</p>
+        <p class="body-text">Creating finished memes through the API requires authentication.</p>
+        <p class="body-text"><a href="https://imgflip.com/api" target="_blank" rel="noopener">imgflip.com/api</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Cataas, Cat as a Service</strong> &mdash; Direct Image + Generated Image<br>Random cats and cat GIFs.</p>
+        <p class="body-text">Random cat:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src = "https://cataas.com/cat?" + Date.now();</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Cat with generated text:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src = "https://cataas.com/cat/says/hello";</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change the text:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src = "https://cataas.com/cat/says/why";</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://cataas.com/" target="_blank" rel="noopener">cataas.com</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="random-image-apis">
+      <summary><h2 style="display: inline;">Random Image APIs</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>Dog CEO</strong> &mdash; API → Image<br>Random dog photographs.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://dog.ceo/api/breeds/image/random")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeImage.src = data.message;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">The API returns JSON containing an image URL. <code class="inline">data.message</code> selects that URL.</p>
+        <p class="body-text"><a href="https://dog.ceo/dog-api/" target="_blank" rel="noopener">dog.ceo/dog-api</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Random Duck</strong> &mdash; API → Image<br>Random duck photographs and GIFs.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://random-d.uk/api/random")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeImage.src = data.url;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://random-d.uk/api" target="_blank" rel="noopener">random-d.uk/api</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>YesNo.wtf</strong> &mdash; API → Image<br>Returns <code class="inline">yes</code>, <code class="inline">no</code>, or <code class="inline">maybe</code> together with a reaction GIF.</p>
+        <p class="body-text">Use only the image:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://yesno.wtf/api")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeImage.src = data.image;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Or use both:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://yesno.wtf/api")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeText.textContent = data.answer;
+    memeImage.src = data.image;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://yesno.wtf/api" target="_blank" rel="noopener">yesno.wtf/api</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Shibe.online</strong> &mdash; API → Image<br>Random Shiba Inu, cat and bird images.</p>
+        <p class="body-text">For example, request one Shiba image:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://shibe.online/api/shibes?count=1&amp;urls=true")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeImage.src = data[0];
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://shibe.online/" target="_blank" rel="noopener">shibe.online</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Lorem Picsum</strong> &mdash; Direct Image<br>Random photographs at dimensions you choose.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src = "https://picsum.photos/800/800?" + Date.now();</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">You can also use a seed. The same seed always gives you the same image:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src = "https://picsum.photos/seed/banana/800/800";</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change the seed:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src = "https://picsum.photos/seed/ghost/800/800";</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://picsum.photos/" target="_blank" rel="noopener">picsum.photos</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>LoremFlickr</strong> &mdash; Direct Image<br>Random Creative Commons Flickr images. You can search by keyword and control dimensions.</p>
+        <p class="body-text">Random image matching <code class="inline">surreal</code>:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>const image = document.getElementById("image");
+
+image.src =
+  "https://loremflickr.com/800/800/surreal?random=" + Date.now();</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">You can combine terms:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>image.src =
+  "https://loremflickr.com/800/800/ghost,computer?random=" + Date.now();</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://www.loremflickr.com/" target="_blank" rel="noopener">loremflickr.com</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>The Cat API</strong> &mdash; API &rarr; Image / GIF<br>Different from Cataas. It has a large searchable image database, breeds, categories and GIF filtering.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>const image = document.getElementById("image");
+
+fetch("https://api.thecatapi.com/v1/images/search")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    image.src = data[0].url;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">You can specifically request GIFs:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.thecatapi.com/v1/images/search?mime_types=gif")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    image.src = data[0].url;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://docs.thecatapi.com/reference" target="_blank" rel="noopener">docs.thecatapi.com/reference</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="gifs">
+      <summary><h2 style="display: inline;">GIFs</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>GIPHY</strong> &mdash; API &rarr; Image<br>Probably the most useful addition. Supports search, trending and random GIFs.</p>
+        <p class="body-text">For example, a random GIF:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>const memeImage = document.getElementById("meme-image");
+
+fetch(
+  "https://api.giphy.com/v1/gifs/random?api_key=YOUR_API_KEY"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeImage.src = data.data.images.original.url;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Or search for something:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>const memeImage = document.getElementById("meme-image");
+
+fetch(
+  "https://api.giphy.com/v1/gifs/search?api_key=YOUR_API_KEY&amp;q=ghost&amp;limit=1"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeImage.src = data.data[0].images.original.url;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Requires a free account/API key. New beta keys are currently limited to 100 API calls per hour. See the <a href="https://developers.giphy.com/docs/api/quick-start-guide/" target="_blank" rel="noopener">quick start guide</a>.</p>
+        <p class="body-text"><a href="https://developers.giphy.com/docs/" target="_blank" rel="noopener">developers.giphy.com/docs</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>GifCities</strong> &mdash; Archive<br>An Internet Archive project containing animated GIFs recovered from old GeoCities websites.</p>
+        <p class="body-text">Rather than contemporary reaction GIFs, you get things like under construction signs, spinning skulls, flames, sparkles, dancing babies, email icons, animated text, and other 90s web graphics.</p>
+        <p class="body-text">Picks a random search term, searches GifCities for it, then picks a random result and builds its archived GIF URL:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>const memeImage = document.getElementById("meme-image");
+
+const words = [
+  "cat",
+  "star",
+  "fire",
+  "love",
+  "home",
+  "web",
+  "cool",
+  "music",
+  "computer",
+  "welcome",
+  "email",
+  "angel",
+  "skull",
+  "rainbow"
+];
+
+const word = words[Math.floor(Math.random() * words.length)];
+
+fetch("https://gifcities.archive.org/api/v1/gifsearch?q=" + word)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    const result = data[Math.floor(Math.random() * data.length)];
+
+    const gifURL =
+      "https://web.archive.org/web/" +
+      result.gif.replace("/", "im_/");
+
+    memeImage.src = gifURL;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://gifcities.org/" target="_blank" rel="noopener">gifcities.org</a></p>
+      </li>
+    </ul>
+        </details>
+
+<details class="guide-disclosure" id="anime-images">
+      <summary><h2 style="display: inline;">Anime Images</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>Nekos.best</strong> &mdash; API &rarr; Image / GIF<br>Anime images and reaction GIFs with categories like <code class="inline">neko</code>, <code class="inline">hug</code>, <code class="inline">wink</code>, <code class="inline">pat</code>, and more. The API returns the media URL plus metadata such as the anime and artist.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>const image = document.getElementById("image");
+
+fetch("https://nekos.best/api/v2/neko")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    image.src = data.results[0].url;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">For a reaction GIF:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://nekos.best/api/v2/wink")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    image.src = data.results[0].url;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://docs.nekos.best/getting-started/api-endpoints.html" target="_blank" rel="noopener">docs.nekos.best</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Waifu.pics</strong> &mdash; API &rarr; Image / GIF<br>User-curated anime image API with categories including <code class="inline">waifu</code>, <code class="inline">neko</code>, <code class="inline">hug</code>, <code class="inline">cry</code>, <code class="inline">dance</code>, <code class="inline">cringe</code>, <code class="inline">blush</code>, <code class="inline">slap</code>, <code class="inline">poke</code>, and more.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>const image = document.getElementById("image");
+
+fetch("https://api.waifu.pics/sfw/cringe")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    image.src = data.url;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Changing the endpoint changes the category:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.waifu.pics/sfw/dance")</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.waifu.pics/sfw/cry")</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://github.com/Waifu-pics/waifu-api" target="_blank" rel="noopener">github.com/Waifu-pics/waifu-api</a></p>
+      </li>
+    </ul>
+        </details>
+
+<details class="guide-disclosure" id="generated-identities-and-creatures">
+      <summary><h2 style="display: inline;">Generated Identities + Creatures</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>RoboHash</strong> &mdash; Generated Image<br>Turns text into a generated robot, monster or cat.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src = "https://robohash.org/hello";</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Different input creates a different image:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src = "https://robohash.org/naomi";</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">You can also use other data as the input:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src = "https://robohash.org/34.0522,-118.2437";</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">The same input always produces the same image.</p>
+        <p class="body-text"><a href="https://robohash.org/" target="_blank" rel="noopener">robohash.org</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>DiceBear</strong> &mdash; Generated Image<br>Generates avatars from text. Many different visual styles are available.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src =
+  "https://api.dicebear.com/9.x/pixel-art/svg?seed=hello";</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change the seed:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>memeImage.src =
+  "https://api.dicebear.com/9.x/pixel-art/svg?seed=banana";</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Or use a JavaScript variable:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>let name = "ghost";
+
+memeImage.src =
+  "https://api.dicebear.com/9.x/pixel-art/svg?seed=" + name;</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://www.dicebear.com/" target="_blank" rel="noopener">www.dicebear.com</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="weird-text-apis">
+      <summary><h2 style="display: inline;">Weird Text APIs</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>Corporate BS Generator</strong> &mdash; API<br>Random corporate jargon.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://corporatebs-generator.sameerkumar.website/")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeText.textContent = data.phrase;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Example output might be corporate language such as a sentence about leveraging scalable solutions or maximizing synergy.</p>
+        <p class="body-text"><a href="https://github.com/sameerkumar18/corporate-bs-generator-api" target="_blank" rel="noopener">github.com/sameerkumar18/corporate-bs-generator-api</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Advice Slip</strong> &mdash; API<br>Random generic life advice.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.adviceslip.com/advice?" + Date.now())
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeText.textContent = data.slip.advice;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><code class="inline">data.slip.advice</code> selects the actual advice from the returned JSON.</p>
+        <p class="body-text"><a href="https://api.adviceslip.com/" target="_blank" rel="noopener">api.adviceslip.com</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Bacon Ipsum</strong> &mdash; API<br>Meat-themed filler text.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://baconipsum.com/api/?type=meat-and-filler&amp;sentences=1")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeText.textContent = data[0];
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">sentences=1</code> to <code class="inline">sentences=3</code> to request more text.</p>
+        <p class="body-text"><a href="https://baconipsum.com/json-api/" target="_blank" rel="noopener">baconipsum.com/json-api</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Useless Facts</strong> &mdash; API<br>Random pointless trivia.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://uselessfacts.jsph.pl/api/v2/facts/random")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeText.textContent = data.text;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://uselessfacts.jsph.pl/" target="_blank" rel="noopener">uselessfacts.jsph.pl</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>JokeAPI</strong> &mdash; API<br>Random jokes in different categories.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://v2.jokeapi.dev/joke/Any?safe-mode&amp;type=single")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeText.textContent = data.joke;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://v2.jokeapi.dev/" target="_blank" rel="noopener">v2.jokeapi.dev</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="words-and-language">
+      <summary><h2 style="display: inline;">Words + Language</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>Datamuse</strong> &mdash; API<br>Finds words by meaning, association, rhyme and sound.</p>
+        <p class="body-text">Find words related to <code class="inline">ghost</code>:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.datamuse.com/words?ml=ghost")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">ml=ghost</code> to <code class="inline">ml=machine</code> and you receive a different set of related words.</p>
+        <p class="body-text"><a href="https://www.datamuse.com/api/" target="_blank" rel="noopener">www.datamuse.com/api</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Free Dictionary API</strong> &mdash; API<br>Definitions, meanings and phonetics.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.dictionaryapi.dev/api/v2/entries/en/ghost")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">ghost</code> to another word:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.dictionaryapi.dev/api/v2/entries/en/machine")</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://dictionaryapi.dev/" target="_blank" rel="noopener">dictionaryapi.dev</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>PoetryDB</strong> &mdash; API<br>Poems searchable by author, title and other properties.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://poetrydb.org/author/Emily%20Dickinson")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">The returned JSON contains poems and their individual lines.</p>
+        <p class="body-text"><a href="https://poetrydb.org/" target="_blank" rel="noopener">poetrydb.org</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Open Trivia Database</strong> &mdash; API<br>Random trivia questions.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://opentdb.com/api.php?amount=1")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data.results[0].question);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">amount=1</code> to <code class="inline">amount=10</code> to request ten questions.</p>
+        <p class="body-text"><a href="https://opentdb.com/" target="_blank" rel="noopener">opentdb.com</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Homosaurus</strong> &mdash; API / Linked Data<br>A structured vocabulary of LGBTQ+ terminology and relationships between concepts. Terms can include broader, narrower and related concepts. The data is available in formats including JSON-LD.</p>
+        <p class="body-text">For example, request the Homosaurus concept <code class="inline">LGBTQ Arts</code> as JSON-LD:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>const term = document.getElementById("term");
+
+fetch("https://api.homosaurus.org/v2/LGBTQArts.jsonld")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    term.textContent = data["http://www.w3.org/2004/02/skos/core#prefLabel"];
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Homosaurus is particularly interesting because the data describes relationships between concepts, rather than just returning a random piece of text. For example, <code class="inline">LGBTQ Arts</code> is connected to concepts including artists, drag, LGBTQ films, literature, theatre and art censorship.</p>
+        <p class="body-text">You can also download the larger vocabulary in machine-readable formats including JSON-LD, CSV, XML and TTL.</p>
+        <p class="body-text"><a href="https://homosaurus.org/" target="_blank" rel="noopener">homosaurus.org</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Pronouns.page</strong> &mdash; API &rarr; Text / Data<br>An explicitly queer API containing pronouns and related linguistic data. Most public endpoints do not require authentication.</p>
+        <p class="body-text">For example, get all available pronoun sets and put the first one into your page:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code class="wrap">&lt;p id="pronoun"&gt;&lt;/p&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>const pronoun = document.getElementById("pronoun");
+
+fetch("https://en.pronouns.page/api/public/v3/pronouns")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    pronoun.textContent = data[0].name;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">The API returns information including the pronoun name, subject and object forms, possessive forms, reflexive form, descriptions and example sentences.</p>
+        <p class="body-text">You could display an example sentence instead:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>const text = document.getElementById("text");
+
+fetch("https://en.pronouns.page/api/public/v3/pronouns")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    text.textContent = data[0].examples[0];
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://docs.api.pronouns.page/" target="_blank" rel="noopener">docs.api.pronouns.page</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="art-and-museum-collections">
+      <summary><h2 style="display: inline;">Art + Museum Collections</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>Art Institute of Chicago</strong> &mdash; API<br>Artworks, artists, exhibitions, images and museum metadata.</p>
+        <p class="body-text">Search for <code class="inline">cat</code>:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.artic.edu/api/v1/artworks/search?q=cat")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change the search:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.artic.edu/api/v1/artworks/search?q=ghost")</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Your JavaScript can therefore search the museum collection dynamically.</p>
+        <p class="body-text"><a href="https://api.artic.edu/docs/" target="_blank" rel="noopener">api.artic.edu/docs</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Metropolitan Museum of Art</strong> &mdash; API<br>Hundreds of thousands of museum objects and public-domain images.</p>
+        <p class="body-text">Search for cats:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://collectionapi.metmuseum.org/public/collection/v1/search?q=cat"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">The first request returns artwork IDs. You can then request an individual artwork:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://collectionapi.metmuseum.org/public/collection/v1/objects/436535"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://metmuseum.github.io/" target="_blank" rel="noopener">metmuseum.github.io</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Smithsonian Open Access</strong> &mdash; API<br>Artworks, historical objects, specimens, photographs and archival records.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://api.si.edu/openaccess/api/v1.0/search?q=moon&amp;api_key=YOUR_KEY"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">q=moon</code> to another search term.</p>
+        <p class="body-text">Requires an API key.</p>
+        <p class="body-text"><a href="https://www.si.edu/openaccess" target="_blank" rel="noopener">www.si.edu/openaccess</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Openverse</strong> &mdash; API → Image/Audio<br>Search openly licensed images and audio.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.openverse.org/v1/images/?q=moon")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change the search:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.openverse.org/v1/images/?q=machine")</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://openverse.org/" target="_blank" rel="noopener">openverse.org</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Library of Congress</strong> &mdash; API<br>Historical photographs, posters, newspapers, maps, manuscripts, films and other archival material.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://www.loc.gov/photos/?q=ghost&amp;fo=json")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">q=ghost</code> to any other search term.</p>
+        <p class="body-text"><a href="https://www.loc.gov/apis/" target="_blank" rel="noopener">www.loc.gov/apis</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="space">
+      <summary><h2 style="display: inline;">Space</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>NASA</strong> &mdash; API<br>Space images, Mars data, asteroids, Earth observation and other scientific data.</p>
+        <p class="body-text">Astronomy Picture of the Day:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">You could display the returned image:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeImage.src = data.url;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">The returned data also contains information such as the title, date and description.</p>
+        <p class="body-text"><a href="https://api.nasa.gov/" target="_blank" rel="noopener">api.nasa.gov</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="earth-and-environment">
+      <summary><h2 style="display: inline;">Earth + Environment</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>USGS Earthquakes</strong> &mdash; API<br>Real earthquake locations, magnitudes, depths and times.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">For example, get the magnitude of the first earthquake:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>let earthquake = data.features[0];
+
+console.log(earthquake.properties.mag);</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Or its location:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>console.log(earthquake.geometry.coordinates);</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://earthquake.usgs.gov/fdsnws/event/1/" target="_blank" rel="noopener">earthquake.usgs.gov/fdsnws/event/1</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Open-Meteo</strong> &mdash; API<br>Current and historical weather data.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://api.open-meteo.com/v1/forecast?latitude=34&amp;longitude=-118&amp;current=temperature_2m"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data.current.temperature_2m);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">latitude=34&amp;longitude=-118</code> to request weather for another location.</p>
+        <p class="body-text"><a href="https://open-meteo.com/" target="_blank" rel="noopener">open-meteo.com</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>OpenAQ</strong> &mdash; API<br>Air-quality measurements.</p>
+        <p class="body-text">Your program can request measurements such as particulate matter and other pollutants and use those numerical values as inputs. For example:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("API-ENDPOINT")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Check the current API documentation for available endpoints and authentication.</p>
+        <p class="body-text"><a href="https://openaq.org/" target="_blank" rel="noopener">openaq.org</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="plants-animals-and-ecology">
+      <summary><h2 style="display: inline;">Plants, Animals + Ecology</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>GBIF</strong> &mdash; API<br>Global biodiversity records, species and specimens.</p>
+        <p class="body-text">Search for mushrooms:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.gbif.org/v1/species/search?q=mushroom")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change the search:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.gbif.org/v1/species/search?q=jellyfish")</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://www.gbif.org/developer/summary" target="_blank" rel="noopener">www.gbif.org/developer/summary</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>iNaturalist</strong> &mdash; API → Data + Images<br>Real observations of plants, animals, fungi and other organisms.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://api.inaturalist.org/v1/observations?taxon_name=mushroom"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">taxon_name=mushroom</code> to <code class="inline">taxon_name=jellyfish</code>.</p>
+        <p class="body-text">Observations can include photographs, dates, species and locations.</p>
+        <p class="body-text"><a href="https://api.inaturalist.org/v1/docs/" target="_blank" rel="noopener">api.inaturalist.org/v1/docs</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>PokéAPI</strong> &mdash; API<br>Pokémon, sprites, types, abilities and statistics.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Or display its image:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    memeImage.src = data.sprites.front_default;
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">ditto</code> to another Pokémon.</p>
+        <p class="body-text"><a href="https://pokeapi.co/" target="_blank" rel="noopener">pokeapi.co</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="books-and-archives">
+      <summary><h2 style="display: inline;">Books + Archives</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>Open Library</strong> &mdash; API<br>Books, authors, subjects, editions and covers.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://openlibrary.org/search.json?q=ghost")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">q=ghost</code> to another search term.</p>
+        <p class="body-text"><a href="https://openlibrary.org/developers/api" target="_blank" rel="noopener">openlibrary.org/developers/api</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Project Gutenberg</strong> &mdash; Dataset / Archive<br>Tens of thousands of public-domain books.</p>
+        <p class="body-text">Instead of requesting a random sentence from an API, you can download a text and process it yourself. For example:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("book.txt")
+  .then(response =&gt; response.text())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Here <code class="inline">.text()</code> is used instead of <code class="inline">.json()</code> because the file contains plain text.</p>
+        <p class="body-text"><a href="https://www.gutenberg.org/" target="_blank" rel="noopener">www.gutenberg.org</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Internet Archive</strong> &mdash; API + Archive<br>Books, software, websites, films, games, audio and historical digital material.</p>
+        <p class="body-text">The archive provides APIs for searching its enormous collection and retrieving metadata.</p>
+        <p class="body-text"><a href="https://archive.org/developers/" target="_blank" rel="noopener">archive.org/developers</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="sound">
+      <summary><h2 style="display: inline;">Sound</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>Freesound</strong> &mdash; API → Audio<br>Search user-uploaded field recordings, sound effects and other audio.</p>
+        <p class="body-text">For example, search for rain:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://freesound.org/apiv2/search/text/?query=rain&amp;token=YOUR_KEY"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">query=rain</code> to <code class="inline">query=machine</code>.</p>
+        <p class="body-text">Requires an API key.</p>
+        <p class="body-text"><a href="https://freesound.org/docs/api/" target="_blank" rel="noopener">freesound.org/docs/api</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="science-and-research">
+      <summary><h2 style="display: inline;">Science + Research</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>OpenAlex</strong> &mdash; API<br>Academic papers, authors, institutions and research topics.</p>
+        <p class="body-text">Search for papers about artificial intelligence:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://api.openalex.org/works?search=artificial%20intelligence"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change the search phrase to investigate another research topic.</p>
+        <p class="body-text"><a href="https://openalex.org/" target="_blank" rel="noopener">openalex.org</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Crossref</strong> &mdash; API<br>Academic publication metadata.</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://api.crossref.org/works?query=climate%20change"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://www.crossref.org/documentation/retrieve-metadata/rest-api/" target="_blank" rel="noopener">www.crossref.org/documentation/retrieve-metadata/rest-api</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="government-and-public-data">
+      <summary><h2 style="display: inline;">Government + Public Data</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>Data.gov</strong> &mdash; Directory + Dataset<br>A huge catalog of U.S. government datasets.</p>
+        <p class="body-text">You don't normally use <code class="inline">data.gov</code> itself as your API. Instead:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>Data.gov
+↓
+find a dataset
+↓
+check its format/API
+↓
+use its API or download the data</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text"><a href="https://data.gov/" target="_blank" rel="noopener">data.gov</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>U.S. Census</strong> &mdash; API<br>Population, housing, demographic and geographic statistics.</p>
+        <p class="body-text">The Census provides APIs where you choose the variables and geographic areas you want to retrieve.</p>
+        <p class="body-text"><a href="https://www.census.gov/data/developers.html" target="_blank" rel="noopener">www.census.gov/data/developers.html</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>NYC Open Data</strong> &mdash; API + Dataset<br>311 calls, trees, buildings, parking, transportation, complaints and thousands of other city datasets.</p>
+        <p class="body-text">Each dataset has its own fields and API endpoint.</p>
+        <p class="body-text"><a href="https://opendata.cityofnewyork.us/" target="_blank" rel="noopener">opendata.cityofnewyork.us</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Los Angeles Open Data</strong> &mdash; API + Dataset<br>Public city records covering transportation, planning, infrastructure and government services.</p>
+        <p class="body-text">Choose a dataset first, then use its API endpoint from JavaScript.</p>
+        <p class="body-text"><a href="https://data.lacity.org/" target="_blank" rel="noopener">data.lacity.org</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="internet-and-software-culture">
+      <summary><h2 style="display: inline;">Internet + Software Culture</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>Hacker News</strong> &mdash; API<br>Posts, comments, users and scores from Hacker News.</p>
+        <p class="body-text">Get one post:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch(
+  "https://hacker-news.firebaseio.com/v0/item/8863.json"
+)
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">The number <code class="inline">8863</code> is the ID of the post.</p>
+        <p class="body-text"><a href="https://github.com/HackerNews/API" target="_blank" rel="noopener">github.com/HackerNews/API</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>GitHub</strong> &mdash; API<br>Repositories, users, commits, issues and other software activity.</p>
+        <p class="body-text">For example:</p>
+        <div class="snippet">
+          <div class="code-card">
+            <div class="code-scroll">
+<pre><code>fetch("https://api.github.com/users/octocat")
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+            </div>
+          </div>
+        </div>
+        <p class="body-text">Change <code class="inline">octocat</code> to another GitHub username.</p>
+        <p class="body-text"><a href="https://docs.github.com/en/rest" target="_blank" rel="noopener">docs.github.com/en/rest</a></p>
+      </li>
+    </ul>
+
+        </details>
+
+<details class="guide-disclosure" id="finding-more">
+      <summary><h2 style="display: inline;">Finding More</h2></summary>
+    <ul class="steps">
+      <li>
+        <p class="body-text no-top-margin"><strong>public-apis-no-auth-only</strong> &mdash; Directory<br>A collection specifically focused on APIs that don't require authentication.</p>
+        <p class="body-text">Use it to find an API, then use the endpoint of that API in your JavaScript.</p>
+        <p class="body-text"><a href="https://github.com/alexandresanlim/public-apis-no-auth-only" target="_blank" rel="noopener">github.com/alexandresanlim/public-apis-no-auth-only</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>Public APIs</strong> &mdash; Directory<br>Large community-maintained collection of public APIs organized by subject.</p>
+        <p class="body-text"><a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener">github.com/public-apis/public-apis</a></p>
+      </li>
+      <li>
+        <p class="body-text no-top-margin"><strong>This X Does Not Exist</strong> &mdash; Directory / Generator Collection<br>A collection of websites generating synthetic people, animals, objects and other AI-generated imagery. It is not itself an API.</p>
+        <p class="body-text">Use it to find an interesting generator, then investigate:</p>
+        <ol class="steps">
+          <li>Does it have a public API?</li>
+          <li>Does it have a direct image URL?</li>
+          <li>What changes when you reload the URL?</li>
+          <li>Can JavaScript access it?</li>
+        </ol>
+        <p class="body-text"><a href="https://thisxdoesnotexist.com/" target="_blank" rel="noopener">thisxdoesnotexist.com</a></p>
+      </li>
+    </ul>
+      </details>
+
+</section>
+
 </main>
-<script src="../navigation.js?v=11"></script>
-<script src="../last-updated.js?v=5"></script>
+<script src="../navigation.js?v=12"></script>
+<script src="../last-updated.js?v=7"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 </body>
 </html>

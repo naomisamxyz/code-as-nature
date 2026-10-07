@@ -24,7 +24,6 @@
   ];
 
   var disabledGuides = new Set([
-    "meme-generator.html",
     "databases.html",
     "multiplayer-sketch.html",
     "google-collab.html",

@@ -121,7 +121,7 @@
 .text-object p,
 .text-object .canvas-paragraph {
   margin: 0;
-  font-size: 15px;
+  font-size: var(--text-font-size, 15px);
   line-height: 1.7;
 }
 
@@ -288,6 +288,7 @@
   white-space: pre;
   filter: drop-shadow(0 0 11px rgba(255, 255, 255, 0.5));
   pointer-events: none;
+  z-index: -1;
 }
 
 .canvas-controls {
@@ -525,10 +526,6 @@
   cursor: move;
 }
 
-.edit-mode .sigil-object {
-  pointer-events: auto;
-  cursor: move;
-}
 
 .resize-handle {
   position: absolute;
@@ -620,12 +617,12 @@
 .canvas-page .week-object .week-heading { width: 100%; margin: 0; }
 .canvas-page .week-object .week-title { min-width: 0; }
 .canvas-page .canvas-object.list-object { padding: 54px 60px; }
-.canvas-page .list-object p { margin: 0 0 32px; font-size: 15px; line-height: 1.7; }
+.canvas-page .list-object p { margin: 0 0 32px; font-size: var(--text-font-size, 15px); line-height: 1.7; }
 .canvas-page .list-object ul { margin: 0; padding: 0; list-style: none; }
 .canvas-page .list-object li {
   position: relative;
   padding-left: 44px;
-  font-size: 15px;
+  font-size: var(--text-font-size, 15px);
   line-height: 1.7;
 }
 .canvas-page .list-object li::before {
@@ -642,8 +639,9 @@
 }
 .canvas-page .list-object li + li { margin-top: 12px; }
 .canvas-page .canvas-object.text-object:not(.week-object):not(.list-object) { padding: 54px 60px; }
-.canvas-page .canvas-object.text-object:not(.week-object):not(.list-object) > p {
-  font-size: 15px;
+.canvas-page .canvas-object.text-object:not(.week-object):not(.list-object) > p,
+.canvas-page .canvas-object.text-object:not(.week-object):not(.list-object) > .canvas-paragraph {
+  font-size: var(--text-font-size, 15px);
   line-height: 1.7;
 }
 

@@ -1,5 +1,5 @@
 window.CANVAS_DATA = {
-  "version": 24,
+  "version": 33,
   "lastUpdated": {
     "datetime": "2026-09-22",
     "label": "September 22, 2026",
@@ -17,7 +17,7 @@ window.CANVAS_DATA = {
       "x": 3341.9760532251807,
       "y": 1920.87975640378,
       "width": 540,
-      "height": 90,
+      "height": 93,
       "title": "Syllabus",
       "groupId": "group-1787883267744"
     },
@@ -27,7 +27,7 @@ window.CANVAS_DATA = {
       "x": 3406.4829294573938,
       "y": 1953.3118269126626,
       "width": 900,
-      "height": 720,
+      "height": 746,
       "text": "<strong>IIMC-446/IIMC-646: Code as Nature</strong> is a studio course centered around computational literacy, systems thinking, and critical engagement with contemporary technology, as well as the potential and poetics of code and computation as artistic media. Moving from questions of how the universe thinks without a brain and the specters of the web to websites, databases, networked systems, artificial intelligence, and simulated and immersive environments, the course introduces computational tools and strategies for generativity, interactivity, automation, connectivity, transcoding, and transmediality.<br><br>Through technical experiments, artworks, and readings, students learn how computational systems work by taking them apart and tracing their inputs, data, logic, environments, outputs, and feedback loops. Along the way, centaurism and human-machine collaboration, automation and authoritarianism, digital occultism and meme magick, the excavation of AI and its datasets, machine hallucinations, and CAPTCHA's shifting distinction between computers and humans provide different ways of thinking through our relationships with computational systems.<br><br>The course considers technological mediation, platform dependency, and the political, economic, and ecological implications of these systems, asking how technologies are shaped by the larger structures they exist within and how they shape our perception, behavior, culture, and environments in return. Ideas ranging from the Black Gooey Universe to posthuman ethics for AI further open these questions toward embodiment, virtuality, and relationships between human, machine, and other forms of intelligence. Understanding these processes allows students to work purposefully with contemporary technologies while maintaining agency over their processes and outcomes.",
       "groupId": "group-1787883267744"
     },
@@ -38,7 +38,7 @@ window.CANVAS_DATA = {
       "x": 1945.706698762086,
       "y": 2365.5317312276243,
       "width": 650,
-      "height": 139,
+      "height": 146,
       "title": "Week 01 ✧ How the Universe Thinks Without a Brain",
       "date": "Wednesday, September 9"
     },
@@ -108,7 +108,7 @@ window.CANVAS_DATA = {
       "x": 2600.6362872404557,
       "y": 3739.6198951183806,
       "width": 650,
-      "height": 118,
+      "height": 121,
       "title": "Week 02 ✧ Specters of the Web",
       "date": "Wednesday, September 16",
       "groupId": "group-1787888674196"
@@ -137,7 +137,7 @@ window.CANVAS_DATA = {
       "x": 4472.899760118021,
       "y": 4084.6453726649743,
       "width": 650,
-      "height": 118,
+      "height": 121,
       "title": "Week 03 ✧ On Centaurism",
       "date": "Wednesday, September 23"
     },
@@ -154,7 +154,7 @@ window.CANVAS_DATA = {
         "“The Rules Are the Art: Creating with AI” - Holly Herndon (2026)",
         "“The Medium Is the Message” - \"The Extensions of Man\" - Marshall McLuhan (1964)",
         "<a href=\"assets/guides/ai-assisted-workflows.html\">✢ Machine Rituals ✢</a>",
-        "<a href=\"assets/guides/cheatsheet-p5.html\">p5.js</a>, <a href=\"assets/guides/cheatsheet-ml5.html\">ml5.js</a>"
+        "<a href=\"assets/guides/cheatsheet-p5.html\">✧ p5.js ✧</a>, <a href=\"assets/guides/cheatsheet-ml5.html\">⌁ ml5.js ⌁</a>"
       ]
     },
     {
@@ -164,7 +164,7 @@ window.CANVAS_DATA = {
       "x": 5223.345237320952,
       "y": 2877.2835204417474,
       "width": 650,
-      "height": 139,
+      "height": 146,
       "title": "Week 04 ✧ Art, Automation and Authoritarianism",
       "date": "Wednesday, September 30"
     },
@@ -183,17 +183,17 @@ window.CANVAS_DATA = {
         "“Art, Automation and Authoritarianism” - Hito Steyerl (2026)",
         "Hito Steyerl, “Mean Images” (2023)",
         "<a href=\"https://tegabrain.com/Slop-Evader\">Slop Evader - Tega Brain</a>",
-        "<a href=\"https://ml5js.org/\">ml5.js</a> continued"
+        "<a href=\"assets/guides/cheatsheet-ml5.html\">⌁ ml5.js ⌁</a> continued"
       ]
     },
     {
       "id": "week05",
       "type": "week",
       "week": 5,
-      "x": 4957.210547745484,
-      "y": 1362.496831962442,
+      "x": 4986.104041272686,
+      "y": 836.7149792234692,
       "width": 650,
-      "height": 139,
+      "height": 146,
       "title": "Week 05 ✧ Digital Occultism and Meme Magick",
       "date": "Wednesday, October 7"
     },
@@ -201,8 +201,8 @@ window.CANVAS_DATA = {
       "id": "week05-content",
       "type": "list",
       "week": 5,
-      "x": 5008.284900356741,
-      "y": 1446.7046398075302,
+      "x": 5037.178393883943,
+      "y": 920.9227870685573,
       "width": 650,
       "height": 284,
       "description": "",
@@ -211,7 +211,7 @@ window.CANVAS_DATA = {
         "“Dark Content” - Eva &amp; Franco Mattes (2015)",
         "“You Can’t Kill Meme” - Hayley Garrigus (2025)",
         "Memes as Sigils",
-        "MEME GENERATOR"
+        "<a href=\"assets/guides/meme-generator.html\">♦︎ Meme Generator ♦︎</a>"
       ]
     },
     {
@@ -219,8 +219,8 @@ window.CANVAS_DATA = {
       "type": "media",
       "mediaKind": "image",
       "week": 5,
-      "x": 5580.80168667398,
-      "y": 1307.621163381941,
+      "x": 5609.695180201182,
+      "y": 781.8393106429681,
       "width": 196.33191001083938,
       "height": 222.80924138634697,
       "title": "Digital Occultism: A Meme-Explainer",
@@ -231,13 +231,115 @@ window.CANVAS_DATA = {
       "heightMode": "manual"
     },
     {
+      "id": "week05-dark-content",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 5,
+      "x": 5850.216129652919,
+      "y": 843.4596603401632,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "Dark Content",
+      "meta": "Eva &amp; Franco Mattes ✧ 2015",
+      "url": "https://0100101110101101.org/dark-content/",
+      "image": "https://iad.microlink.io/9NGR_q0h8r24ak4XLLACmGw85q_Nw62ed48Y6SBGYOKmQ-q4tH-0N-0vBLB3Hc-tmEBue_dbzhaM3y-9EvsAYQ.png",
+      "alt": "Dark Content by Eva and Franco Mattes"
+    },
+    {
+      "id": "week05-imgflip",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 5,
+      "x": 6450,
+      "y": 843,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "Meme Generator",
+      "meta": "Imgflip",
+      "url": "https://imgflip.com/memegenerator",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22/%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eimgflip.com%3C/text%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C/text%3E%3C/svg%3E",
+      "alt": "Imgflip Meme Generator"
+    },
+    {
+      "id": "week05-meme-magic",
+      "type": "text",
+      "x": 6181.573447158635,
+      "y": 1197.4268567713436,
+      "width": 418.09723261706733,
+      "height": 234.44145017520486,
+      "text": "<strong>Meme Magic</strong><br><br>Internet subcultures jokingly claimed this coincidence proved \"meme magic\"&mdash;the idea that memes could alter reality.",
+      "heightMode": "manual"
+    },
+    {
+      "id": "week05-you-cant-kill-meme-video",
+      "type": "media",
+      "mediaKind": "youtube",
+      "week": 5,
+      "x": 5981.360152259616,
+      "y": 1081.1774780474152,
+      "width": 240,
+      "height": 180,
+      "title": "You Can’t Kill Meme | Full Film",
+      "meta": "Hayley Garrigus ✧ YouTube",
+      "url": "https://www.youtube.com/watch?v=BiI_XKSYYkM",
+      "image": "https://i.ytimg.com/vi/BiI_XKSYYkM/hqdefault.jpg",
+      "alt": "You Can't Kill Meme full film"
+    },
+    {
+      "id": "week05-multithread-video",
+      "type": "media",
+      "mediaKind": "youtube",
+      "week": 5,
+      "x": 5910.831461648595,
+      "y": 1397.5319637932437,
+      "width": 240,
+      "height": 180,
+      "title": "multithread 02_Digital Occultism",
+      "meta": "Sophie Publig &amp; Mikkel Rørbo ✧ YouTube",
+      "url": "https://www.youtube.com/watch?v=rwkb1RG5r7M",
+      "image": "https://i.ytimg.com/vi/rwkb1RG5r7M/hqdefault.jpg",
+      "alt": "multithread 02 Digital Occultism video"
+    },
+    {
+      "id": "week05-occultism-breakdown",
+      "type": "text",
+      "x": 5858.549281128266,
+      "y": 1637.087505512172,
+      "width": 666.7759210204691,
+      "height": 326.9459350310254,
+      "text": "<strong>Esoteric Infrastructure:</strong> The book posits that modern digital spaces use an unspoken esoteric grammar to structure platform logic, belief systems, and user behavior.<br><br><strong>Memetic Circulation:</strong> It maps out internet meme ecologies through a genealogy of occult thinking, tracing how online fictions cross over to manifest material realities.<br><br><strong>Psychological Warfare:</strong> The authors examine how modern digital politics function via computational influence, viral lore, and targeted psychological feedback loops.<br><br><strong>Algorithmic Desire:</strong> The text deconstructs how automated social media environments actively engineer and manipulate human desires through hidden algorithmic architecture.<br>",
+      "heightMode": "manual",
+      "fontSize": 11
+    },
+    {
+      "id": "week05-rituals-exhibition",
+      "type": "list",
+      "x": 5111.860984172414,
+      "y": 1798.8092244892548,
+      "width": 595.5596928623645,
+      "height": 895.9181850501109,
+      "description": "",
+      "items": [
+        "<strong><p data-pm-slice=\"1 1 []\">Rather than rituals disappearing in the digital era, Fries argues they are evolving. People are actively creating new digital spiritualities and rituals to find meaning, certainty, and community amidst accelerating technological change.</p></strong>",
+        "<strong>Rituals as Resistance to Tech Hegemony</strong><br>Countering \"Tech-Bro\" Culture: Fries views rituals and spiritual frameworks as practical tools to reclaim interpretive agency and imagine alternative social orders against the overwhelming dominance of Big Tech and technocratic power structures.",
+        "Lack of Agency: Artists and users operate downstream from technology creators, meaning they have little control over underlying protocols or hardware (e.g., Fries notes feeling disillusioned using Meta hardware due to corporate culture shifts).",
+        "<strong>The Mythologizing and Animism of AI</strong><br>Black Boxes and Magical Thinking: Because complex AI models remain opaque even to their creators, people naturally project magical thinking onto them, filling the void left by post-Enlightenment disenchantment.<br>Big Tech's Strategy: Tech leaders (like Sam Altman framing AGI in divine terms, or companies like Palantir invoking oracular symbolism) intentionally market AI as transcendent beings or companions with agency rather than simple software tools.<br>Democratic Alternatives: Fries highlights Audrey Tang's work (e.g., <a href=\"https://civic.ai/\">Civic AI</a>) as an alternative approach that focuses on small, locally governed models that build consensus and strengthen democratic participation rather than concentrating power.",
+        "<strong>Re-evaluating the \"Apocalypse\"</strong><br>Cyclical Reality: The exhibition treats the \"end of the world\" not as a singular upcoming event, but as a cyclical mood or rhythm driven by climate crisis, pandemics, and conflict.<br>Historical Context: Fries notes that for many marginalized and Indigenous populations (citing Ailton Krenak), \"apocalypses\" and extinctions have already occurred repeatedly through colonization, whereas dominant powers are only now confronting their own vulnerability.",
+        "<strong>Featured Artistic Practices</strong><br>The exhibition showcases diverse artistic interpretations of modern digital rituals:<br>Anan Fries: Built a shrine sculpture where visitors place their smartphones to run a speculative \"cleansing ritual\" that purifies devices of techno-fascist energies by summoning and dissolving the stock data and images of Big Tech CEOs.<br>Zach Blas: Displays 576 Tears, an installation using facial recognition where visitors offer their emotional responses/tears as a ritual gift to an AI deity named Lacrimae.<br>Auriea Harvey: Uses a custom interface that references biblical body parts to print out personalized oracle poetry.<br>Skawennati: Uses machinima in Second Life to frame time travel as a speculative ritual to imagine alternative futures.<br>S()fia Braga &amp; Etsuko Ichihara: Explore how algorithms act as new belief systems (Platform Workshippers) and update traditional surveillance folklore for the digital age (Namahage in Tokyo)."
+      ],
+      "heightMode": "manual",
+      "fontSize": 9
+    },
+    {
       "id": "week06",
       "type": "week",
       "week": 6,
       "x": 3674.7725817629635,
       "y": 235.49255125253796,
       "width": 650,
-      "height": 118,
+      "height": 121,
       "title": "Week 06 ✧ Excavating AI",
       "date": "Wednesday, October 14"
     },
@@ -253,7 +355,7 @@ window.CANVAS_DATA = {
       "items": [
         "“From Spectacle to Extraction. And All Over Again,” a video interview with Kate Crawford and Trevor Paglen (2019)",
         "“Feminist Data Set” - Caroline Sinders (2017–ongoing) and “The Library of Missing Datasets” - Mimi Onuoha (2016–ongoing)",
-        "DATABASES"
+        "⌗ Databases ⌗"
       ]
     },
     {
@@ -263,7 +365,7 @@ window.CANVAS_DATA = {
       "x": 1992.4023389065194,
       "y": 302.2254721856963,
       "width": 650,
-      "height": 118,
+      "height": 121,
       "title": "Week 07 ✧ Networked Systems",
       "date": "Wednesday, October 21"
     },
@@ -279,7 +381,7 @@ window.CANVAS_DATA = {
       "items": [
         "“SOMEONE” - Lauren Lee McCarthy (2019)",
         "Alexander Galloway, <cite>Protocol: How Control Exists After Decentralization</cite> (2004)",
-        "MULTIPLAYER SKETCH"
+        "⠿ Networked Systems ⠿"
       ]
     },
     {
@@ -289,7 +391,7 @@ window.CANVAS_DATA = {
       "x": 266.74571366710666,
       "y": 850.994111685492,
       "width": 780,
-      "height": 139,
+      "height": 146,
       "title": "Week 08 ✧ Completely Automated Public Turing Test to Tell Computers and Humans Apart (CAPTCHA)",
       "date": "Wednesday, October 28"
     },
@@ -318,7 +420,7 @@ window.CANVAS_DATA = {
       "x": -450.08661614824507,
       "y": 2305.6640625,
       "width": 650,
-      "height": 118,
+      "height": 121,
       "title": "Week 09 ✧ Hallucinations",
       "date": "Wednesday, November 4"
     },
@@ -333,7 +435,7 @@ window.CANVAS_DATA = {
       "description": "",
       "items": [
         "Google DeepDream (2015)",
-        "HALLUCINATIONS"
+        "𖦹 Hallucinations 𖦹"
       ]
     },
     {
@@ -343,7 +445,7 @@ window.CANVAS_DATA = {
       "x": 587.4106082462362,
       "y": 4208.072734624606,
       "width": 650,
-      "height": 118,
+      "height": 121,
       "title": "Week 10 ✧ Black Gooey Universe",
       "date": "Wednesday, November 11"
     },
@@ -371,7 +473,7 @@ window.CANVAS_DATA = {
       "x": 2549.092073669577,
       "y": 5521.728775933552,
       "width": 650,
-      "height": 118,
+      "height": 121,
       "title": "Week 11 ✧ Simulated Worlds",
       "date": "Wednesday, November 18"
     },
@@ -389,7 +491,7 @@ window.CANVAS_DATA = {
         "“Morphogenic Angels” - Keiken (2023)",
         "“2065 / Geomancer” - Lawrence Lek (2017)",
         "“Posthuman Ethics for AI” - Rosi Braidotti (2025)",
-        "UNREAL ENGINE BLUEPRINTS"
+        "⟷ UE Blueprints ⟷"
       ]
     },
     {
@@ -399,7 +501,7 @@ window.CANVAS_DATA = {
       "x": 5508.345304735129,
       "y": 5562.657141924895,
       "width": 650,
-      "height": 118,
+      "height": 121,
       "title": "Week 12 ✧ Poetics of Encryption",
       "date": "Wednesday, November 25"
     },
@@ -414,7 +516,7 @@ window.CANVAS_DATA = {
       "description": "",
       "items": [
         "“Poetics of Encryption: Art and the Technocene” - Nadim Samman (2024)",
-        "UNREAL INTERCONNECTED"
+        "◇ UE Interconnected ◇"
       ]
     },
     {
@@ -424,7 +526,7 @@ window.CANVAS_DATA = {
       "x": 7349.591205614022,
       "y": 3872.857248155775,
       "width": 650,
-      "height": 118,
+      "height": 121,
       "title": "Week 13 ✧ Autonomous Artworks",
       "date": "Wednesday, December 2"
     },
@@ -441,7 +543,7 @@ window.CANVAS_DATA = {
         "“BOB (Bag of Beliefs)” - Ian Cheng (2018–2019)",
         "“Undercurrents” - Rafael Lozano-Hemmer (2026)",
         "“Xeno Computer 0.1: Labor” - Tega Brain (2025)",
-        "EXHIBITION SYSTEMS"
+        "✣ Autonomous Artworks ✣"
       ]
     },
     {
@@ -451,7 +553,7 @@ window.CANVAS_DATA = {
       "x": 7186.13634450291,
       "y": 1774.940581489108,
       "width": 650,
-      "height": 118,
+      "height": 121,
       "title": "Week 14 ✧ Presentation",
       "date": "Wednesday, December 9"
     },
@@ -930,8 +1032,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1787894503681",
       "type": "text",
-      "x": 5253.0680211407,
-      "y": 1604.0075793757908,
+      "x": 5281.961514667902,
+      "y": 1078.5553053926014,
       "width": 657.4300959442048,
       "height": 725.7212173320528,
       "text": "Sophie Publig &amp; Mikkel Rørbo, Digital Occultism (Aksioma, 2026)<br><br>Digital Occultism argues that contemporary technoculture is structured by logics that resemble esoteric, magical, and occult systems of thought. Rather than understanding occultism as something opposed to technology or belonging to the past, Publig and Rørbo trace its presence through digital platforms, algorithms, online communities, and networked culture.<br><br>The book examines digital infrastructures as systems whose inner workings remain largely hidden while shaping how we behave and what we believe. It connects the circulation of memes and online fictions to older traditions of magical thinking, asking how collectively produced symbols and narratives can cross from the internet into material and political reality. It also looks at computational propaganda and psychological warfare, as well as the ways algorithmic systems influence attention, desire, and behavior through feedback loops that remain largely invisible to their users.<br><br>In the afterword, Zach Blas, “CULTUS,” these questions extend toward artificial intelligence, heretical forms of knowledge, and emerging forms of networked spirituality.",
@@ -940,8 +1042,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1787894636880",
       "type": "media",
-      "x": 5085.161997143829,
-      "y": 1702.7811871181596,
+      "x": 5114.05549067103,
+      "y": 1176.9993343791868,
       "width": 193.20015149836627,
       "height": 286.2224466642463,
       "mediaKind": "image",
@@ -996,8 +1098,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1787962996438",
       "type": "media",
-      "x": 5011.975999967652,
-      "y": 2041.6692801427662,
+      "x": 5057.4521441281495,
+      "y": 1609.5604157140126,
       "width": 232.3168570562983,
       "height": 155,
       "mediaKind": "link",
@@ -1235,8 +1337,8 @@ window.CANVAS_DATA = {
     {
       "id": "sigil-jellyfish",
       "type": "sigil",
-      "x": 5746.644079677129,
-      "y": -170.0521479702345,
+      "x": 5838.028924424118,
+      "y": -187.27948008930304,
       "text": "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠄⠀⠀⠀⠀⢀⡲⢷⠷⢧⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⢠⠜⠁⠀⠀⠀⠀⠀⢠⣣⡓⡉⣧⠎⠋⢖⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠈⠉⢰⣻⣷⡦⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⢀⣔⠦⣤⣇⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⠸⣙⣯⣡⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠈⠀⠀⢹⣧⣢⠀⠀⠀⠀⡇⠀⠀⠀⣤⠂⡟⡟⣈⡳⡀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠛⠸⣻⡘⠀⡀⡀⣜⣇⡄⠀⠀⣧⡧⣿⣿⣿⣻⣇⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀\n⠐⠂⠐⢓⣶⢾⡿⣵⣖⡓⣒⢈⠛⣁⣞⣭⣏⣿⣿⣿⣦⣿⡕⣘⣥⡀⢠⡀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠸⠂⠑⠋⠉⣳⣭⣿⡋⡹⠉⠠⠷⣿⣿⣶⣲⠓⣿⡟⠛⠛⠋⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠀⠟⣞⡌⠗⠀⢺⣞⢯⡇⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⢰⣋⣂⣀⠀⠰⢷⠿⠁⠀⠀⣤⢺⢋⣁⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⣠⠛⠉⠀⣔⠛⣶⡟⡲⠀⠀⠀⢈⠸⣿⠃⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⢰⠂⠀⠀⠀⡨⢭⢿⠋⡱⣀⡀⠀⢸⠀⡿⠀⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠸⠀⠀⠀⠀⠉⠀⢳⣧⡛⠉⠉⠳⡘⠀⡽⠈⡄⠀⡀⠀⢀⣇⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠐⠜⢼⡤⠀⣠⠰⠳⠠⣸⢀⠃⠀⠀⠀⢏⣗⡑⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⢀⣀⠀⢸⠀⠀⢸⠔⢄⡀⠀⠀⡇⡻⠋⠀⠀⠉⠉⢹⣋⠇⢀⢀⠀⠀⠀\n⠐⠂⠒⠒⠒⠒⠒⠛⠓⢫⠛⢻⡱⠛⠫⣺⢽⣧⡧⢾⠈⡈⠈⠉⢻⢸⢵⣈⠺⠋⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠰⡄⠀⠀⠸⣲⡌⢿⣾⡰⡃⢀⡤⠼⣽⣮⢣⠅⠤⠄⢀⠆\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠁⠀⠘⠥⡍⣿⠟⠱⣒⣬⣤⡃⠼⣥⡤⠄⠊⠁⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⡿⠁⠀⠚⠀⠀⠈⢻⠂⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⣻⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⡟⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡧⣾⠄⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣯⣗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣗⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡷⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣯⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣵⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
       "fontSize": 84
     },
@@ -1308,13 +1410,13 @@ window.CANVAS_DATA = {
       "x": 5701.709176209217,
       "y": 3600.0021521594185,
       "width": 100,
-      "height": 159.40839032454664,
+      "height": 155,
       "mediaKind": "link",
       "title": "Mean Images",
       "url": "https://www.are.na/block/33521913",
       "meta": "Hito Steyerl",
       "alt": "Hito Steyerl",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eare.na%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "image": "https://iad.microlink.io/ghqzjqIOGpa6Rox63E4S-gpQKQ-zdJKsl7xFmm3Uuzh2xTOLU1eZ1cUOJyOX3IXeaf5koTlftKw3dSr7Pe4J8A.png",
       "previewHeight": 155,
       "heightMode": "manual"
     }

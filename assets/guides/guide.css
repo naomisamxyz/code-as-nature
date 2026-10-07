@@ -88,6 +88,19 @@
     text-shadow: 0 0 7px rgba(255, 255, 255, 0.7);
   }
 
+  /* Sub-entries that belong under the preceding numbered section, instead
+     of getting a number of their own. */
+  .page-toc a.sub {
+    counter-increment: page-section 0;
+    padding-left: 58px;
+    font-size: 11.5px;
+  }
+
+  .page-toc a.sub::before {
+    content: "\2014";
+    flex: 0 0 20px;
+  }
+
   @media (max-width: 600px) {
     .page-toc {
       margin-bottom: 42px;

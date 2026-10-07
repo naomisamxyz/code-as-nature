@@ -260,7 +260,11 @@
     element.style.cssText =
       "--x:" + resource.x + "px;--y:" + resource.y + "px;" +
       (Number.isFinite(resource.width) ? "--w:" + resource.width + "px;" : "") +
-      (Number.isFinite(resource.height) ? "--h:" + resource.height + "px;" : "");
+      (Number.isFinite(resource.height) ? "--h:" + resource.height + "px;" : "") +
+      (["text", "list"].includes(resource.type) &&
+        Number.isFinite(Number(resource.fontSize))
+        ? "--text-font-size:" + Number(resource.fontSize) + "px;"
+        : "");
     if (resource.type === "week") {
       element.classList.add("text-object", "week-object");
       element.innerHTML =
@@ -409,7 +413,7 @@
       bindEditableCopy(element, resource);
     }
 
-    if (edit) {
+    if (edit && resource.type !== "sigil") {
       const dragHandle = document.createElement("i");
       dragHandle.className = "drag-handle";
       dragHandle.title = "Drag";
@@ -984,6 +988,28 @@
 
   function selectedResources() {
     return data.resources.filter(resource => selectedIds.has(resource.id));
+  }
+
+  function resizeSelectedText(direction) {
+    const sizes = [9, 11, 13, 15, 18, 22, 28, 36];
+    const resources = selectedResources().filter(
+      resource => resource.type === "text" || resource.type === "list"
+    );
+    if (!resources.length) {
+      alert("Select a plain text or list object first.");
+      return;
+    }
+    resources.forEach(resource => {
+      const current = Number(resource.fontSize) || 15;
+      const next = direction < 0
+        ? sizes.slice().reverse().find(size => size < current)
+        : sizes.find(size => size > current);
+      if (next === undefined) return;
+      resource.fontSize = next;
+      world.querySelector('[data-id="' + resource.id + '"]')
+        ?.style.setProperty("--text-font-size", next + "px");
+    });
+    saveLocal();
   }
 
   function updateSelectionDisplay() {
@@ -1930,6 +1956,8 @@
     const action = event.target.dataset.action;
     if (!action) return;
     if (action === "add-text") await addResource("text");
+    if (action === "text-smaller") resizeSelectedText(-1);
+    if (action === "text-larger") resizeSelectedText(1);
     if (action === "add-image") await addResource("image");
     if (action === "add-link") await addResource("link");
     if (action === "add-youtube") await addResource("youtube");
