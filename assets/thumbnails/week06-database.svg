@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300">
+  <rect width="480" height="300" fill="#080808"/>
+  <rect x="20" y="20" width="440" height="260" fill="none" stroke="#f2f2f2"/>
+  <text x="40" y="112" fill="#f2f2f2" font-family="monospace" font-size="28">DATABASE AS A</text>
+  <text x="40" y="151" fill="#f2f2f2" font-family="monospace" font-size="28">SYMBOLIC FORM</text>
+  <text x="40" y="202" fill="#a8a8a8" font-family="monospace" font-size="18">Lev Manovich, 1998</text>
+  <text x="40" y="241" fill="#777" font-family="monospace" font-size="15">PDF</text>
+</svg>

@@ -2,8 +2,8 @@
   "use strict";
 
   const updated = {
-    datetime: "2026-10-06",
-    label: "October 6, 2026",
+    datetime: "2026-10-13",
+    label: "October 13, 2026",
     by: "Naomi Sam"
   };
 

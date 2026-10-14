@@ -1,8 +1,8 @@
 window.CANVAS_DATA = {
-  "version": 33,
+  "version": 36,
   "lastUpdated": {
-    "datetime": "2026-09-22",
-    "label": "September 22, 2026",
+    "datetime": "2026-10-06",
+    "label": "October 6, 2026",
     "by": "Naomi Sam"
   },
   "home": {
@@ -17,7 +17,7 @@ window.CANVAS_DATA = {
       "x": 3341.9760532251807,
       "y": 1920.87975640378,
       "width": 540,
-      "height": 93,
+      "height": 90,
       "title": "Syllabus",
       "groupId": "group-1787883267744"
     },
@@ -27,7 +27,7 @@ window.CANVAS_DATA = {
       "x": 3406.4829294573938,
       "y": 1953.3118269126626,
       "width": 900,
-      "height": 746,
+      "height": 720,
       "text": "<strong>IIMC-446/IIMC-646: Code as Nature</strong> is a studio course centered around computational literacy, systems thinking, and critical engagement with contemporary technology, as well as the potential and poetics of code and computation as artistic media. Moving from questions of how the universe thinks without a brain and the specters of the web to websites, databases, networked systems, artificial intelligence, and simulated and immersive environments, the course introduces computational tools and strategies for generativity, interactivity, automation, connectivity, transcoding, and transmediality.<br><br>Through technical experiments, artworks, and readings, students learn how computational systems work by taking them apart and tracing their inputs, data, logic, environments, outputs, and feedback loops. Along the way, centaurism and human-machine collaboration, automation and authoritarianism, digital occultism and meme magick, the excavation of AI and its datasets, machine hallucinations, and CAPTCHA's shifting distinction between computers and humans provide different ways of thinking through our relationships with computational systems.<br><br>The course considers technological mediation, platform dependency, and the political, economic, and ecological implications of these systems, asking how technologies are shaped by the larger structures they exist within and how they shape our perception, behavior, culture, and environments in return. Ideas ranging from the Black Gooey Universe to posthuman ethics for AI further open these questions toward embodiment, virtuality, and relationships between human, machine, and other forms of intelligence. Understanding these processes allows students to work purposefully with contemporary technologies while maintaining agency over their processes and outcomes.",
       "groupId": "group-1787883267744"
     },
@@ -38,7 +38,7 @@ window.CANVAS_DATA = {
       "x": 1945.706698762086,
       "y": 2365.5317312276243,
       "width": 650,
-      "height": 146,
+      "height": 139,
       "title": "Week 01 ✧ How the Universe Thinks Without a Brain",
       "date": "Wednesday, September 9"
     },
@@ -108,7 +108,7 @@ window.CANVAS_DATA = {
       "x": 2600.6362872404557,
       "y": 3739.6198951183806,
       "width": 650,
-      "height": 121,
+      "height": 118,
       "title": "Week 02 ✧ Specters of the Web",
       "date": "Wednesday, September 16",
       "groupId": "group-1787888674196"
@@ -137,7 +137,7 @@ window.CANVAS_DATA = {
       "x": 4472.899760118021,
       "y": 4084.6453726649743,
       "width": 650,
-      "height": 121,
+      "height": 118,
       "title": "Week 03 ✧ On Centaurism",
       "date": "Wednesday, September 23"
     },
@@ -164,7 +164,7 @@ window.CANVAS_DATA = {
       "x": 5223.345237320952,
       "y": 2877.2835204417474,
       "width": 650,
-      "height": 146,
+      "height": 139,
       "title": "Week 04 ✧ Art, Automation and Authoritarianism",
       "date": "Wednesday, September 30"
     },
@@ -193,7 +193,7 @@ window.CANVAS_DATA = {
       "x": 4986.104041272686,
       "y": 836.7149792234692,
       "width": 650,
-      "height": 146,
+      "height": 139,
       "title": "Week 05 ✧ Digital Occultism and Meme Magick",
       "date": "Wednesday, October 7"
     },
@@ -259,7 +259,7 @@ window.CANVAS_DATA = {
       "title": "Meme Generator",
       "meta": "Imgflip",
       "url": "https://imgflip.com/memegenerator",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22/%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eimgflip.com%3C/text%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C/text%3E%3C/svg%3E",
+      "image": "https://iad.microlink.io/-ffWCW38QeAcPqwTP2H32F9H3C2dsBXvQKfyCKBUHHVaVGKvChumooffPZoS5-c4K4IRGM3kXZ69AIzyjMNV0A.png",
       "alt": "Imgflip Meme Generator"
     },
     {
@@ -339,7 +339,7 @@ window.CANVAS_DATA = {
       "x": 3674.7725817629635,
       "y": 235.49255125253796,
       "width": 650,
-      "height": 121,
+      "height": 118,
       "title": "Week 06 ✧ Excavating AI",
       "date": "Wednesday, October 14"
     },
@@ -355,8 +355,184 @@ window.CANVAS_DATA = {
       "items": [
         "“From Spectacle to Extraction. And All Over Again,” a video interview with Kate Crawford and Trevor Paglen (2019)",
         "“Feminist Data Set” - Caroline Sinders (2017–ongoing) and “The Library of Missing Datasets” - Mimi Onuoha (2016–ongoing)",
-        "⌗ Databases ⌗"
+        "<a href=\"assets/guides/databases.html\">⌗ Databases ⌗</a>"
       ]
+    },
+    {
+      "id": "week06-spectacle-extraction",
+      "type": "media",
+      "mediaKind": "youtube",
+      "week": 6,
+      "x": 4299.164068886072,
+      "y": 47.458490562014845,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "From Spectacle to Extraction. And All Over Again",
+      "meta": "Kate Crawford and Trevor Paglen ✧ 2019",
+      "url": "https://www.youtube.com/playlist?list=PLshWAoHIYAsnFbd6uKlZ14nG0NW3SOwGl",
+      "image": "assets/thumbnails/week06-spectacle.jpg",
+      "alt": "From Spectacle to Extraction video interview playlist"
+    },
+    {
+      "id": "week06-imagenet-roulette",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 6,
+      "x": 4534.908989729156,
+      "y": 141.87138253726954,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "ImageNet Roulette: Cambridge Analytica Database",
+      "meta": "ImageNet Roulette archive",
+      "url": "https://www.chiark.greenend.org.uk/~ijackson/2019/ImageNet-Roulette-cambridge-2017.html",
+      "image": "assets/thumbnails/week06-imagenet-roulette.jpg",
+      "alt": "ImageNet Roulette results from the Cambridge Analytica database"
+    },
+    {
+      "id": "week06-imagenet-sander",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 6,
+      "x": 4638.529219448765,
+      "y": 391.3847185345979,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "ImageNet Roulette vs August Sander",
+      "meta": "Patrick Dinneen ✧ 2022",
+      "url": "https://www.patrickdinneen.com/posts/imagenet-roulette-vs-august-sander/",
+      "image": "assets/thumbnails/week06-august-sander.jpg",
+      "alt": "August Sander portrait used in an ImageNet Roulette comparison"
+    },
+    {
+      "id": "week06-missing-datasets",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 6,
+      "x": 3729.089195389068,
+      "y": 607.2373947156332,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "The Library of Missing Datasets",
+      "meta": "Mimi Ọnụọha ✧ 2016",
+      "url": "https://mimi-onuoha-9s0o.squarespace.com/the-library-of-missing-datasets",
+      "image": "assets/thumbnails/week06-missing-datasets.jpg",
+      "alt": "The Library of Missing Datasets installation"
+    },
+    {
+      "id": "week06-feminist-data-set",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 6,
+      "x": 3993.2978982583304,
+      "y": 657.5765031222073,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "Feminist Data Set",
+      "meta": "Caroline Sinders ✧ 2017–ongoing",
+      "url": "https://carolinesinders.com/feminist-data-set/",
+      "image": "assets/thumbnails/week06-feminist-data-set.png",
+      "alt": "Feminist Data Set by Caroline Sinders"
+    },
+    {
+      "id": "week06-how-normal",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 6,
+      "x": 3462.322035545706,
+      "y": 270.74914681106026,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "How Normal Am I?",
+      "meta": "Tijmen Schep",
+      "url": "https://www.hownormalami.eu/",
+      "image": "assets/thumbnails/week06-how-normal.jpg",
+      "alt": "How Normal Am I interactive facial analysis project"
+    },
+    {
+      "id": "week06-survival-best-fit",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 6,
+      "x": 3361.3774280709717,
+      "y": 499.1639155272386,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "Survival of the Best Fit",
+      "meta": "Interactive game about hiring algorithms",
+      "url": "https://www.survivalofthebestfit.com/",
+      "image": "assets/thumbnails/week06-survival.jpg",
+      "alt": "Survival of the Best Fit interactive game"
+    },
+    {
+      "id": "week06-survival-reading-list",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 6,
+      "x": 3444.2756496367438,
+      "y": 728.9410493477676,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "Survival of the Best Fit: Reading List",
+      "meta": "GitHub wiki",
+      "url": "https://github.com/survivalofthebestfit/survivalofthebestfit/wiki/Reading-List",
+      "image": "assets/thumbnails/week06-reading-list.png",
+      "alt": "Reading list for Survival of the Best Fit"
+    },
+    {
+      "id": "week06-data-human-rights",
+      "type": "media",
+      "mediaKind": "youtube",
+      "week": 6,
+      "x": 4391.750616794145,
+      "y": 464.9364516609062,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "Design for Data & Human Rights",
+      "meta": "Caroline Sinders ✧ Slow AI Festival",
+      "url": "https://www.youtube.com/watch?v=FaTkfC-5XsU&t=466s",
+      "image": "assets/thumbnails/week06-caroline-sinders-video.jpg",
+      "alt": "Design for Data and Human Rights with Caroline Sinders"
+    },
+    {
+      "id": "week06-database-symbolic-form",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 6,
+      "x": 4259.8834467656025,
+      "y": 711.2216649681924,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "Database as a Symbolic Form",
+      "meta": "Lev Manovich ✧ 1998 ✧ PDF",
+      "url": "https://manovich.net/content/04-projects/025-database-as-a-symbolic-form/19_article_1998.pdf",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22/%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Emanovich.net%3C/text%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C/text%3E%3C/svg%3E",
+      "alt": "Database as a Symbolic Form by Lev Manovich"
+    },
+    {
+      "id": "week06-supabase-project",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 6,
+      "x": 4300,
+      "y": 900,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "Supabase Project",
+      "meta": "Shared meme database",
+      "url": "https://supabase.com/dashboard/project/uspxokoxzbajirtyhtjv",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22/%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Esupabase.com%3C/text%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C/text%3E%3C/svg%3E",
+      "alt": "Supabase project dashboard for the shared meme database"
     },
     {
       "id": "week07",
@@ -365,7 +541,7 @@ window.CANVAS_DATA = {
       "x": 1992.4023389065194,
       "y": 302.2254721856963,
       "width": 650,
-      "height": 121,
+      "height": 118,
       "title": "Week 07 ✧ Networked Systems",
       "date": "Wednesday, October 21"
     },
@@ -391,7 +567,7 @@ window.CANVAS_DATA = {
       "x": 266.74571366710666,
       "y": 850.994111685492,
       "width": 780,
-      "height": 146,
+      "height": 139,
       "title": "Week 08 ✧ Completely Automated Public Turing Test to Tell Computers and Humans Apart (CAPTCHA)",
       "date": "Wednesday, October 28"
     },
@@ -420,7 +596,7 @@ window.CANVAS_DATA = {
       "x": -450.08661614824507,
       "y": 2305.6640625,
       "width": 650,
-      "height": 121,
+      "height": 118,
       "title": "Week 09 ✧ Hallucinations",
       "date": "Wednesday, November 4"
     },
@@ -445,7 +621,7 @@ window.CANVAS_DATA = {
       "x": 587.4106082462362,
       "y": 4208.072734624606,
       "width": 650,
-      "height": 121,
+      "height": 118,
       "title": "Week 10 ✧ Black Gooey Universe",
       "date": "Wednesday, November 11"
     },
@@ -473,7 +649,7 @@ window.CANVAS_DATA = {
       "x": 2549.092073669577,
       "y": 5521.728775933552,
       "width": 650,
-      "height": 121,
+      "height": 118,
       "title": "Week 11 ✧ Simulated Worlds",
       "date": "Wednesday, November 18"
     },
@@ -501,7 +677,7 @@ window.CANVAS_DATA = {
       "x": 5508.345304735129,
       "y": 5562.657141924895,
       "width": 650,
-      "height": 121,
+      "height": 118,
       "title": "Week 12 ✧ Poetics of Encryption",
       "date": "Wednesday, November 25"
     },
@@ -526,7 +702,7 @@ window.CANVAS_DATA = {
       "x": 7349.591205614022,
       "y": 3872.857248155775,
       "width": 650,
-      "height": 121,
+      "height": 118,
       "title": "Week 13 ✧ Autonomous Artworks",
       "date": "Wednesday, December 2"
     },
@@ -553,7 +729,7 @@ window.CANVAS_DATA = {
       "x": 7186.13634450291,
       "y": 1774.940581489108,
       "width": 650,
-      "height": 121,
+      "height": 118,
       "title": "Week 14 ✧ Presentation",
       "date": "Wednesday, December 9"
     },
@@ -1419,6 +1595,17 @@ window.CANVAS_DATA = {
       "image": "https://iad.microlink.io/ghqzjqIOGpa6Rox63E4S-gpQKQ-zdJKsl7xFmm3Uuzh2xTOLU1eZ1cUOJyOX3IXeaf5koTlftKw3dSr7Pe4J8A.png",
       "previewHeight": 155,
       "heightMode": "manual"
+    },
+    {
+      "id": "item1791946338164",
+      "type": "text",
+      "x": 3626.8751106779578,
+      "y": 853.5053428111912,
+      "width": 676.676637281506,
+      "height": 286.5346586894002,
+      "text": "Manovich argues that databases and narratives are two competing ways of organizing experience. A narrative creates a sequence with cause, effect, and progression. A database presents a collection of elements without prescribing a single order.<br><br>The database is not merely a technical storage system. It is a “symbolic form,” a way contemporary culture conceptualizes the world: as an open-ended collection of elements that can be accessed, rearranged, and recombined rather than as one fixed story.",
+      "heightMode": "manual",
+      "fontSize": 13
     }
   ],
   "connections": [

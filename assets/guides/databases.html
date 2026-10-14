@@ -18,10 +18,483 @@
 
   <header class="masthead">
     <div class="section-heading"><pre class="section-ornament guide-title-ornament" aria-hidden="true"></pre><h1>Databases</h1></div>
+    <p>Saving our generated memes in a Supabase database</p>
   </header>
+
+  <nav class="page-toc">
+    <a href="#create-db">Creating a Supabase database (optional)</a>
+    <a href="#what-we-save">What we are saving</a>
+    <a href="#edit-html">Edit the meme generator HTML</a>
+    <a href="#connect-script">Connect script.js to Supabase</a>
+    <a href="#connect-button">Connect the Save button</a>
+    <a href="#save-function">Create the save function</a>
+    <a href="#week6-container">Week 6 Meme Database HTML</a>
+    <a href="#week6-connect">Connect to Supabase and the HTML</a>
+    <a href="#week6-retrieve">Retrieve and display the memes</a>
+    <a href="#week6-run">Run the function</a>
+    <a href="#week6-grid">Create the database grid</a>
+    <a href="#database-apis-manovich">Database, APIs, and Manovich</a>
+  </nav>
+
+  <section class="section" id="create-db">
+    <h2>Creating a Supabase database (optional)</h2>
+    <p class="body-text no-top-margin">Last week, our meme generator requested random text and images from APIs. This week, we will save them to a shared Supabase database so we can retrieve them later.</p>
+    <p class="body-text"><strong>Everyone will use the same database. You do not need to create your own Supabase account, project, or table.</strong></p>
+    <details class="guide-disclosure">
+      <summary>Skip this section for the class exercise. These instructions are for creating your own database in the future.</summary>
+    <p class="body-text">Go to Supabase, create an account, and create a new project.</p>
+
+    <h3 class="sub">Create a table</h3>
+    <p class="body-text no-top-margin">Go to <strong>Table Editor &rarr; New Table</strong>.</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>Name:</dt><dd><code class="inline">memes</code></dd></div>
+          <div class="ref-row"><dt>Schema:</dt><dd><code class="inline">public</code></dd></div>
+          <div class="ref-row"><dt>Row Level Security (RLS):</dt><dd>ON</dd></div>
+          <div class="ref-row"><dt>Realtime:</dt><dd>OFF</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <p class="body-text">Create these columns:</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt><code class="inline">id</code>:</dt><dd><code class="inline">int8</code>, Identity / automatically generated, does not allow NULL, Primary Key.</dd></div>
+          <div class="ref-row"><dt><code class="inline">image_url</code>:</dt><dd><code class="inline">text</code>, no default, does not allow NULL.</dd></div>
+          <div class="ref-row"><dt><code class="inline">meme_text</code>:</dt><dd><code class="inline">text</code>, no default, allows NULL.</dd></div>
+          <div class="ref-row"><dt><code class="inline">created_at</code>:</dt><dd><code class="inline">timestamptz</code>, default <code class="inline">now()</code>, does not allow NULL.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="sub">Allow public inserts</h3>
+    <p class="body-text no-top-margin">Go to <strong>memes &rarr; RLS / Policies &rarr; Create Policy &rarr; Create a policy from scratch</strong>.</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>Policy name:</dt><dd>Allow public meme uploads</dd></div>
+          <div class="ref-row"><dt>Policy command:</dt><dd>INSERT</dd></div>
+          <div class="ref-row"><dt>Target roles:</dt><dd><code class="inline">anon</code></dd></div>
+          <div class="ref-row"><dt>WITH CHECK expression:</dt><dd><code class="inline">true</code></dd></div>
+        </dl>
+      </div>
+    </div>
+    <p class="body-text">This allows visitors who are not logged in to add rows.</p>
+
+    <h3 class="sub">Allow public reads</h3>
+    <p class="body-text no-top-margin">Go to <strong>memes &rarr; RLS / Policies &rarr; Create Policy &rarr; Create a policy from scratch</strong>.</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>Policy name:</dt><dd>Allow public meme reading</dd></div>
+          <div class="ref-row"><dt>Policy command:</dt><dd>SELECT</dd></div>
+          <div class="ref-row"><dt>Target roles:</dt><dd><code class="inline">anon</code></dd></div>
+          <div class="ref-row"><dt>USING expression:</dt><dd><code class="inline">true</code></dd></div>
+        </dl>
+      </div>
+    </div>
+    <p class="body-text">This allows visitors who are not logged in to read rows.</p>
+
+    <h3 class="sub">Get your connection information</h3>
+    <p class="body-text no-top-margin">Go to <strong>Project Settings &rarr; API</strong>. Copy the <strong>Project URL</strong> and <strong>Publishable Key</strong>.</p>
+    <p class="body-text">The Project URL identifies the project. The Publishable Key allows frontend JavaScript to access it according to the RLS policies.</p>
+    <p class="body-text">Never put a secret or service-role key in a public website.</p>
+    </details>
+  </section>
+
+  <section class="section" id="what-we-save">
+    <h2>What we are saving</h2>
+    <p class="section-intro">Each saved meme becomes one row:</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt><code class="inline">id</code>:</dt><dd><code class="inline">27</code></dd></div>
+          <div class="ref-row"><dt><code class="inline">image_url</code>:</dt><dd><code class="inline">https://upload.wikimedia.org/...</code></dd></div>
+          <div class="ref-row"><dt><code class="inline">meme_text</code>:</dt><dd><code class="inline">LEVERAGE VIRTUAL SYNERGIES</code></dd></div>
+          <div class="ref-row"><dt><code class="inline">created_at</code>:</dt><dd><code class="inline">2026-10-13 20:45:00</code></dd></div>
+        </dl>
+      </div>
+    </div>
+    <p class="body-text">We save the image URL, not the image file itself.</p>
+  </section>
+
+  <section class="section" id="edit-html">
+    <h2>Edit the meme generator HTML</h2>
+    <p class="section-intro">Open the existing Week 5 <code class="inline">index.html</code>.</p>
+    <p class="body-text">Add a Save button underneath the Generate button, and load the Supabase library before your existing <code class="inline">script.js</code>:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;button id="generate-button"&gt;[ Generate Meme ]&lt;/button&gt;
+&lt;button id="save-button"&gt;[ Save Meme ]&lt;/button&gt;
+
+&lt;script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"&gt;&lt;/script&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">The Supabase library has to load before <code class="inline">script.js</code>, since our own script will use it.</p>
+  </section>
+
+  <section class="section" id="connect-script">
+    <h2>Connect script.js to Supabase</h2>
+    <p class="section-intro">Open the existing Week 5 <code class="inline">script.js</code>. Add this near the top:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>const supabaseClient = supabase.createClient(
+  "https://uspxokoxzbajirtyhtjv.supabase.co",
+  "sb_publishable_QfPcMD4M9fWHFAL5oHRznA_7g7g-v5Y"
+);</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">This connects our website to the shared Supabase database. <code class="inline">createClient()</code> needs the Project URL and Publishable Key.</p>
+  </section>
+
+  <section class="section" id="connect-button">
+    <h2>Connect the Save button</h2>
+    <p class="section-intro">Add this next to the existing variables for your Generate button, meme text, and meme image:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>const saveButton = document.getElementById("save-button");</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">Then add another event listener:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>saveButton.addEventListener("click", saveMeme);</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">This runs <code class="inline">saveMeme()</code> whenever the Save button is clicked.</p>
+  </section>
+
+  <section class="section" id="save-function">
+    <h2>Create the save function</h2>
+    <p class="section-intro">Add this underneath your existing <code class="inline">generateMeme()</code> function:</p>
+
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="ASYNC FUNCTION" style="top: calc(0 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="INSERT ROW" style="top: calc(2 * 2.05em); height: calc(6 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="HANDLE RESULT" style="top: calc(9 * 2.05em); height: calc(5 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-label="IMAGE URL" style="top: calc(5 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-alt="1" data-label="MEME TEXT" style="top: calc(6 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>async function saveMeme() {
+
+  const { error } = await supabaseClient
+    .from("memes")
+    .insert({
+      image_url: memeImage.src,
+      meme_text: memeText.textContent
+    });
+
+  if (error) {
+    console.error("Could not save meme:", error);
+  } else {
+    console.log("Meme saved!");
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" data-notes-id="save-meme" style="min-height: 418px;">
+
+        <div class="note" data-note="async-function" style="top: 0px;">
+          <span class="note-label">ASYNC FUNCTION</span>
+          <p><code>async</code> lets this function wait for an online operation to finish.</p>
+        </div>
+
+        <div class="note" data-note="insert-row" style="top: 90px;">
+          <span class="note-label">INSERT ROW</span>
+          <p>Connects to the <code>memes</code> table and inserts a new row. <code>await</code> waits until Supabase responds. Supabase automatically creates the <code>id</code> and <code>created_at</code> values, so we don't need to send them.</p>
+        </div>
+
+        <div class="note" data-note="handle-result" style="top: 224px;">
+          <span class="note-label">HANDLE RESULT</span>
+          <p>Prints the result in the browser console.</p>
+        </div>
+
+        <div class="note" data-note="image-url" style="top: 294px;">
+          <span class="note-label">IMAGE URL</span>
+          <p>Saves the URL currently used by our meme image.</p>
+        </div>
+
+        <div class="note" data-note="meme-text" style="top: 364px;">
+          <span class="note-label">MEME TEXT</span>
+          <p>Saves the text currently displayed on the meme.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors" data-connectors-id="save-meme">
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:12px;"></div>
+        <div class="conn-h" style="top:12px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:102px;"></div>
+        <div class="conn-h" style="top:102px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:236px;"></div>
+        <div class="conn-h" style="top:236px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:306px;"></div>
+        <div class="conn-h" style="top:306px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:376px;"></div>
+        <div class="conn-h" style="top:376px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+
+    <p class="body-text">Open <strong>Developer Tools &rarr; Console</strong> and click <strong>Save Meme</strong>. If it works, you should see:</p>
+    <pre class="folder-tree" aria-label="Console output after a successful save">Meme saved!</pre>
+  </section>
+
+  <section class="section" id="week6-container">
+    <h2>Week 6 Meme Database HTML</h2>
+    <p class="section-intro">In Week 5 we saved meme images and text to our shared Supabase database. Now we will retrieve that data and use it to generate HTML elements.</p>
+    <p class="body-text">Copy the content of the Week 5 HTML into the Week 6 HTML. Remove the meme image, text, and buttons, and add:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>&lt;div id="meme-database"&gt;&lt;/div&gt;
+
+&lt;script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"&gt;&lt;/script&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">The empty <code class="inline">&lt;div&gt;</code> is where JavaScript will add the memes.</p>
+  </section>
+
+  <section class="section" id="week6-connect">
+    <h2>Connect to Supabase and the HTML</h2>
+    <p class="section-intro">At the beginning of <code class="inline">script.js</code>:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>const supabaseClient = supabase.createClient(
+  "https://uspxokoxzbajirtyhtjv.supabase.co",
+  "sb_publishable_QfPcMD4M9fWHFAL5oHRznA_7g7g-v5Y"
+);
+
+const memeDatabase = document.getElementById("meme-database");</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">Same connection as before, plus a reference to the empty container we just added.</p>
+  </section>
+
+  <section class="section" id="week6-retrieve">
+    <h2>Retrieve and display the memes</h2>
+    <p class="section-intro">Add this function to <code class="inline">script.js</code>:</p>
+
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="RETRIEVE ROWS" style="top: calc(2 * 2.05em); height: calc(4 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="REPEAT FOR EACH ROW" style="top: calc(12 * 2.05em); height: calc(17 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-label="CREATE CONTAINER" style="top: calc(13 * 2.05em); height: calc(2 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-alt="1" data-label="CREATE IMAGE" style="top: calc(16 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-label="CREATE TEXT" style="top: calc(20 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-alt="1" data-label="ASSEMBLE MEME" style="top: calc(24 * 2.05em); height: calc(2 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="2" data-label="ADD TO PAGE" style="top: calc(27 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>async function getMemes() {
+
+  const { data, error } = await supabaseClient
+    .from("memes")
+    .select("*")
+    .order("id", { ascending: true });
+
+  if (error) {
+    console.error("Could not retrieve memes:", error);
+    return;
+  }
+
+  data.forEach(meme => {
+    const memeDiv = document.createElement("div");
+    memeDiv.className = "meme";
+
+    const image = document.createElement("img");
+    image.src = meme.image_url;
+    image.className = "meme-image";
+
+    const text = document.createElement("p");
+    text.textContent = meme.meme_text;
+    text.className = "meme-text";
+
+    memeDiv.appendChild(image);
+    memeDiv.appendChild(text);
+
+    memeDatabase.appendChild(memeDiv);
+  });
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" data-notes-id="get-memes" style="min-height: 630px;">
+
+        <div class="note" data-note="retrieve-rows" style="top: 0px;">
+          <span class="note-label">RETRIEVE ROWS</span>
+          <p>Retrieves every row from the <code>memes</code> table, selecting all columns and ordering by <code>id</code> so rows appear in the order they were created.</p>
+        </div>
+
+        <div class="note" data-note="repeat-for-each-row" style="top: 105px;">
+          <span class="note-label">REPEAT FOR EACH ROW</span>
+          <p>Repeats the code inside once for every row returned by Supabase, turning each one into a meme element on the page.</p>
+        </div>
+
+        <div class="note" data-note="create-container" style="top: 188px;">
+          <span class="note-label">CREATE CONTAINER</span>
+          <p>Creates a container <code>&lt;div&gt;</code> for one meme.</p>
+        </div>
+
+        <div class="note" data-note="create-image" style="top: 270px;">
+          <span class="note-label">CREATE IMAGE</span>
+          <p>Creates its image from <code>image_url</code>.</p>
+        </div>
+
+        <div class="note" data-note="create-text" style="top: 360px;">
+          <span class="note-label">CREATE TEXT</span>
+          <p>Creates its text from <code>meme_text</code>.</p>
+        </div>
+
+        <div class="note" data-note="assemble-meme" style="top: 450px;">
+          <span class="note-label">ASSEMBLE MEME</span>
+          <p>Puts the image and text inside the meme container.</p>
+        </div>
+
+        <div class="note" data-note="add-to-page" style="top: 540px;">
+          <span class="note-label">ADD TO PAGE</span>
+          <p>Adds the finished meme to the page.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors" data-connectors-id="get-memes">
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:12px;"></div>
+        <div class="conn-h" style="top:12px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:117px;"></div>
+        <div class="conn-h" style="top:117px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:200px;"></div>
+        <div class="conn-h" style="top:200px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:282px;"></div>
+        <div class="conn-h" style="top:282px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:372px;"></div>
+        <div class="conn-h" style="top:372px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:462px;"></div>
+        <div class="conn-h" style="top:462px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:552px;"></div>
+        <div class="conn-h" style="top:552px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="week6-run">
+    <h2>Run the function</h2>
+    <p class="section-intro">At the bottom of <code class="inline">script.js</code>:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>getMemes();</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">Retrieves and displays the memes when the page loads.</p>
+  </section>
+
+  <section class="section" id="week6-grid">
+    <h2>Create the database grid</h2>
+    <p class="section-intro">Add to <code class="inline">style.css</code>:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>#meme-database {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+#meme-database .meme {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+}</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text"><code class="inline">auto-fit</code> changes the number of columns based on the available space. <code class="inline">minmax(300px, 1fr)</code> gives each column a minimum width of <code class="inline">300px</code> while allowing it to grow.</p>
+    <p class="body-text">We target <code class="inline">#meme-database .meme</code> specifically so only memes inside the database are affected &mdash; the original <code class="inline">.meme</code> style can stay <code class="inline">400px &times; 400px</code>.</p>
+  </section>
+
+  <section class="section" id="database-apis-manovich">
+    <h2>Database, APIs, and Manovich</h2>
+    <p class="section-intro">A database stores and organizes data. An API lets programs retrieve, send, or modify that data.</p>
+    <p class="body-text">Last week, we used APIs to retrieve data. Now we use Supabase's API to send data into our shared database:</p>
+
+    <pre class="folder-tree" aria-label="How text and image APIs feed into the shared database">TEXT API  ──→ text  ──┐
+                       ├──→ MEME → SAVE → DATABASE
+IMAGE API ──→ image ──┘</pre>
+
+    <p class="body-text">We store the two parts separately:</p>
+    <pre class="folder-tree" aria-label="The two columns stored per meme">image_url
+meme_text</pre>
+
+    <p class="body-text">This connects to Manovich's database as a symbolic form: cultural material becomes a collection of elements that can be selected, organized, and recombined.</p>
+    <p class="body-text">Because the images and texts remain separate, we can recombine them:</p>
+
+    <pre class="folder-tree" aria-label="Recombining stored images and text">image 1 + text 3
+image 3 + text 1
+image 2 + text 2</pre>
+  </section>
 </main>
-<script src="../navigation.js?v=12"></script>
-<script src="../last-updated.js?v=7"></script>
+<script src="../navigation.js?v=13"></script>
+<script src="../last-updated.js?v=9"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 </body>
 </html>
