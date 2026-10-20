@@ -1,8 +1,8 @@
 window.CANVAS_DATA = {
-  "version": 36,
+  "version": 38,
   "lastUpdated": {
-    "datetime": "2026-10-06",
-    "label": "October 6, 2026",
+    "datetime": "2026-10-20",
+    "label": "October 20, 2026",
     "by": "Naomi Sam"
   },
   "home": {
@@ -515,7 +515,7 @@ window.CANVAS_DATA = {
       "title": "Database as a Symbolic Form",
       "meta": "Lev Manovich ✧ 1998 ✧ PDF",
       "url": "https://manovich.net/content/04-projects/025-database-as-a-symbolic-form/19_article_1998.pdf",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22/%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Emanovich.net%3C/text%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C/text%3E%3C/svg%3E",
+      "image": "https://iad.microlink.io/uxSc8TdgemulChY9if79x-7t-3hOV0sgUVjLCxlWwKi1ITqBcQbd7GYqDz5KXPTa2rPIne7sn6myxY7MePA9mg.png",
       "alt": "Database as a Symbolic Form by Lev Manovich"
     },
     {
@@ -531,26 +531,52 @@ window.CANVAS_DATA = {
       "title": "Supabase Project",
       "meta": "Shared meme database",
       "url": "https://supabase.com/dashboard/project/uspxokoxzbajirtyhtjv",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22/%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Esupabase.com%3C/text%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C/text%3E%3C/svg%3E",
+      "image": "https://iad.microlink.io/bJ7hk1ASryH-aM3hSO2bO7no5W5iCYh4pXRQ9d3ttfCKmzAvw9r1eHqPp-guifGLCJygOF02QLLugbp3q455-Q.png",
       "alt": "Supabase project dashboard for the shared meme database"
     },
     {
       "id": "week07",
       "type": "week",
       "week": 7,
-      "x": 1992.4023389065194,
-      "y": 302.2254721856963,
+      "x": 2063.0821871475077,
+      "y": -57.55471258018684,
       "width": 650,
       "height": 118,
-      "title": "Week 07 ✧ Networked Systems",
-      "date": "Wednesday, October 21"
+      "title": "Week 07 ✧ Recap",
+      "date": "Wednesday, October 21",
+      "groupId": "group-1792531362031"
     },
     {
       "id": "week07-content",
       "type": "list",
       "week": 7,
-      "x": 2106.3023870622305,
-      "y": 355.4306205837287,
+      "x": 2168.0821871475077,
+      "y": 18.098940628960808,
+      "width": 650,
+      "height": 287,
+      "description": "",
+      "items": [
+        "Portfolio Work Session<br>Work on your class portfolio. Populate Weeks 1–7 with sketches, or improve your existing sketches, using the p5.js and ml5.js libraries. Make sure everything is published through GitHub, accessible online, and ready to present at the end of class. The use of AI chat is permitted."
+      ],
+      "groupId": "group-1792531362031"
+    },
+    {
+      "id": "week08",
+      "type": "week",
+      "week": 8,
+      "x": 535.3249933668527,
+      "y": 699.1616548374514,
+      "width": 650,
+      "height": 118,
+      "title": "Week 08 ✧ Networked Systems",
+      "groupId": "group-1792531324574"
+    },
+    {
+      "id": "week08-content",
+      "type": "list",
+      "week": 8,
+      "x": 648.5503027260241,
+      "y": 752.3668032354838,
       "width": 650,
       "height": 234,
       "description": "",
@@ -558,25 +584,26 @@ window.CANVAS_DATA = {
         "“SOMEONE” - Lauren Lee McCarthy (2019)",
         "Alexander Galloway, <cite>Protocol: How Control Exists After Decentralization</cite> (2004)",
         "⠿ Networked Systems ⠿"
-      ]
+      ],
+      "groupId": "group-1792531324574"
     },
     {
-      "id": "week08",
+      "id": "week09",
       "type": "week",
-      "week": 8,
-      "x": 266.74571366710666,
-      "y": 850.994111685492,
+      "week": 9,
+      "x": -509.7099564507274,
+      "y": 2245.4050914965524,
       "width": 780,
       "height": 139,
-      "title": "Week 08 ✧ Completely Automated Public Turing Test to Tell Computers and Humans Apart (CAPTCHA)",
-      "date": "Wednesday, October 28"
+      "title": "Week 09 ✧ Completely Automated Public Turing Test to Tell Computers and Humans Apart (CAPTCHA)",
+      "groupId": "group-1792531315158"
     },
     {
-      "id": "week08-content",
+      "id": "week09-content",
       "type": "list",
-      "week": 8,
-      "x": 446.69224764801186,
-      "y": 929.9935654934432,
+      "week": 9,
+      "x": -329.7634224698222,
+      "y": 2324.4045453045037,
       "width": 650,
       "height": 321,
       "description": "",
@@ -587,50 +614,52 @@ window.CANVAS_DATA = {
         "Ghost Font (2026)",
         "LORAs",
         "Google Colab"
-      ]
+      ],
+      "groupId": "group-1792531315158"
     },
     {
-      "id": "week09",
+      "id": "week10",
       "type": "week",
-      "week": 9,
-      "x": -450.08661614824507,
-      "y": 2305.6640625,
+      "week": 10,
+      "x": -433.89288503129694,
+      "y": 4268.5213928082,
       "width": 650,
       "height": 118,
-      "title": "Week 09 ✧ Hallucinations",
-      "date": "Wednesday, November 4"
+      "title": "Week 10 ✧ Hallucinations",
+      "groupId": "group-1792531297978"
     },
     {
-      "id": "week09-content",
+      "id": "week10-content",
       "type": "list",
-      "week": 9,
-      "x": -296.4220273952888,
-      "y": 2368.021090442457,
+      "week": 10,
+      "x": -279.57464306919303,
+      "y": 4330.878420750658,
       "width": 650,
       "height": 171,
       "description": "",
       "items": [
         "Google DeepDream (2015)",
         "𖦹 Hallucinations 𖦹"
-      ]
+      ],
+      "groupId": "group-1792531297978"
     },
     {
-      "id": "week10",
+      "id": "week11",
       "type": "week",
-      "week": 10,
-      "x": 587.4106082462362,
-      "y": 4208.072734624606,
+      "week": 11,
+      "x": 1755.5556490247732,
+      "y": 5430.632247475073,
       "width": 650,
       "height": 118,
-      "title": "Week 10 ✧ Black Gooey Universe",
-      "date": "Wednesday, November 11"
+      "title": "Week 11 ✧ Black Gooey Universe",
+      "groupId": "group-1792531286137"
     },
     {
-      "id": "week10-content",
+      "id": "week11-content",
       "type": "list",
-      "week": 10,
-      "x": 688.8301959600983,
-      "y": 4267.305458030986,
+      "week": 11,
+      "x": 1856.975236738635,
+      "y": 5489.864970881453,
       "width": 648.5681288840159,
       "height": 271.2493008425529,
       "description": "",
@@ -640,25 +669,25 @@ window.CANVAS_DATA = {
         "Legacy Russell, <cite>Glitch Feminism</cite>",
         "Fuser"
       ],
-      "heightMode": "manual"
+      "heightMode": "manual",
+      "groupId": "group-1792531286137"
     },
     {
-      "id": "week11",
+      "id": "week12",
       "type": "week",
-      "week": 11,
-      "x": 2549.092073669577,
-      "y": 5521.728775933552,
+      "week": 12,
+      "x": 4425.282506435245,
+      "y": 6071.788881935038,
       "width": 650,
       "height": 118,
-      "title": "Week 11 ✧ Simulated Worlds",
-      "date": "Wednesday, November 18"
+      "title": "Week 12 ✧ Simulated Worlds"
     },
     {
-      "id": "week11-content",
+      "id": "week12-content",
       "type": "list",
-      "week": 11,
-      "x": 2688.4902748827953,
-      "y": 5583.209908172069,
+      "week": 12,
+      "x": 4495.920607163609,
+      "y": 6155.3129142291455,
       "width": 650,
       "height": 284,
       "description": "",
@@ -671,47 +700,48 @@ window.CANVAS_DATA = {
       ]
     },
     {
-      "id": "week12",
+      "id": "week13",
       "type": "week",
-      "week": 12,
-      "x": 5508.345304735129,
-      "y": 5562.657141924895,
+      "week": 13,
+      "x": 6396.078049378878,
+      "y": 5178.885135482581,
       "width": 650,
       "height": 118,
-      "title": "Week 12 ✧ Poetics of Encryption",
-      "date": "Wednesday, November 25"
+      "title": "Week 13 ✧ Poetics of Encryption",
+      "groupId": "group-1792531256621"
     },
     {
-      "id": "week12-content",
+      "id": "week13-content",
       "type": "list",
-      "week": 12,
-      "x": 5616.0758587025475,
-      "y": 5616.303383274033,
+      "week": 13,
+      "x": 6503.808603346297,
+      "y": 5233.003720985438,
       "width": 650,
       "height": 197,
       "description": "",
       "items": [
         "“Poetics of Encryption: Art and the Technocene” - Nadim Samman (2024)",
         "◇ UE Interconnected ◇"
-      ]
+      ],
+      "groupId": "group-1792531256621"
     },
     {
-      "id": "week13",
+      "id": "week14",
       "type": "week",
-      "week": 13,
-      "x": 7349.591205614022,
-      "y": 3872.857248155775,
+      "week": 14,
+      "x": 7499.64427741471,
+      "y": 3423.977933041209,
       "width": 650,
       "height": 118,
-      "title": "Week 13 ✧ Autonomous Artworks",
-      "date": "Wednesday, December 2"
+      "title": "Week 14 ✧ Autonomous Artworks",
+      "groupId": "group-1792531250657"
     },
     {
-      "id": "week13-content",
+      "id": "week14-content",
       "type": "list",
-      "week": 13,
-      "x": 7420.8306103436835,
-      "y": 3934.274882662096,
+      "week": 14,
+      "x": 7570.883682144371,
+      "y": 3485.852674793064,
       "width": 650,
       "height": 246,
       "description": "",
@@ -720,23 +750,23 @@ window.CANVAS_DATA = {
         "“Undercurrents” - Rafael Lozano-Hemmer (2026)",
         "“Xeno Computer 0.1: Labor” - Tega Brain (2025)",
         "✣ Autonomous Artworks ✣"
-      ]
+      ],
+      "groupId": "group-1792531250657"
     },
     {
-      "id": "week14",
+      "id": "week15",
       "type": "week",
-      "week": 14,
+      "week": 15,
       "x": 7186.13634450291,
       "y": 1774.940581489108,
       "width": 650,
       "height": 118,
-      "title": "Week 14 ✧ Presentation",
-      "date": "Wednesday, December 9"
+      "title": "Week 15 ✧ Presentation"
     },
     {
-      "id": "week14-content",
+      "id": "week15-content",
       "type": "list",
-      "week": 14,
+      "week": 15,
       "x": 7286.05975677525,
       "y": 1844.9199679964343,
       "width": 650,
@@ -1244,8 +1274,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1787950086838",
       "type": "media",
-      "x": 357.77460076856204,
-      "y": 4615.649302347326,
+      "x": 1525.4625343015646,
+      "y": 5838.208815197792,
       "width": 210,
       "height": 155,
       "mediaKind": "link",
@@ -1254,7 +1284,8 @@ window.CANVAS_DATA = {
       "meta": "article",
       "alt": "Dismantling the Blue Gaze Magnus Schaefer on American Artist at the Queens Museum, New York",
       "image": "assets/thumbnails/item1787950086838.jpg",
-      "previewHeight": 155
+      "previewHeight": 155,
+      "groupId": "group-1792531286137"
     },
     {
       "id": "item1787950387554",
@@ -1475,8 +1506,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1788737403107",
       "type": "media",
-      "x": 168.31027946622862,
-      "y": 1035.512317460199,
+      "x": -608.1453906516053,
+      "y": 2429.9232972712593,
       "width": 240,
       "height": 135,
       "mediaKind": "youtube",
@@ -1485,7 +1516,8 @@ window.CANVAS_DATA = {
       "meta": "YouTube",
       "alt": "The First Ever AI Chatbot: ELIZA (1966)",
       "image": "https://i.ytimg.com/vi/8jGpkdPO-1Y/hqdefault.jpg",
-      "previewHeight": 135
+      "previewHeight": 135,
+      "groupId": "group-1792531315158"
     },
     {
       "id": "item1788746366736",
@@ -1634,8 +1666,8 @@ window.CANVAS_DATA = {
       "to": "week08"
     },
     {
-      "from": "week09-content",
-      "to": "week10"
+      "from": "week08",
+      "to": "week09"
     },
     {
       "from": "week10-content",
@@ -1646,16 +1678,20 @@ window.CANVAS_DATA = {
       "to": "week12"
     },
     {
-      "from": "week12",
-      "to": "week13-content"
+      "from": "week12-content",
+      "to": "week13"
     },
     {
       "from": "week13",
       "to": "week14-content"
     },
     {
-      "from": "week08-content",
-      "to": "week09"
+      "from": "week14",
+      "to": "week15-content"
+    },
+    {
+      "from": "week09-content",
+      "to": "week10"
     },
     {
       "from": "item1787880634815",
