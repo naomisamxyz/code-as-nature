@@ -1,8 +1,8 @@
 window.CANVAS_DATA = {
-  "version": 38,
+  "version": 47,
   "lastUpdated": {
-    "datetime": "2026-10-20",
-    "label": "October 20, 2026",
+    "datetime": "2026-10-27",
+    "label": "October 27, 2026",
     "by": "Naomi Sam"
   },
   "home": {
@@ -583,7 +583,7 @@ window.CANVAS_DATA = {
       "items": [
         "“SOMEONE” - Lauren Lee McCarthy (2019)",
         "Alexander Galloway, <cite>Protocol: How Control Exists After Decentralization</cite> (2004)",
-        "⠿ Networked Systems ⠿"
+        "<a href=\"assets/guides/multiplayer-sketch.html\">⠿ Networked Systems ⠿</a>"
       ],
       "groupId": "group-1792531324574"
     },
@@ -1638,6 +1638,61 @@ window.CANVAS_DATA = {
       "text": "Manovich argues that databases and narratives are two competing ways of organizing experience. A narrative creates a sequence with cause, effect, and progression. A database presents a collection of elements without prescribing a single order.<br><br>The database is not merely a technical storage system. It is a “symbolic form,” a way contemporary culture conceptualizes the world: as an open-ended collection of elements that can be accessed, rearranged, and recombined rather than as one fixed story.",
       "heightMode": "manual",
       "fontSize": 13
+    },
+    {
+      "id": "week08-someone-text",
+      "type": "text",
+      "x": 725.1814840728846,
+      "y": 922.6390624793687,
+      "width": 540.3479227304508,
+      "height": 974.7331112392579,
+      "text": "Lauren Lee McCarthy, <em>SOMEONE</em> (2019)<br><br>SOMEONE is a networked smart-home installation in which a human takes the place of an automated voice assistant like Alexa or Google Home. Cameras, microphones, and connected devices allow a remote person to observe and interact with someone inside their home.<br><br>The system follows a simple structure:<br><br>INPUT → NETWORK → HUMAN → OUTPUT → FEEDBACK<br><br>1. <strong>Input:</strong> Cameras and microphones capture audio and video from the home.<br>2. <strong>Network:</strong> Information travels over the internet to a remote interface.<br>3. <strong>Human processing:</strong> Instead of an AI interpreting the information, a person watches, listens, and makes decisions.<br>4. <strong>Output:</strong> The remote participant can speak to the resident and control connected devices.<br>5. <strong>Feedback:</strong> The resident responds, the operator receives new information, and the cycle continues.<br><br><strong>Client and Server</strong><br>The project uses a client-server architecture, a fundamental structure of networked systems.<br><br>A client is a device or application that connects to another computer to exchange information. A server coordinates communication between connected clients.<br><br>In SOMEONE, the home and the remote operator are connected through networked software that exchanges audio, video, and control commands.<br><br>HOME (CLIENT) ↔ SERVER ↔ OPERATOR (CLIENT)<br><br>SOMEONE demonstrates that a network doesn't just connect devices. It establishes relationships between people and determines who can observe, communicate, and exercise control.<br><br>By replacing artificial intelligence with a human operator, McCarthy makes the normally invisible processes of smart-home automation visible. The work raises questions about surveillance, privacy, labor, intimacy, and the power embedded in technological systems.",
+      "heightMode": "manual",
+      "fontSize": 11
+    },
+    {
+      "id": "week08-someone-link",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 8,
+      "x": 513.634274732962,
+      "y": 990.6717499983314,
+      "width": 210,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "SOMEONE",
+      "meta": "Lauren Lee McCarthy",
+      "url": "https://get-lauren.net/SOMEONE",
+      "image": "https://iad.microlink.io/e-0qdCaV_k7P6ET8j_EfVeqJR8lGehtPqZzJfi7uQDKXqUEP6AJ0pkvEsGCMuGlgQWc93oBf6E5LR434dTgG1Q.png",
+      "alt": "SOMEONE by Lauren Lee McCarthy"
+    },
+    {
+      "id": "week08-galloway-protocol",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 8,
+      "x": 1721.6233064578225,
+      "y": 973.6347313358269,
+      "width": 100,
+      "height": 155,
+      "previewHeight": 155,
+      "title": "galloway_protocol",
+      "meta": "Are.na",
+      "url": "https://www.are.na/block/51967234",
+      "image": "https://iad.microlink.io/q2s0W_hMzzXrAnx6pA-wrH5TR54NjoAt348vZ9_ZG1fdD2BEmtQv5SP1D1koBccVCeKm10wPubQCbKxfkrN_lQ.png",
+      "alt": "galloway_protocol on Are.na",
+      "heightMode": "manual"
+    },
+    {
+      "id": "week08-protocol-text",
+      "type": "text",
+      "x": 1204.762035955494,
+      "y": 883.2270758591108,
+      "width": 522.2662753985071,
+      "height": 819.1918750559695,
+      "text": "Alexander R. Galloway, <em>Protocol: How Control Exists after Decentralization</em> (2004)<br><br>Networks distribute communication, but protocols organize and control the conditions under which communication becomes possible.<br><br>“Without a shared protocol, there is no network.” - Galloway, <em>Protocol</em> (2004), p. 11<br><br><strong>Who defines the rules of connection, and how do those rules shape what participants can do?</strong><br><br>Internet protocols make it possible for different machines, institutions, and individuals to participate in a shared network, but participation depends on technical standardization. Galloway argues that this produces a new form of control through compatibility, regulation, and participation, rather than simply through exclusion. He describes the internet as a system where information flows, but in a highly regulated manner.<br><br>The architecture of a network determines:<br>• Who can communicate with whom.<br>• Which connections are possible.<br>• Who can interrupt or regulate communication.<br>• Which systems are compatible.<br>• Where authority is concentrated or distributed.<br><br>Galloway uses DNS as an important example: even within the distributed internet, the domain-name system contains hierarchical structures that can regulate access.<br>DNS is the system that translates domain names like <code dir=\"ltr\">example.com</code> into the numeric IP addresses computers use to connect to each other. It is run by a few organizations at the top who decide which names exist and who controls them, so the people who own those domains and servers determine what can be found on the internet.",
+      "heightMode": "manual",
+      "fontSize": 11
     }
   ],
   "connections": [

@@ -19,9 +19,454 @@
   <header class="masthead">
     <div class="section-heading"><pre class="section-ornament guide-title-ornament" aria-hidden="true"></pre><h1>Networked Systems</h1></div>
   </header>
+
+  <nav class="page-toc">
+    <a href="#create-sketch">Create a multiplayer p5.js sketch (no server needed)</a>
+    <a href="#index-html">Replace index.html</a>
+    <a href="#sketch-js">Replace sketch.js</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#test">Test together</a>
+    <a href="#make-your-own">Make your own changes</a>
+    <a href="#with-server">Multiplayer with a server</a>
+    <a href="#how-it-works-particles">How Collective Particles works</a>
+    <a href="#self-hosting">Self-hosting</a>
+  </nav>
+
+  <section class="section" id="create-sketch">
+    <h2>Create a multiplayer p5.js sketch (no server needed)</h2>
+    <p class="section-intro">Change a color together. Click the canvas to change its color for everyone watching.</p>
+    <p class="body-text">We are making a sketch that everyone can change at the same time: when one person clicks the canvas, its color changes on every screen. Normally this would need a server of our own to pass information between computers. Instead, we use p5.party, a library that provides the shared connection for us, so we don't need to build or run a server. This example follows the p5.party shared-data approach, and its public demo server is intended for classroom experiments.</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>p5.party:</dt><dd><a href="https://p5party.org/" target="_blank" rel="noopener">p5party.org</a></dd></div>
+        </dl>
+      </div>
+    </div>
+    <br>
+
+    <div style="position: relative; width: 400px; height: 400px; overflow: hidden; margin: 0 0 24px;">
+      <iframe src="https://editor.p5js.org/naomisamxyz/full/WnFZMnX3J" width="800" height="800" frameborder="0" scrolling="no" style="position: absolute; top: -50px; left: -8px;"></iframe>
+    </div>
+
+    <div style="position: relative; width: 400px; height: 400px; overflow: hidden; margin: 0 0 24px;">
+      <iframe src="https://editor.p5js.org/naomisamxyz/full/oH4N864Qs" width="800" height="800" frameborder="0" scrolling="no" style="position: absolute; top: -42px; left: 0;"></iframe>
+    </div>
+
+    <p class="body-text">Open <a href="https://editor.p5js.org/" target="_blank" rel="noopener">editor.p5js.org</a>, sign in, and create a new sketch.</p>
+    <p class="body-text">Expand the file sidebar to see <code class="inline">index.html</code> and <code class="inline">sketch.js</code>.</p>
+  </section>
+
+  <section class="section" id="index-html">
+    <h2>Replace index.html</h2>
+    <details class="guide-disclosure" open>
+      <summary style="text-transform: uppercase; letter-spacing: 0.08em;">Important: use p5.js version 1</summary>
+      <p class="body-text no-top-margin" style="margin: 0 14px 14px;">This guide uses p5.js <code class="inline">1.11.10</code>. Its <code class="inline">preload()</code> function loads the shared data before the sketch starts. Copy the HTML exactly as shown.</p>
+    </details>
+    <p class="section-intro">Select <code class="inline">index.html</code>, delete its contents, and paste:</p>
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="PAGE TITLE" style="top: calc(5 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="P5 LIBRARY" style="top: calc(7 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="P5.PARTY LIBRARY" style="top: calc(10 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="YOUR SKETCH" style="top: calc(15 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+
+  &lt;title&gt;Our Shared Color&lt;/title&gt;
+
+  &lt;script
+    src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"&gt;
+  &lt;/script&gt;
+  &lt;script
+    src="https://cdn.jsdelivr.net/npm/p5.party@latest/dist/p5.party.js"&gt;
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script src="sketch.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" data-notes-id="index-html" style="min-height: 445px;">
+
+        <div class="note" data-note="page-title" style="top: 123px;">
+          <span class="note-label">PAGE TITLE</span>
+          <p>The name shown on the browser tab.</p>
+        </div>
+
+        <div class="note" data-note="p5-library" style="top: 193px;">
+          <span class="note-label">P5 LIBRARY</span>
+          <p>Loads p5.js version 1.11.10, which this guide requires.</p>
+        </div>
+
+        <div class="note" data-note="p5.party-library" style="top: 263px;">
+          <span class="note-label">P5.PARTY LIBRARY</span>
+          <p>Loads p5.party, the library that shares data between everyone connected.</p>
+        </div>
+
+        <div class="note" data-note="your-sketch" style="top: 369px;">
+          <span class="note-label">YOUR SKETCH</span>
+          <p>Runs your <code>sketch.js</code> file. It comes last so both libraries are ready first.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors" data-connectors-id="index-html">
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:135px;"></div>
+        <div class="conn-h" style="top:135px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:205px;"></div>
+        <div class="conn-h" style="top:205px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:275px;"></div>
+        <div class="conn-h" style="top:275px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:381px;"></div>
+        <div class="conn-h" style="top:381px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="sketch-js">
+    <h2>Replace sketch.js</h2>
+    <p class="section-intro">Select <code class="inline">sketch.js</code>, delete its contents, and paste:</p>
+    <div class="annotated">
+
+      <div class="code-card">
+        <div class="code-groups">
+          <span class="grp" data-level="1" data-label="SHARED VARIABLE" style="top: calc(0 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="CONNECT" style="top: calc(3 * 2.05em); height: calc(4 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="LOAD SHARED DATA" style="top: calc(8 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="DRAW" style="top: calc(18 * 2.05em); height: calc(1 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-label="INSIDE CANVAS ONLY" style="top: calc(22 * 2.05em); height: calc(6 * 2.05em - 6px);"></span>
+          <span class="grp" data-level="1" data-alt="1" data-label="TOGGLE COLOR" style="top: calc(29 * 2.05em); height: calc(5 * 2.05em - 6px);"></span>
+        </div>
+        <div class="code-scroll">
+<pre><code>let shared;
+
+function preload() {
+  partyConnect(
+    "wss://demoserver.p5party.org",
+    "code-as-nature"
+  );
+
+  shared = partyLoadShared("background", {
+    color: "white"
+  });
+}
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(shared.color);
+}
+
+function mousePressed() {
+  if (
+    mouseX &lt; 0 || mouseX &gt; width ||
+    mouseY &lt; 0 || mouseY &gt; height
+  ) {
+    return;
+  }
+
+  if (shared.color === "white") {
+    shared.color = "pink";
+  } else {
+    shared.color = "white";
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="notes" data-notes-id="sketch-js" style="min-height: 788px;">
+
+        <div class="note" data-note="shared-variable" style="top: 0px;">
+          <span class="note-label">SHARED VARIABLE</span>
+          <p>Will hold the object everyone shares.</p>
+        </div>
+
+        <div class="note" data-note="connect" style="top: 74px;">
+          <span class="note-label">CONNECT</span>
+          <p>Connects the sketch to the group. Everyone using the same server address and project name <code>"code-as-nature"</code> joins together.</p>
+        </div>
+
+        <div class="note" data-note="load-shared-data" style="top: 197px;">
+          <span class="note-label">LOAD SHARED DATA</span>
+          <p>Loads the shared object <code>"background"</code>. The white starting value is only used when it is first created.</p>
+        </div>
+
+        <div class="note" data-note="draw" style="top: 443px;">
+          <span class="note-label">DRAW</span>
+          <p>Paints the background with the shared color, so every screen shows the same one.</p>
+        </div>
+
+        <div class="note" data-note="inside-canvas-only" style="top: 541px;">
+          <span class="note-label">INSIDE CANVAS ONLY</span>
+          <p>Ignores clicks outside the canvas.</p>
+        </div>
+
+        <div class="note" data-note="toggle-color" style="top: 713px;">
+          <span class="note-label">TOGGLE COLOR</span>
+          <p>Switches the shared color between white and pink. Because it is shared, it changes on everyone's screen.</p>
+        </div>
+
+      </div>
+
+      <div class="connectors" data-connectors-id="sketch-js">
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:12px;"></div>
+        <div class="conn-h" style="top:12px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:86px;"></div>
+        <div class="conn-h" style="top:86px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:209px;"></div>
+        <div class="conn-h" style="top:209px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:455px;"></div>
+        <div class="conn-h" style="top:455px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:553px;"></div>
+        <div class="conn-h" style="top:553px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+
+        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
+        <div class="conn-v" style="left:50%; top:0px; height:725px;"></div>
+        <div class="conn-h" style="top:725px; left:50%; width:14px;"></div>
+        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
+      </div>
+
+    </div>
+    <p class="body-text">The first <code class="inline">if</code> in <code class="inline">mousePressed()</code> makes the sketch only respond to clicks inside the canvas.</p>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <h2>How it works</h2>
+    <ul class="steps">
+      <li><code class="inline">partyConnect()</code> connects the sketch to the group.</li>
+      <li><code class="inline">partyLoadShared()</code> loads a value everyone shares.</li>
+      <li><code class="inline">background(shared.color)</code> displays that value.</li>
+      <li>Clicking changes <code class="inline">shared.color</code>, which updates everyone&rsquo;s screen.</li>
+    </ul>
+    <p class="body-text">The white starting value is used when the shared object is first created. Joining an existing session loads its current color.</p>
+  </section>
+
+  <section class="section" id="test">
+    <h2>Test together</h2>
+    <ol class="steps">
+      <li>Click Play.</li>
+      <li>Click the canvas. It switches between white and pink.</li>
+      <li>Save the sketch.</li>
+      <li>Choose <strong>File &rarr; Share</strong>.</li>
+      <li>Copy the middle link, labeled <strong>Share Sketch As View-Only</strong>.</li>
+      <li>Send that link to a classmate.</li>
+      <li>Keep both sketches open and take turns clicking.</li>
+    </ol>
+    <p class="body-text">The color changes on both screens.</p>
+    <p class="body-text">&ldquo;View-only&rdquo; means classmates cannot edit the code. They can still click the canvas and change its color.</p>
+    <p class="body-text">Everyone using the project name <code class="inline">"code-as-nature"</code> and shared object <code class="inline">"background"</code> joins the same shared color.</p>
+  </section>
+
+  <section class="section" id="make-your-own">
+    <h2>Make your own changes</h2>
+    <p class="section-intro">Change the sketch yourself with the help of the p5.party website.</p>
+    <p class="body-text">Look through its documentation and examples to find out what else can be shared between screens, then adapt the sketch to do something of your own.</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>p5.party:</dt><dd><a href="https://p5party.org/" target="_blank" rel="noopener">p5party.org</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="with-server">
+    <h2>Multiplayer with a server</h2>
+    <p class="section-intro">This example starts with a server.</p>
+    <br>
+    <iframe src="https://collective-particles.onrender.com/embed.html" width="100%" height="872" frameborder="0"></iframe>
+  </section>
+
+  <section class="section" id="how-it-works-particles">
+    <h2>How Collective Particles works</h2>
+    <p class="section-intro">Collective Particles lets everyone visiting the website interact with the same field of particles. Each browser draws the field, while one shared server calculates what happens to it.</p>
+
+    <h3 class="sub">Where the files are stored</h3>
+    <p class="body-text no-top-margin">The GitHub repository is the online project folder. It contains both the portfolio website and the particle application:</p>
+    <pre class="folder-tree" aria-label="Repository folder structure">Portfolio-Website-2/
+│
+├── week7/
+│   ├── index.html
+│   ├── config.js
+│   ├── embed.js
+│   └── particles.css
+│
+└── collective-particles/
+    ├── server.js
+    ├── shared/
+    │   └── simulation.js
+    └── public/
+        ├── embed.html
+        ├── sketch.js
+        └── style.css</pre>
+    <p class="body-text">Two services make the project work online:</p>
+    <ul class="steps">
+      <li>GitHub Pages displays the portfolio.</li>
+      <li>Render runs the particle application&rsquo;s server.</li>
+    </ul>
+
+    <h3 class="sub">Why the code is on GitHub and Render</h3>
+    <p class="body-text no-top-margin">GitHub holds the source code and its change history. Render uses that repository to obtain the code it needs to run.</p>
+    <p class="body-text">When the application is deployed, Render downloads the selected version from GitHub, installs its libraries, and builds a runnable copy.</p>
+    <p class="body-text">The update process is:</p>
+    <pre class="folder-tree" aria-label="Update process">Edit on the computer → push to GitHub → Render builds and runs the updated application</pre>
+    <p class="body-text">Render keeps that built copy. A normal restart or wake from sleep runs the existing copy; it does not need to download the code from GitHub again.</p>
+    <p class="body-text">The simulation does not inherently require GitHub. GitHub is the delivery and version-history system chosen for this project.</p>
+
+    <h3 class="sub">How Week 7 displays the sketch</h3>
+    <p class="body-text no-top-margin">Inside <code class="inline">week7/</code>, <code class="inline">index.html</code> contains the portfolio page&rsquo;s heading, text, and navigation.</p>
+    <p class="body-text"><code class="inline">config.js</code> stores the particle application&rsquo;s address:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>https://collective-particles.onrender.com</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text"><code class="inline">embed.js</code> uses that address to create an iframe: a window displaying another webpage inside the portfolio page. It opens the application&rsquo;s <code class="inline">embed.html</code> page from Render.</p>
+    <p class="body-text"><code class="inline">particles.css</code> controls the size and appearance of that window.</p>
+    <p class="body-text">The result looks like one website, although the surrounding portfolio comes from GitHub Pages and the interactive sketch comes from Render.</p>
+
+    <h3 class="sub">What runs on Render</h3>
+    <p class="body-text no-top-margin">Render starts <code class="inline">server.js</code>.</p>
+    <p class="body-text">A server is a running program that receives connections and responds to them. Here, it keeps one shared particle field for all visitors.</p>
+    <p class="body-text"><code class="inline">server.js</code> uses <code class="inline">shared/simulation.js</code> to calculate particle positions, attraction, repulsion, vortex movement, and color absorption. It updates the field 30 times per second.</p>
+    <p class="body-text">These calculations happen on Render rather than separately on each visitor&rsquo;s computer.</p>
+
+    <h3 class="sub">What runs in the browser</h3>
+    <p class="body-text no-top-margin">Render also delivers webpage files to each visitor:</p>
+    <ul class="steps">
+      <li><code class="inline">public/embed.html</code> loads the interactive page and its libraries.</li>
+      <li><code class="inline">public/sketch.js</code> draws the particles using p5.js and detects mouse or touch actions.</li>
+      <li><code class="inline">public/style.css</code> styles the interface.</li>
+    </ul>
+    <p class="body-text">Although these files are stored on Render, their drawing and interaction code runs in the visitor&rsquo;s browser.</p>
+    <p class="body-text">The browser displays the particle positions it receives from the server.</p>
+
+    <h3 class="sub">What Socket.IO does</h3>
+    <p class="body-text no-top-margin">Socket.IO is a JavaScript library that carries messages between browsers and the server.</p>
+    <p class="body-text">In <code class="inline">sketch.js</code>, this line opens the connection:</p>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>const socket = io();</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text"><code class="inline">socket</code> is simply the name given to that connection. It is not another website or hosting service.</p>
+    <p class="body-text">Because the sketch loaded from Render, it connects back to that Render server.</p>
+    <p class="body-text">When someone presses the canvas, the browser sends their pointer position, selected force, and whether they are pressing.</p>
+    <p class="body-text">The server receives that message, updates the shared particles, and sends their new positions and colors to everyone. Each browser then redraws the field.</p>
+    <p class="body-text">The exchange works like this:</p>
+    <div class="ref-groups">
+      <div class="ref-group">
+        <dl>
+          <div class="ref-row"><dt>Your browser:</dt><dd>&ldquo;Someone is pressing here with the vortex tool.&rdquo;</dd></div>
+          <div class="ref-row"><dt>The server:</dt><dd>&ldquo;Here is how that changes the particles.&rdquo;</dd></div>
+          <div class="ref-row"><dt>Everyone&rsquo;s browser:</dt><dd>Draws the updated particles.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="sub">What is saved&mdash;and what resets</h3>
+    <p class="body-text no-top-margin">Render keeps the application code in its deployed build. However, the current particle positions, colors, and movements exist only in the running server&rsquo;s memory.</p>
+    <p class="body-text">This project has no database or permanent save system. Restarting the server resets the particle field, while the application code remains available to run again.</p>
+    <p class="body-text">Every visitor connects to the same server, so their actions affect the same particles. The computer used to build the project can be turned off because Render runs the application online. The free hosting service can sleep when unused.</p>
+  </section>
+
+  <section class="section" id="self-hosting">
+    <h2>Self-hosting</h2>
+    <p class="section-intro">Self-hosting means your own computer acts as the server, instead of a hosting service like Render.</p>
+
+    <h3 class="sub">What a local server does</h3>
+    <p class="body-text no-top-margin">A server is a program that runs continuously and waits for connections. It listens on a port, a numbered door on your computer, and when a browser connects to that port, the server answers it by sending back webpage files or by exchanging messages, as Socket.IO does in this project.</p>
+    <p class="body-text">A local server is the same program running on your own computer, so the computer you are working on is also the one every visitor connects to.</p>
+
+    <h3 class="sub">Start the server</h3>
+    <ol class="steps">
+      <li>Install <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a>, which runs JavaScript programs outside the browser.</li>
+      <li>Open a terminal in the folder that contains <code class="inline">server.js</code>, in this project the <code class="inline">collective-particles</code> folder.</li>
+      <li>The first time only, install the libraries the project needs, such as Socket.IO:</li>
+    </ol>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>npm install</code></pre>
+        </div>
+      </div>
+    </div>
+    <ol class="steps" start="4">
+      <li>Start the server:</li>
+    </ol>
+    <div class="snippet">
+      <div class="code-card">
+        <div class="code-scroll">
+<pre><code>node server.js</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="body-text">The terminal stays busy while the server is running, and it may print a message saying which port it is listening on. Check <code class="inline">server.js</code> for the port number it uses.</p>
+    <p class="body-text">Open that address on your own computer to test it, for example:</p>
+    <pre class="folder-tree" aria-label="Example local address">http://localhost:3000</pre>
+    <p class="body-text">To stop the server, click the terminal and press <code class="inline">Ctrl + C</code>.</p>
+
+    <h3 class="sub">Connect from another device</h3>
+    <p class="body-text no-top-margin"><code class="inline">localhost</code> only works on your own computer. Other devices on the same Wi-Fi or network need your computer&rsquo;s local network address instead. On a Mac, you can find it in <strong>System Settings &rarr; Wi-Fi &rarr; Details</strong>, or by running <code class="inline">ipconfig getifaddr en0</code> in the terminal. On Windows, run <code class="inline">ipconfig</code> and look for the IPv4 address.</p>
+    <p class="body-text">Then use that address with the same port:</p>
+    <pre class="folder-tree" aria-label="Example local network address">http://192.168.1.20:3000</pre>
+    <p class="body-text">This only works while your computer is on, the server is running, and the other devices are on the same network.</p>
+
+    <h3 class="sub">Over the internet</h3>
+    <p class="body-text no-top-margin">To let people connect from outside your network, your computer has to be reachable from the internet. There are two common ways to do this:</p>
+    <ul class="steps">
+      <li>Set up port forwarding on your router, so connections arriving at a chosen port are passed on to your computer.</li>
+      <li>Use a tunneling tool such as ngrok or Cloudflare Tunnel, which gives your locally running server a public web address without changing your router.</li>
+    </ul>
+    <p class="body-text">Opening your computer to the internet has security risks, so only expose a server you understand and are comfortable sharing.</p>
+
+    <h3 class="sub">Compared with a hosting service</h3>
+    <p class="body-text no-top-margin">A hosting service such as Render keeps the server running on its own computers, so your computer can be turned off. When you self-host, the server runs only while your computer is on and connected, and you are responsible for keeping it running.</p>
+  </section>
 </main>
-<script src="../navigation.js?v=13"></script>
-<script src="../last-updated.js?v=10"></script>
+<script src="../navigation.js?v=14"></script>
+<script src="../last-updated.js?v=11"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 </body>
 </html>
