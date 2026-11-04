@@ -1,5 +1,5 @@
 window.CANVAS_DATA = {
-  "version": 47,
+  "version": 56,
   "lastUpdated": {
     "datetime": "2026-10-27",
     "label": "October 27, 2026",
@@ -538,8 +538,8 @@ window.CANVAS_DATA = {
       "id": "week07",
       "type": "week",
       "week": 7,
-      "x": 2063.0821871475077,
-      "y": -57.55471258018684,
+      "x": 1705.12428350171,
+      "y": 453.95104333958466,
       "width": 650,
       "height": 118,
       "title": "Week 07 ✧ Recap",
@@ -550,8 +550,8 @@ window.CANVAS_DATA = {
       "id": "week07-content",
       "type": "list",
       "week": 7,
-      "x": 2168.0821871475077,
-      "y": 18.098940628960808,
+      "x": 1810.12428350171,
+      "y": 529.6046965487324,
       "width": 650,
       "height": 287,
       "description": "",
@@ -564,19 +564,20 @@ window.CANVAS_DATA = {
       "id": "week08",
       "type": "week",
       "week": 8,
-      "x": 535.3249933668527,
-      "y": 699.1616548374514,
+      "x": 58.3585533458604,
+      "y": 1068.6719928381788,
       "width": 650,
       "height": 118,
       "title": "Week 08 ✧ Networked Systems",
-      "groupId": "group-1792531324574"
+      "groupId": "group-1793767695439",
+      "date": "Wednesday, October 28"
     },
     {
       "id": "week08-content",
       "type": "list",
       "week": 8,
-      "x": 648.5503027260241,
-      "y": 752.3668032354838,
+      "x": 171.58386270503183,
+      "y": 1121.8771412362112,
       "width": 650,
       "height": 234,
       "description": "",
@@ -585,25 +586,25 @@ window.CANVAS_DATA = {
         "Alexander Galloway, <cite>Protocol: How Control Exists After Decentralization</cite> (2004)",
         "<a href=\"assets/guides/multiplayer-sketch.html\">⠿ Networked Systems ⠿</a>"
       ],
-      "groupId": "group-1792531324574"
+      "groupId": "group-1793767695439"
     },
     {
-      "id": "week09",
+      "id": "week10",
       "type": "week",
-      "week": 9,
-      "x": -509.7099564507274,
-      "y": 2245.4050914965524,
+      "week": 10,
+      "x": 962.192340633468,
+      "y": 5515.702987078469,
       "width": 780,
       "height": 139,
-      "title": "Week 09 ✧ Completely Automated Public Turing Test to Tell Computers and Humans Apart (CAPTCHA)",
+      "title": "Week 10 ✧ Completely Automated Public Turing Test to Tell Computers and Humans Apart (CAPTCHA)",
       "groupId": "group-1792531315158"
     },
     {
-      "id": "week09-content",
+      "id": "week10-content",
       "type": "list",
-      "week": 9,
-      "x": -329.7634224698222,
-      "y": 2324.4045453045037,
+      "week": 10,
+      "x": 1142.1388746143734,
+      "y": 5594.70244088642,
       "width": 650,
       "height": 321,
       "description": "",
@@ -611,83 +612,57 @@ window.CANVAS_DATA = {
         "How Do AI Systems Work",
         "Inventing ELIZA and the Turing Test, CAPTCHA",
         "Iterations and Early Models",
-        "Ghost Font (2026)",
         "LORAs",
-        "Google Colab"
+        "Google DeepDream (2015)",
+        "𖦹 Hallucinations 𖦹"
       ],
       "groupId": "group-1792531315158"
     },
     {
-      "id": "week10",
+      "id": "week09",
       "type": "week",
-      "week": 10,
-      "x": -433.89288503129694,
-      "y": 4268.5213928082,
+      "week": 9,
+      "x": -376.5479637519628,
+      "y": 3165.608092184295,
       "width": 650,
       "height": 118,
-      "title": "Week 10 ✧ Hallucinations",
-      "groupId": "group-1792531297978"
+      "title": "Week 09 ✧ Black Gooey Universe"
     },
     {
-      "id": "week10-content",
+      "id": "week09-content",
       "type": "list",
-      "week": 10,
-      "x": -279.57464306919303,
-      "y": 4330.878420750658,
-      "width": 650,
-      "height": 171,
+      "week": 9,
+      "x": -275.128376038101,
+      "y": 3224.8408155906745,
+      "width": 667.8277397748869,
+      "height": 1121.3486018301928,
       "description": "",
       "items": [
-        "Google DeepDream (2015)",
-        "𖦹 Hallucinations 𖦹"
+        "“Password Protected with American Artist on Their Dash Cam Video Art” - Pioneer Works (2020)",
+        "American Artist, “Black Gooey Universe” (2021)",
+        "The Interface<br>“Easy to Use and Incredibly Difficult: On the Mythical Border between Interface and Gameplay” — Jesper Juul and Marleigh Norton (2009)<br>“The Interface Theory of Perception” — Donald D. Hoffman, Manish Singh, and Chetan Prakash (2015)<br>“Laws of Media: The New Science” — Marshall McLuhan and Eric McLuhan (1988)",
+        "Jurgenson, Nathan (2011). “Digital Dualism versus Augmented Reality.”<br>Haraway, Donna (1985). “A Cyborg Manifesto: Science, Technology, and Socialist-Feminism in the Late Twentieth Century.”<br>Smith (2009). “On Reality and Virtuality: A Study of Time-Spaces in Plowing the Dark.” Mosaic: An Interdisciplinary Critical Journal, 42(3), 95–108. University of Manitoba.<br>Gane, Nicholas (2006). “When We Have Never Been Human, What Is to Be Done? Interview with Donna Haraway.”<br>Russell, Legacy (2020). Glitch Feminism: A Manifesto. Verso Books.<br>Varghese (2020). “A Defiant Manifesto for ‘Glitch Feminism.’” Hyperallergic.<br>Russell, Legacy (2012). “Digital Dualism and the Glitch Feminism Manifesto.” Cyborgology, December 10, 2012.",
+        "Fuser"
       ],
-      "groupId": "group-1792531297978"
+      "heightMode": "manual"
     },
     {
       "id": "week11",
       "type": "week",
       "week": 11,
-      "x": 1755.5556490247732,
-      "y": 5430.632247475073,
+      "x": 2909.0610703135453,
+      "y": 6148.724520341249,
       "width": 650,
       "height": 118,
-      "title": "Week 11 ✧ Black Gooey Universe",
-      "groupId": "group-1792531286137"
+      "title": "Week 11 ✧ Simulated Worlds",
+      "groupId": "group-1793767500444"
     },
     {
       "id": "week11-content",
       "type": "list",
       "week": 11,
-      "x": 1856.975236738635,
-      "y": 5489.864970881453,
-      "width": 648.5681288840159,
-      "height": 271.2493008425529,
-      "description": "",
-      "items": [
-        "“Password Protected with American Artist on Their Dash Cam Video Art” - Pioneer Works (2020)",
-        "American Artist, “Black Gooey Universe” (2021)",
-        "Legacy Russell, <cite>Glitch Feminism</cite>",
-        "Fuser"
-      ],
-      "heightMode": "manual",
-      "groupId": "group-1792531286137"
-    },
-    {
-      "id": "week12",
-      "type": "week",
-      "week": 12,
-      "x": 4425.282506435245,
-      "y": 6071.788881935038,
-      "width": 650,
-      "height": 118,
-      "title": "Week 12 ✧ Simulated Worlds"
-    },
-    {
-      "id": "week12-content",
-      "type": "list",
-      "week": 12,
-      "x": 4495.920607163609,
-      "y": 6155.3129142291455,
+      "x": 2997.4215783772815,
+      "y": 6231.077643304128,
       "width": 650,
       "height": 284,
       "description": "",
@@ -697,25 +672,26 @@ window.CANVAS_DATA = {
         "“2065 / Geomancer” - Lawrence Lek (2017)",
         "“Posthuman Ethics for AI” - Rosi Braidotti (2025)",
         "⟷ UE Blueprints ⟷"
-      ]
+      ],
+      "groupId": "group-1793767500444"
     },
     {
-      "id": "week13",
+      "id": "week12",
       "type": "week",
-      "week": 13,
-      "x": 6396.078049378878,
-      "y": 5178.885135482581,
+      "week": 12,
+      "x": 5030.342269475911,
+      "y": 6046.366043140979,
       "width": 650,
       "height": 118,
-      "title": "Week 13 ✧ Poetics of Encryption",
+      "title": "Week 12 ✧ Poetics of Encryption",
       "groupId": "group-1792531256621"
     },
     {
-      "id": "week13-content",
+      "id": "week12-content",
       "type": "list",
-      "week": 13,
-      "x": 6503.808603346297,
-      "y": 5233.003720985438,
+      "week": 12,
+      "x": 5138.072823443329,
+      "y": 6100.484628643836,
       "width": 650,
       "height": 197,
       "description": "",
@@ -726,56 +702,33 @@ window.CANVAS_DATA = {
       "groupId": "group-1792531256621"
     },
     {
-      "id": "week14",
+      "id": "week13",
       "type": "week",
-      "week": 14,
-      "x": 7499.64427741471,
-      "y": 3423.977933041209,
+      "week": 13,
+      "x": 6699.666328881775,
+      "y": 4800.482232524332,
       "width": 650,
       "height": 118,
-      "title": "Week 14 ✧ Autonomous Artworks",
+      "title": "Week 13 ✧ Autonomous Artworks",
       "groupId": "group-1792531250657"
     },
     {
-      "id": "week14-content",
+      "id": "week13-content",
       "type": "list",
-      "week": 14,
-      "x": 7570.883682144371,
-      "y": 3485.852674793064,
+      "week": 13,
+      "x": 6770.9057336114365,
+      "y": 4862.356974276187,
       "width": 650,
-      "height": 246,
+      "height": 284,
       "description": "",
       "items": [
         "“BOB (Bag of Beliefs)” - Ian Cheng (2018–2019)",
         "“Undercurrents” - Rafael Lozano-Hemmer (2026)",
         "“Xeno Computer 0.1: Labor” - Tega Brain (2025)",
-        "✣ Autonomous Artworks ✣"
+        "✣ Autonomous Artworks ✣",
+        "Final Portfolio Presentation"
       ],
       "groupId": "group-1792531250657"
-    },
-    {
-      "id": "week15",
-      "type": "week",
-      "week": 15,
-      "x": 7186.13634450291,
-      "y": 1774.940581489108,
-      "width": 650,
-      "height": 118,
-      "title": "Week 15 ✧ Presentation"
-    },
-    {
-      "id": "week15-content",
-      "type": "list",
-      "week": 15,
-      "x": 7286.05975677525,
-      "y": 1844.9199679964343,
-      "width": 650,
-      "height": 171,
-      "description": "",
-      "items": [
-        "Presentation of websites and individual sketches",
-        "Setup for IM class show"
-      ]
     },
     {
       "id": "item1787880329889",
@@ -1274,10 +1227,10 @@ window.CANVAS_DATA = {
     {
       "id": "item1787950086838",
       "type": "media",
-      "x": 1525.4625343015646,
-      "y": 5838.208815197792,
-      "width": 210,
-      "height": 155,
+      "x": -793.7043415269508,
+      "y": 3180.1937519053913,
+      "width": 100,
+      "height": 69.74380732853346,
       "mediaKind": "link",
       "title": "Dismantling the Blue Gaze Magnus Schaefer on American Artist at the Queens Museum, New York",
       "url": "https://www.textezurkunst.de/en/118/dismantling-blue-gaze/",
@@ -1285,7 +1238,8 @@ window.CANVAS_DATA = {
       "alt": "Dismantling the Blue Gaze Magnus Schaefer on American Artist at the Queens Museum, New York",
       "image": "assets/thumbnails/item1787950086838.jpg",
       "previewHeight": 155,
-      "groupId": "group-1792531286137"
+      "heightMode": "manual",
+      "groupId": "group-1793806405725"
     },
     {
       "id": "item1787950387554",
@@ -1506,8 +1460,8 @@ window.CANVAS_DATA = {
     {
       "id": "item1788737403107",
       "type": "media",
-      "x": -608.1453906516053,
-      "y": 2429.9232972712593,
+      "x": 863.7569064325902,
+      "y": 5700.221192853176,
       "width": 240,
       "height": 135,
       "mediaKind": "youtube",
@@ -1608,7 +1562,7 @@ window.CANVAS_DATA = {
       "url": "https://www.are.na/block/27889207",
       "meta": "Marshall McLuhan",
       "alt": "Marshall McLuhan",
-      "image": "https://iad.microlink.io/0CZOFmOEID7NKs5XCC9sju01tbYhs6OqbjXcI_jrzw5N9vXzjEMou1PaxpJm3xTaVGmoC32mlsMfmAZ1k2IzAg.png",
+      "image": "https://iad.microlink.io/7UVr8M-cfDQCYmpvnCaTtyNnKRL4SsieDNxl9snuf9_bAaiPQIlFvR0_GDxLssjeKN-JVvANj8R_4MpS3TLr0g.png",
       "previewHeight": 155,
       "heightMode": "manual"
     },
@@ -1642,21 +1596,22 @@ window.CANVAS_DATA = {
     {
       "id": "week08-someone-text",
       "type": "text",
-      "x": 725.1814840728846,
-      "y": 922.6390624793687,
+      "x": 248.21504405189228,
+      "y": 1292.1494004800961,
       "width": 540.3479227304508,
       "height": 974.7331112392579,
       "text": "Lauren Lee McCarthy, <em>SOMEONE</em> (2019)<br><br>SOMEONE is a networked smart-home installation in which a human takes the place of an automated voice assistant like Alexa or Google Home. Cameras, microphones, and connected devices allow a remote person to observe and interact with someone inside their home.<br><br>The system follows a simple structure:<br><br>INPUT → NETWORK → HUMAN → OUTPUT → FEEDBACK<br><br>1. <strong>Input:</strong> Cameras and microphones capture audio and video from the home.<br>2. <strong>Network:</strong> Information travels over the internet to a remote interface.<br>3. <strong>Human processing:</strong> Instead of an AI interpreting the information, a person watches, listens, and makes decisions.<br>4. <strong>Output:</strong> The remote participant can speak to the resident and control connected devices.<br>5. <strong>Feedback:</strong> The resident responds, the operator receives new information, and the cycle continues.<br><br><strong>Client and Server</strong><br>The project uses a client-server architecture, a fundamental structure of networked systems.<br><br>A client is a device or application that connects to another computer to exchange information. A server coordinates communication between connected clients.<br><br>In SOMEONE, the home and the remote operator are connected through networked software that exchanges audio, video, and control commands.<br><br>HOME (CLIENT) ↔ SERVER ↔ OPERATOR (CLIENT)<br><br>SOMEONE demonstrates that a network doesn't just connect devices. It establishes relationships between people and determines who can observe, communicate, and exercise control.<br><br>By replacing artificial intelligence with a human operator, McCarthy makes the normally invisible processes of smart-home automation visible. The work raises questions about surveillance, privacy, labor, intimacy, and the power embedded in technological systems.",
       "heightMode": "manual",
-      "fontSize": 11
+      "fontSize": 11,
+      "groupId": "group-1793767695439"
     },
     {
       "id": "week08-someone-link",
       "type": "media",
       "mediaKind": "link",
       "week": 8,
-      "x": 513.634274732962,
-      "y": 990.6717499983314,
+      "x": 36.336796156527384,
+      "y": 1359.8510494436166,
       "width": 210,
       "height": 155,
       "previewHeight": 155,
@@ -1664,15 +1619,16 @@ window.CANVAS_DATA = {
       "meta": "Lauren Lee McCarthy",
       "url": "https://get-lauren.net/SOMEONE",
       "image": "https://iad.microlink.io/e-0qdCaV_k7P6ET8j_EfVeqJR8lGehtPqZzJfi7uQDKXqUEP6AJ0pkvEsGCMuGlgQWc93oBf6E5LR434dTgG1Q.png",
-      "alt": "SOMEONE by Lauren Lee McCarthy"
+      "alt": "SOMEONE by Lauren Lee McCarthy",
+      "groupId": "group-1793767695439"
     },
     {
       "id": "week08-galloway-protocol",
       "type": "media",
       "mediaKind": "link",
       "week": 8,
-      "x": 1721.6233064578225,
-      "y": 973.6347313358269,
+      "x": 1244.6568664368303,
+      "y": 1343.1450693365543,
       "width": 100,
       "height": 155,
       "previewHeight": 155,
@@ -1681,18 +1637,258 @@ window.CANVAS_DATA = {
       "url": "https://www.are.na/block/51967234",
       "image": "https://iad.microlink.io/q2s0W_hMzzXrAnx6pA-wrH5TR54NjoAt348vZ9_ZG1fdD2BEmtQv5SP1D1koBccVCeKm10wPubQCbKxfkrN_lQ.png",
       "alt": "galloway_protocol on Are.na",
-      "heightMode": "manual"
+      "heightMode": "manual",
+      "groupId": "group-1793767695439"
     },
     {
       "id": "week08-protocol-text",
       "type": "text",
-      "x": 1204.762035955494,
-      "y": 883.2270758591108,
+      "x": 758.8936862122795,
+      "y": 1406.1445319153938,
       "width": 522.2662753985071,
       "height": 819.1918750559695,
       "text": "Alexander R. Galloway, <em>Protocol: How Control Exists after Decentralization</em> (2004)<br><br>Networks distribute communication, but protocols organize and control the conditions under which communication becomes possible.<br><br>“Without a shared protocol, there is no network.” - Galloway, <em>Protocol</em> (2004), p. 11<br><br><strong>Who defines the rules of connection, and how do those rules shape what participants can do?</strong><br><br>Internet protocols make it possible for different machines, institutions, and individuals to participate in a shared network, but participation depends on technical standardization. Galloway argues that this produces a new form of control through compatibility, regulation, and participation, rather than simply through exclusion. He describes the internet as a system where information flows, but in a highly regulated manner.<br><br>The architecture of a network determines:<br>• Who can communicate with whom.<br>• Which connections are possible.<br>• Who can interrupt or regulate communication.<br>• Which systems are compatible.<br>• Where authority is concentrated or distributed.<br><br>Galloway uses DNS as an important example: even within the distributed internet, the domain-name system contains hierarchical structures that can regulate access.<br>DNS is the system that translates domain names like <code dir=\"ltr\">example.com</code> into the numeric IP addresses computers use to connect to each other. It is run by a few organizations at the top who decide which names exist and who controls them, so the people who own those domains and servers determine what can be found on the internet.",
       "heightMode": "manual",
-      "fontSize": 11
+      "fontSize": 11,
+      "groupId": "group-1793767695439"
+    },
+    {
+      "id": "item1793767894847",
+      "type": "text",
+      "x": -731.7880905967372,
+      "y": 3821.8352629912156,
+      "width": 473.35608463207524,
+      "height": 176.68642906894232,
+      "text": "Central question: How does an interface tell the user which actions are possible and how does it shape their actions? Societal question: How are people quantified and governed by computational systems?",
+      "fontSize": 11,
+      "heightMode": "manual"
+    },
+    {
+      "id": "item1793767946514",
+      "type": "text",
+      "x": -913.8681210830855,
+      "y": 4002.052470354721,
+      "width": 629.941885076106,
+      "height": 849.7448829484273,
+      "text": "Interfaces are tools or prostheses for communicating with coded structures and accessing information and resources that lie beyond our perceptual, physiological, and socioeconomic limitations. They create bridges between physical and digital realms, connecting us with and within the world around us (Hookway 2014, 4–5).<br><br>The inter-face is a significant surface: a “permeable plane that lies between two entities”, “with meaning embedded in it or delivered through it” (Galloway 2012, 30; see also Flusser 2000, 6). It speaks in a language of thresholds and transitions. It is “a gateway that opens up and allows passage to some place beyond” (Galloway 2012, 30), providing access to virtual grounds. Interfaces are “autonomous zones of activity” with their own capacity to generate results, consequences, and narratives (Galloway 2012, vii). They are processes that produce results and “bring about transformations in material states” (Galloway 2012, vii).<br><br>Interfaces are therefore never neutral: they emerge in response to particular social and historical conditions. They can be interpreted as sites through which we “read the present as material history” (Galloway 2012, ix).<br><br>&nbsp;Contemporary media contain other forms of media within them. As McLuhan argues, “the ‘content’ of any medium is always another medium” (McLuhan 1964, 8). Building upon this layered conception of media, Galloway writes that “the interface becomes the point of transition between different mediatic layers within any nested system” (Galloway 2012, 31). In certain cases, it becomes an intraface: “an interface internal to the interface” (Galloway 2012, 40), operating between such elements as non-diegetic and diegetic space.<br><br>In “The Interface Theory of Perception,” Donald D. Hoffman uses the interface as a model for perception—not as a transparent window onto reality, but as a species-specific desktop shaped by natural selection. It presents the world in a form that allows organisms to act, survive, and reproduce rather than showing objective reality as it truly is (Hoffman 2009, 148–165; Hoffman 2016, 157–161). For human beings, spacetime functions as the desktop of this perceptual interface, while physical objects function as icons (Hoffman 2016, 159). Perception does not simply reconstruct an independently given visual reality; it constructs and translates the properties and categories of an organism’s perceptual world, much as a computer desktop turns underlying code into representational symbols and possible actions (Davies and Hoffman 2002, 72–87).",
+      "fontSize": 11,
+      "heightMode": "manual"
+    },
+    {
+      "id": "item1793768214454",
+      "type": "text",
+      "x": -170.9649865148705,
+      "y": 4151.217389130374,
+      "width": 582.4911190261362,
+      "height": 1205.6981222486102,
+      "text": "The concept of digital dualism, stating that the physical world is \"real\" and the digital world is\n\"virtual\", is based on the \"systematic bias to see the digital and physical as separate; often as a\nzero-sum tradeoff where time and energy spent on one subtracts from the other\" (Juergenson,\n2011).<br><br>There is the \"myth of AFK (“Away From Keyboard”) and IRL (“In Real Life”)\" in contrast\nto \"the virtual\", while IRL actually contains our reality constituted from both online and offline\nexperience, including \"cyberspace\" (Russell, 2012). Using spatial language and talking about\n\"so-called “first” and “second” selves \"plays into binaries of real/virtual that parallel the\nrampantly socialized figuration of male/female\" (Russel, 2012).\n“People are enmeshing their\nphysical and digital selves to the point where the distinction is becoming increasingly\nirrelevant\" (Juergenson, 2011).<br><br>Donna Haraway`s \"Cyborg Manifesto\" published in 1985 \"embraces the body and its\ninteraction with technology in a way that conceptualizes the body differently, […] gender is\nnot eliminated but rethought\" (Smith, 2009).\n\"Just as the machine is essential to the creation of the cyborg, so\ntoo is the body. Haraway's theory of the cyborg is about\ntransgressed boundaries between mind and body. Both sides of\nthe boundary must exist in order for the subject to pass between\nthe different identities. In that moment when these boundaries\nare transgressed and break down, there opens the possibility for\none to see from both perspectives simultaneously, allowing for\nthe development of a critical consciousness in which the subject\ncan see the world and conflicting world views from multiple\nperspectives\"\n(Smith, 2009)\nHaraway emphasizes the importance to incorporate intersectionalism into the concept of the\ncyborg, as the term \"post-gender\" is misleading and delusional. Inequality and oppression must be considered in their complexity, defining a utopian term that is at the same time so\nlimited blurs the view on ongoing structural disparities (Gane, 2006).<br><br>Legacy Russell's Glitch Feminism Manifesto, published in 2013 \"approach[es] the body as a\npolitical site\" on the \"slippage between AFK [away from keyboard] and online.\n\"Where\ncyberfeminism asks if we can simply transcend our bodies through cyberspace, Russell tells\nthe reader that we can transcend our bodies altogether. […] not just on the Internet, in a\nforum or on our phones, but all the time. […] Who defines the material of the body? Who gives\nit value — and why?\"\n. To Russell \"the machine is a material through which we process our\nbodily experiences\" (Varghese, 2020). She is talking about glitches as something that is not to\nbe fixed but is in fact emancipatory, a catalyst of the surprise:\n\"it is the rainbowed spinning\nwheel, the pixilated hiccup, the frozen screen, or the buffering signal that acts as a fissure, that\njars us into recognition of the separation of our physical selves from the body that immerses\nitself in fantasy\". Glitch feminism embraces the \"error in a social system that has already been\ndisturbed by economic, racial, social, sexual, and cultural stratification and the imperialist\nwrecking-ball of globalization—processes that continue to enact violence on all bodies—may\nnot, in fact, be an error at all, but rather a much-needed erratum. This glitch is a correction to\nthe “machine”, and, in turn, a positive departure, [...] breaking from the hegemony of a\n“structured system” [...] of patriarchy, [that] too long has marginalized female-identified\nbodies\"\n.\n\"Glitch Feminism therefore is feminism for a digital age, a heralding of virtual agency,\na blooming of particularity and selfhood\" (Russel, 2012).",
+      "fontSize": 11,
+      "heightMode": "manual"
+    },
+    {
+      "id": "week09-unbag",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 9,
+      "x": -552.2541040994639,
+      "y": 3541.3712905111975,
+      "width": 100,
+      "height": 142.86213144558369,
+      "title": "UNBAG 2: American Artist",
+      "meta": "PDF",
+      "url": "https://static1.squarespace.com/static/59238d36d2b8575d127794a4/t/5a60bdecf9619a7f881b02a0/1516289526013/UNBAG_2_AmericanArtist.pdf",
+      "image": "assets/thumbnails/week09-unbag.jpg",
+      "alt": "UNBAG 2: American Artist — PDF",
+      "previewHeight": 135,
+      "heightMode": "manual",
+      "groupId": "group-1793806405725"
+    },
+    {
+      "id": "week09-cura",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 9,
+      "x": -842.753969147005,
+      "y": 3502.757728662709,
+      "width": 240,
+      "height": 135,
+      "title": "American Artist",
+      "meta": "Cura Magazine",
+      "url": "https://curamagazine.com/digital/american-artist/",
+      "image": "assets/thumbnails/week09-cura.jpg",
+      "alt": "American Artist — Cura Magazine",
+      "previewHeight": 135,
+      "groupId": "group-1793806405725"
+    },
+    {
+      "id": "week09-video",
+      "type": "media",
+      "mediaKind": "youtube",
+      "week": 9,
+      "x": -656.5030825253793,
+      "y": 3250.5852050647545,
+      "width": 240,
+      "height": 180,
+      "title": "American Artist",
+      "meta": "YouTube",
+      "url": "https://www.youtube.com/watch?v=t9AGx0tO7yg",
+      "image": "https://i.ytimg.com/vi/t9AGx0tO7yg/hqdefault.jpg",
+      "alt": "American Artist — YouTube",
+      "groupId": "group-1793806405725"
+    },
+    {
+      "id": "week09-cyborgology",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 9,
+      "x": 734.9591133954455,
+      "y": 3373.596902235545,
+      "width": 100,
+      "height": 145.0433438143469,
+      "title": "Digital Dualism and the Glitch Feminism Manifesto",
+      "meta": "Cyborgology",
+      "url": "https://thesocietypages.org/cyborgology/2012/12/10/digital-dualism-and-the-glitch-feminism-manifesto/",
+      "image": "assets/thumbnails/week09-cyborgology.svg",
+      "alt": "Digital Dualism and the Glitch Feminism Manifesto — Cyborgology",
+      "previewHeight": 135,
+      "heightMode": "manual"
+    },
+    {
+      "id": "week09-hyperallergic",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 9,
+      "x": 453.4904520426804,
+      "y": 3527.447539836022,
+      "width": 240,
+      "height": 135,
+      "title": "A Defiant Manifesto for “Glitch Feminism”",
+      "meta": "Hyperallergic",
+      "url": "https://hyperallergic.com/593208/glitch-feminism-review-legacy-russell/",
+      "image": "assets/thumbnails/week09-hyperallergic.jpg",
+      "alt": "A Defiant Manifesto for “Glitch Feminism” — Hyperallergic",
+      "previewHeight": 135
+    },
+    {
+      "id": "week09-laws-of-media",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 9,
+      "x": -1030.9486804809685,
+      "y": 3651.295021903258,
+      "width": 100,
+      "height": 147.12496288511386,
+      "title": "Laws of Media: The New Science",
+      "meta": "PDF · Monoskop",
+      "url": "https://monoskop.org/images/e/ec/McLuhan_Marshall_McLuhan_Eric_Laws_of_Media_The_New_Science.pdf",
+      "image": "assets/thumbnails/week09-laws-of-media.jpg",
+      "alt": "Laws of Media: The New Science — PDF · Monoskop",
+      "previewHeight": 135,
+      "heightMode": "manual",
+      "groupId": "group-1793806416292"
+    },
+    {
+      "id": "week09-arena-25379057",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 9,
+      "x": -1010.8698995791225,
+      "y": 3916.2226837451517,
+      "width": 101.33083908669674,
+      "height": 89.13599171809815,
+      "title": "Easy to Use and Incredibly Difficult",
+      "meta": "Juul and Norton · Are.na",
+      "url": "https://www.are.na/block/25379057",
+      "image": "assets/thumbnails/week09-arena-25379057.jpg",
+      "alt": "Easy to Use and Incredibly Difficult — Juul and Norton · Are.na",
+      "previewHeight": 135,
+      "heightMode": "manual",
+      "groupId": "group-1793806416292"
+    },
+    {
+      "id": "week09-arena-49999707",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 9,
+      "x": -889.1670971912334,
+      "y": 3767.1510534316703,
+      "width": 100,
+      "height": 101.25931491962972,
+      "title": "The Interface Theory of Perception",
+      "meta": "Hoffman, Singh and Prakash · Are.na",
+      "url": "https://www.are.na/block/49999707",
+      "image": "assets/thumbnails/week09-arena-49999707.jpg",
+      "alt": "The Interface Theory of Perception — Hoffman, Singh and Prakash · Are.na",
+      "previewHeight": 135,
+      "heightMode": "manual",
+      "groupId": "group-1793806416292"
+    },
+    {
+      "id": "week09-glitch-feminism-book",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 9,
+      "x": 416.63408866792645,
+      "y": 3819.92548672388,
+      "width": 100,
+      "height": 71.36807514885284,
+      "title": "Glitch Feminism: A Manifesto",
+      "meta": "Legacy Russell · PDF · Monoskop",
+      "url": "https://monoskop.org/images/2/20/Russell_Legacy_Glitch_Feminism_A_Manifesto_2020.pdf",
+      "image": "assets/thumbnails/week09-glitch-feminism-book.jpg",
+      "alt": "Glitch Feminism: A Manifesto — Legacy Russell · PDF · Monoskop",
+      "previewHeight": 135,
+      "heightMode": "manual"
+    },
+    {
+      "id": "week09-strong-mild-dualism",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 9,
+      "x": 548.1980231289983,
+      "y": 3751.5542660206856,
+      "width": 240,
+      "height": 135,
+      "title": "Strong and Mild Digital Dualism",
+      "meta": "Cyborgology",
+      "url": "https://thesocietypages.org/cyborgology/2012/10/29/strong-and-mild-digital-dualism/",
+      "image": "assets/thumbnails/week09-strong-mild-dualism.jpg",
+      "alt": "Strong and Mild Digital Dualism — Cyborgology",
+      "previewHeight": 135
+    },
+    {
+      "id": "week09-cyborg-manifesto",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 9,
+      "x": 858.0622216452584,
+      "y": 3577.882752757051,
+      "width": 100,
+      "height": 99.41827585851982,
+      "title": "A Cyborg Manifesto",
+      "meta": "Donna Haraway · PDF · The Anarchist Library",
+      "url": "https://theanarchistlibrary.org/mirror/d/dh/donna-haraway-a-cyborg-manifesto.pdf",
+      "image": "assets/thumbnails/week09-cyborg-manifesto.jpg",
+      "alt": "A Cyborg Manifesto — Donna Haraway · PDF · The Anarchist Library",
+      "previewHeight": 135,
+      "heightMode": "manual"
+    },
+    {
+      "id": "week09-gane-haraway",
+      "type": "media",
+      "mediaKind": "link",
+      "week": 9,
+      "x": 822.3623849452729,
+      "y": 3825.019067179523,
+      "width": 100,
+      "height": 60,
+      "title": "When We Have Never Been Human, What Is to Be Done?",
+      "meta": "Nicholas Gane · Theory, Culture & Society · SAGE",
+      "url": "https://journals.sagepub.com/doi/epdf/10.1177/0263276406069228",
+      "image": "assets/thumbnails/week09-gane-haraway.svg",
+      "alt": "When We Have Never Been Human, What Is to Be Done? — Nicholas Gane · Theory, Culture & Society · SAGE",
+      "previewHeight": 135,
+      "heightMode": "manual"
     }
   ],
   "connections": [
@@ -1721,8 +1917,8 @@ window.CANVAS_DATA = {
       "to": "week08"
     },
     {
-      "from": "week08",
-      "to": "week09"
+      "from": "week09-content",
+      "to": "week10"
     },
     {
       "from": "week10-content",
@@ -1733,20 +1929,8 @@ window.CANVAS_DATA = {
       "to": "week12"
     },
     {
-      "from": "week12-content",
-      "to": "week13"
-    },
-    {
-      "from": "week13",
-      "to": "week14-content"
-    },
-    {
-      "from": "week14",
-      "to": "week15-content"
-    },
-    {
-      "from": "week09-content",
-      "to": "week10"
+      "from": "week12",
+      "to": "week13-content"
     },
     {
       "from": "item1787880634815",
@@ -1755,6 +1939,10 @@ window.CANVAS_DATA = {
     {
       "from": "item1787891980962",
       "to": "week03"
+    },
+    {
+      "from": "week08-someone-text",
+      "to": "week09"
     }
   ]
 };
