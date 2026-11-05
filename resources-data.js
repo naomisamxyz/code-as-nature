@@ -1,5 +1,5 @@
 window.CANVAS_DATA = {
-  "version": 56,
+  "version": 64,
   "lastUpdated": {
     "datetime": "2026-10-27",
     "label": "October 27, 2026",
@@ -28,7 +28,7 @@ window.CANVAS_DATA = {
       "y": 1953.3118269126626,
       "width": 900,
       "height": 720,
-      "text": "<strong>IIMC-446/IIMC-646: Code as Nature</strong> is a studio course centered around computational literacy, systems thinking, and critical engagement with contemporary technology, as well as the potential and poetics of code and computation as artistic media. Moving from questions of how the universe thinks without a brain and the specters of the web to websites, databases, networked systems, artificial intelligence, and simulated and immersive environments, the course introduces computational tools and strategies for generativity, interactivity, automation, connectivity, transcoding, and transmediality.<br><br>Through technical experiments, artworks, and readings, students learn how computational systems work by taking them apart and tracing their inputs, data, logic, environments, outputs, and feedback loops. Along the way, centaurism and human-machine collaboration, automation and authoritarianism, digital occultism and meme magick, the excavation of AI and its datasets, machine hallucinations, and CAPTCHA's shifting distinction between computers and humans provide different ways of thinking through our relationships with computational systems.<br><br>The course considers technological mediation, platform dependency, and the political, economic, and ecological implications of these systems, asking how technologies are shaped by the larger structures they exist within and how they shape our perception, behavior, culture, and environments in return. Ideas ranging from the Black Gooey Universe to posthuman ethics for AI further open these questions toward embodiment, virtuality, and relationships between human, machine, and other forms of intelligence. Understanding these processes allows students to work purposefully with contemporary technologies while maintaining agency over their processes and outcomes.",
+      "text": "<strong>IIMC-446/IIMC-646: Code as Nature</strong> is a studio course centered around computational literacy, systems thinking, and critical engagement with contemporary technology, as well as the potential and poetics of code and computation as artistic media. Moving from questions of how the universe thinks without a brain and the specters of the web to websites, databases, networked systems, artificial intelligence, and simulated and immersive environments, the course introduces computational tools and strategies for generativity, interactivity, automation, connectivity, transcoding, and transmediality.<br><br>Through technical experiments, artworks, and readings, students learn how computational systems work by taking them apart and tracing their inputs, data, logic, environments, outputs, and feedback loops. Along the way, centaurism and human-machine collaboration, automation and authoritarianism, digital occultism and meme magick, the excavation of AI and its datasets, becoming virtual through extended reality, posthuman bodies, simulated worlds, and transcoding and transmediality provide different ways of thinking through our relationships with computational systems.<br><br>The course considers technological mediation, platform dependency, and the political, economic, and ecological implications of these systems, asking how technologies are shaped by the larger structures they exist within and how they shape our perception, behavior, culture, and environments in return. Ideas ranging from the Black Gooey Universe to posthuman ethics for AI further open these questions toward embodiment, virtuality, and relationships between human, machine, and other forms of intelligence. Understanding these processes allows students to work purposefully with contemporary technologies while maintaining agency over their processes and outcomes.",
       "groupId": "group-1787883267744"
     },
     {
@@ -596,7 +596,7 @@ window.CANVAS_DATA = {
       "y": 5515.702987078469,
       "width": 780,
       "height": 139,
-      "title": "Week 10 ✧ Completely Automated Public Turing Test to Tell Computers and Humans Apart (CAPTCHA)",
+      "title": "Week 10 ✧ Becoming Virtual",
       "groupId": "group-1792531315158"
     },
     {
@@ -609,12 +609,12 @@ window.CANVAS_DATA = {
       "height": 321,
       "description": "",
       "items": [
-        "How Do AI Systems Work",
-        "Inventing ELIZA and the Turing Test, CAPTCHA",
-        "Iterations and Early Models",
-        "LORAs",
-        "Google DeepDream (2015)",
-        "𖦹 Hallucinations 𖦹"
+        "Virtual Bodies, Simulation, and Extended Reality",
+        "“Becoming Chimeric, Chimeric Becoming: Glitching Toward Radical Hybrid Identities and Unruly Kinship” - Martina Menegon (2024–ongoing)",
+        "“The Maw Of” - Rachel Rossin (2022)",
+        "“4th Wall” - Nancy Baker Cahill (2018–ongoing)",
+        "“Posthuman Ethics for AI” - Rosi Braidotti (2025)",
+        "<a href=\"assets/guides/web-ar-characters.html\">༶ Web AR ༶</a>"
       ],
       "groupId": "group-1792531315158"
     },
@@ -670,8 +670,7 @@ window.CANVAS_DATA = {
         "“Posthuman Wombs” - Anan Fries (2021)",
         "“Morphogenic Angels” - Keiken (2023)",
         "“2065 / Geomancer” - Lawrence Lek (2017)",
-        "“Posthuman Ethics for AI” - Rosi Braidotti (2025)",
-        "⟷ UE Blueprints ⟷"
+        "<a href=\"assets/guides/unreal-engine-blueprints.html\">⟷ UE Blueprints ⟷</a>"
       ],
       "groupId": "group-1793767500444"
     },
@@ -683,7 +682,7 @@ window.CANVAS_DATA = {
       "y": 6046.366043140979,
       "width": 650,
       "height": 118,
-      "title": "Week 12 ✧ Poetics of Encryption",
+      "title": "Week 12 ✧ Transcoding and Transmediality",
       "groupId": "group-1792531256621"
     },
     {
@@ -696,8 +695,10 @@ window.CANVAS_DATA = {
       "height": 197,
       "description": "",
       "items": [
+        "“Xeno Computer 0.1: Labor” - Tega Brain (2025)",
         "“Poetics of Encryption: Art and the Technocene” - Nadim Samman (2024)",
-        "◇ UE Interconnected ◇"
+        "<a href=\"assets/guides/unreal-interconnected.html\">◇ UE Interconnected ◇</a>",
+        "<a href=\"assets/guides/autonomous-artworks-exhibition-systems.html\">✣ Autonomous Artworks ✣</a>"
       ],
       "groupId": "group-1792531256621"
     },
@@ -709,7 +710,7 @@ window.CANVAS_DATA = {
       "y": 4800.482232524332,
       "width": 650,
       "height": 118,
-      "title": "Week 13 ✧ Autonomous Artworks",
+      "title": "Week 13 ✧ Presentation",
       "groupId": "group-1792531250657"
     },
     {
@@ -722,11 +723,8 @@ window.CANVAS_DATA = {
       "height": 284,
       "description": "",
       "items": [
-        "“BOB (Bag of Beliefs)” - Ian Cheng (2018–2019)",
-        "“Undercurrents” - Rafael Lozano-Hemmer (2026)",
-        "“Xeno Computer 0.1: Labor” - Tega Brain (2025)",
-        "✣ Autonomous Artworks ✣",
-        "Final Portfolio Presentation"
+        "Presentation of websites and individual sketches",
+        "Setup for IM class show"
       ],
       "groupId": "group-1792531250657"
     },
@@ -1456,22 +1454,6 @@ window.CANVAS_DATA = {
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927280400"
-    },
-    {
-      "id": "item1788737403107",
-      "type": "media",
-      "x": 863.7569064325902,
-      "y": 5700.221192853176,
-      "width": 240,
-      "height": 135,
-      "mediaKind": "youtube",
-      "title": "The First Ever AI Chatbot: ELIZA (1966)",
-      "url": "https://www.youtube.com/watch?v=8jGpkdPO-1Y",
-      "meta": "YouTube",
-      "alt": "The First Ever AI Chatbot: ELIZA (1966)",
-      "image": "https://i.ytimg.com/vi/8jGpkdPO-1Y/hqdefault.jpg",
-      "previewHeight": 135,
-      "groupId": "group-1792531315158"
     },
     {
       "id": "item1788746366736",

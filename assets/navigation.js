@@ -15,8 +15,6 @@
     ["meme-generator.html", "♦︎ Meme Generator ♦︎"],
     ["databases.html", "⌗ Databases ⌗"],
     ["multiplayer-sketch.html", "⠿ Networked Systems ⠿"],
-    ["google-collab.html", "☁︎ Google Collab ☁︎"],
-    ["hallucinations.html", "𖦹 Hallucinations 𖦹"],
     ["web-ar-characters.html", "༶ Web AR ༶"],
     ["unreal-engine-blueprints.html", "⟷ UE Blueprints ⟷"],
     ["unreal-interconnected.html", "◇ UE Interconnected ◇"],
@@ -24,8 +22,6 @@
   ];
 
   var disabledGuides = new Set([
-    "google-collab.html",
-    "hallucinations.html",
     "web-ar-characters.html",
     "unreal-engine-blueprints.html",
     "unreal-interconnected.html",
