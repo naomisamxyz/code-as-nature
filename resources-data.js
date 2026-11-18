@@ -243,7 +243,7 @@ window.CANVAS_DATA = {
       "title": "Dark Content",
       "meta": "Eva &amp; Franco Mattes ✧ 2015",
       "url": "https://0100101110101101.org/dark-content/",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3E0100101110101101.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "image": "https://iad.microlink.io/uWwmAlYhQATscHJaKqfjVYYDHeE3MiP6KnAAqN4yHRfDE9pZccK_411DHWu9tvp7HAio3okCfWHWDbf5EdX_1w.png",
       "alt": "Dark Content by Eva and Franco Mattes"
     },
     {
@@ -259,7 +259,7 @@ window.CANVAS_DATA = {
       "title": "Meme Generator",
       "meta": "Imgflip",
       "url": "https://imgflip.com/memegenerator",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eimgflip.com%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "image": "https://iad.microlink.io/vfuDlAkUAPHhYkmnGnphro5PBVoavoFj4WNmyN5jv67u-MpFMqow32cjy40hWjsbjd2xpSR9LCN5XnTtFKdWJg.png",
       "alt": "Imgflip Meme Generator"
     },
     {
@@ -876,7 +876,7 @@ window.CANVAS_DATA = {
       "url": "https://tina.zone/index.html",
       "meta": "website",
       "alt": "Tina Tarighian",
-      "image": "assets/thumbnails/item1787889139898.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Etina.zone%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578705158"
@@ -893,7 +893,7 @@ window.CANVAS_DATA = {
       "url": "https://contemporary-home-computing.org/vernacular-web-2/",
       "meta": "Blog",
       "alt": "Olia Lialina: Vernacular Web 2",
-      "image": "assets/thumbnails/item1787889210805.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Econtemporary-home-computing.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927311636"
@@ -910,7 +910,7 @@ window.CANVAS_DATA = {
       "url": "http://wwwwwwwww.jodi.org/",
       "meta": "Net Art",
       "alt": "http://wwwwwwwww.jodi.org/ (1995)",
-      "image": "assets/thumbnails/item1787889357446.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Ewwwwwwwww.jodi.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual"
     },
@@ -926,7 +926,7 @@ window.CANVAS_DATA = {
       "url": "http://potatoland.org/shredder",
       "meta": "Net Art",
       "alt": "Mark Napier, Shredder 1.0 (1998)",
-      "image": "assets/thumbnails/item1787889423065.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Epotatoland.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578507997"
@@ -943,7 +943,7 @@ window.CANVAS_DATA = {
       "url": "http://www.teleportacia.org/war/",
       "meta": "Net Art",
       "alt": "Olia Lialina, My Boyfriend Came Back from the War (1996)",
-      "image": "assets/thumbnails/item1787889460596.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eteleportacia.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927311636"
@@ -960,7 +960,7 @@ window.CANVAS_DATA = {
       "url": "https://www.are.na/block/49515017",
       "meta": "Are.na",
       "alt": "Digital Folklore (2009)",
-      "image": "assets/thumbnails/item1787889507374.png",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eare.na%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927311636"
@@ -977,7 +977,7 @@ window.CANVAS_DATA = {
       "url": "https://sites.rhizome.org/anthology/world-of-awe.html",
       "meta": "Net Art",
       "alt": "Yael Kanarek, World of Awe (2000)",
-      "image": "assets/thumbnails/item1787889770564.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Esites.rhizome.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "groupId": "group-1788578507997"
     },
@@ -993,7 +993,7 @@ window.CANVAS_DATA = {
       "url": "https://nag.iap.de/?ac=create&name=anonymous&query=internet&comp=4&width=600&ext=jpg",
       "meta": "Net Art",
       "alt": "Net Art Generator (1997)",
-      "image": "assets/thumbnails/item1787889816144.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Enag.iap.de%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578507997"
@@ -1010,7 +1010,7 @@ window.CANVAS_DATA = {
       "url": "https://sadgrl.online/guides/",
       "meta": "Guides for DIY website making",
       "alt": "Sadgirl Online",
-      "image": "assets/thumbnails/item1787889905455.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Esadgrl.online%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578705158"
@@ -1027,7 +1027,7 @@ window.CANVAS_DATA = {
       "url": "https://net-art.org/browser-art",
       "meta": "website",
       "alt": "Net Art Database",
-      "image": "assets/thumbnails/item1787890448597.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Enet-art.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578507997"
@@ -1126,7 +1126,7 @@ window.CANVAS_DATA = {
       "url": "https://www.praxisfilms.org/shorts/triple-chaser",
       "meta": "Website",
       "alt": "Triple-Chaser” - Forensic Architecture + Praxis Films (2019)",
-      "image": "assets/thumbnails/item1787893209425.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Epraxisfilms.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual"
     },
@@ -1283,7 +1283,7 @@ window.CANVAS_DATA = {
       "url": "https://themotherboard.mmm.page/",
       "meta": "Net Art",
       "alt": "Motherboard Ascension Network",
-      "image": "assets/thumbnails/item1788047874291.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Ethemotherboard.mmm.page%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "groupId": "group-1788578807145"
     },
@@ -1299,7 +1299,7 @@ window.CANVAS_DATA = {
       "url": "https://everythingi.love/",
       "meta": "Artist Website",
       "alt": "Chia Amisola",
-      "image": "assets/thumbnails/item1788048064440.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eeverythingi.love%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927236122"
@@ -1316,7 +1316,7 @@ window.CANVAS_DATA = {
       "url": "https://chia.design/",
       "meta": "Website",
       "alt": "Chia Amisola 2",
-      "image": "assets/thumbnails/item1788048225985.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Echia.design%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927236122"
@@ -1333,7 +1333,7 @@ window.CANVAS_DATA = {
       "url": "https://saint-fiona-bianco-xena.fantasia-malware.net/",
       "meta": "Browser Game by Fantasia Malware",
       "alt": "The Life of Saint Fiona Bianco Xena",
-      "image": "assets/thumbnails/item1788048264550.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Esaint-fiona-bianco-xena.fantasia-m%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927236122"
@@ -1350,7 +1350,7 @@ window.CANVAS_DATA = {
       "url": "https://welcometomyhomepage.net/",
       "meta": "Web Residency",
       "alt": "Welcome to my Homepage",
-      "image": "assets/thumbnails/item1788048332592.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Ewelcometomyhomepage.net%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578705158"
@@ -1367,7 +1367,7 @@ window.CANVAS_DATA = {
       "url": "https://beyondresolution.info/",
       "meta": "Website",
       "alt": "Rosa Menkman",
-      "image": "assets/thumbnails/item1788051656348.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Ebeyondresolution.info%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578807145"
@@ -1384,7 +1384,7 @@ window.CANVAS_DATA = {
       "url": "https://www.mollysoda.exposed/",
       "meta": "website",
       "alt": "Molly Soda",
-      "image": "assets/thumbnails/item1788052139511.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Emollysoda.exposed%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927236122"
@@ -1401,7 +1401,7 @@ window.CANVAS_DATA = {
       "url": "https://www.petracortright.com/white_with_white.html",
       "meta": "Net Art",
       "alt": "Petra Cortright",
-      "image": "assets/thumbnails/item1788577608692.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Epetracortright.com%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927280400"
@@ -1418,7 +1418,7 @@ window.CANVAS_DATA = {
       "url": "https://www.petracortright.com/dog_drip_and_gold_drip/gold_drip.html",
       "meta": "Net Art",
       "alt": "Petra Cortright",
-      "image": "assets/thumbnails/item1788577675706.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Epetracortright.com%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "groupId": "group-1788927280400"
     },
@@ -1434,7 +1434,7 @@ window.CANVAS_DATA = {
       "url": "https://www.petracortright.com/works/selected_show/system_landscapes.html",
       "meta": "Net Art",
       "alt": "Petra Cortright",
-      "image": "assets/thumbnails/item1788577768635.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Epetracortright.com%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927280400"
@@ -1451,7 +1451,7 @@ window.CANVAS_DATA = {
       "url": "https://www.petracortright.com/hello.html",
       "meta": "Website",
       "alt": "Petra Cortright",
-      "image": "assets/thumbnails/item1788577894194.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Epetracortright.com%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927280400"
@@ -1468,7 +1468,7 @@ window.CANVAS_DATA = {
       "url": "https://edgecases.rhizome.org/m/karlie/",
       "meta": "Net Art",
       "alt": "Karlie",
-      "image": "assets/thumbnails/item1788746366736.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eedgecases.rhizome.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "previewHeight": 155
     },
     {
@@ -1561,7 +1561,7 @@ window.CANVAS_DATA = {
       "url": "https://www.are.na/block/33521913",
       "meta": "Hito Steyerl",
       "alt": "Hito Steyerl",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eare.na%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "image": "https://iad.microlink.io/G8fkazwb6AcygJutL1BY1ND2rS3at4LnKfjioT5CcwdRCouQJWxrLBBM6vU9gWx8zMydO0rcTy9noqBge3E0Iw.png",
       "previewHeight": 155,
       "heightMode": "manual"
     },
@@ -1886,7 +1886,7 @@ window.CANVAS_DATA = {
       "title": "Martina Menegon",
       "meta": "martinamenegon.xyz",
       "url": "https://martinamenegon.xyz/",
-      "image": "assets/thumbnails/week10-menegon.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Emartinamenegon.xyz%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "alt": "Martina Menegon — martinamenegon.xyz"
     },
     {
@@ -1902,7 +1902,7 @@ window.CANVAS_DATA = {
       "title": "Becoming Chimeric, Chimeric Becoming",
       "meta": "Martina Menegon",
       "url": "https://becoming-chimeric.cargo.site/",
-      "image": "assets/thumbnails/week10-becoming-chimeric.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Ebecoming-chimeric.cargo.site%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "alt": "Becoming Chimeric, Chimeric Becoming — Martina Menegon"
     },
     {
@@ -1918,7 +1918,7 @@ window.CANVAS_DATA = {
       "title": "Rachel Rossin: The Maw Of",
       "meta": "Whitney Museum of American Art",
       "url": "https://whitney.org/exhibitions/the-maw-of",
-      "image": "assets/thumbnails/week10-maw-of.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Ewhitney.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "alt": "Rachel Rossin: The Maw Of — Whitney Museum of American Art"
     },
     {
@@ -1934,7 +1934,7 @@ window.CANVAS_DATA = {
       "title": "4th Wall",
       "meta": "Nancy Baker Cahill",
       "url": "https://www.4thwallapp.org/",
-      "image": "assets/thumbnails/week10-4th-wall.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3E4thwallapp.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "alt": "4th Wall — Nancy Baker Cahill"
     },
     {
@@ -1950,8 +1950,23 @@ window.CANVAS_DATA = {
       "title": "Posthuman Ethics for AI",
       "meta": "Rosi Braidotti · Are.na",
       "url": "https://www.are.na/block/52931581",
-      "image": "assets/thumbnails/week10-posthuman-ethics.jpg",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Eare.na%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
       "alt": "Posthuman Ethics for AI — Rosi Braidotti · Are.na"
+    },
+    {
+      "id": "item1794975306221",
+      "type": "media",
+      "x": 1392.3254224932546,
+      "y": 6652.6167460199395,
+      "width": 210,
+      "height": 155,
+      "mediaKind": "link",
+      "title": "Liquify",
+      "url": "https://naomisamxyz.github.io/AR/",
+      "meta": "Naomi Sam",
+      "alt": "Naomi Sam",
+      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Enaomisamxyz.github.io%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "previewHeight": 155
     }
   ],
   "connections": [
