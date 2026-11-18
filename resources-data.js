@@ -1,5 +1,5 @@
 window.CANVAS_DATA = {
-  "version": 68,
+  "version": 69,
   "lastUpdated": {
     "datetime": "2026-11-17",
     "label": "November 17, 2026",
@@ -607,7 +607,7 @@ window.CANVAS_DATA = {
       "x": 1142.1388746143734,
       "y": 5594.70244088642,
       "width": 650,
-      "height": 461,
+      "height": 512,
       "description": "",
       "items": [
         "Virtual Bodies, Simulation, and Extended Reality",
@@ -616,7 +616,7 @@ window.CANVAS_DATA = {
         "“4th Wall” - Nancy Baker Cahill (2018–ongoing)",
         "“Posthuman Ethics for AI” - Rosi Braidotti (2025)",
         "<a href=\"assets/guides/web-ar-characters.html\">༶ Web AR ༶</a>",
-        "Homework: Write a short artist statement in relationship to the debates covered in class and add to your website"
+        "Homework: Write a short artist statement in relationship to the debates covered in class and add to your website<br>Install Unreal Engine 5.3 if you want to work on your own computer next week"
       ],
       "groupId": "group-1792531315158"
     },
@@ -930,7 +930,7 @@ window.CANVAS_DATA = {
       "url": "http://potatoland.org/shredder",
       "meta": "Net Art",
       "alt": "Mark Napier, Shredder 1.0 (1998)",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Epotatoland.org%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "image": "https://iad.microlink.io/tfkwGmI4yWkthGMD8eUHcgaJRygm-nzT2zKPWUN3pwCCap9gUoPvF8GHCxDsqYbN5DZTTGnqqDyagssCZ_wdqA.png",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578507997"
@@ -1354,7 +1354,7 @@ window.CANVAS_DATA = {
       "url": "https://welcometomyhomepage.net/",
       "meta": "Web Residency",
       "alt": "Welcome to my Homepage",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Ewelcometomyhomepage.net%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "image": "https://iad.microlink.io/vZ6xNjuOgyOt5rD5k1CPwH4YWxZTd9gDB1qKZ0YUlVNIURDoS2BhuG72ICJsGb6TGdxecPGCjU0tzxE_ML0KUw.png",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788578705158"
@@ -1388,7 +1388,7 @@ window.CANVAS_DATA = {
       "url": "https://www.mollysoda.exposed/",
       "meta": "website",
       "alt": "Molly Soda",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Emollysoda.exposed%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "image": "https://iad.microlink.io/8Hd83S6LS20BA6iE161Edjzz6ZBLQT2uDAIsKPysZ3BNo0tk-mRM3JmZJDoclo9kCbxYV_pfheMxjHudEAkENQ.png",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927236122"
@@ -1455,7 +1455,7 @@ window.CANVAS_DATA = {
       "url": "https://www.petracortright.com/hello.html",
       "meta": "Website",
       "alt": "Petra Cortright",
-      "image": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22310%22%20viewBox%3D%220%200%20420%20310%22%3E%3Crect%20width%3D%22420%22%20height%3D%22310%22%20fill%3D%22%23080808%22%2F%3E%3Ctext%20x%3D%2222%22%20y%3D%22148%22%20fill%3D%22%23f2f2f2%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3Epetracortright.com%3C%2Ftext%3E%3Ctext%20x%3D%2222%22%20y%3D%22181%22%20fill%3D%22%23777%22%20font-family%3D%22monospace%22%20font-size%3D%2215%22%3Elink%20preview%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "image": "https://iad.microlink.io/2RADelFqEaKiF_THm-UnC0VfUAotcDkIWEcFX08uV5iv_39XyQv4zgkqpLNRCEg8oXsKH0_tYmSvrq9PpdItTw.png",
       "previewHeight": 155,
       "heightMode": "manual",
       "groupId": "group-1788927280400"
@@ -1946,8 +1946,8 @@ window.CANVAS_DATA = {
       "type": "media",
       "mediaKind": "link",
       "week": 10,
-      "x": 1418.1792740460328,
-      "y": 6056.185169483431,
+      "x": 1455.419723572591,
+      "y": 6121.393416962124,
       "width": 240,
       "height": 135,
       "previewHeight": 135,
