@@ -1,5 +1,5 @@
 window.CANVAS_DATA = {
-  "version": 67,
+  "version": 68,
   "lastUpdated": {
     "datetime": "2026-11-17",
     "label": "November 17, 2026",
@@ -597,7 +597,8 @@ window.CANVAS_DATA = {
       "width": 780,
       "height": 118,
       "title": "Week 10 ✧ Becoming Virtual",
-      "groupId": "group-1792531315158"
+      "groupId": "group-1792531315158",
+      "date": "Wednesday, November 18"
     },
     {
       "id": "week10-content",
@@ -656,7 +657,8 @@ window.CANVAS_DATA = {
       "width": 650,
       "height": 118,
       "title": "Week 11 ✧ Simulated Worlds",
-      "groupId": "group-1793767500444"
+      "groupId": "group-1793767500444",
+      "date": "Wednesday, November 25"
     },
     {
       "id": "week11-content",
@@ -684,7 +686,8 @@ window.CANVAS_DATA = {
       "width": 650,
       "height": 139,
       "title": "Week 12 ✧ Transcoding and Transmediality",
-      "groupId": "group-1792531256621"
+      "groupId": "group-1792531256621",
+      "date": "Wednesday, December 2"
     },
     {
       "id": "week12-content",
@@ -712,7 +715,8 @@ window.CANVAS_DATA = {
       "width": 650,
       "height": 118,
       "title": "Week 13 ✧ Presentation",
-      "groupId": "group-1792531250657"
+      "groupId": "group-1792531250657",
+      "date": "Wednesday, December 9"
     },
     {
       "id": "week13-content",
