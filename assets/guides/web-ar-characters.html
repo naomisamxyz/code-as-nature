@@ -21,394 +21,256 @@
   </header>
 
   <nav class="page-toc">
-    <a href="#outcome">Project outcome and tools</a>
-    <a href="#prepare">Prepare the character</a>
-    <a href="#mixamo">Rig it in Mixamo</a>
-    <a href="#animation">Add an animation</a>
-    <a href="#glb">Create the GLB</a>
-    <a href="#usdz">Create and test the USDZ</a>
-    <a href="#website">Create the website</a>
-    <a href="#local-test">Test locally</a>
-    <a href="#publish">Publish with GitHub Pages</a>
-    <a href="#device-test">Test the published project</a>
-    <a href="#qr-code">Create a QR code</a>
-    <a href="#troubleshooting">Troubleshooting</a>
-    <a href="#assignment">Assignment</a>
+    <a href="#outcome">Project overview</a>
+    <a href="#source">Create a clear source image</a>
+    <a href="#generate">Generate a 3D model</a>
+    <a href="#rig">Rig and animate</a>
+    <a href="#prepare-ar">Prepare the files for AR</a>
+    <a href="#website">Build the website</a>
+    <a href="#publish">Publish and test</a>
+    <a href="#attributes">&lt;model-viewer&gt; attributes</a>
   </nav>
 
   <section class="section" id="outcome">
-    <h2>Project outcome and tools</h2>
-    <p class="section-intro">Create an animated AR character website with Mixamo, <code class="inline">&lt;model-viewer&gt;</code>, and GitHub Pages.</p>
-    <h3 class="sub">You will</h3>
-    <ol class="steps">
-      <li>Generate a 3D humanoid character.</li>
-      <li>Rig and animate it with Adobe Mixamo.</li>
-      <li>Create <code class="inline">character.glb</code> for the webpage and Android AR.</li>
-      <li>Create <code class="inline">character.usdz</code> for iPhone and iPad AR.</li>
-      <li>Build and publish a small website, then share it through a URL or QR code.</li>
-    </ol>
-    <p class="body-text">No Unity project, app-store submission, or web-server programming is required.</p>
-    <h3 class="sub">Tools</h3>
-    <ul class="steps">
-      <li>An AI 3D character-generation service</li>
-      <li>Adobe Mixamo</li>
-      <li>Blender</li>
-      <li>Apple Reality Converter on a Mac</li>
-      <li>GitHub</li>
-      <li>Google's <code class="inline">&lt;model-viewer&gt;</code></li>
-    </ul>
+    <h2>Project overview</h2>
+    <p class="section-intro">In this project, we will turn a single 2D image into an animated 3D character and place it inside a web application that allows viewers to interact with the character and experience it in augmented reality (AR).</p>
+    <div class="snippet"><div class="code-card"><div class="code-scroll">
+<pre><code>Photoshop Collage → Meshy / Krea AI 3D → Mixamo / Meshy Rigging → GLB + USDZ → Website</code></pre>
+    </div></div></div>
+    <p class="body-text">We will use our Fuser accounts to access Meshy, generate and rig our characters, and export them for the web. You can also use Meshy or Krea independently, although free plans may limit textures, exports, and rigging features.</p>
   </section>
 
-  <section class="section" id="prepare">
-    <h2>Prepare the character</h2>
-    <p class="section-intro">Generate or choose a humanoid character. For the easiest Mixamo workflow, it should:</p>
-    <ul class="steps">
-      <li>Have one head, two arms, and two legs.</li>
-      <li>Stand upright, face forward, and use a neutral T-pose or A-pose.</li>
-      <li>Have its arms separated from its body and its legs separated from one another.</li>
-      <li>Avoid large wings, tails, props, or disconnected body parts.</li>
-      <li>Use a relatively low polygon count and include textures.</li>
-    </ul>
-    <p class="body-text">Download it as FBX, OBJ, ZIP, or another format Mixamo accepts.</p>
+  <section class="section" id="source">
+    <h2>Create a clear source image</h2>
+    <p class="section-intro">Begin with a clean, front-facing, full-body character image. The 3D generator has to invent everything it cannot see, so a clear silhouette will produce a more usable model.</p>
+    <ol class="steps">
+      <li>Create a character or collage in Photoshop and remove the background.</li>
+      <li>Position the character in an A-pose or T-pose, with arms away from the torso and legs separated.</li>
+      <li>Make sure the hands and feet are visible and nothing is cropped.</li>
+      <li>Export the image as a PNG with a transparent or plain background.</li>
+    </ol>
   </section>
 
-  <section class="section" id="mixamo">
-    <h2>Rig the character in Mixamo</h2>
+  <section class="section" id="generate">
+    <h2>Generate a 3D model</h2>
     <ol class="steps">
-      <li>Open Mixamo, sign in with a personal Adobe ID, and select <strong>Upload Character</strong>.</li>
-      <li>Place the chin, wrist, elbow, knee, and groin markers according to Mixamo's guide.</li>
-      <li>Select the appropriate finger setting and start automatic rigging.</li>
-      <li>Preview the rigged character.</li>
+      <li>Open Meshy through your Fuser account, or use Meshy / Krea independently.</li>
+      <li>Select <strong>Image to 3D</strong> and upload your PNG.</li>
+      <li>Choose an A-pose or T-pose if pose controls are available.</li>
+      <li>Generate your model and inspect it from all sides.</li>
+      <li>Generate textures if they are not already included.</li>
     </ol>
+    <p class="body-text">Remember that the AI invents the back and sides of your character. Check for missing limbs, distorted geometry, and disconnected parts before continuing.</p>
+  </section>
+
+  <section class="section" id="rig">
+    <h2>Rig and animate</h2>
+    <p class="section-intro">Rigging creates a digital skeleton that allows the character to move.</p>
+    <h3 class="sub">Option A: Meshy</h3>
+    <ol class="steps">
+      <li>Use Meshy's built-in rigging tool.</li>
+      <li>Choose an animation from the available library.</li>
+      <li>Preview the animated character.</li>
+      <li>Export the animated model as GLB.</li>
+    </ol>
+    <h3 class="sub">Option B: Mixamo</h3>
+    <ol class="steps">
+      <li>Export your character from the 3D generator in a compatible format, such as FBX or OBJ.</li>
+      <li>Upload it to <a href="https://www.mixamo.com/" target="_blank" rel="noopener">Mixamo</a>.</li>
+      <li>Position the rigging markers on the character.</li>
+      <li>Choose an animation and adjust its settings.</li>
+      <li>Download the animated character as FBX.</li>
+      <li>Convert the animated FBX to GLB using Blender or another compatible tool.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="prepare-ar">
+    <h2>Prepare the files for AR</h2>
+    <p class="section-intro">Our website will use two versions of the same character:</p>
     <div class="ref-groups">
       <div class="ref-group">
         <dl>
-          <div class="ref-row"><dt>If the rig fails:</dt><dd>check that the body parts are visually distinct and that the original model is in a neutral pose.</dd></div>
+          <div class="ref-row"><dt>GLB:</dt><dd>for displaying the animated character in the browser and supported Android AR experiences.</dd></div>
+          <div class="ref-row"><dt>USDZ:</dt><dd>for Apple's AR Quick Look on iPhone and iPad.</dd></div>
         </dl>
       </div>
     </div>
-  </section>
-
-  <section class="section" id="animation">
-    <h2>Add an animation</h2>
-    <ol class="steps">
-      <li>Choose an animation that loops clearly: dancing, waving, idle movement, walking in place, stretching, or looking around.</li>
-      <li>Adjust speed, arm spacing, or animation length, then select <strong>Download</strong>.</li>
-    </ol>
-    <div class="ref-groups">
-      <div class="ref-group">
-        <h3>Download settings</h3>
-        <dl>
-          <div class="ref-row"><dt>Format:</dt><dd>FBX Binary</dd></div>
-          <div class="ref-row"><dt>Skin:</dt><dd>With Skin</dd></div>
-          <div class="ref-row"><dt>Frames per second:</dt><dd>30</dd></div>
-          <div class="ref-row"><dt>Keyframe reduction:</dt><dd>None</dd></div>
-        </dl>
-      </div>
-    </div>
-    <p class="body-text">The resulting FBX should contain the character, skeleton, textures, and animation.</p>
-  </section>
-
-  <section class="section" id="glb">
-    <h2>Create the GLB file</h2>
-    <p class="section-intro">GLB packages the model, skeleton, animation, materials, and textures into one web-friendly file.</p>
-    <ol class="steps">
-      <li>Open Blender and import the animated Mixamo FBX through <strong>File &rarr; Import &rarr; FBX</strong>.</li>
-      <li>Play the timeline. Confirm that the character and textures are visible and the skeleton and animation move correctly.</li>
-      <li>Select the character and armature, then choose <strong>File &rarr; Export &rarr; glTF 2.0</strong>.</li>
-      <li>Choose GLB and include materials, skinning, animations, selected objects when applicable, and any shape keys.</li>
-      <li>Export as <code class="inline">character.glb</code>.</li>
-    </ol>
-    <p class="body-text">Test the GLB in the <code class="inline">&lt;model-viewer&gt;</code> editor before continuing.</p>
-  </section>
-
-  <section class="section" id="usdz">
-    <h2>Create and test the USDZ file</h2>
-    <p class="section-intro">Apple devices use USDZ for AR Quick Look. Supply a dedicated <code class="inline">ios-src</code>; automatic conversion does not reliably preserve skeletal animation.</p>
-    <ol class="steps">
-      <li>Open Apple's Reality Converter on a Mac and drag in <code class="inline">character.glb</code>.</li>
-      <li>Check the character, textures, scale, orientation, and animation.</li>
-      <li>Export as <code class="inline">character.usdz</code>.</li>
-      <li>Transfer it to an iPhone or iPad and open it in Apple Quick Look.</li>
-      <li>Enter AR mode and confirm its scale, textures, and animation.</li>
-    </ol>
+    <p class="body-text">Export the GLB from Meshy and convert it to USDZ using a compatible conversion tool. Make sure textures, materials, and animations are preserved where supported.</p>
     <div class="ref-groups">
       <div class="ref-group">
         <dl>
-          <div class="ref-row"><dt>If animation is missing:</dt><dd>confirm in Blender that the character uses one skeleton and that the animation is baked. Export again, reopen it in Reality Converter, and test the new USDZ. Simple characters with baked animation are more reliable than multiple skeletons, constraints, modifiers, procedural effects, or complex materials.</dd></div>
+          <div class="ref-row"><dt>USDZ converter:</dt><dd><a href="https://meshy-to-usdz-by-code-as-nature-f26.fuser.app/" target="_blank" rel="noopener">meshy-to-usdz-by-code-as-nature-f26.fuser.app</a></dd></div>
         </dl>
       </div>
     </div>
+    <p class="body-text">You can test your GLB in the <a href="https://modelviewer.dev/editor/" target="_blank" rel="noopener">model-viewer editor</a>. Confirm that the textures appear correctly and the animation plays.</p>
+    <p class="body-text">Test the USDZ by opening it on your iPhone or iPad. Check that the character appears correctly in AR. Animation support may differ between the browser preview and Apple's AR Quick Look.</p>
   </section>
 
   <section class="section" id="website">
-    <h2>Create the website</h2>
-    <p class="section-intro">Create a project folder containing three files:</p>
-    <pre class="folder-tree" aria-label="Web AR project folder structure">my-ar-character/
+    <h2>Build the website</h2>
+    <p class="section-intro">Create the following folder inside your portfolio website:</p>
+    <pre class="folder-tree" aria-label="Week 10 folder structure">week10/
 ├── index.html
+├── sketch.js
 ├── character.glb
 └── character.usdz</pre>
-    <p class="body-text">Add this to <code class="inline">index.html</code>:</p>
-    <div class="annotated">
-
-      <div class="code-card">
-        <div class="code-groups">
-          <span class="grp" data-level="1" data-label="HEAD" style="top: calc(2 * 2.05em); height: calc(48 * 2.05em - 6px);"></span>
-          <span class="grp" data-level="1" data-label="BODY" style="top: calc(50 * 2.05em); height: calc(20 * 2.05em - 6px);"></span>
-          <span class="grp" data-level="2" data-label="LOAD MODEL-VIEWER" style="top: calc(6 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
-          <span class="grp" data-level="2" data-label="PAGE STYLES" style="top: calc(9 * 2.05em); height: calc(40 * 2.05em - 6px);"></span>
-          <span class="grp" data-level="2" data-label="HEADER" style="top: calc(52 * 2.05em); height: calc(4 * 2.05em - 6px);"></span>
-          <span class="grp" data-level="2" data-label="THE VIEWER" style="top: calc(56 * 2.05em); height: calc(12 * 2.05em - 6px);"></span>
-          <span class="grp" data-level="3" data-label="BUTTON" style="top: calc(64 * 2.05em); height: calc(3 * 2.05em - 6px);"></span>
-        </div>
-        <div class="code-scroll">
+    <p class="body-text">We will use Google's <a href="https://modelviewer.dev/" target="_blank" rel="noopener"><code class="inline">&lt;model-viewer&gt;</code></a> web component to display our 3D character directly in the browser.</p>
+    <p class="body-text">It allows visitors to rotate, zoom, and inspect the model, play its embedded animation, and launch AR on supported devices. The HTML defines the viewer and its attributes, CSS controls its appearance, and JavaScript allows us to add custom interactions.</p>
+    <h3 class="sub">week10/index.html</h3>
+    <div class="snippet"><div class="code-card"><div class="code-scroll">
 <pre><code>&lt;!doctype html&gt;
 &lt;html lang="en"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-    &lt;title&gt;My AR Character&lt;/title&gt;
-    &lt;script type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"&gt;
-    &lt;/script&gt;
-    &lt;style&gt;
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        min-height: 100vh;
-        background: #e8ff52;
-        color: #111;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      main {
-        display: grid;
-        grid-template-rows: auto 1fr;
-        min-height: 100vh;
-      }
-      header { padding: 18px 22px; }
-      h1 { margin: 0; font-size: clamp(1.5rem, 5vw, 3rem); }
-      p { max-width: 42rem; line-height: 1.4; }
-      model-viewer {
-        width: 100%;
-        min-height: 70vh;
-        background: transparent;
-      }
-      .ar-button {
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-        padding: 12px 18px;
-        border: 2px solid #111;
-        border-radius: 999px;
-        background: #fff;
-        color: #111;
-        font: inherit;
-        font-weight: bold;
-        cursor: pointer;
-      }
-      .ar-button:focus {
-        outline: 3px solid #725cff;
-        outline-offset: 3px;
-      }
-    &lt;/style&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;main&gt;
-      &lt;header&gt;
-        &lt;h1&gt;My AR Character&lt;/h1&gt;
-        &lt;p&gt;Drag to rotate, scroll or pinch to zoom, or place the character in your space.&lt;/p&gt;
-      &lt;/header&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+
+  &lt;title&gt;Week 10: Becoming Virtual · Code as Nature&lt;/title&gt;
+
+  &lt;link rel="stylesheet" href="../style.css"&gt;
+
+  &lt;script
+    type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"&gt;
+  &lt;/script&gt;
+
+  &lt;script src="sketch.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Week 10: Becoming Virtual&lt;/h1&gt;
+    &lt;p&gt;✰ Exploring the boundaries of digital reality ✰&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;main id="week10"&gt;
+
+    &lt;section class="ar-section"&gt;
       &lt;model-viewer
+        id="character-viewer"
         src="character.glb"
         ios-src="character.usdz"
         alt="An animated three-dimensional character"
-        camera-controls autoplay loop
-        shadow-intensity="1" exposure="1"
-        ar ar-placement="floor" ar-scale="auto"
+        camera-controls
+        autoplay
+        shadow-intensity="1"
+        exposure="1"
+        ar
+        ar-placement="floor"
+        ar-scale="auto"
         ar-modes="webxr scene-viewer quick-look"&gt;
-        &lt;button class="ar-button" slot="ar-button"&gt;
-          View in your space
+
+        &lt;button
+          id="ar-button"
+          class="ar-button"
+          slot="ar-button"
+          type="button"&gt;
+          [ VIEW IN YOUR SPACE ]
         &lt;/button&gt;
+
       &lt;/model-viewer&gt;
-    &lt;/main&gt;
-  &lt;/body&gt;
+    &lt;/section&gt;
+
+  &lt;/main&gt;
+
+  &lt;nav class="page-nav" aria-label="Page navigation"&gt;
+    &lt;a href="../index.html"&gt;[ RETURN HOME ]&lt;/a&gt;
+    &lt;a href="../week9/index.html"&gt;[ PREVIOUS WEEK ]&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;Code as Nature · Fall 2026&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
 &lt;/html&gt;</code></pre>
-        </div>
-      </div>
+    </div></div></div>
+    <h3 class="sub">Into your main style.css</h3>
+    <div class="snippet"><div class="code-card"><div class="code-scroll">
+<pre><code>/* ========================================
+   WEEK 10: BECOMING VIRTUAL
+======================================== */
 
-      <div class="notes" data-notes-id="ar-page-example" style="min-height: 1670px;">
+#character-viewer {
+  display: block;
+  width: 100%;
+  height: 70vh;
+  min-height: 400px;
+}
 
-        <div class="note" data-note="head" style="top: 49px;">
-          <span class="note-label">HEAD</span>
-          <p>Everything the page needs before it can display anything: metadata, the <code>model-viewer</code> script, and all the CSS.</p>
-        </div>
+.ar-button {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+}</code></pre>
+    </div></div></div>
+    <h3 class="sub">sketch.js</h3>
+    <div class="snippet"><div class="code-card"><div class="code-scroll">
+<pre><code>const viewer = document.querySelector("#character-viewer");
+const arButton = document.querySelector("#ar-button");
 
-        <div class="note" data-note="body" style="top: 1230px;">
-          <span class="note-label">BODY</span>
-          <p>What actually appears on screen - the page layout wrapping the header and the AR viewer.</p>
-        </div>
+viewer.addEventListener("load", () =&gt; {
+  console.log("3D character loaded");
+});
 
-        <div class="note" data-note="load-model-viewer" style="top: 148px;">
-          <span class="note-label">LOAD MODEL-VIEWER</span>
-          <p>Loads Google's <code>&lt;model-viewer&gt;</code> custom element from a CDN. Everything below depends on this one script.</p>
-        </div>
-
-        <div class="note" data-note="page-styles" style="top: 232px;">
-          <span class="note-label">PAGE STYLES</span>
-          <p>Ordinary CSS: page layout, background, and the floating AR button's shape and position. None of it is AR-specific - <code>model-viewer</code> is just another element to style.</p>
-        </div>
-
-        <div class="note" data-note="header" style="top: 1312px;">
-          <span class="note-label">HEADER</span>
-          <p>The title and instructions shown above the viewer.</p>
-        </div>
-
-        <div class="note" data-note="the-viewer" style="top: 1378px;">
-          <span class="note-label">THE VIEWER</span>
-          <p>The 3D viewer itself, configured entirely through attributes. See what each one does below.</p>
-        </div>
-
-        <div class="note" data-note="button" style="top: 1574px;">
-          <span class="note-label">BUTTON</span>
-          <p>A custom trigger dropped into <code>model-viewer</code>'s <code>ar-button</code> slot, so it can be styled like the rest of the page instead of using the library's default button.</p>
-        </div>
-
-      </div>
-
-      <div class="connectors" data-connectors-id="ar-page-example">
-        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
-        <div class="conn-v" style="left:50%; top:0px; height:61px;"></div>
-        <div class="conn-h" style="top:61px; left:50%; width:14px;"></div>
-        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
-
-        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
-        <div class="conn-v" style="left:50%; top:0px; height:1242px;"></div>
-        <div class="conn-h" style="top:1242px; left:50%; width:14px;"></div>
-        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
-
-        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
-        <div class="conn-v" style="left:50%; top:0px; height:160px;"></div>
-        <div class="conn-h" style="top:160px; left:50%; width:14px;"></div>
-        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
-
-        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
-        <div class="conn-v" style="left:50%; top:0px; height:244px;"></div>
-        <div class="conn-h" style="top:244px; left:50%; width:14px;"></div>
-        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
-
-        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
-        <div class="conn-v" style="left:50%; top:0px; height:1324px;"></div>
-        <div class="conn-h" style="top:1324px; left:50%; width:14px;"></div>
-        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
-
-        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
-        <div class="conn-v" style="left:50%; top:0px; height:1390px;"></div>
-        <div class="conn-h" style="top:1390px; left:50%; width:14px;"></div>
-        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
-
-        <div class="conn-h" style="top:0px; left:calc(50% - 14px); width:14px;"></div>
-        <div class="conn-v" style="left:50%; top:0px; height:1586px;"></div>
-        <div class="conn-h" style="top:1586px; left:50%; width:14px;"></div>
-        <div class="conn-dot" style="top:0px; left:calc(50% - 14px);"></div>
-      </div>
-
-    </div>
-    <div class="ref-groups">
-      <div class="ref-group">
-        <h3>Important attributes</h3>
-        <dl>
-          <div class="ref-row"><dt>src:</dt><dd>loads the GLB used by the webpage and Android.</dd></div>
-          <div class="ref-row"><dt>ios-src:</dt><dd>provides the dedicated Apple USDZ.</dd></div>
-          <div class="ref-row"><dt>autoplay and loop:</dt><dd>start and repeat the animation.</dd></div>
-          <div class="ref-row"><dt>camera-controls:</dt><dd>allows rotation and zoom.</dd></div>
-          <div class="ref-row"><dt>ar:</dt><dd>enables the AR button.</dd></div>
-          <div class="ref-row"><dt>ar-placement="floor":</dt><dd>uses a horizontal surface. Change <code class="inline">floor</code> to <code class="inline">wall</code> for a wall placement.</dd></div>
-          <div class="ref-row"><dt>ar-scale="auto":</dt><dd>lets viewers resize the character.</dd></div>
-          <div class="ref-row"><dt>ar-modes:</dt><dd>provides WebXR, Android Scene Viewer, and Apple Quick Look.</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="local-test">
-    <h2>Test the website locally</h2>
-    <p class="section-intro">Opening <code class="inline">index.html</code> directly may cause browser restrictions. Test through a local web server or GitHub Pages.</p>
-    <ul class="steps">
-      <li>Check that the character loads, its textures appear, and its animation plays.</li>
-      <li>Check that rotation and zoom work and the AR button appears on a supported phone.</li>
-      <li>Check that Android loads the GLB and Apple devices load the USDZ.</li>
-    </ul>
+viewer.addEventListener("ar-status", (event) =&gt; {
+  console.log("AR status:", event.detail.status);
+});</code></pre>
+    </div></div></div>
   </section>
 
   <section class="section" id="publish">
-    <h2>Publish with GitHub Pages</h2>
+    <h2>Publish and test</h2>
     <ol class="steps">
-      <li>Create a public GitHub repository named something like <code class="inline">my-ar-character</code>.</li>
-      <li>Upload and commit the HTML, GLB, and USDZ files.</li>
-      <li>Open <strong>Settings &rarr; Pages</strong>.</li>
-      <li>Choose <strong>Deploy from a branch</strong>, <strong>main</strong>, and <strong>/root</strong>.</li>
-      <li>Save and wait for the site to publish.</li>
+      <li>Push the updated website to GitHub Pages.</li>
+      <li>Open the published page on your computer and phone.</li>
+      <li>Test the animation, camera controls, and AR button.</li>
     </ol>
-    <div class="snippet"><div class="code-card"><div class="code-scroll"><pre><code>https://USERNAME.github.io/REPOSITORY-NAME/</code></pre></div></div></div>
-    <p class="body-text">GitHub Pages provides the HTTPS required by browser-based WebXR.</p>
   </section>
 
-  <section class="section" id="device-test">
-    <h2>Test the published project</h2>
-    <h3 class="sub">Desktop</h3>
-    <p class="body-text no-top-margin">Check that the character appears, loops, rotates when dragged, and zooms when scrolled.</p>
-    <h3 class="sub">Android</h3>
-    <p class="body-text no-top-margin">Tap <strong>View in your space</strong>, allow camera access, scan a horizontal surface, and place the character. Android normally uses the GLB through WebXR or Scene Viewer.</p>
-    <h3 class="sub">iPhone and iPad</h3>
-    <p class="body-text no-top-margin">Open the site in Safari and tap <strong>View in your space</strong>. Quick Look should load the dedicated USDZ. Place the character and confirm its animation.</p>
-  </section>
-
-  <section class="section" id="qr-code">
-    <h2>Create a QR code</h2>
-    <p class="section-intro">Point it to the GitHub Pages URL, not directly to either model file.</p>
-    <p class="body-text no-top-margin">The code can appear in a wall label, poster, publication, sculpture, sticker, exhibition map, projection, or portfolio.</p>
-  </section>
-
-  <section class="section" id="troubleshooting">
-    <h2>Troubleshooting</h2>
+  <section class="section" id="attributes">
+    <h2>&lt;model-viewer&gt; attributes</h2>
     <div class="ref-groups">
       <div class="ref-group">
-        <h3>Common problems</h3>
+        <h3>Important &lt;model-viewer&gt; attributes</h3>
         <dl>
-          <div class="ref-row"><dt>White or missing textures:</dt><dd>Include textures during Blender export, use GLB, and convert unsupported procedural materials to image textures.</dd></div>
-          <div class="ref-row"><dt>No webpage animation:</dt><dd>Test the GLB in the <code class="inline">&lt;model-viewer&gt;</code> editor, include animation during export, and confirm <code class="inline">autoplay</code>. For several animations, specify <code class="inline">animation-name="Dance"</code>.</dd></div>
-          <div class="ref-row"><dt>No animation in iPhone AR:</dt><dd>Confirm <code class="inline">ios-src</code>, open the USDZ directly, bake the animation, and use one skeleton and one animation.</dd></div>
-          <div class="ref-row"><dt>Wrong direction:</dt><dd>Correct and apply rotation in Blender, then export both formats again.</dd></div>
-          <div class="ref-row"><dt>Wrong scale:</dt><dd>Adjust scale before export and test the USDZ on a device.</dd></div>
-          <div class="ref-row"><dt>No AR button:</dt><dd>The browser or device may not support the requested AR modes. Interactive 3D should still work.</dd></div>
-          <div class="ref-row"><dt>GitHub Pages 404:</dt><dd>Check <code class="inline">index.html</code>, the branch, folder, and filename capitalization, then wait several minutes.</dd></div>
+          <div class="ref-row"><dt>src="character.glb"</dt><dd>Loads the 3D model for web and Android.</dd></div>
+          <div class="ref-row"><dt>ios-src="character.usdz"</dt><dd>Loads the Apple AR version.</dd></div>
+          <div class="ref-row"><dt>alt="..."</dt><dd>Provides an accessible description.</dd></div>
+          <div class="ref-row"><dt>camera-controls</dt><dd>Enables rotation and zoom.</dd></div>
+          <div class="ref-row"><dt>autoplay</dt><dd>Automatically plays the model's animation.</dd></div>
+          <div class="ref-row"><dt>loop</dt><dd>Repeats the animation (note: looping is already the default in model-viewer).</dd></div>
+          <div class="ref-row"><dt>shadow-intensity="1"</dt><dd>Controls shadow strength.</dd></div>
+          <div class="ref-row"><dt>exposure="1"</dt><dd>Controls the model's brightness.</dd></div>
+          <div class="ref-row"><dt>ar</dt><dd>Enables augmented reality.</dd></div>
+          <div class="ref-row"><dt>ar-placement="floor"</dt><dd>Places the model on a horizontal surface.</dd></div>
+          <div class="ref-row"><dt>ar-scale="auto"</dt><dd>Allows the model to be resized in supported AR modes.</dd></div>
+          <div class="ref-row"><dt>ar-modes="webxr scene-viewer quick-look"</dt><dd>Specifies supported AR methods and their priority.</dd></div>
+          <div class="ref-row"><dt>slot="ar-button"</dt><dd>Assigns a custom button to launch AR.</dd></div>
+        </dl>
+      </div>
+      <div class="ref-group">
+        <h3>Additional attributes to experiment with</h3>
+        <dl>
+          <div class="ref-row"><dt>auto-rotate</dt><dd>Automatically rotates the model.</dd></div>
+          <div class="ref-row"><dt>rotation-per-second="30deg"</dt><dd>Controls automatic rotation speed.</dd></div>
+          <div class="ref-row"><dt>camera-orbit="0deg 75deg 3m"</dt><dd>Sets the initial camera angle and distance.</dd></div>
+          <div class="ref-row"><dt>field-of-view="30deg"</dt><dd>Controls camera perspective.</dd></div>
+          <div class="ref-row"><dt>camera-target="0m 1m 0m"</dt><dd>Sets the point the camera looks at.</dd></div>
+          <div class="ref-row"><dt>environment-image="neutral"</dt><dd>Changes environmental lighting and reflections.</dd></div>
+          <div class="ref-row"><dt>shadow-softness="1"</dt><dd>Controls shadow softness.</dd></div>
+          <div class="ref-row"><dt>scale="1 1 1"</dt><dd>Sets the model's scale.</dd></div>
+          <div class="ref-row"><dt>orientation="0deg 0deg 0deg"</dt><dd>Sets the model's orientation.</dd></div>
+          <div class="ref-row"><dt>animation-name="..."</dt><dd>Selects a specific embedded animation.</dd></div>
+          <div class="ref-row"><dt>interaction-prompt="none"</dt><dd>Hides the default interaction hint.</dd></div>
         </dl>
       </div>
     </div>
   </section>
 
-  <section class="section" id="assignment">
-    <h2>A Character Enters the World</h2>
-    <p class="section-intro">Create or generate a humanoid character, give it one movement using Mixamo, and publish it as a website that lets visitors view it in 3D and place it in a physical environment.</p>
-    <h3 class="sub">Consider</h3>
-    <ul class="steps">
-      <li>What scale should the character occupy, and where does it belong?</li>
-      <li>Does its movement change meaning in a bedroom, street, gallery, classroom, or landscape?</li>
-      <li>Is it visiting, haunting, performing for, or attempting to escape the physical world?</li>
-      <li>What relationship exists between the webpage, screen, and surrounding space?</li>
-    </ul>
-    <h3 class="sub">Required files and tests</h3>
-    <ul class="steps">
-      <li><code class="inline">index.html</code>, <code class="inline">character.glb</code>, and <code class="inline">character.usdz</code></li>
-      <li>Animated webpage on desktop and mobile</li>
-      <li>Android AR when a test device is available</li>
-      <li>iPhone or iPad AR using the dedicated USDZ</li>
-      <li>Public GitHub Pages URL and QR code</li>
-    </ul>
-  </section>
 </main>
-<script src="../navigation.js?v=15"></script>
-<script src="../last-updated.js?v=12"></script>
+<script src="../navigation.js?v=16"></script>
+<script src="../last-updated.js?v=13"></script>
 <script src="../cursor-sparkle.js?v=20260827"></script>
 </body>
 </html>

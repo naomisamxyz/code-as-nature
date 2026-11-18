@@ -22,7 +22,6 @@
   ];
 
   var disabledGuides = new Set([
-    "web-ar-characters.html",
     "unreal-engine-blueprints.html",
     "unreal-interconnected.html",
     "autonomous-artworks-exhibition-systems.html"
